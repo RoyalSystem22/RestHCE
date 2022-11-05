@@ -1,0 +1,653 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WEB_ERPSALUD_CSBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ParametrosMast">
+          <Key>
+            <PropertyRef Name="CompaniaCodigo" />
+            <PropertyRef Name="AplicacionCodigo" />
+            <PropertyRef Name="ParametroClave" />
+          </Key>
+          <Property Name="CompaniaCodigo" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="AplicacionCodigo" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ParametroClave" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="DescripcionParametro" Type="char" MaxLength="300" />
+          <Property Name="Explicacion" Type="varchar" MaxLength="300" />
+          <Property Name="TipodeDatoFlag" Type="char" MaxLength="1" />
+          <Property Name="Texto" Type="char" MaxLength="20" />
+          <Property Name="Numero" Type="money" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="FinanceComunFlag" Type="char" MaxLength="1" />
+          <Property Name="Estado" Type="char" MaxLength="1" />
+          <Property Name="UltimoUsuario" Type="varchar" MaxLength="25" />
+          <Property Name="UltimaFechaModif" Type="datetime" />
+          <Property Name="ExplicacionAdicional" Type="varchar" MaxLength="250" />
+          <Property Name="Texto1" Type="char" MaxLength="10" />
+          <Property Name="Texto2" Type="char" MaxLength="10" />
+          <Property Name="UnidadReplicacion" Type="varchar" MaxLength="4" />
+          <Property Name="Accion" Type="varchar" MaxLength="25" />
+          <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+          <Property Name="FechaCreacion" Type="datetime" />
+        </EntityType>
+        <Function Name="SP_ParametrosMastListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompaniaCodigo" Type="char" Mode="In" />
+          <Parameter Name="AplicacionCodigo" Type="char" Mode="In" />
+          <Parameter Name="ParametroClave" Type="char" Mode="In" />
+          <Parameter Name="DescripcionParametro" Type="varchar" Mode="In" />
+          <Parameter Name="Explicacion" Type="varchar" Mode="In" />
+          <Parameter Name="TipodeDatoFlag" Type="char" Mode="In" />
+          <Parameter Name="Texto" Type="char" Mode="In" />
+          <Parameter Name="Numero" Type="money" Mode="In" />
+          <Parameter Name="Fecha" Type="datetime" Mode="In" />
+          <Parameter Name="FinanceComunFlag" Type="char" Mode="In" />
+          <Parameter Name="Estado" Type="char" Mode="In" />
+          <Parameter Name="UltimoUsuario" Type="varchar" Mode="In" />
+          <Parameter Name="UltimaFechaModif" Type="datetime" Mode="In" />
+          <Parameter Name="ExplicacionAdicional" Type="varchar" Mode="In" />
+          <Parameter Name="Texto1" Type="char" Mode="In" />
+          <Parameter Name="Texto2" Type="char" Mode="In" />
+          <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+          <Parameter Name="Accion" Type="varchar" Mode="In" />
+          <Parameter Name="INICIO" Type="int" Mode="In" />
+          <Parameter Name="NUMEROFILAS" Type="int" Mode="In" />
+          <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+          <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="SP_VW_ATENCIONPACIENTE_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+          <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />
+          <Parameter Name="UnidadReplicacionEC" Type="char" Mode="In" />
+          <Parameter Name="IdPaciente" Type="int" Mode="In" />
+          <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+          <Parameter Name="IdEstablecimientoSalud" Type="int" Mode="In" />
+          <Parameter Name="IdUnidadServicio" Type="int" Mode="In" />
+          <Parameter Name="IdPersonalSalud" Type="int" Mode="In" />
+          <Parameter Name="aaaaAtencion" Type="int" Mode="In" />
+          <Parameter Name="EpisodioAtencion" Type="bigint" Mode="In" />
+          <Parameter Name="FechaRegistro" Type="datetime" Mode="In" />
+          <Parameter Name="FechaAtencion" Type="datetime" Mode="In" />
+          <Parameter Name="TipoAtencion" Type="int" Mode="In" />
+          <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+          <Parameter Name="LineaOrdenAtencion" Type="int" Mode="In" />
+          <Parameter Name="TipoOrdenAtencion" Type="int" Mode="In" />
+          <Parameter Name="Estado" Type="int" Mode="In" />
+          <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+          <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+          <Parameter Name="IdEspecialidad" Type="int" Mode="In" />
+          <Parameter Name="CodigoOA" Type="varchar" Mode="In" />
+          <Parameter Name="FechaOrden" Type="datetime" Mode="In" />
+          <Parameter Name="IdProcedimiento" Type="int" Mode="In" />
+          <Parameter Name="IdTipoOrden" Type="int" Mode="In" />
+          <Parameter Name="FechaRegistroEpiClinico" Type="datetime" Mode="In" />
+          <Parameter Name="FechaCierreEpiClinico" Type="datetime" Mode="In" />
+          <Parameter Name="TipoPaciente" Type="int" Mode="In" />
+          <Parameter Name="Edad" Type="int" Mode="In" />
+          <Parameter Name="CodigoHC" Type="varchar" Mode="In" />
+          <Parameter Name="CodigoHCAnterior" Type="varchar" Mode="In" />
+          <Parameter Name="CodigoHCSecundario" Type="varchar" Mode="In" />
+          <Parameter Name="TipoHistoria" Type="varchar" Mode="In" />
+          <Parameter Name="EstadoPaciente" Type="int" Mode="In" />
+          <Parameter Name="NumeroFile" Type="int" Mode="In" />
+          <Parameter Name="IDPACIENTE_OK" Type="int" Mode="In" />
+          <Parameter Name="Persona" Type="int" Mode="In" />
+          <Parameter Name="NombreCompleto" Type="varchar" Mode="In" />
+          <Parameter Name="TipoDocumento" Type="char" Mode="In" />
+          <Parameter Name="Documento" Type="char" Mode="In" />
+          <Parameter Name="EsCliente" Type="char" Mode="In" />
+          <Parameter Name="EsProveedor" Type="char" Mode="In" />
+          <Parameter Name="EsEmpleado" Type="char" Mode="In" />
+          <Parameter Name="EsOtro" Type="char" Mode="In" />
+          <Parameter Name="TipoPersona" Type="char" Mode="In" />
+          <Parameter Name="FechaNacimiento" Type="datetime" Mode="In" />
+          <Parameter Name="Sexo" Type="char" Mode="In" />
+          <Parameter Name="Nacionalidad" Type="char" Mode="In" />
+          <Parameter Name="EstadoCivil" Type="char" Mode="In" />
+          <Parameter Name="NivelInstruccion" Type="char" Mode="In" />
+          <Parameter Name="CodigoPostal" Type="char" Mode="In" />
+          <Parameter Name="Provincia" Type="char" Mode="In" />
+          <Parameter Name="Departamento" Type="char" Mode="In" />
+          <Parameter Name="FecIniDiscamec" Type="datetime" Mode="In" />
+          <Parameter Name="FecFinDiscamec" Type="datetime" Mode="In" />
+          <Parameter Name="Pais" Type="char" Mode="In" />
+          <Parameter Name="EsPaciente" Type="char" Mode="In" />
+          <Parameter Name="EsEmpresa" Type="char" Mode="In" />
+          <Parameter Name="personanew" Type="int" Mode="In" />
+          <Parameter Name="EstadoPersona" Type="char" Mode="In" />
+          <Parameter Name="Servicio" Type="varchar" Mode="In" />
+          <Parameter Name="INICIO" Type="int" Mode="In" />
+          <Parameter Name="NUMEROFILAS" Type="int" Mode="In" />
+          <Parameter Name="Version" Type="varchar" Mode="In" />
+          <Parameter Name="ACCION" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="WEB_ERPSALUD_CSBModelStoreContainer">
+          <EntitySet Name="ParametrosMast" EntityType="Self.ParametrosMast" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WEB_ERPSALUD_CSBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ParametrosMast">
+          <Key>
+            <PropertyRef Name="CompaniaCodigo" />
+            <PropertyRef Name="AplicacionCodigo" />
+            <PropertyRef Name="ParametroClave" />
+          </Key>
+          <Property Name="CompaniaCodigo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="AplicacionCodigo" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ParametroClave" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DescripcionParametro" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="Explicacion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="TipodeDatoFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Texto" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Numero" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="FinanceComunFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UltimoUsuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="UltimaFechaModif" Type="DateTime" Precision="3" />
+          <Property Name="ExplicacionAdicional" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Texto1" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Texto2" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="UnidadReplicacion" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="WEB_ERPSALUDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ParametrosMast" EntityType="Self.ParametrosMast" />
+          <FunctionImport Name="SP_ParametrosMastListar" ReturnType="Collection(WEB_ERPSALUD_CSBModel.SP_ParametrosMastListar_Result)">
+            <Parameter Name="CompaniaCodigo" Mode="In" Type="String" />
+            <Parameter Name="AplicacionCodigo" Mode="In" Type="String" />
+            <Parameter Name="ParametroClave" Mode="In" Type="String" />
+            <Parameter Name="DescripcionParametro" Mode="In" Type="String" />
+            <Parameter Name="Explicacion" Mode="In" Type="String" />
+            <Parameter Name="TipodeDatoFlag" Mode="In" Type="String" />
+            <Parameter Name="Texto" Mode="In" Type="String" />
+            <Parameter Name="Numero" Mode="In" Type="Decimal" />
+            <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="FinanceComunFlag" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="String" />
+            <Parameter Name="UltimoUsuario" Mode="In" Type="String" />
+            <Parameter Name="UltimaFechaModif" Mode="In" Type="DateTime" />
+            <Parameter Name="ExplicacionAdicional" Mode="In" Type="String" />
+            <Parameter Name="Texto1" Mode="In" Type="String" />
+            <Parameter Name="Texto2" Mode="In" Type="String" />
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="Accion" Mode="In" Type="String" />
+            <Parameter Name="INICIO" Mode="In" Type="Int32" />
+            <Parameter Name="NUMEROFILAS" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+            <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_VW_ATENCIONPACIENTE_LISTAR" ReturnType="Collection(WEB_ERPSALUD_CSBModel.SP_VW_ATENCIONPACIENTE_LISTAR_Result)">
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int64" />
+            <Parameter Name="UnidadReplicacionEC" Mode="In" Type="String" />
+            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+            <Parameter Name="IdEstablecimientoSalud" Mode="In" Type="Int32" />
+            <Parameter Name="IdUnidadServicio" Mode="In" Type="Int32" />
+            <Parameter Name="IdPersonalSalud" Mode="In" Type="Int32" />
+            <Parameter Name="aaaaAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="EpisodioAtencion" Mode="In" Type="Int64" />
+            <Parameter Name="FechaRegistro" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaAtencion" Mode="In" Type="DateTime" />
+            <Parameter Name="TipoAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="TipoOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="Estado" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+            <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+            <Parameter Name="IdEspecialidad" Mode="In" Type="Int32" />
+            <Parameter Name="CodigoOA" Mode="In" Type="String" />
+            <Parameter Name="FechaOrden" Mode="In" Type="DateTime" />
+            <Parameter Name="IdProcedimiento" Mode="In" Type="Int32" />
+            <Parameter Name="IdTipoOrden" Mode="In" Type="Int32" />
+            <Parameter Name="FechaRegistroEpiClinico" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaCierreEpiClinico" Mode="In" Type="DateTime" />
+            <Parameter Name="TipoPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="Edad" Mode="In" Type="Int32" />
+            <Parameter Name="CodigoHC" Mode="In" Type="String" />
+            <Parameter Name="CodigoHCAnterior" Mode="In" Type="String" />
+            <Parameter Name="CodigoHCSecundario" Mode="In" Type="String" />
+            <Parameter Name="TipoHistoria" Mode="In" Type="String" />
+            <Parameter Name="EstadoPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="NumeroFile" Mode="In" Type="Int32" />
+            <Parameter Name="IDPACIENTE_OK" Mode="In" Type="Int32" />
+            <Parameter Name="Persona" Mode="In" Type="Int32" />
+            <Parameter Name="NombreCompleto" Mode="In" Type="String" />
+            <Parameter Name="TipoDocumento" Mode="In" Type="String" />
+            <Parameter Name="Documento" Mode="In" Type="String" />
+            <Parameter Name="EsCliente" Mode="In" Type="String" />
+            <Parameter Name="EsProveedor" Mode="In" Type="String" />
+            <Parameter Name="EsEmpleado" Mode="In" Type="String" />
+            <Parameter Name="EsOtro" Mode="In" Type="String" />
+            <Parameter Name="TipoPersona" Mode="In" Type="String" />
+            <Parameter Name="FechaNacimiento" Mode="In" Type="DateTime" />
+            <Parameter Name="Sexo" Mode="In" Type="String" />
+            <Parameter Name="Nacionalidad" Mode="In" Type="String" />
+            <Parameter Name="EstadoCivil" Mode="In" Type="String" />
+            <Parameter Name="NivelInstruccion" Mode="In" Type="String" />
+            <Parameter Name="CodigoPostal" Mode="In" Type="String" />
+            <Parameter Name="Provincia" Mode="In" Type="String" />
+            <Parameter Name="Departamento" Mode="In" Type="String" />
+            <Parameter Name="FecIniDiscamec" Mode="In" Type="DateTime" />
+            <Parameter Name="FecFinDiscamec" Mode="In" Type="DateTime" />
+            <Parameter Name="Pais" Mode="In" Type="String" />
+            <Parameter Name="EsPaciente" Mode="In" Type="String" />
+            <Parameter Name="EsEmpresa" Mode="In" Type="String" />
+            <Parameter Name="personanew" Mode="In" Type="Int32" />
+            <Parameter Name="EstadoPersona" Mode="In" Type="String" />
+            <Parameter Name="Servicio" Mode="In" Type="String" />
+            <Parameter Name="INICIO" Mode="In" Type="Int32" />
+            <Parameter Name="NUMEROFILAS" Mode="In" Type="Int32" />
+            <Parameter Name="Version" Mode="In" Type="String" />
+            <Parameter Name="ACCION" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SP_ParametrosMastListar_Result">
+          <Property Type="String" Name="CompaniaCodigo" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="AplicacionCodigo" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="ParametroClave" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="DescripcionParametro" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Explicacion" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="TipodeDatoFlag" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="Texto" Nullable="true" MaxLength="20" />
+          <Property Type="Decimal" Name="Numero" Nullable="true" Precision="19" />
+          <Property Type="DateTime" Name="Fecha" Nullable="true" Precision="23" />
+          <Property Type="String" Name="FinanceComunFlag" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="Estado" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="UltimoUsuario" Nullable="true" MaxLength="25" />
+          <Property Type="DateTime" Name="UltimaFechaModif" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ExplicacionAdicional" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Texto1" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Texto2" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="UnidadReplicacion" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="Accion" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+          <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="SP_VW_ATENCIONPACIENTE_LISTAR_Result">
+          <Property Type="String" Name="UnidadReplicacion" Nullable="true" MaxLength="4" />
+          <Property Type="Int64" Name="IdEpisodioAtencion" Nullable="true" />
+          <Property Type="String" Name="UnidadReplicacionEC" Nullable="true" MaxLength="4" />
+          <Property Type="Int32" Name="IdPaciente" Nullable="true" />
+          <Property Type="Int32" Name="EpisodioClinico" Nullable="true" />
+          <Property Type="Int32" Name="IdEstablecimientoSalud" Nullable="true" />
+          <Property Type="Int32" Name="IdUnidadServicio" Nullable="true" />
+          <Property Type="Int32" Name="IdPersonalSalud" Nullable="true" />
+          <Property Type="Int64" Name="EpisodioAtencion" Nullable="true" />
+          <Property Type="DateTime" Name="FechaRegistro" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FechaAtencion" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="TipoAtencion" Nullable="true" />
+          <Property Type="Int32" Name="IdOrdenAtencion" Nullable="true" />
+          <Property Type="Int32" Name="LineaOrdenAtencion" Nullable="true" />
+          <Property Type="Int32" Name="TipoOrdenAtencion" Nullable="true" />
+          <Property Type="Int32" Name="Estado" Nullable="true" />
+          <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+          <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="60" />
+          <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="IdEspecialidad" Nullable="true" />
+          <Property Type="String" Name="CodigoOA" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="ProximaAtencionFlag" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="IdEspecialidadProxima" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="IdEstablecimientoSaludProxima" Nullable="true" />
+          <Property Type="Int32" Name="IdTipoInterConsulta" Nullable="true" />
+          <Property Type="Int32" Name="IdTipoReferencia" Nullable="true" />
+          <Property Type="String" Name="ObservacionProxima" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="DescansoMedico" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="DiasDescansoMedico" Nullable="true" />
+          <Property Type="DateTime" Name="FechaInicioDescansoMedico" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FechaFinDescansoMedico" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FechaOrden" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="IdProcedimiento" Nullable="true" />
+          <Property Type="String" Name="ObservacionOrden" Nullable="true" MaxLength="80" />
+          <Property Type="Int32" Name="IdTipoOrden" Nullable="true" />
+          <Property Type="String" Name="Accion" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="Version" Nullable="true" MaxLength="25" />
+          <Property Type="DateTime" Name="FechaRegistroEpiClinico" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FechaCierreEpiClinico" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="TipoPaciente" Nullable="true" />
+          <Property Type="Int32" Name="Edad" Nullable="true" />
+          <Property Type="String" Name="Raza" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Religion" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Cargo" Nullable="true" MaxLength="350" />
+          <Property Type="String" Name="AreaLaboral" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Ocupacion" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="CodigoHC" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="CodigoHCAnterior" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="CodigoHCSecundario" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="TipoAlmacenamiento" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="TipoHistoria" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="TipoSituacion" Nullable="true" MaxLength="1" />
+          <Property Type="Int32" Name="IdUbicacion" Nullable="true" />
+          <Property Type="String" Name="LugarProcedencia" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="RutaFoto" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="FechaIngreso" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="IndicadorNuevo" Nullable="true" />
+          <Property Type="Int32" Name="EstadoPaciente" Nullable="true" />
+          <Property Type="Int32" Name="NumeroFile" Nullable="true" />
+          <Property Type="String" Name="Servicio" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="UsuarioAlmacenamiento" Nullable="true" MaxLength="25" />
+          <Property Type="DateTime" Name="FechaAlmacenamiento" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Observacion" Nullable="true" MaxLength="250" />
+          <Property Type="Int32" Name="IndicadorAsistencia" Nullable="true" />
+          <Property Type="Int32" Name="CantidadAsistencia" Nullable="true" />
+          <Property Type="Int32" Name="UbicacionHHCC" Nullable="true" />
+          <Property Type="Int32" Name="IndicadorMigradoSiteds" Nullable="true" />
+          <Property Type="String" Name="NumeroCaja" Nullable="true" MaxLength="25" />
+          <Property Type="Int32" Name="IndicadorCodigoBarras" Nullable="true" />
+          <Property Type="Int32" Name="IDPACIENTE_OK" Nullable="true" />
+          <Property Type="String" Name="CodigoAsegurado" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="NumeroPoliza" Nullable="true" />
+          <Property Type="String" Name="CodigoProducto" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="CodigoPlan" Nullable="true" MaxLength="25" />
+          <Property Type="Int32" Name="TipoParentesco" Nullable="true" />
+          <Property Type="String" Name="CodigoBeneficio" Nullable="true" MaxLength="25" />
+          <Property Type="Int32" Name="Situacion" Nullable="true" />
+          <Property Type="Int32" Name="TomoActual" Nullable="true" />
+          <Property Type="Int32" Name="IndicadorHistoriaFisica" Nullable="true" />
+          <Property Type="String" Name="DescripcionHistoria" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="NumeroCertificado" Nullable="true" />
+          <Property Type="Int32" Name="Persona" Nullable="true" />
+          <Property Type="String" Name="Origen" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="ApellidoPaterno" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="ApellidoMaterno" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TipoDocumento" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="CodigoBarras" Nullable="true" MaxLength="18" />
+          <Property Type="String" Name="EsCliente" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="EsProveedor" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="EsEmpleado" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="EsOtro" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="TipoPersona" Nullable="true" MaxLength="1" />
+          <Property Type="DateTime" Name="FechaNacimiento" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Sexo" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="CiudadNacimiento" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Nacionalidad" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoCivil" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="NivelInstruccion" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="Direccion" Nullable="true" MaxLength="190" />
+          <Property Type="String" Name="CodigoPostal" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="Provincia" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="Departamento" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="Telefono" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Fax" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="DocumentoFiscal" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DocumentoIdentidad" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CarnetExtranjeria" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="DocumentoMilitarFA" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="TipoBrevete" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="Brevete" Nullable="true" MaxLength="18" />
+          <Property Type="String" Name="Pasaporte" Nullable="true" MaxLength="18" />
+          <Property Type="String" Name="NombreEmergencia" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DireccionEmergencia" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="TelefonoEmergencia" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="PersonaAnt" Nullable="true" MaxLength="46" />
+          <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EnfermedadGraveFlag" Nullable="true" MaxLength="1" />
+          <Property Type="DateTime" Name="IngresoFechaRegistro" Nullable="true" Precision="23" />
+          <Property Type="String" Name="IngresoAplicacionCodigo" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="IngresoUsuario" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="Celular" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="ParentescoEmergencia" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="CelularEmergencia" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="LugarNacimiento" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="SuspensionFonaviFlag" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="FlagRepetido" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="CodDiscamec" Nullable="true" MaxLength="15" />
+          <Property Type="DateTime" Name="FecIniDiscamec" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FecFinDiscamec" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Pais" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="EsPaciente" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="EsEmpresa" Nullable="true" MaxLength="1" />
+          <Property Type="Int32" Name="Persona_Old" Nullable="true" />
+          <Property Type="Int32" Name="personanew" Nullable="false" />
+          <Property Type="String" Name="EstadoPersona" Nullable="true" MaxLength="1" />
+          <Property Type="Int32" Name="IDASIGNACIONMEDICO" Nullable="true" />
+          <Property Type="Int32" Name="tipoasignacion" Nullable="true" />
+          <Property Type="String" Name="ObservacionesAsigMed" Nullable="true" MaxLength="120" />
+          <Property Type="Int32" Name="EstadoAsigMed" Nullable="true" />
+          <Property Type="Int32" Name="EstadoEpiClinico" Nullable="true" />
+          <Property Type="Int32" Name="SecAsigMed" Nullable="true" />
+          <Property Type="Int32" Name="SecReferidaAsigMed" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WEB_ERPSALUD_CSBModelStoreContainer" CdmEntityContainer="WEB_ERPSALUDEntities">
+          <EntitySetMapping Name="ParametrosMast">
+            <EntityTypeMapping TypeName="WEB_ERPSALUD_CSBModel.ParametrosMast">
+              <MappingFragment StoreEntitySet="ParametrosMast">
+                <ScalarProperty Name="CompaniaCodigo" ColumnName="CompaniaCodigo" />
+                <ScalarProperty Name="AplicacionCodigo" ColumnName="AplicacionCodigo" />
+                <ScalarProperty Name="ParametroClave" ColumnName="ParametroClave" />
+                <ScalarProperty Name="DescripcionParametro" ColumnName="DescripcionParametro" />
+                <ScalarProperty Name="Explicacion" ColumnName="Explicacion" />
+                <ScalarProperty Name="TipodeDatoFlag" ColumnName="TipodeDatoFlag" />
+                <ScalarProperty Name="Texto" ColumnName="Texto" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="FinanceComunFlag" ColumnName="FinanceComunFlag" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+                <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+                <ScalarProperty Name="ExplicacionAdicional" ColumnName="ExplicacionAdicional" />
+                <ScalarProperty Name="Texto1" ColumnName="Texto1" />
+                <ScalarProperty Name="Texto2" ColumnName="Texto2" />
+                <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+                <ScalarProperty Name="Accion" ColumnName="Accion" />
+                <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_ParametrosMastListar" FunctionName="WEB_ERPSALUD_CSBModel.Store.SP_ParametrosMastListar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WEB_ERPSALUD_CSBModel.SP_ParametrosMastListar_Result">
+                <ScalarProperty Name="CompaniaCodigo" ColumnName="CompaniaCodigo" />
+                <ScalarProperty Name="AplicacionCodigo" ColumnName="AplicacionCodigo" />
+                <ScalarProperty Name="ParametroClave" ColumnName="ParametroClave" />
+                <ScalarProperty Name="DescripcionParametro" ColumnName="DescripcionParametro" />
+                <ScalarProperty Name="Explicacion" ColumnName="Explicacion" />
+                <ScalarProperty Name="TipodeDatoFlag" ColumnName="TipodeDatoFlag" />
+                <ScalarProperty Name="Texto" ColumnName="Texto" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="FinanceComunFlag" ColumnName="FinanceComunFlag" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+                <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+                <ScalarProperty Name="ExplicacionAdicional" ColumnName="ExplicacionAdicional" />
+                <ScalarProperty Name="Texto1" ColumnName="Texto1" />
+                <ScalarProperty Name="Texto2" ColumnName="Texto2" />
+                <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+                <ScalarProperty Name="Accion" ColumnName="Accion" />
+                <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_VW_ATENCIONPACIENTE_LISTAR" FunctionName="WEB_ERPSALUD_CSBModel.Store.SP_VW_ATENCIONPACIENTE_LISTAR">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WEB_ERPSALUD_CSBModel.SP_VW_ATENCIONPACIENTE_LISTAR_Result">
+                <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+                <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+                <ScalarProperty Name="UnidadReplicacionEC" ColumnName="UnidadReplicacionEC" />
+                <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+                <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+                <ScalarProperty Name="IdEstablecimientoSalud" ColumnName="IdEstablecimientoSalud" />
+                <ScalarProperty Name="IdUnidadServicio" ColumnName="IdUnidadServicio" />
+                <ScalarProperty Name="IdPersonalSalud" ColumnName="IdPersonalSalud" />
+                <ScalarProperty Name="EpisodioAtencion" ColumnName="EpisodioAtencion" />
+                <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+                <ScalarProperty Name="FechaAtencion" ColumnName="FechaAtencion" />
+                <ScalarProperty Name="TipoAtencion" ColumnName="TipoAtencion" />
+                <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+                <ScalarProperty Name="LineaOrdenAtencion" ColumnName="LineaOrdenAtencion" />
+                <ScalarProperty Name="TipoOrdenAtencion" ColumnName="TipoOrdenAtencion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
+                <ScalarProperty Name="CodigoOA" ColumnName="CodigoOA" />
+                <ScalarProperty Name="ProximaAtencionFlag" ColumnName="ProximaAtencionFlag" />
+                <ScalarProperty Name="IdEspecialidadProxima" ColumnName="IdEspecialidadProxima" />
+                <ScalarProperty Name="IdEstablecimientoSaludProxima" ColumnName="IdEstablecimientoSaludProxima" />
+                <ScalarProperty Name="IdTipoInterConsulta" ColumnName="IdTipoInterConsulta" />
+                <ScalarProperty Name="IdTipoReferencia" ColumnName="IdTipoReferencia" />
+                <ScalarProperty Name="ObservacionProxima" ColumnName="ObservacionProxima" />
+                <ScalarProperty Name="DescansoMedico" ColumnName="DescansoMedico" />
+                <ScalarProperty Name="DiasDescansoMedico" ColumnName="DiasDescansoMedico" />
+                <ScalarProperty Name="FechaInicioDescansoMedico" ColumnName="FechaInicioDescansoMedico" />
+                <ScalarProperty Name="FechaFinDescansoMedico" ColumnName="FechaFinDescansoMedico" />
+                <ScalarProperty Name="FechaOrden" ColumnName="FechaOrden" />
+                <ScalarProperty Name="IdProcedimiento" ColumnName="IdProcedimiento" />
+                <ScalarProperty Name="ObservacionOrden" ColumnName="ObservacionOrden" />
+                <ScalarProperty Name="IdTipoOrden" ColumnName="IdTipoOrden" />
+                <ScalarProperty Name="Accion" ColumnName="Accion" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="FechaRegistroEpiClinico" ColumnName="FechaRegistroEpiClinico" />
+                <ScalarProperty Name="FechaCierreEpiClinico" ColumnName="FechaCierreEpiClinico" />
+                <ScalarProperty Name="TipoPaciente" ColumnName="TipoPaciente" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Raza" ColumnName="Raza" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="AreaLaboral" ColumnName="AreaLaboral" />
+                <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+                <ScalarProperty Name="CodigoHC" ColumnName="CodigoHC" />
+                <ScalarProperty Name="CodigoHCAnterior" ColumnName="CodigoHCAnterior" />
+                <ScalarProperty Name="CodigoHCSecundario" ColumnName="CodigoHCSecundario" />
+                <ScalarProperty Name="TipoAlmacenamiento" ColumnName="TipoAlmacenamiento" />
+                <ScalarProperty Name="TipoHistoria" ColumnName="TipoHistoria" />
+                <ScalarProperty Name="TipoSituacion" ColumnName="TipoSituacion" />
+                <ScalarProperty Name="IdUbicacion" ColumnName="IdUbicacion" />
+                <ScalarProperty Name="LugarProcedencia" ColumnName="LugarProcedencia" />
+                <ScalarProperty Name="RutaFoto" ColumnName="RutaFoto" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="IndicadorNuevo" ColumnName="IndicadorNuevo" />
+                <ScalarProperty Name="EstadoPaciente" ColumnName="EstadoPaciente" />
+                <ScalarProperty Name="NumeroFile" ColumnName="NumeroFile" />
+                <ScalarProperty Name="Servicio" ColumnName="Servicio" />
+                <ScalarProperty Name="UsuarioAlmacenamiento" ColumnName="UsuarioAlmacenamiento" />
+                <ScalarProperty Name="FechaAlmacenamiento" ColumnName="FechaAlmacenamiento" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="IndicadorAsistencia" ColumnName="IndicadorAsistencia" />
+                <ScalarProperty Name="CantidadAsistencia" ColumnName="CantidadAsistencia" />
+                <ScalarProperty Name="UbicacionHHCC" ColumnName="UbicacionHHCC" />
+                <ScalarProperty Name="IndicadorMigradoSiteds" ColumnName="IndicadorMigradoSiteds" />
+                <ScalarProperty Name="NumeroCaja" ColumnName="NumeroCaja" />
+                <ScalarProperty Name="IndicadorCodigoBarras" ColumnName="IndicadorCodigoBarras" />
+                <ScalarProperty Name="IDPACIENTE_OK" ColumnName="IDPACIENTE_OK" />
+                <ScalarProperty Name="CodigoAsegurado" ColumnName="CodigoAsegurado" />
+                <ScalarProperty Name="NumeroPoliza" ColumnName="NumeroPoliza" />
+                <ScalarProperty Name="CodigoProducto" ColumnName="CodigoProducto" />
+                <ScalarProperty Name="CodigoPlan" ColumnName="CodigoPlan" />
+                <ScalarProperty Name="TipoParentesco" ColumnName="TipoParentesco" />
+                <ScalarProperty Name="CodigoBeneficio" ColumnName="CodigoBeneficio" />
+                <ScalarProperty Name="Situacion" ColumnName="Situacion" />
+                <ScalarProperty Name="TomoActual" ColumnName="TomoActual" />
+                <ScalarProperty Name="IndicadorHistoriaFisica" ColumnName="IndicadorHistoriaFisica" />
+                <ScalarProperty Name="DescripcionHistoria" ColumnName="DescripcionHistoria" />
+                <ScalarProperty Name="NumeroCertificado" ColumnName="NumeroCertificado" />
+                <ScalarProperty Name="Persona" ColumnName="Persona" />
+                <ScalarProperty Name="Origen" ColumnName="Origen" />
+                <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+                <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+                <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+                <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="CodigoBarras" ColumnName="CodigoBarras" />
+                <ScalarProperty Name="EsCliente" ColumnName="EsCliente" />
+                <ScalarProperty Name="EsProveedor" ColumnName="EsProveedor" />
+                <ScalarProperty Name="EsEmpleado" ColumnName="EsEmpleado" />
+                <ScalarProperty Name="EsOtro" ColumnName="EsOtro" />
+                <ScalarProperty Name="TipoPersona" ColumnName="TipoPersona" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="CiudadNacimiento" ColumnName="CiudadNacimiento" />
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+                <ScalarProperty Name="NivelInstruccion" ColumnName="NivelInstruccion" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="DocumentoFiscal" ColumnName="DocumentoFiscal" />
+                <ScalarProperty Name="DocumentoIdentidad" ColumnName="DocumentoIdentidad" />
+                <ScalarProperty Name="CarnetExtranjeria" ColumnName="CarnetExtranjeria" />
+                <ScalarProperty Name="DocumentoMilitarFA" ColumnName="DocumentoMilitarFA" />
+                <ScalarProperty Name="TipoBrevete" ColumnName="TipoBrevete" />
+                <ScalarProperty Name="Brevete" ColumnName="Brevete" />
+                <ScalarProperty Name="Pasaporte" ColumnName="Pasaporte" />
+                <ScalarProperty Name="NombreEmergencia" ColumnName="NombreEmergencia" />
+                <ScalarProperty Name="DireccionEmergencia" ColumnName="DireccionEmergencia" />
+                <ScalarProperty Name="TelefonoEmergencia" ColumnName="TelefonoEmergencia" />
+                <ScalarProperty Name="PersonaAnt" ColumnName="PersonaAnt" />
+                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+                <ScalarProperty Name="EnfermedadGraveFlag" ColumnName="EnfermedadGraveFlag" />
+                <ScalarProperty Name="IngresoFechaRegistro" ColumnName="IngresoFechaRegistro" />
+                <ScalarProperty Name="IngresoAplicacionCodigo" ColumnName="IngresoAplicacionCodigo" />
+                <ScalarProperty Name="IngresoUsuario" ColumnName="IngresoUsuario" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="ParentescoEmergencia" ColumnName="ParentescoEmergencia" />
+                <ScalarProperty Name="CelularEmergencia" ColumnName="CelularEmergencia" />
+                <ScalarProperty Name="LugarNacimiento" ColumnName="LugarNacimiento" />
+                <ScalarProperty Name="SuspensionFonaviFlag" ColumnName="SuspensionFonaviFlag" />
+                <ScalarProperty Name="FlagRepetido" ColumnName="FlagRepetido" />
+                <ScalarProperty Name="CodDiscamec" ColumnName="CodDiscamec" />
+                <ScalarProperty Name="FecIniDiscamec" ColumnName="FecIniDiscamec" />
+                <ScalarProperty Name="FecFinDiscamec" ColumnName="FecFinDiscamec" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="EsPaciente" ColumnName="EsPaciente" />
+                <ScalarProperty Name="EsEmpresa" ColumnName="EsEmpresa" />
+                <ScalarProperty Name="Persona_Old" ColumnName="Persona_Old" />
+                <ScalarProperty Name="personanew" ColumnName="personanew" />
+                <ScalarProperty Name="EstadoPersona" ColumnName="EstadoPersona" />
+                <ScalarProperty Name="IDASIGNACIONMEDICO" ColumnName="IDASIGNACIONMEDICO" />
+                <ScalarProperty Name="tipoasignacion" ColumnName="tipoasignacion" />
+                <ScalarProperty Name="ObservacionesAsigMed" ColumnName="ObservacionesAsigMed" />
+                <ScalarProperty Name="EstadoAsigMed" ColumnName="EstadoAsigMed" />
+                <ScalarProperty Name="EstadoEpiClinico" ColumnName="EstadoEpiClinico" />
+                <ScalarProperty Name="SecAsigMed" ColumnName="SecAsigMed" />
+                <ScalarProperty Name="SecReferidaAsigMed" ColumnName="SecReferidaAsigMed" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

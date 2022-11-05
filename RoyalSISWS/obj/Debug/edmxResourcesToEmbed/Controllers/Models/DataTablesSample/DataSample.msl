@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataSampleModelStoreContainer" CdmEntityContainer="DataSampleEntities">
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="DataSampleModel.Students">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="iD" ColumnName="iD" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="feesPaid" ColumnName="feesPaid" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="emailId" ColumnName="emailId" />
+          <ScalarProperty Name="telephoneNumber" ColumnName="telephoneNumber" />
+          <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="lastModifiedDate" ColumnName="lastModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="DataSampleModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getStudents" FunctionName="DataSampleModel.Store.getStudents">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DataSampleModel.getStudents_Result">
+          <ScalarProperty Name="iD" ColumnName="iD" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="feesPaid" ColumnName="feesPaid" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="emailId" ColumnName="emailId" />
+          <ScalarProperty Name="telephoneNumber" ColumnName="telephoneNumber" />
+          <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="lastModifiedDate" ColumnName="lastModifiedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

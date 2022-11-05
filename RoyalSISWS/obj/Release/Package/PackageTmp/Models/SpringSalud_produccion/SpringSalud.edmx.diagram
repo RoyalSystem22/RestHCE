@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d7f9b757a4e64976840beb81ea9a325c" Name="Diagram1" ZoomLevel="40">
+        <EntityTypeShape EntityType="ModelGolf.VW_SA_PR_REP_ListaServiciosAuxiliares" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="ModelGolf.VW_SS_HCE_VisorAnamnesis" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ModelGolf.VW_SS_HCE_VisorDiagnostico" Width="1.5" PointX="2.75" PointY="5.75" />
+        <EntityTypeShape EntityType="ModelGolf.VW_SS_HCE_VisorEmergencia" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ModelGolf.VW_SS_HCE_VisorExamen" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ModelGolf.VW_SS_HCE_VisorProcedimientoInforme" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ModelGolf.VW_SS_HCE_VisorHistoria" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ModelGolf.VW_SS_HCE_VisorReceta" Width="1.5" PointX="0.75" PointY="11.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

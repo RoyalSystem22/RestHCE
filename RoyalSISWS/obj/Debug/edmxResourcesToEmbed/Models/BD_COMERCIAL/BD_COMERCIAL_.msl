@@ -1,0 +1,1406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDComercialModelStoreContainer" CdmEntityContainer="BDComercialEntities">
+    <FunctionImportMapping FunctionImportName="WCO_ListarAdmisionServicio" FunctionName="BDComercialModel.Store.WCO_ListarAdmisionServicio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarAdmisionServicio_Result">
+          <ScalarProperty Name="IdAdmision" ColumnName="IdAdmision" />
+          <ScalarProperty Name="UneuNegocioId" ColumnName="UneuNegocioId" />
+          <ScalarProperty Name="TipoOperacionId" ColumnName="TipoOperacionId" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="FechaAdmision" ColumnName="FechaAdmision" />
+          <ScalarProperty Name="HistoriaClinica" ColumnName="HistoriaClinica" />
+          <ScalarProperty Name="NroPeticion" ColumnName="NroPeticion" />
+          <ScalarProperty Name="OrdenAtencion" ColumnName="OrdenAtencion" />
+          <ScalarProperty Name="MedicoId" ColumnName="MedicoId" />
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
+          <ScalarProperty Name="IpModificacion" ColumnName="IpModificacion" />
+          <ScalarProperty Name="MedicoDescripcion" ColumnName="MedicoDescripcion" />
+          <ScalarProperty Name="IdEmpresaPaciente" ColumnName="IdEmpresaPaciente" />
+          <ScalarProperty Name="IdAseguradora" ColumnName="IdAseguradora" />
+          <ScalarProperty Name="TipoOrden" ColumnName="TipoOrden" />
+          <ScalarProperty Name="Cama" ColumnName="Cama" />
+          <ScalarProperty Name="Grupo" ColumnName="Grupo" />
+          <ScalarProperty Name="IdSedeEmpresa" ColumnName="IdSedeEmpresa" />
+          <ScalarProperty Name="CoaSeguro" ColumnName="CoaSeguro" />
+          <ScalarProperty Name="FechaLimite" ColumnName="FechaLimite" />
+          <ScalarProperty Name="IdExamen" ColumnName="IdExamen" />
+          <ScalarProperty Name="IdInsumo" ColumnName="IdInsumo" />
+          <ScalarProperty Name="ClasificadorMovimiento" ColumnName="ClasificadorMovimiento" />
+          <ScalarProperty Name="IdAprobador" ColumnName="IdAprobador" />
+          <ScalarProperty Name="OrdenSinapa" ColumnName="OrdenSinapa" />
+          <ScalarProperty Name="ValorDescuento" ColumnName="ValorDescuento" />
+          <ScalarProperty Name="SituacionSMS" ColumnName="SituacionSMS" />
+          <ScalarProperty Name="DxPresuntivo" ColumnName="DxPresuntivo" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="DesEstado" ColumnName="DesEstado" />
+          <ScalarProperty Name="TipoAdmisionId" ColumnName="TipoAdmisionId" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="DesExamen" ColumnName="DesExamen" />
+          <ScalarProperty Name="DesInsumo" ColumnName="DesInsumo" />
+          <ScalarProperty Name="Situacion" ColumnName="Situacion" />
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="FecAdmision" ColumnName="FecAdmision" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarUsuario" FunctionName="BDComercialModel.Store.WCO_ListarUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarUsuario_Result">
+          <ScalarProperty Name="UserNameWeb" ColumnName="UserNameWeb" />
+          <ScalarProperty Name="PasswordWeb" ColumnName="PasswordWeb" />
+          <ScalarProperty Name="userHash" ColumnName="userHash" />
+          <ScalarProperty Name="estadoActualizacion" ColumnName="estadoActualizacion" />
+          <ScalarProperty Name="tipoUserWeb" ColumnName="tipoUserWeb" />
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="Busqueda" ColumnName="Busqueda" />
+          <ScalarProperty Name="GrupoEmpresarial" ColumnName="GrupoEmpresarial" />
+          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="FecNac" ColumnName="FecNac" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="TipoPersona" ColumnName="TipoPersona" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="DocumentoFiscal" ColumnName="DocumentoFiscal" />
+          <ScalarProperty Name="DocumentoIdentidad" ColumnName="DocumentoIdentidad" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="DireccionReferencia" ColumnName="DireccionReferencia" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="ParentescoEmergencia" ColumnName="ParentescoEmergencia" />
+          <ScalarProperty Name="RutaFirma" ColumnName="RutaFirma" />
+          <ScalarProperty Name="TipoDocumentoIdentidad" ColumnName="TipoDocumentoIdentidad" />
+          <ScalarProperty Name="EstadoDesc" ColumnName="EstadoDesc" />
+          <ScalarProperty Name="TipoPerfil" ColumnName="TipoPerfil" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_AccesoUsuario" FunctionName="BDComercialModel.Store.WCO_AccesoUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_AccesoUsuario_Result">
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="ExpirarPasswordFlag" ColumnName="ExpirarPasswordFlag" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="DIA" ColumnName="DIA" />
+          <ScalarProperty Name="SedIp" ColumnName="SedIp" />
+          <ScalarProperty Name="UneuNegocioId" ColumnName="UneuNegocioId" />
+          <ScalarProperty Name="ACCESO" ColumnName="ACCESO" />
+          <ScalarProperty Name="SerieBV" ColumnName="SerieBV" />
+          <ScalarProperty Name="SerieFA" ColumnName="SerieFA" />
+          <ScalarProperty Name="Igv" ColumnName="Igv" />
+          <ScalarProperty Name="TipoCambio" ColumnName="TipoCambio" />
+          <ScalarProperty Name="ClasificadorMovimiento" ColumnName="ClasificadorMovimiento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_BUSCARPERSONAUSUARIO" FunctionName="BDComercialModel.Store.WCO_BUSCARPERSONAUSUARIO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_BUSCARPERSONAUSUARIO_Result">
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarAccionDocumento" FunctionName="BDComercialModel.Store.WCO_ListarAccionDocumento">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarAccionDocumento_Result">
+          <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+          <ScalarProperty Name="IdAccion" ColumnName="IdAccion" />
+          <ScalarProperty Name="CodigoAccion" ColumnName="CodigoAccion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="TipoAccion" ColumnName="TipoAccion" />
+          <ScalarProperty Name="TipoUsoAccion" ColumnName="TipoUsoAccion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="IdProceso" ColumnName="IdProceso" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarAdmisionCarga" FunctionName="BDComercialModel.Store.WCO_ListarAdmisionCarga">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarAdmisionCarga_Result">
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="HistoriaClinica" ColumnName="HistoriaClinica" />
+          <ScalarProperty Name="MedicoApellido" ColumnName="MedicoApellido" />
+          <ScalarProperty Name="MedicoNombre" ColumnName="MedicoNombre" />
+          <ScalarProperty Name="NroPeticion" ColumnName="NroPeticion" />
+          <ScalarProperty Name="Examen" ColumnName="Examen" />
+          <ScalarProperty Name="FLATNUEVO" ColumnName="FLATNUEVO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarAdmisionControl" FunctionName="BDComercialModel.Store.WCO_ListarAdmisionControl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarAdmisionControl_Result">
+          <ScalarProperty Name="IdAdmisionControl" ColumnName="IdAdmisionControl" />
+          <ScalarProperty Name="IdAdmision" ColumnName="IdAdmision" />
+          <ScalarProperty Name="IdAprobador" ColumnName="IdAprobador" />
+          <ScalarProperty Name="UneuNegocioId" ColumnName="UneuNegocioId" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="FechaAprobacion" ColumnName="FechaAprobacion" />
+          <ScalarProperty Name="TipoFormula" ColumnName="TipoFormula" />
+          <ScalarProperty Name="ValorDescuento" ColumnName="ValorDescuento" />
+          <ScalarProperty Name="ValorAprobador" ColumnName="ValorAprobador" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+          <ScalarProperty Name="DescuentoAutorizado" ColumnName="DescuentoAutorizado" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Neto" ColumnName="Neto" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
+          <ScalarProperty Name="IpModificacion" ColumnName="IpModificacion" />
+          <ScalarProperty Name="DesEstado" ColumnName="DesEstado" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="NroPeticion" ColumnName="NroPeticion" />
+          <ScalarProperty Name="OrdenAtencion" ColumnName="OrdenAtencion" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarAdmisionExistente" FunctionName="BDComercialModel.Store.WCO_ListarAdmisionExistente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarAdmisionExistente_Result">
+          <ScalarProperty Name="NroPeticion" ColumnName="NroPeticion" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarAdmisionExportar" FunctionName="BDComercialModel.Store.WCO_ListarAdmisionExportar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarAdmisionExportar_Result">
+          <ScalarProperty Name="TipoAtencion" ColumnName="TipoAtencion" />
+          <ScalarProperty Name="TipoPaciente" ColumnName="TipoPaciente" />
+          <ScalarProperty Name="TipoOrden" ColumnName="TipoOrden" />
+          <ScalarProperty Name="OrdenSpring" ColumnName="OrdenSpring" />
+          <ScalarProperty Name="NroPeticion" ColumnName="NroPeticion" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="HistoriaClinica" ColumnName="HistoriaClinica" />
+          <ScalarProperty Name="OAClinica" ColumnName="OAClinica" />
+          <ScalarProperty Name="IdMedico" ColumnName="IdMedico" />
+          <ScalarProperty Name="MedicoApellido" ColumnName="MedicoApellido" />
+          <ScalarProperty Name="MedicoNombre" ColumnName="MedicoNombre" />
+          <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
+          <ScalarProperty Name="Especialidad" ColumnName="Especialidad" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="EmpresaDescripcion" ColumnName="EmpresaDescripcion" />
+          <ScalarProperty Name="IdEmpresaSede" ColumnName="IdEmpresaSede" />
+          <ScalarProperty Name="EmpresaSedeDescripcion" ColumnName="EmpresaSedeDescripcion" />
+          <ScalarProperty Name="IdEmpresaPaciente" ColumnName="IdEmpresaPaciente" />
+          <ScalarProperty Name="EmpresaPacienteDescripcion" ColumnName="EmpresaPacienteDescripcion" />
+          <ScalarProperty Name="IdEmpresaPacienteSede" ColumnName="IdEmpresaPacienteSede" />
+          <ScalarProperty Name="EmpresaSedePacienteDescripcion" ColumnName="EmpresaSedePacienteDescripcion" />
+          <ScalarProperty Name="IdAseguradora" ColumnName="IdAseguradora" />
+          <ScalarProperty Name="AseguradoraDescripcion" ColumnName="AseguradoraDescripcion" />
+          <ScalarProperty Name="IdProcedencia" ColumnName="IdProcedencia" />
+          <ScalarProperty Name="ProcedenciaDescripcion" ColumnName="ProcedenciaDescripcion" />
+          <ScalarProperty Name="Diagnostico1" ColumnName="Diagnostico1" />
+          <ScalarProperty Name="Diagnostico2" ColumnName="Diagnostico2" />
+          <ScalarProperty Name="Diagnostico3" ColumnName="Diagnostico3" />
+          <ScalarProperty Name="Diagnostico4" ColumnName="Diagnostico4" />
+          <ScalarProperty Name="Diagnostico5" ColumnName="Diagnostico5" />
+          <ScalarProperty Name="Cama" ColumnName="Cama" />
+          <ScalarProperty Name="CodigoComponente" ColumnName="CodigoComponente" />
+          <ScalarProperty Name="Componente" ColumnName="Componente" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFinal" ColumnName="FechaFinal" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+          <ScalarProperty Name="CMP" ColumnName="CMP" />
+          <ScalarProperty Name="Documento_Medico" ColumnName="Documento_Medico" />
+          <ScalarProperty Name="Medico_Paterno" ColumnName="Medico_Paterno" />
+          <ScalarProperty Name="Medico_Materno" ColumnName="Medico_Materno" />
+          <ScalarProperty Name="TipoOperacionId" ColumnName="TipoOperacionId" />
+          <ScalarProperty Name="FLATNUEVO" ColumnName="FLATNUEVO" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarAdmisionProduccion" FunctionName="BDComercialModel.Store.WCO_ListarAdmisionProduccion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarAdmisionProduccion_Result">
+          <ScalarProperty Name="FechaProduccion" ColumnName="FechaProduccion" />
+          <ScalarProperty Name="IdAdmision" ColumnName="IdAdmision" />
+          <ScalarProperty Name="Linea" ColumnName="Linea" />
+          <ScalarProperty Name="UnidadNegocio" ColumnName="UnidadNegocio" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="CLIENTE" ColumnName="CLIENTE" />
+          <ScalarProperty Name="TipoPaciente" ColumnName="TipoPaciente" />
+          <ScalarProperty Name="TipoAtencion" ColumnName="TipoAtencion" />
+          <ScalarProperty Name="NroPeticion" ColumnName="NroPeticion" />
+          <ScalarProperty Name="HistoriaClinica" ColumnName="HistoriaClinica" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="CodigoComponente" ColumnName="CodigoComponente" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="EstadoProceso" ColumnName="EstadoProceso" />
+          <ScalarProperty Name="DesEstado" ColumnName="DesEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarAdmisionServicioConstancia" FunctionName="BDComercialModel.Store.WCO_ListarAdmisionServicioConstancia">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarAdmisionServicioConstancia_Result">
+          <ScalarProperty Name="IdAdmision" ColumnName="IdAdmision" />
+          <ScalarProperty Name="Linea" ColumnName="Linea" />
+          <ScalarProperty Name="CodigoComponente" ColumnName="CodigoComponente" />
+          <ScalarProperty Name="NroPeticion" ColumnName="NroPeticion" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="TipoOperacionID" ColumnName="TipoOperacionID" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="TIPOADMISIONID" ColumnName="TIPOADMISIONID" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="MEDICO" ColumnName="MEDICO" />
+          <ScalarProperty Name="CLIENTE" ColumnName="CLIENTE" />
+          <ScalarProperty Name="PROCEDENCIA" ColumnName="PROCEDENCIA" />
+          <ScalarProperty Name="HistoriaClinica" ColumnName="HistoriaClinica" />
+          <ScalarProperty Name="EMPRESA" ColumnName="EMPRESA" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="OrdenAtencion" ColumnName="OrdenAtencion" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="FechaAdmision" ColumnName="FechaAdmision" />
+          <ScalarProperty Name="NombreEmpresa" ColumnName="NombreEmpresa" />
+          <ScalarProperty Name="OrdenSinapa" ColumnName="OrdenSinapa" />
+          <ScalarProperty Name="TipoPaciente" ColumnName="TipoPaciente" />
+          <ScalarProperty Name="TipoOrden" ColumnName="TipoOrden" />
+          <ScalarProperty Name="TipoAtencion" ColumnName="TipoAtencion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarAdmisionServicioDetalle" FunctionName="BDComercialModel.Store.WCO_ListarAdmisionServicioDetalle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarAdmisionServicioDetalle_Result">
+          <ScalarProperty Name="IdAdmision" ColumnName="IdAdmision" />
+          <ScalarProperty Name="Linea" ColumnName="Linea" />
+          <ScalarProperty Name="CodigoComponente" ColumnName="CodigoComponente" />
+          <ScalarProperty Name="NroPeticion" ColumnName="NroPeticion" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="TipoOperacionID" ColumnName="TipoOperacionID" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="ClasificadorMovimiento" ColumnName="ClasificadorMovimiento" />
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="TIPOADMISIONID" ColumnName="TIPOADMISIONID" />
+          <ScalarProperty Name="AplicaTitular" ColumnName="AplicaTitular" />
+          <ScalarProperty Name="Valorprecio" ColumnName="Valorprecio" />
+          <ScalarProperty Name="IdAdmServicio" ColumnName="IdAdmServicio" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="ValorEmpresa" ColumnName="ValorEmpresa" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="EstadoAdm" ColumnName="EstadoAdm" />
+          <ScalarProperty Name="Copago" ColumnName="Copago" />
+          <ScalarProperty Name="idempresa" ColumnName="idempresa" />
+          <ScalarProperty Name="IdTitularAutorizado" ColumnName="IdTitularAutorizado" />
+          <ScalarProperty Name="IdListaBase" ColumnName="IdListaBase" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="CanTotal" ColumnName="CanTotal" />
+          <ScalarProperty Name="IdCobertura" ColumnName="IdCobertura" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarAdmisionServicioImpresion" FunctionName="BDComercialModel.Store.WCO_ListarAdmisionServicioImpresion" />
+    <FunctionImportMapping FunctionImportName="WCO_ListarAdmisionSubDetalle" FunctionName="BDComercialModel.Store.WCO_ListarAdmisionSubDetalle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarAdmisionSubDetalle_Result">
+          <ScalarProperty Name="Clasificacion" ColumnName="Clasificacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdClasificacion" ColumnName="IdClasificacion" />
+          <ScalarProperty Name="Organo" ColumnName="Organo" />
+          <ScalarProperty Name="Muestra" ColumnName="Muestra" />
+          <ScalarProperty Name="IdAdmision" ColumnName="IdAdmision" />
+          <ScalarProperty Name="IdAdmServicio" ColumnName="IdAdmServicio" />
+          <ScalarProperty Name="IdAdmLinea" ColumnName="IdAdmLinea" />
+          <ScalarProperty Name="IdSecuencial" ColumnName="IdSecuencial" />
+          <ScalarProperty Name="IdOrgano" ColumnName="IdOrgano" />
+          <ScalarProperty Name="CodigoComponente" ColumnName="CodigoComponente" />
+          <ScalarProperty Name="IdMuestraMarcador" ColumnName="IdMuestraMarcador" />
+          <ScalarProperty Name="NroPeticion" ColumnName="NroPeticion" />
+          <ScalarProperty Name="NroReferencia" ColumnName="NroReferencia" />
+          <ScalarProperty Name="FechaIsquemia" ColumnName="FechaIsquemia" />
+          <ScalarProperty Name="HoraIsquemia" ColumnName="HoraIsquemia" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="FechaProduccion" ColumnName="FechaProduccion" />
+          <ScalarProperty Name="IdProduccion" ColumnName="IdProduccion" />
+          <ScalarProperty Name="NroComprobante" ColumnName="NroComprobante" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
+          <ScalarProperty Name="IpModificacion" ColumnName="IpModificacion" />
+          <ScalarProperty Name="ESTADOdesc" ColumnName="ESTADOdesc" />
+          <ScalarProperty Name="SubFijo" ColumnName="SubFijo" />
+          <ScalarProperty Name="IdExamen" ColumnName="IdExamen" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarAprobadores" FunctionName="BDComercialModel.Store.WCO_ListarAprobadores">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarAprobadores_Result">
+          <ScalarProperty Name="IdAprobador" ColumnName="IdAprobador" />
+          <ScalarProperty Name="UneuNegocioId" ColumnName="UneuNegocioId" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="TipoDescuento" ColumnName="TipoDescuento" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
+          <ScalarProperty Name="IpModificacion" ColumnName="IpModificacion" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="ESTADOdesc" ColumnName="ESTADOdesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarArqueo" FunctionName="BDComercialModel.Store.WCO_ListarArqueo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarArqueo_Result">
+          <ScalarProperty Name="IdArqueo" ColumnName="IdArqueo" />
+          <ScalarProperty Name="TipoArqueo" ColumnName="TipoArqueo" />
+          <ScalarProperty Name="SerieArqueo" ColumnName="SerieArqueo" />
+          <ScalarProperty Name="NumeroArqueo" ColumnName="NumeroArqueo" />
+          <ScalarProperty Name="PeriodoEmision" ColumnName="PeriodoEmision" />
+          <ScalarProperty Name="IdResponsable" ColumnName="IdResponsable" />
+          <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+          <ScalarProperty Name="Compania" ColumnName="Compania" />
+          <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+          <ScalarProperty Name="IdEstablecimiento" ColumnName="IdEstablecimiento" />
+          <ScalarProperty Name="NumeroTransaccion" ColumnName="NumeroTransaccion" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="IndicadorContabilizado" ColumnName="IndicadorContabilizado" />
+          <ScalarProperty Name="PeriodoAsiento" ColumnName="PeriodoAsiento" />
+          <ScalarProperty Name="Asiento" ColumnName="Asiento" />
+          <ScalarProperty Name="PeriodoAnulacion" ColumnName="PeriodoAnulacion" />
+          <ScalarProperty Name="AsientoAnulacion" ColumnName="AsientoAnulacion" />
+          <ScalarProperty Name="EstadoDocumento" ColumnName="EstadoDocumento" />
+          <ScalarProperty Name="EstadoDocumentoAnterior" ColumnName="EstadoDocumentoAnterior" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="CuentaBancaria" ColumnName="CuentaBancaria" />
+          <ScalarProperty Name="FechaAsiento" ColumnName="FechaAsiento" />
+          <ScalarProperty Name="IndicadorAnulado" ColumnName="IndicadorAnulado" />
+          <ScalarProperty Name="PeriodoAsientoAnulado" ColumnName="PeriodoAsientoAnulado" />
+          <ScalarProperty Name="AsientoAnulado" ColumnName="AsientoAnulado" />
+          <ScalarProperty Name="FechaAsientoAnulado" ColumnName="FechaAsientoAnulado" />
+          <ScalarProperty Name="SecuenciaTransaccion" ColumnName="SecuenciaTransaccion" />
+          <ScalarProperty Name="UnidadReplicacionTransaccion" ColumnName="UnidadReplicacionTransaccion" />
+          <ScalarProperty Name="NumeroDeposito" ColumnName="NumeroDeposito" />
+          <ScalarProperty Name="ESTADOdesc" ColumnName="ESTADOdesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarAseguradora" FunctionName="BDComercialModel.Store.WCO_ListarAseguradora">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarAseguradora_Result">
+          <ScalarProperty Name="IdAseguradora" ColumnName="IdAseguradora" />
+          <ScalarProperty Name="NombreEmpresa" ColumnName="NombreEmpresa" />
+          <ScalarProperty Name="Clasificacion_1" ColumnName="Clasificacion_1" />
+          <ScalarProperty Name="Clasificacion_2" ColumnName="Clasificacion_2" />
+          <ScalarProperty Name="TipoAseguradora" ColumnName="TipoAseguradora" />
+          <ScalarProperty Name="DscTipo" ColumnName="DscTipo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_LISTARASIGNARPERFILPAG" FunctionName="BDComercialModel.Store.WCO_LISTARASIGNARPERFILPAG">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_LISTARASIGNARPERFILPAG_Result">
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="NOMBRECOMPLETO" ColumnName="NOMBRECOMPLETO" />
+          <ScalarProperty Name="PERFIL" ColumnName="PERFIL" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ClasificadorMovimiento" ColumnName="ClasificadorMovimiento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarComprobanteId" FunctionName="BDComercialModel.Store.WCO_ListarComprobanteId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarComprobanteId_Result">
+          <ScalarProperty Name="IdComprobante" ColumnName="IdComprobante" />
+          <ScalarProperty Name="TipoComprobante" ColumnName="TipoComprobante" />
+          <ScalarProperty Name="SerieComprobante" ColumnName="SerieComprobante" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="PeriodoEmision" ColumnName="PeriodoEmision" />
+          <ScalarProperty Name="NumeroComprobante" ColumnName="NumeroComprobante" />
+          <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
+          <ScalarProperty Name="ClasificadorMovimiento" ColumnName="ClasificadorMovimiento" />
+          <ScalarProperty Name="IdClienteFacturacion" ColumnName="IdClienteFacturacion" />
+          <ScalarProperty Name="DocumentoCliente" ColumnName="DocumentoCliente" />
+          <ScalarProperty Name="ConceptoFacturacion" ColumnName="ConceptoFacturacion" />
+          <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+          <ScalarProperty Name="FechaCancelacion" ColumnName="FechaCancelacion" />
+          <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+          <ScalarProperty Name="Procedencia" ColumnName="Procedencia" />
+          <ScalarProperty Name="TipoVenta" ColumnName="TipoVenta" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="TipoCambio" ColumnName="TipoCambio" />
+          <ScalarProperty Name="ValorImpuesto" ColumnName="ValorImpuesto" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="PrecioVenta" ColumnName="PrecioVenta" />
+          <ScalarProperty Name="MontoAfecto" ColumnName="MontoAfecto" />
+          <ScalarProperty Name="MontoImpuestoVentas" ColumnName="MontoImpuestoVentas" />
+          <ScalarProperty Name="MontoImpuestoVentasLocal" ColumnName="MontoImpuestoVentasLocal" />
+          <ScalarProperty Name="MontoTotal" ColumnName="MontoTotal" />
+          <ScalarProperty Name="DireccionCliente" ColumnName="DireccionCliente" />
+          <ScalarProperty Name="NomClasificador" ColumnName="NomClasificador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IGV" ColumnName="IGV" />
+          <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+          <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+          <ScalarProperty Name="Compania" ColumnName="Compania" />
+          <ScalarProperty Name="Detraccion" ColumnName="Detraccion" />
+          <ScalarProperty Name="DesEstado" ColumnName="DesEstado" />
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+          <ScalarProperty Name="TipoFacturacion" ColumnName="TipoFacturacion" />
+          <ScalarProperty Name="FormaPago" ColumnName="FormaPago" />
+          <ScalarProperty Name="IdClienteSolicitante" ColumnName="IdClienteSolicitante" />
+          <ScalarProperty Name="TipoPago" ColumnName="TipoPago" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="Ruc" ColumnName="Ruc" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="MontoAdelanto" ColumnName="MontoAdelanto" />
+          <ScalarProperty Name="MontoAdelantoSaldo" ColumnName="MontoAdelantoSaldo" />
+          <ScalarProperty Name="MontoRedondeo" ColumnName="MontoRedondeo" />
+          <ScalarProperty Name="IdAdmision" ColumnName="IdAdmision" />
+          <ScalarProperty Name="CorreoCliente" ColumnName="CorreoCliente" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarConciliacion" FunctionName="BDComercialModel.Store.WCO_ListarConciliacion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarConciliacion_Result">
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="ESTADOdesc" ColumnName="ESTADOdesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarConciliacionDetalle" FunctionName="BDComercialModel.Store.WCO_ListarConciliacionDetalle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarConciliacionDetalle_Result">
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="fechaproduccion" ColumnName="fechaproduccion" />
+          <ScalarProperty Name="periodo" ColumnName="periodo" />
+          <ScalarProperty Name="nropeticion" ColumnName="nropeticion" />
+          <ScalarProperty Name="LineaOrdenAtencion" ColumnName="LineaOrdenAtencion" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="codigoOA" ColumnName="codigoOA" />
+          <ScalarProperty Name="paciente" ColumnName="paciente" />
+          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarConciliacionDetalleAgrupado" FunctionName="BDComercialModel.Store.WCO_ListarConciliacionDetalleAgrupado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarConciliacionDetalleAgrupado_Result">
+          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="ESTADOdesc" ColumnName="ESTADOdesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarConfiguracionCorreo" FunctionName="BDComercialModel.Store.WCO_ListarConfiguracionCorreo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarConfiguracionCorreo_Result">
+          <ScalarProperty Name="CompaniaCodigo" ColumnName="CompaniaCodigo" />
+          <ScalarProperty Name="AplicacionCodigo" ColumnName="AplicacionCodigo" />
+          <ScalarProperty Name="ParametroClave" ColumnName="ParametroClave" />
+          <ScalarProperty Name="DescripcionParametro" ColumnName="DescripcionParametro" />
+          <ScalarProperty Name="Explicacion" ColumnName="Explicacion" />
+          <ScalarProperty Name="TipodeDatoFlag" ColumnName="TipodeDatoFlag" />
+          <ScalarProperty Name="Texto" ColumnName="Texto" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="FinanceComunFlag" ColumnName="FinanceComunFlag" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+          <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+          <ScalarProperty Name="ExplicacionAdicional" ColumnName="ExplicacionAdicional" />
+          <ScalarProperty Name="Texto1" ColumnName="Texto1" />
+          <ScalarProperty Name="Texto2" ColumnName="Texto2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarCorrelativosMast" FunctionName="BDComercialModel.Store.WCO_ListarCorrelativosMast">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarCorrelativosMast_Result">
+          <ScalarProperty Name="CompaniaCodigo" ColumnName="CompaniaCodigo" />
+          <ScalarProperty Name="TipoComprobante" ColumnName="TipoComprobante" />
+          <ScalarProperty Name="Serie" ColumnName="Serie" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="CorrelativoNumero" ColumnName="CorrelativoNumero" />
+          <ScalarProperty Name="CorrelativoDesde" ColumnName="CorrelativoDesde" />
+          <ScalarProperty Name="CorrelativoHasta" ColumnName="CorrelativoHasta" />
+          <ScalarProperty Name="AlmacenCodigo" ColumnName="AlmacenCodigo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+          <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+          <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+          <ScalarProperty Name="IdEstablecimiento" ColumnName="IdEstablecimiento" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="ObjetoReporte" ColumnName="ObjetoReporte" />
+          <ScalarProperty Name="Impresora" ColumnName="Impresora" />
+          <ScalarProperty Name="IndicadorImpresora" ColumnName="IndicadorImpresora" />
+          <ScalarProperty Name="Lineas" ColumnName="Lineas" />
+          <ScalarProperty Name="NumeroDigitos" ColumnName="NumeroDigitos" />
+          <ScalarProperty Name="IndicadorTicket" ColumnName="IndicadorTicket" />
+          <ScalarProperty Name="idCaja" ColumnName="idCaja" />
+          <ScalarProperty Name="IndicadorIncluirFacturacion" ColumnName="IndicadorIncluirFacturacion" />
+          <ScalarProperty Name="ImpresoraFlag" ColumnName="ImpresoraFlag" />
+          <ScalarProperty Name="DatawindowObjeto" ColumnName="DatawindowObjeto" />
+          <ScalarProperty Name="Ancho" ColumnName="Ancho" />
+          <ScalarProperty Name="Alto" ColumnName="Alto" />
+          <ScalarProperty Name="ESTADOdesc" ColumnName="ESTADOdesc" />
+          <ScalarProperty Name="DescripcionCorta" ColumnName="DescripcionCorta" />
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarHomologacion" FunctionName="BDComercialModel.Store.WCO_ListarHomologacion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarHomologacion_Result">
+          <ScalarProperty Name="CodigoHomologado" ColumnName="CodigoHomologado" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarMenuOpciones" FunctionName="BDComercialModel.Store.WCO_ListarMenuOpciones" />
+    <FunctionImportMapping FunctionImportName="WCO_ListarMenuOpcionesPerfil" FunctionName="BDComercialModel.Store.WCO_ListarMenuOpcionesPerfil" />
+    <FunctionImportMapping FunctionImportName="WCO_ListarModeloServicio" FunctionName="BDComercialModel.Store.WCO_ListarModeloServicio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarModeloServicio_Result">
+          <ScalarProperty Name="UneuNegocioId" ColumnName="UneuNegocioId" />
+          <ScalarProperty Name="ModeloServicioId" ColumnName="ModeloServicioId" />
+          <ScalarProperty Name="TipoOperacionId" ColumnName="TipoOperacionId" />
+          <ScalarProperty Name="MosDescripcion" ColumnName="MosDescripcion" />
+          <ScalarProperty Name="MosEstado" ColumnName="MosEstado" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
+          <ScalarProperty Name="IpModificacion" ColumnName="IpModificacion" />
+          <ScalarProperty Name="MosAplicaFactor" ColumnName="MosAplicaFactor" />
+          <ScalarProperty Name="MosFactor" ColumnName="MosFactor" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+          <ScalarProperty Name="EstadoDesc" ColumnName="EstadoDesc" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="AdmDescripcion" ColumnName="AdmDescripcion" />
+          <ScalarProperty Name="IdListaBase" ColumnName="IdListaBase" />
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarModServDetalle" FunctionName="BDComercialModel.Store.WCO_ListarModServDetalle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarModServDetalle_Result">
+          <ScalarProperty Name="UneuNegocioId" ColumnName="UneuNegocioId" />
+          <ScalarProperty Name="ModeloServicioId" ColumnName="ModeloServicioId" />
+          <ScalarProperty Name="codigocomponente" ColumnName="codigocomponente" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="EstadoAdm" ColumnName="EstadoAdm" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
+          <ScalarProperty Name="IpModificacion" ColumnName="IpModificacion" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarMonedaMast" FunctionName="BDComercialModel.Store.WCO_ListarMonedaMast">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarMonedaMast_Result">
+          <ScalarProperty Name="MonedaCodigo" ColumnName="MonedaCodigo" />
+          <ScalarProperty Name="DescripcionCorta" ColumnName="DescripcionCorta" />
+          <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+          <ScalarProperty Name="DescripcionExtranjera" ColumnName="DescripcionExtranjera" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+          <ScalarProperty Name="CodigoFiscal" ColumnName="CodigoFiscal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarMuestra" FunctionName="BDComercialModel.Store.WCO_ListarMuestra">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarMuestra_Result">
+          <ScalarProperty Name="IdMuestra" ColumnName="IdMuestra" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
+          <ScalarProperty Name="IpModificacion" ColumnName="IpModificacion" />
+          <ScalarProperty Name="abreviatura" ColumnName="abreviatura" />
+          <ScalarProperty Name="ESTADOdesc" ColumnName="ESTADOdesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarMuestraMarcador" FunctionName="BDComercialModel.Store.WCO_ListarMuestraMarcador">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarMuestraMarcador_Result">
+          <ScalarProperty Name="Clasificacion" ColumnName="Clasificacion" />
+          <ScalarProperty Name="Componente" ColumnName="Componente" />
+          <ScalarProperty Name="IdClasificacion" ColumnName="IdClasificacion" />
+          <ScalarProperty Name="Organo" ColumnName="Organo" />
+          <ScalarProperty Name="IdMuestraMarcador" ColumnName="IdMuestraMarcador" />
+          <ScalarProperty Name="CodigoComponente" ColumnName="CodigoComponente" />
+          <ScalarProperty Name="IdOrgano" ColumnName="IdOrgano" />
+          <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+          <ScalarProperty Name="SubFijo" ColumnName="SubFijo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
+          <ScalarProperty Name="IpModificacion" ColumnName="IpModificacion" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+          <ScalarProperty Name="ESTADOdesc" ColumnName="ESTADOdesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarMuestraMarcadorOrgano" FunctionName="BDComercialModel.Store.WCO_ListarMuestraMarcadorOrgano">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarMuestraMarcadorOrgano_Result">
+          <ScalarProperty Name="IdOrgano" ColumnName="IdOrgano" />
+          <ScalarProperty Name="Organo" ColumnName="Organo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_LISTARPERFILPAG" FunctionName="BDComercialModel.Store.WCO_LISTARPERFILPAG">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_LISTARPERFILPAG_Result">
+          <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarPeriodoEmision" FunctionName="BDComercialModel.Store.WCO_ListarPeriodoEmision">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarPeriodoEmision_Result">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="UneDescripcion" ColumnName="UneDescripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarPeriodosPrograma" FunctionName="BDComercialModel.Store.WCO_ListarPeriodosPrograma">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarPeriodosPrograma_Result">
+          <ScalarProperty Name="Programa" ColumnName="Programa" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+          <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+          <ScalarProperty Name="FlagCierre" ColumnName="FlagCierre" />
+          <ScalarProperty Name="DescEstado" ColumnName="DescEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarPersonas" FunctionName="BDComercialModel.Store.WCO_ListarPersonas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarPersonas_Result">
+          <ScalarProperty Name="persona" ColumnName="persona" />
+          <ScalarProperty Name="origen" ColumnName="origen" />
+          <ScalarProperty Name="BUSQUEDA" ColumnName="BUSQUEDA" />
+          <ScalarProperty Name="TIPODOCUMENTO" ColumnName="TIPODOCUMENTO" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="DocumentoIdentidad" ColumnName="DocumentoIdentidad" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarPersonasGeneral" FunctionName="BDComercialModel.Store.WCO_ListarPersonasGeneral">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarPersonasGeneral_Result">
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="TipoPaciente" ColumnName="TipoPaciente" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="TipoPersona" ColumnName="TipoPersona" />
+          <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+          <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+          <ScalarProperty Name="SunatUbigeo" ColumnName="SunatUbigeo" />
+          <ScalarProperty Name="IngresoFechaRegistro" ColumnName="IngresoFechaRegistro" />
+          <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+          <ScalarProperty Name="IngresoUsuario" ColumnName="IngresoUsuario" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+          <ScalarProperty Name="PerPerfilProfesional" ColumnName="PerPerfilProfesional" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="EsCliente" ColumnName="EsCliente" />
+          <ScalarProperty Name="EsEmpleado" ColumnName="EsEmpleado" />
+          <ScalarProperty Name="EsProveedor" ColumnName="EsProveedor" />
+          <ScalarProperty Name="EsOtro" ColumnName="EsOtro" />
+          <ScalarProperty Name="DocumentoFiscal" ColumnName="DocumentoFiscal" />
+          <ScalarProperty Name="PerTipoVia" ColumnName="PerTipoVia" />
+          <ScalarProperty Name="PasswordWeb" ColumnName="PasswordWeb" />
+          <ScalarProperty Name="DireccionReferencia" ColumnName="DireccionReferencia" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="DiaVencimiento" ColumnName="DiaVencimiento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarProduccion" FunctionName="BDComercialModel.Store.WCO_ListarProduccion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarProduccion_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FechaProduccion" ColumnName="FechaProduccion" />
+          <ScalarProperty Name="IdOALineaOrigen" ColumnName="IdOALineaOrigen" />
+          <ScalarProperty Name="IdAdmision" ColumnName="IdAdmision" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="UnidadNegocio" ColumnName="UnidadNegocio" />
+          <ScalarProperty Name="ClasificadorMovimiento" ColumnName="ClasificadorMovimiento" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="CLIENTE" ColumnName="CLIENTE" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="TipoPaciente" ColumnName="TipoPaciente" />
+          <ScalarProperty Name="NroPeticion" ColumnName="NroPeticion" />
+          <ScalarProperty Name="CodigoComponente" ColumnName="CodigoComponente" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="MontoTotal" ColumnName="MontoTotal" />
+          <ScalarProperty Name="Copago" ColumnName="Copago" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="EmpresaPaciente" ColumnName="EmpresaPaciente" />
+          <ScalarProperty Name="RucEmpresa" ColumnName="RucEmpresa" />
+          <ScalarProperty Name="DesEstado" ColumnName="DesEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarProduccionGeneral" FunctionName="BDComercialModel.Store.WCO_ListarProduccionGeneral">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarProduccionGeneral_Result">
+          <ScalarProperty Name="UneuNegocioId" ColumnName="UneuNegocioId" />
+          <ScalarProperty Name="AdmDescripcion" ColumnName="AdmDescripcion" />
+          <ScalarProperty Name="TIPOADMISIONID" ColumnName="TIPOADMISIONID" />
+          <ScalarProperty Name="UneDescripcion" ColumnName="UneDescripcion" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="ClasificadorMovimiento" ColumnName="ClasificadorMovimiento" />
+          <ScalarProperty Name="UnidadNegocio" ColumnName="UnidadNegocio" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="CLIENTE" ColumnName="CLIENTE" />
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="Sede" ColumnName="Sede" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="TipoPacienteId" ColumnName="TipoPacienteId" />
+          <ScalarProperty Name="TipoOperacionID" ColumnName="TipoOperacionID" />
+          <ScalarProperty Name="Examen" ColumnName="Examen" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="PrecioReal" ColumnName="PrecioReal" />
+          <ScalarProperty Name="PrecioVenta" ColumnName="PrecioVenta" />
+          <ScalarProperty Name="Pendiente" ColumnName="Pendiente" />
+          <ScalarProperty Name="Liquidado" ColumnName="Liquidado" />
+          <ScalarProperty Name="Facturado" ColumnName="Facturado" />
+          <ScalarProperty Name="Cerrado" ColumnName="Cerrado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarSede" FunctionName="BDComercialModel.Store.WCO_ListarSede">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarSede_Result">
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="SedCodigo" ColumnName="SedCodigo" />
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+          <ScalarProperty Name="SedIp" ColumnName="SedIp" />
+          <ScalarProperty Name="SedEstado" ColumnName="SedEstado" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
+          <ScalarProperty Name="IpModificacion" ColumnName="IpModificacion" />
+          <ScalarProperty Name="Inicial" ColumnName="Inicial" />
+          <ScalarProperty Name="Final" ColumnName="Final" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Val_Ini" ColumnName="Val_Ini" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="FlatCodigo" ColumnName="FlatCodigo" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Establecimiento" ColumnName="Establecimiento" />
+          <ScalarProperty Name="DescEstado" ColumnName="DescEstado" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="CompaniaCodigo" ColumnName="CompaniaCodigo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarSedeCliente" FunctionName="BDComercialModel.Store.WCO_ListarSedeCliente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarSedeCliente_Result">
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+          <ScalarProperty Name="SedCodigo" ColumnName="SedCodigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="IdSedeCliente" ColumnName="IdSedeCliente" />
+          <ScalarProperty Name="TipoConexion" ColumnName="TipoConexion" />
+          <ScalarProperty Name="Homologacion" ColumnName="Homologacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarSedeInterfaz" FunctionName="BDComercialModel.Store.WCO_ListarSedeInterfaz">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarSedeInterfaz_Result">
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="SedCodigo" ColumnName="SedCodigo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IPServer" ColumnName="IPServer" />
+          <ScalarProperty Name="IdServicio" ColumnName="IdServicio" />
+          <ScalarProperty Name="IdMedico" ColumnName="IdMedico" />
+          <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
+          <ScalarProperty Name="UsuarioBD" ColumnName="UsuarioBD" />
+          <ScalarProperty Name="PasswordBD" ColumnName="PasswordBD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarSedePrinter" FunctionName="BDComercialModel.Store.WCO_ListarSedePrinter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarSedePrinter_Result">
+          <ScalarProperty Name="idprinter" ColumnName="idprinter" />
+          <ScalarProperty Name="idsede" ColumnName="idsede" />
+          <ScalarProperty Name="shared_name" ColumnName="shared_name" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="codebar" ColumnName="codebar" />
+          <ScalarProperty Name="alias_name" ColumnName="alias_name" />
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarSedeSucursal" FunctionName="BDComercialModel.Store.WCO_ListarSedeSucursal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarSedeSucursal_Result">
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+          <ScalarProperty Name="ClasificadorMovimiento" ColumnName="ClasificadorMovimiento" />
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+          <ScalarProperty Name="DescripcionLocal" ColumnName="DescripcionLocal" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarSedeSucursalNegocio" FunctionName="BDComercialModel.Store.WCO_ListarSedeSucursalNegocio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarSedeSucursalNegocio_Result">
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+          <ScalarProperty Name="ClasificadorMovimiento" ColumnName="ClasificadorMovimiento" />
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+          <ScalarProperty Name="DescripcionLocal" ColumnName="DescripcionLocal" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="TipoComprobante" ColumnName="TipoComprobante" />
+          <ScalarProperty Name="SERIE" ColumnName="SERIE" />
+          <ScalarProperty Name="IdEstablecimiento" ColumnName="IdEstablecimiento" />
+          <ScalarProperty Name="CompaniaCodigo" ColumnName="CompaniaCodigo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarSerie" FunctionName="BDComercialModel.Store.WCO_ListarSerie">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarSerie_Result">
+          <ScalarProperty Name="Serie" ColumnName="Serie" />
+          <ScalarProperty Name="TipoComprobante" ColumnName="TipoComprobante" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Compania" ColumnName="Compania" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarSucursal" FunctionName="BDComercialModel.Store.WCO_ListarSucursal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarSucursal_Result">
+          <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+          <ScalarProperty Name="SucursalGrupo" ColumnName="SucursalGrupo" />
+          <ScalarProperty Name="DescripcionLocal" ColumnName="DescripcionLocal" />
+          <ScalarProperty Name="DescripcionIngles" ColumnName="DescripcionIngles" />
+          <ScalarProperty Name="CuentaContableDefecto" ColumnName="CuentaContableDefecto" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+          <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="Inicial" ColumnName="Inicial" />
+          <ScalarProperty Name="Final" ColumnName="Final" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Val_Ini" ColumnName="Val_Ini" />
+          <ScalarProperty Name="SedIp" ColumnName="SedIp" />
+          <ScalarProperty Name="FlatCodigo" ColumnName="FlatCodigo" />
+          <ScalarProperty Name="CodSunat" ColumnName="CodSunat" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="DescEstado" ColumnName="DescEstado" />
+          <ScalarProperty Name="DescripcionCorta" ColumnName="DescripcionCorta" />
+          <ScalarProperty Name="CompaniaCodigo" ColumnName="CompaniaCodigo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarTablaMaestroDetalle" FunctionName="BDComercialModel.Store.WCO_ListarTablaMaestroDetalle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarTablaMaestroDetalle_Result">
+          <ScalarProperty Name="IdTablaMaestro" ColumnName="IdTablaMaestro" />
+          <ScalarProperty Name="IdCodigo" ColumnName="IdCodigo" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarTablasMaestras" FunctionName="BDComercialModel.Store.WCO_ListarTablasMaestras">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarTablasMaestras_Result">
+          <ScalarProperty Name="IdTablaMaestro" ColumnName="IdTablaMaestro" />
+          <ScalarProperty Name="CodigoTabla" ColumnName="CodigoTabla" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="EstadoDe" ColumnName="EstadoDe" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarTipoCambio" FunctionName="BDComercialModel.Store.WCO_ListarTipoCambio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarTipoCambio_Result">
+          <ScalarProperty Name="monedacodigo" ColumnName="monedacodigo" />
+          <ScalarProperty Name="monedacambiocodigo" ColumnName="monedacambiocodigo" />
+          <ScalarProperty Name="fechacambio" ColumnName="fechacambio" />
+          <ScalarProperty Name="factorcompra" ColumnName="factorcompra" />
+          <ScalarProperty Name="factorventa" ColumnName="factorventa" />
+          <ScalarProperty Name="factorpromedio" ColumnName="factorpromedio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarTipoCambioMo" FunctionName="BDComercialModel.Store.WCO_ListarTipoCambioMo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarTipoCambioMo_Result">
+          <ScalarProperty Name="MonedaCodigo" ColumnName="MonedaCodigo" />
+          <ScalarProperty Name="MonedaCambioCodigo" ColumnName="MonedaCambioCodigo" />
+          <ScalarProperty Name="FechaCambio" ColumnName="FechaCambio" />
+          <ScalarProperty Name="FechaCambioString" ColumnName="FechaCambioString" />
+          <ScalarProperty Name="Factor" ColumnName="Factor" />
+          <ScalarProperty Name="FactorCompra" ColumnName="FactorCompra" />
+          <ScalarProperty Name="FactorVenta" ColumnName="FactorVenta" />
+          <ScalarProperty Name="FactorPromedio" ColumnName="FactorPromedio" />
+          <ScalarProperty Name="FactorCompraAfp" ColumnName="FactorCompraAfp" />
+          <ScalarProperty Name="FactorVentaAfp" ColumnName="FactorVentaAfp" />
+          <ScalarProperty Name="FactorCompraSBS" ColumnName="FactorCompraSBS" />
+          <ScalarProperty Name="FactorVentaSBS" ColumnName="FactorVentaSBS" />
+          <ScalarProperty Name="ValorCuota" ColumnName="ValorCuota" />
+          <ScalarProperty Name="TasaTAMEX" ColumnName="TasaTAMEX" />
+          <ScalarProperty Name="TasaTAMN" ColumnName="TasaTAMN" />
+          <ScalarProperty Name="TasaAnualTAMEX" ColumnName="TasaAnualTAMEX" />
+          <ScalarProperty Name="TasaAnualTAMN" ColumnName="TasaAnualTAMN" />
+          <ScalarProperty Name="EstadoDesc" ColumnName="EstadoDesc" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+          <ScalarProperty Name="FactorCobranza" ColumnName="FactorCobranza" />
+          <ScalarProperty Name="FactorCobranzaVenta" ColumnName="FactorCobranzaVenta" />
+          <ScalarProperty Name="DesMoneda" ColumnName="DesMoneda" />
+          <ScalarProperty Name="DesCambio" ColumnName="DesCambio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarTipodeAdmision" FunctionName="BDComercialModel.Store.WCO_ListarTipodeAdmision">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarTipodeAdmision_Result">
+          <ScalarProperty Name="TipoAdmisionId" ColumnName="TipoAdmisionId" />
+          <ScalarProperty Name="AdmCodigo" ColumnName="AdmCodigo" />
+          <ScalarProperty Name="AdmDescripcion" ColumnName="AdmDescripcion" />
+          <ScalarProperty Name="EstadoDesc" ColumnName="EstadoDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarTipoOperacion" FunctionName="BDComercialModel.Store.WCO_ListarTipoOperacion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarTipoOperacion_Result">
+          <ScalarProperty Name="TipoOperacionID" ColumnName="TipoOperacionID" />
+          <ScalarProperty Name="TIPOADMISIONID" ColumnName="TIPOADMISIONID" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="TPContratoID" ColumnName="TPContratoID" />
+          <ScalarProperty Name="IdListaBase" ColumnName="IdListaBase" />
+          <ScalarProperty Name="UneuNegocioId" ColumnName="UneuNegocioId" />
+          <ScalarProperty Name="TPAplicaFactor" ColumnName="TPAplicaFactor" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
+          <ScalarProperty Name="IpModificacion" ColumnName="IpModificacion" />
+          <ScalarProperty Name="TipEstado" ColumnName="TipEstado" />
+          <ScalarProperty Name="TPFactor" ColumnName="TPFactor" />
+          <ScalarProperty Name="TPMoneda" ColumnName="TPMoneda" />
+          <ScalarProperty Name="AplicaFormula" ColumnName="AplicaFormula" />
+          <ScalarProperty Name="TipoPacienteId" ColumnName="TipoPacienteId" />
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="FlatAprobacion" ColumnName="FlatAprobacion" />
+          <ScalarProperty Name="FlaCon" ColumnName="FlaCon" />
+          <ScalarProperty Name="AdmDescripcion" ColumnName="AdmDescripcion" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="EstadoDesc" ColumnName="EstadoDesc" />
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaTermino" ColumnName="FechaTermino" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="CodigoContrato" ColumnName="CodigoContrato" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="DescripcionLocal" ColumnName="DescripcionLocal" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Convenio" ColumnName="Convenio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarTipoOperacionCliente" FunctionName="BDComercialModel.Store.WCO_ListarTipoOperacionCliente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarTipoOperacionCliente_Result">
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarTipoOperacionClienteSede" FunctionName="BDComercialModel.Store.WCO_ListarTipoOperacionClienteSede">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarTipoOperacionClienteSede_Result">
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarTipoOperacionClienteTipoPaciente" FunctionName="BDComercialModel.Store.WCO_ListarTipoOperacionClienteTipoPaciente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarTipoOperacionClienteTipoPaciente_Result">
+          <ScalarProperty Name="TipoPacienteId" ColumnName="TipoPacienteId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarTipoPaciente" FunctionName="BDComercialModel.Store.WCO_ListarTipoPaciente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarTipoPaciente_Result">
+          <ScalarProperty Name="TipoAdmisionId" ColumnName="TipoAdmisionId" />
+          <ScalarProperty Name="TipoPacienteId" ColumnName="TipoPacienteId" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
+          <ScalarProperty Name="IpModificacion" ColumnName="IpModificacion" />
+          <ScalarProperty Name="AdmDescripcion" ColumnName="AdmDescripcion" />
+          <ScalarProperty Name="ESTADOdesc" ColumnName="ESTADOdesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarTipoTrabajador" FunctionName="BDComercialModel.Store.WCO_ListarTipoTrabajador">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarTipoTrabajador_Result">
+          <ScalarProperty Name="TipoTrabajador" ColumnName="TipoTrabajador" />
+          <ScalarProperty Name="DescripcionLocal" ColumnName="DescripcionLocal" />
+          <ScalarProperty Name="DescripcionExtranjera" ColumnName="DescripcionExtranjera" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+          <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+          <ScalarProperty Name="TratamientoContableAuxiliar" ColumnName="TratamientoContableAuxiliar" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="CodigoSeguro" ColumnName="CodigoSeguro" />
+          <ScalarProperty Name="TipotrabajadorRTPS" ColumnName="TipotrabajadorRTPS" />
+          <ScalarProperty Name="categoriaRTPS" ColumnName="categoriaRTPS" />
+          <ScalarProperty Name="IndicadorAplicaCaja" ColumnName="IndicadorAplicaCaja" />
+          <ScalarProperty Name="IndicadorCirugia" ColumnName="IndicadorCirugia" />
+          <ScalarProperty Name="OrdenPersonalCirugia" ColumnName="OrdenPersonalCirugia" />
+          <ScalarProperty Name="ComponenteHospitalizacion" ColumnName="ComponenteHospitalizacion" />
+          <ScalarProperty Name="IndicadorSelectorMedico" ColumnName="IndicadorSelectorMedico" />
+          <ScalarProperty Name="PorcentajeFacturacion" ColumnName="PorcentajeFacturacion" />
+          <ScalarProperty Name="IndicadorPorcentajeFacturacion" ColumnName="IndicadorPorcentajeFacturacion" />
+          <ScalarProperty Name="EstadoDesc" ColumnName="EstadoDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarTMAestroDetalles" FunctionName="BDComercialModel.Store.WCO_ListarTMAestroDetalles">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarTMAestroDetalles_Result">
+          <ScalarProperty Name="IdTablaMaestro" ColumnName="IdTablaMaestro" />
+          <ScalarProperty Name="IdCodigo" ColumnName="IdCodigo" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="IdTablaMaestro1" ColumnName="IdTablaMaestro1" />
+          <ScalarProperty Name="CodigoTabla" ColumnName="CodigoTabla" />
+          <ScalarProperty Name="Nombre1" ColumnName="Nombre1" />
+          <ScalarProperty Name="Descripcion1" ColumnName="Descripcion1" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Estado1" ColumnName="Estado1" />
+          <ScalarProperty Name="UsuarioCreacion1" ColumnName="UsuarioCreacion1" />
+          <ScalarProperty Name="FechaCreacion1" ColumnName="FechaCreacion1" />
+          <ScalarProperty Name="UsuarioModificacion1" ColumnName="UsuarioModificacion1" />
+          <ScalarProperty Name="FechaModificacion1" ColumnName="FechaModificacion1" />
+          <ScalarProperty Name="EstadoDesc" ColumnName="EstadoDesc" />
+          <ScalarProperty Name="TablaMaestro" ColumnName="TablaMaestro" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarUbigeo" FunctionName="BDComercialModel.Store.WCO_ListarUbigeo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarUbigeo_Result">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarUsuarioSede" FunctionName="BDComercialModel.Store.WCO_ListarUsuarioSede">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarUsuarioSede_Result">
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ObtenerParametroTexto" FunctionName="BDComercialModel.Store.WCO_ObtenerParametroTexto" />
+    <FunctionImportMapping FunctionImportName="WCO_ObtenerTramaOA" FunctionName="BDComercialModel.Store.WCO_ObtenerTramaOA" />
+    <FunctionImportMapping FunctionImportName="WCO_PerfilPaginas" FunctionName="BDComercialModel.Store.WCO_PerfilPaginas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_PerfilPaginas_Result">
+          <ScalarProperty Name="AplicacionCodigo" ColumnName="AplicacionCodigo" />
+          <ScalarProperty Name="DescripcionGrupo" ColumnName="DescripcionGrupo" />
+          <ScalarProperty Name="Grupo" ColumnName="Grupo" />
+          <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+          <ScalarProperty Name="ConceptoPadre" ColumnName="ConceptoPadre" />
+          <ScalarProperty Name="DescripcionPaginas" ColumnName="DescripcionPaginas" />
+          <ScalarProperty Name="DescripcionIngles" ColumnName="DescripcionIngles" />
+          <ScalarProperty Name="VisibleFlag" ColumnName="VisibleFlag" />
+          <ScalarProperty Name="TipodeDetalle" ColumnName="TipodeDetalle" />
+          <ScalarProperty Name="TipodeObjeto" ColumnName="TipodeObjeto" />
+          <ScalarProperty Name="Objeto" ColumnName="Objeto" />
+          <ScalarProperty Name="TipodeAcceso" ColumnName="TipodeAcceso" />
+          <ScalarProperty Name="ObjetoWindow" ColumnName="ObjetoWindow" />
+          <ScalarProperty Name="WorkFlag" ColumnName="WorkFlag" />
+          <ScalarProperty Name="WorkAgregarFlag" ColumnName="WorkAgregarFlag" />
+          <ScalarProperty Name="WorkModificarFlag" ColumnName="WorkModificarFlag" />
+          <ScalarProperty Name="WorkBorrarFlag" ColumnName="WorkBorrarFlag" />
+          <ScalarProperty Name="WorkAprobarFlag" ColumnName="WorkAprobarFlag" />
+          <ScalarProperty Name="WebFlag" ColumnName="WebFlag" />
+          <ScalarProperty Name="WebPage" ColumnName="WebPage" />
+          <ScalarProperty Name="WebAction" ColumnName="WebAction" />
+          <ScalarProperty Name="WebGrupo" ColumnName="WebGrupo" />
+          <ScalarProperty Name="WebGrupoSecuencia" ColumnName="WebGrupoSecuencia" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+          <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+          <ScalarProperty Name="xEstado" ColumnName="xEstado" />
+          <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="RUTAIMAGEN" ColumnName="RUTAIMAGEN" />
+          <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="UsuarioPerfil" ColumnName="UsuarioPerfil" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+          <ScalarProperty Name="Usuario1" ColumnName="Usuario1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_PerfilPaginasOpciones" FunctionName="BDComercialModel.Store.WCO_PerfilPaginasOpciones">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_PerfilPaginasOpciones_Result">
+          <ScalarProperty Name="AplicacionCodigo" ColumnName="AplicacionCodigo" />
+          <ScalarProperty Name="DescGrupo" ColumnName="DescGrupo" />
+          <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Grupo" ColumnName="Grupo" />
+          <ScalarProperty Name="DescOpciones" ColumnName="DescOpciones" />
+          <ScalarProperty Name="DescripcionIngles" ColumnName="DescripcionIngles" />
+          <ScalarProperty Name="VisibleFlag" ColumnName="VisibleFlag" />
+          <ScalarProperty Name="TipodeDetalle" ColumnName="TipodeDetalle" />
+          <ScalarProperty Name="TipodeObjeto" ColumnName="TipodeObjeto" />
+          <ScalarProperty Name="Objeto" ColumnName="Objeto" />
+          <ScalarProperty Name="TipodeAcceso" ColumnName="TipodeAcceso" />
+          <ScalarProperty Name="ObjetoWindow" ColumnName="ObjetoWindow" />
+          <ScalarProperty Name="WorkFlag" ColumnName="WorkFlag" />
+          <ScalarProperty Name="WorkAgregarFlag" ColumnName="WorkAgregarFlag" />
+          <ScalarProperty Name="WorkModificarFlag" ColumnName="WorkModificarFlag" />
+          <ScalarProperty Name="WorkBorrarFlag" ColumnName="WorkBorrarFlag" />
+          <ScalarProperty Name="WorkAprobarFlag" ColumnName="WorkAprobarFlag" />
+          <ScalarProperty Name="WebFlag" ColumnName="WebFlag" />
+          <ScalarProperty Name="WebPage" ColumnName="WebPage" />
+          <ScalarProperty Name="WebAction" ColumnName="WebAction" />
+          <ScalarProperty Name="WebGrupo" ColumnName="WebGrupo" />
+          <ScalarProperty Name="WebGrupoSecuencia" ColumnName="WebGrupoSecuencia" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+          <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+          <ScalarProperty Name="xEstado" ColumnName="xEstado" />
+          <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="RUTAIMAGEN" ColumnName="RUTAIMAGEN" />
+          <ScalarProperty Name="Usuario1" ColumnName="Usuario1" />
+          <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+          <ScalarProperty Name="ConceptoPadre" ColumnName="ConceptoPadre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

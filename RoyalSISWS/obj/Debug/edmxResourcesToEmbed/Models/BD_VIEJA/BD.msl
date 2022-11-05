@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WEB_ERPSALUD_CEGModelStoreContainer" CdmEntityContainer="Entidad_Royal">
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_ReporteEpisodioClinico" FunctionName="WEB_ERPSALUD_CEGModel.Store.SP_SS_HC_ReporteEpisodioClinico">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WEB_ERPSALUD_CEGModel.SP_SS_HC_ReporteEpisodioClinico_Result">
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+          <ScalarProperty Name="FechaAtencion" ColumnName="FechaAtencion" />
+          <ScalarProperty Name="TipoAtencion" ColumnName="TipoAtencion" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="LineaOrdenAtencion" ColumnName="LineaOrdenAtencion" />
+          <ScalarProperty Name="TipoOrdenAtencion" ColumnName="TipoOrdenAtencion" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="CodigoOA" ColumnName="CodigoOA" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Tabla" ColumnName="Tabla" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="EpisodioAtencion" ColumnName="EpisodioAtencion" />
+          <ScalarProperty Name="TipoFormulario" ColumnName="TipoFormulario" />
+          <ScalarProperty Name="Ruta" ColumnName="Ruta" />
+          <ScalarProperty Name="Formulario" ColumnName="Formulario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

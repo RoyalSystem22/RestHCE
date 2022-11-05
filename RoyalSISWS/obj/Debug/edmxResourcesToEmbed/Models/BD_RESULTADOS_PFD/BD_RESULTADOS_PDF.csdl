@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ResultadosPDFModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ResultadosPDFEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="WCO_ListaInformePatologia" ReturnType="Collection(ResultadosPDFModel.WCO_ListaInformePatologia_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="OrdenPapCore" Mode="In" Type="String" />
+      <Parameter Name="IdCliente" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="PDF_LOG" EntityType="ResultadosPDFModel.PDF_LOG" />
+  </EntityContainer>
+  <ComplexType Name="WCO_ListaInformePatologia_Result">
+    <Property Type="Int32" Name="IdPdfLog" Nullable="false" />
+    <Property Type="DateTime" Name="FechaGeneracion" Nullable="true" />
+    <Property Type="String" Name="numerpeticion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="NumeroOrden" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="IdCliente" Nullable="true" />
+    <Property Type="Binary" Name="CodigoBinario" Nullable="true" MaxLength="Max" />
+    <Property Type="Boolean" Name="FlatEnvio" Nullable="true" />
+    <Property Type="DateTime" Name="FechaEnvio" Nullable="true" />
+    <Property Type="String" Name="Tipo" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Hclinica" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" />
+    <Property Type="String" Name="VarCodExterno" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CodSede" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="NombreArchivo" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="CodSedeDesc" Nullable="true" MaxLength="5" />
+  </ComplexType>
+  <EntityType Name="PDF_LOG">
+    <Key>
+      <PropertyRef Name="IdPdfLog" />
+    </Key>
+    <Property Name="IdPdfLog" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaGeneracion" Type="DateTime" Precision="3" />
+    <Property Name="numerpeticion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroOrden" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="IdCliente" Type="Int32" />
+    <Property Name="CodigoBinario" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FlatEnvio" Type="Boolean" />
+    <Property Name="FechaEnvio" Type="DateTime" Precision="3" />
+    <Property Name="Tipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Hclinica" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="VarCodExterno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CodSede" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NombreArchivo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CodSedeDesc" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

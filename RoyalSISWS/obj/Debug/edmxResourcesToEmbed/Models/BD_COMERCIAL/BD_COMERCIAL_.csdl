@@ -1,0 +1,1584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDComercialModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BDComercialEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="WCO_ListarAdmisionServicio" ReturnType="Collection(BDComercialModel.WCO_ListarAdmisionServicio_Result)">
+      <Parameter Name="pFechaFin" Mode="In" Type="DateTime" />
+      <Parameter Name="pFechaIni" Mode="In" Type="DateTime" />
+      <Parameter Name="pNroPeticion" Mode="In" Type="String" />
+      <Parameter Name="pTipoAdmision" Mode="In" Type="Int32" />
+      <Parameter Name="pHistoriaClinica" Mode="In" Type="String" />
+      <Parameter Name="pEstado" Mode="In" Type="Int32" />
+      <Parameter Name="Persona" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="IdSede" Mode="In" Type="Int32" />
+      <Parameter Name="OrdenAtencion" Mode="In" Type="String" />
+      <Parameter Name="IdClasificadorMovimiento" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarUsuario" ReturnType="Collection(BDComercialModel.WCO_ListarUsuario_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="TipoUsuario" Mode="In" Type="String" />
+      <Parameter Name="IdPersona" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_AccesoUsuario" ReturnType="Collection(BDComercialModel.WCO_AccesoUsuario_Result)">
+      <Parameter Name="USUARIO" Mode="In" Type="String" />
+      <Parameter Name="PASSWORD" Mode="In" Type="String" />
+      <Parameter Name="SEDE" Mode="In" Type="Int32" />
+      <Parameter Name="IDPERSONA" Mode="In" Type="Int32" />
+      <Parameter Name="TDOCUMENTO" Mode="In" Type="String" />
+      <Parameter Name="EXPERIRARPASSWORDFLAG" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_BUSCARPERSONAUSUARIO" ReturnType="Collection(BDComercialModel.WCO_BUSCARPERSONAUSUARIO_Result)">
+      <Parameter Name="NOMBRECOMPLETO" Mode="In" Type="String" />
+      <Parameter Name="TipoDocumento" Mode="In" Type="String" />
+      <Parameter Name="Documento" Mode="In" Type="String" />
+      <Parameter Name="tipopersona" Mode="In" Type="String" />
+      <Parameter Name="SoloBeneficiarios" Mode="In" Type="Int32" />
+      <Parameter Name="idEmpresaEmpleadora" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarAccionDocumento" ReturnType="Collection(BDComercialModel.WCO_ListarAccionDocumento_Result)">
+      <Parameter Name="CodigoDocumento" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarAdmisionCarga" ReturnType="Collection(BDComercialModel.WCO_ListarAdmisionCarga_Result)">
+      <Parameter Name="NroPeticion" Mode="In" Type="String" />
+      <Parameter Name="NumeroDocumento" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="TipoOperacionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarAdmisionControl" ReturnType="Collection(BDComercialModel.WCO_ListarAdmisionControl_Result)">
+      <Parameter Name="IdAdmisionControl" Mode="In" Type="Int32" />
+      <Parameter Name="IdAdmision" Mode="In" Type="Int32" />
+      <Parameter Name="IdAprobador" Mode="In" Type="Int32" />
+      <Parameter Name="UneuNegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="TipoAdmisionId" Mode="In" Type="Int32" />
+      <Parameter Name="IdSede" Mode="In" Type="Int32" />
+      <Parameter Name="TipoPacienteId" Mode="In" Type="Int32" />
+      <Parameter Name="NroPeticion" Mode="In" Type="String" />
+      <Parameter Name="OrdenAtencion" Mode="In" Type="String" />
+      <Parameter Name="HistoriaClinica" Mode="In" Type="String" />
+      <Parameter Name="IdPersona" Mode="In" Type="Int32" />
+      <Parameter Name="FechaIni" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarAdmisionExistente" ReturnType="Collection(BDComercialModel.WCO_ListarAdmisionExistente_Result)">
+      <Parameter Name="IdPersona" Mode="In" Type="Int32" />
+      <Parameter Name="OrdenAtencion" Mode="In" Type="String" />
+      <Parameter Name="IdSede" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarAdmisionExportar" ReturnType="Collection(BDComercialModel.WCO_ListarAdmisionExportar_Result)">
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="TipoOperacionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarAdmisionProduccion" ReturnType="Collection(BDComercialModel.WCO_ListarAdmisionProduccion_Result)">
+      <Parameter Name="TipoAdmisionId" Mode="In" Type="Int32" />
+      <Parameter Name="ClienteId" Mode="In" Type="Int32" />
+      <Parameter Name="TipoPacienteId" Mode="In" Type="Int32" />
+      <Parameter Name="IdSede" Mode="In" Type="Int32" />
+      <Parameter Name="TipoAtencionId" Mode="In" Type="Int32" />
+      <Parameter Name="AseguradoraId" Mode="In" Type="Int32" />
+      <Parameter Name="EmpresaId" Mode="In" Type="Int32" />
+      <Parameter Name="PacienteId" Mode="In" Type="Int32" />
+      <Parameter Name="TipoOperacionId" Mode="In" Type="Int32" />
+      <Parameter Name="IdClasificacion" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="NombreComponente" Mode="In" Type="String" />
+      <Parameter Name="pFecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="pFecha2" Mode="In" Type="DateTime" />
+      <Parameter Name="ClasificadorMovimiento" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="Periodo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarAdmisionServicioConstancia" ReturnType="Collection(BDComercialModel.WCO_ListarAdmisionServicioConstancia_Result)">
+      <Parameter Name="pIdAdmision" Mode="In" Type="Int32" />
+      <Parameter Name="NroPeticion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarAdmisionServicioDetalle" ReturnType="Collection(BDComercialModel.WCO_ListarAdmisionServicioDetalle_Result)">
+      <Parameter Name="pIdAdmision" Mode="In" Type="Int32" />
+      <Parameter Name="NroPeticion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarAdmisionServicioImpresion">
+      <Parameter Name="pIdAdmision" Mode="In" Type="Int32" />
+      <Parameter Name="NroPeticion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarAdmisionSubDetalle" ReturnType="Collection(BDComercialModel.WCO_ListarAdmisionSubDetalle_Result)">
+      <Parameter Name="IdAdmision" Mode="In" Type="Int32" />
+      <Parameter Name="IdAdmServicio" Mode="In" Type="Int32" />
+      <Parameter Name="IdAdmLinea" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="IdOrgano" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarAprobadores" ReturnType="Collection(BDComercialModel.WCO_ListarAprobadores_Result)">
+      <Parameter Name="IdAprobador" Mode="In" Type="Int32" />
+      <Parameter Name="TipoDescuento" Mode="In" Type="Int32" />
+      <Parameter Name="IdUsuario" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UneuNegocioId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarArqueo" ReturnType="Collection(BDComercialModel.WCO_ListarArqueo_Result)">
+      <Parameter Name="NumeroArqueo" Mode="In" Type="String" />
+      <Parameter Name="FechaIngreso" Mode="In" Type="DateTime" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarAseguradora" ReturnType="Collection(BDComercialModel.WCO_ListarAseguradora_Result)">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="IdAseguradora" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_LISTARASIGNARPERFILPAG" ReturnType="Collection(BDComercialModel.WCO_LISTARASIGNARPERFILPAG_Result)">
+      <Parameter Name="perfil" Mode="In" Type="String" />
+      <Parameter Name="usuario" Mode="In" Type="String" />
+      <Parameter Name="nombrecompleto" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarComprobanteId" ReturnType="Collection(BDComercialModel.WCO_ListarComprobanteId_Result)">
+      <Parameter Name="UneuNegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="IdComprobante" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroComprobante" Mode="In" Type="String" />
+      <Parameter Name="TipoComprobante" Mode="In" Type="String" />
+      <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaFinal" Mode="In" Type="DateTime" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="Serie" Mode="In" Type="String" />
+      <Parameter Name="IdPersona" Mode="In" Type="Int32" />
+      <Parameter Name="Sucursal" Mode="In" Type="String" />
+      <Parameter Name="Documento" Mode="In" Type="String" />
+      <Parameter Name="IdClasificadorMovimiento" Mode="In" Type="String" />
+      <Parameter Name="CompaniaCodigo" Mode="In" Type="String" />
+      <Parameter Name="TipoVenta" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarConciliacion" ReturnType="Collection(BDComercialModel.WCO_ListarConciliacion_Result)">
+      <Parameter Name="IdConciliacion" Mode="In" Type="Int32" />
+      <Parameter Name="Periodo" Mode="In" Type="String" />
+      <Parameter Name="IdCliente" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarConciliacionDetalle" ReturnType="Collection(BDComercialModel.WCO_ListarConciliacionDetalle_Result)">
+      <Parameter Name="IdConciliacion" Mode="In" Type="Int32" />
+      <Parameter Name="codigoOA" Mode="In" Type="String" />
+      <Parameter Name="IdCliente" Mode="In" Type="Int32" />
+      <Parameter Name="codigo" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarConciliacionDetalleAgrupado" ReturnType="Collection(BDComercialModel.WCO_ListarConciliacionDetalleAgrupado_Result)">
+      <Parameter Name="IdConciliacion" Mode="In" Type="Int32" />
+      <Parameter Name="IdCliente" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarConfiguracionCorreo" ReturnType="Collection(BDComercialModel.WCO_ListarConfiguracionCorreo_Result)" />
+    <FunctionImport Name="WCO_ListarCorrelativosMast" ReturnType="Collection(BDComercialModel.WCO_ListarCorrelativosMast_Result)">
+      <Parameter Name="CompaniaCodigo" Mode="In" Type="String" />
+      <Parameter Name="TipoComprobante" Mode="In" Type="String" />
+      <Parameter Name="Serie" Mode="In" Type="String" />
+      <Parameter Name="SedCodigo" Mode="In" Type="String" />
+      <Parameter Name="IdSede" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarHomologacion" ReturnType="Collection(BDComercialModel.WCO_ListarHomologacion_Result)">
+      <Parameter Name="UneuNegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="CodigoHomologado" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarMenuOpciones">
+      <Parameter Name="APLICACIONCODIGO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarMenuOpcionesPerfil">
+      <Parameter Name="PERFIL" Mode="In" Type="String" />
+      <Parameter Name="APLICACIONCODIGO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarModeloServicio" ReturnType="Collection(BDComercialModel.WCO_ListarModeloServicio_Result)">
+      <Parameter Name="UneuNegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="ModeloServicioId" Mode="In" Type="Int32" />
+      <Parameter Name="MosDescripcion" Mode="In" Type="String" />
+      <Parameter Name="MosEstado" Mode="In" Type="Int32" />
+      <Parameter Name="TipoOperacionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarModServDetalle" ReturnType="Collection(BDComercialModel.WCO_ListarModServDetalle_Result)">
+      <Parameter Name="UneuNegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="ModeloServicioId" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="TipoOperacionID" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarMonedaMast" ReturnType="Collection(BDComercialModel.WCO_ListarMonedaMast_Result)">
+      <Parameter Name="Estado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarMuestra" ReturnType="Collection(BDComercialModel.WCO_ListarMuestra_Result)">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="IdMuestra" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarMuestraMarcador" ReturnType="Collection(BDComercialModel.WCO_ListarMuestraMarcador_Result)">
+      <Parameter Name="IdMuestraMarcador" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="IdOrgano" Mode="In" Type="Int32" />
+      <Parameter Name="IdTipo" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="IdClasificacion" Mode="In" Type="Int32" />
+      <Parameter Name="ClasificadorMovimiento" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarMuestraMarcadorOrgano" ReturnType="Collection(BDComercialModel.WCO_ListarMuestraMarcadorOrgano_Result)">
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_LISTARPERFILPAG" ReturnType="Collection(BDComercialModel.WCO_LISTARPERFILPAG_Result)">
+      <Parameter Name="estado" Mode="In" Type="String" />
+      <Parameter Name="perfil" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarPeriodoEmision" ReturnType="Collection(BDComercialModel.WCO_ListarPeriodoEmision_Result)">
+      <Parameter Name="UneuNegocioId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarPeriodosPrograma" ReturnType="Collection(BDComercialModel.WCO_ListarPeriodosPrograma_Result)">
+      <Parameter Name="Periodo" Mode="In" Type="String" />
+      <Parameter Name="Programa" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="String" />
+      <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarPersonas" ReturnType="Collection(BDComercialModel.WCO_ListarPersonas_Result)">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="tipoperso" Mode="In" Type="String" />
+      <Parameter Name="estado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarPersonasGeneral" ReturnType="Collection(BDComercialModel.WCO_ListarPersonasGeneral_Result)">
+      <Parameter Name="NOMBRECOMPLETO" Mode="In" Type="String" />
+      <Parameter Name="TipoDocumento" Mode="In" Type="String" />
+      <Parameter Name="Documento" Mode="In" Type="String" />
+      <Parameter Name="TipoPersona" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarProduccion" ReturnType="Collection(BDComercialModel.WCO_ListarProduccion_Result)">
+      <Parameter Name="TipoAdmisionId" Mode="In" Type="Int32" />
+      <Parameter Name="ClienteId" Mode="In" Type="Int32" />
+      <Parameter Name="TipoPacienteId" Mode="In" Type="Int32" />
+      <Parameter Name="IdSede" Mode="In" Type="Int32" />
+      <Parameter Name="TipoAtencionId" Mode="In" Type="Int32" />
+      <Parameter Name="AseguradoraId" Mode="In" Type="Int32" />
+      <Parameter Name="EmpresaId" Mode="In" Type="Int32" />
+      <Parameter Name="PacienteId" Mode="In" Type="Int32" />
+      <Parameter Name="TipoOperacionId" Mode="In" Type="Int32" />
+      <Parameter Name="IdClasificacion" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="NombreComponente" Mode="In" Type="String" />
+      <Parameter Name="pFecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="pFecha2" Mode="In" Type="DateTime" />
+      <Parameter Name="ClasificadorMovimiento" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="Periodo" Mode="In" Type="String" />
+      <Parameter Name="NroPeticion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarProduccionGeneral" ReturnType="Collection(BDComercialModel.WCO_ListarProduccionGeneral_Result)">
+      <Parameter Name="UneuNegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="Periodo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarSede" ReturnType="Collection(BDComercialModel.WCO_ListarSede_Result)">
+      <Parameter Name="DescripcionLocal" Mode="In" Type="String" />
+      <Parameter Name="IdSede" Mode="In" Type="Int32" />
+      <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarSedeCliente" ReturnType="Collection(BDComercialModel.WCO_ListarSedeCliente_Result)">
+      <Parameter Name="IdSede" Mode="In" Type="Int32" />
+      <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+      <Parameter Name="IdSedeCliente" Mode="In" Type="Int32" />
+      <Parameter Name="NombreCompleto" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarSedeInterfaz" ReturnType="Collection(BDComercialModel.WCO_ListarSedeInterfaz_Result)">
+      <Parameter Name="Sucursal" Mode="In" Type="String" />
+      <Parameter Name="UsuarioBD" Mode="In" Type="String" />
+      <Parameter Name="PasswordBD" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarSedePrinter" ReturnType="Collection(BDComercialModel.WCO_ListarSedePrinter_Result)">
+      <Parameter Name="IdPrinter" Mode="In" Type="Int32" />
+      <Parameter Name="IdSede" Mode="In" Type="Int32" />
+      <Parameter Name="Ip" Mode="In" Type="String" />
+      <Parameter Name="Shared_Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarSedeSucursal" ReturnType="Collection(BDComercialModel.WCO_ListarSedeSucursal_Result)">
+      <Parameter Name="ClasificadorMovimiento" Mode="In" Type="String" />
+      <Parameter Name="CompaniaCodigo" Mode="In" Type="String" />
+      <Parameter Name="Sucursal" Mode="In" Type="String" />
+      <Parameter Name="IdSede" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarSedeSucursalNegocio" ReturnType="Collection(BDComercialModel.WCO_ListarSedeSucursalNegocio_Result)">
+      <Parameter Name="ClasificadorMovimiento" Mode="In" Type="String" />
+      <Parameter Name="CompaniaCodigo" Mode="In" Type="String" />
+      <Parameter Name="Sucursal" Mode="In" Type="String" />
+      <Parameter Name="IdSede" Mode="In" Type="Int32" />
+      <Parameter Name="TipoComprobante" Mode="In" Type="String" />
+      <Parameter Name="Serie" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarSerie" ReturnType="Collection(BDComercialModel.WCO_ListarSerie_Result)">
+      <Parameter Name="Compania" Mode="In" Type="String" />
+      <Parameter Name="TipoComprobante" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarSucursal" ReturnType="Collection(BDComercialModel.WCO_ListarSucursal_Result)">
+      <Parameter Name="Sucursal" Mode="In" Type="String" />
+      <Parameter Name="DescripcionLocal" Mode="In" Type="String" />
+      <Parameter Name="CompaniaCodigo" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarTablaMaestroDetalle" ReturnType="Collection(BDComercialModel.WCO_ListarTablaMaestroDetalle_Result)">
+      <Parameter Name="CodigoTabla" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarTablasMaestras" ReturnType="Collection(BDComercialModel.WCO_ListarTablasMaestras_Result)">
+      <Parameter Name="Idtabla" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="estado" Mode="In" Type="Int32" />
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarTipoCambio" ReturnType="Collection(BDComercialModel.WCO_ListarTipoCambio_Result)" />
+    <FunctionImport Name="WCO_ListarTipoCambioMo" ReturnType="Collection(BDComercialModel.WCO_ListarTipoCambioMo_Result)">
+      <Parameter Name="PFechacambio" Mode="In" Type="DateTime" />
+      <Parameter Name="PFechainicial" Mode="In" Type="DateTime" />
+      <Parameter Name="PFechaFinal" Mode="In" Type="DateTime" />
+      <Parameter Name="PEstado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarTipodeAdmision" ReturnType="Collection(BDComercialModel.WCO_ListarTipodeAdmision_Result)">
+      <Parameter Name="AdmCodigo" Mode="In" Type="String" />
+      <Parameter Name="AdmDescripcion" Mode="In" Type="String" />
+      <Parameter Name="AdmEstado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarTipoOperacion" ReturnType="Collection(BDComercialModel.WCO_ListarTipoOperacion_Result)">
+      <Parameter Name="UneuNegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="TipoOperacionId" Mode="In" Type="Int32" />
+      <Parameter Name="Persona" Mode="In" Type="Int32" />
+      <Parameter Name="TipoAdmisionId" Mode="In" Type="Int32" />
+      <Parameter Name="TipEstado" Mode="In" Type="Int32" />
+      <Parameter Name="TipoPacienteId" Mode="In" Type="Int32" />
+      <Parameter Name="IdSede" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarTipoOperacionCliente" ReturnType="Collection(BDComercialModel.WCO_ListarTipoOperacionCliente_Result)">
+      <Parameter Name="UneuNegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="Persona" Mode="In" Type="Int32" />
+      <Parameter Name="TipoAdmisionId" Mode="In" Type="Int32" />
+      <Parameter Name="TipEstado" Mode="In" Type="Int32" />
+      <Parameter Name="Cliente" Mode="In" Type="String" />
+      <Parameter Name="Documento" Mode="In" Type="String" />
+      <Parameter Name="IdSede" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarTipoOperacionClienteSede" ReturnType="Collection(BDComercialModel.WCO_ListarTipoOperacionClienteSede_Result)">
+      <Parameter Name="UneuNegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="Persona" Mode="In" Type="Int32" />
+      <Parameter Name="TipoAdmisionId" Mode="In" Type="Int32" />
+      <Parameter Name="TipEstado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarTipoOperacionClienteTipoPaciente" ReturnType="Collection(BDComercialModel.WCO_ListarTipoOperacionClienteTipoPaciente_Result)">
+      <Parameter Name="UneuNegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="Persona" Mode="In" Type="Int32" />
+      <Parameter Name="TipoAdmisionId" Mode="In" Type="Int32" />
+      <Parameter Name="TipEstado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarTipoPaciente" ReturnType="Collection(BDComercialModel.WCO_ListarTipoPaciente_Result)">
+      <Parameter Name="TipoPacienteId" Mode="In" Type="Int32" />
+      <Parameter Name="TipoAdmisionId" Mode="In" Type="Int32" />
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarTipoTrabajador" ReturnType="Collection(BDComercialModel.WCO_ListarTipoTrabajador_Result)">
+      <Parameter Name="pTipoTrabajador" Mode="In" Type="String" />
+      <Parameter Name="pDescripcion" Mode="In" Type="String" />
+      <Parameter Name="pEstado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarTMAestroDetalles" ReturnType="Collection(BDComercialModel.WCO_ListarTMAestroDetalles_Result)">
+      <Parameter Name="idtablamaestro" Mode="In" Type="Int32" />
+      <Parameter Name="idcodigo" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarUbigeo" ReturnType="Collection(BDComercialModel.WCO_ListarUbigeo_Result)">
+      <Parameter Name="pUbigeo" Mode="In" Type="String" />
+      <Parameter Name="NUM" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ListarUsuarioSede" ReturnType="Collection(BDComercialModel.WCO_ListarUsuarioSede_Result)">
+      <Parameter Name="usuario" Mode="In" Type="String" />
+      <Parameter Name="IdSede" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ObtenerParametroTexto" ReturnType="Collection(String)">
+      <Parameter Name="as_Codigo" Mode="In" Type="String" />
+      <Parameter Name="valor" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_ObtenerTramaOA">
+      <Parameter Name="CodigoOA" Mode="In" Type="String" />
+      <Parameter Name="Trama" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_PerfilPaginas" ReturnType="Collection(BDComercialModel.WCO_PerfilPaginas_Result)">
+      <Parameter Name="USUARIO" Mode="In" Type="String" />
+      <Parameter Name="PASSWORD" Mode="In" Type="String" />
+      <Parameter Name="SEDE" Mode="In" Type="String" />
+      <Parameter Name="IDPERSONA" Mode="In" Type="Int32" />
+      <Parameter Name="TDOCUMENTO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WCO_PerfilPaginasOpciones" ReturnType="Collection(BDComercialModel.WCO_PerfilPaginasOpciones_Result)">
+      <Parameter Name="USUARIO" Mode="In" Type="String" />
+      <Parameter Name="PASSWORD" Mode="In" Type="String" />
+      <Parameter Name="MODULO" Mode="In" Type="String" />
+      <Parameter Name="PAGINA" Mode="In" Type="String" />
+      <Parameter Name="SEDE" Mode="In" Type="String" />
+      <Parameter Name="IDPERSONA" Mode="In" Type="Int32" />
+      <Parameter Name="TDOCUMENTO" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="WCO_ListarAdmisionServicio_Result">
+    <Property Type="Int32" Name="IdAdmision" Nullable="false" />
+    <Property Type="Int32" Name="UneuNegocioId" Nullable="true" />
+    <Property Type="Int32" Name="TipoOperacionId" Nullable="true" />
+    <Property Type="Int32" Name="Persona" Nullable="true" />
+    <Property Type="DateTime" Name="FechaAdmision" Nullable="true" Precision="23" />
+    <Property Type="String" Name="HistoriaClinica" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="NroPeticion" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="OrdenAtencion" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="MedicoId" Nullable="true" />
+    <Property Type="Int32" Name="IdSede" Nullable="true" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IpCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IpModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="MedicoDescripcion" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="IdEmpresaPaciente" Nullable="true" />
+    <Property Type="Int32" Name="IdAseguradora" Nullable="true" />
+    <Property Type="String" Name="TipoOrden" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Cama" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="Grupo" Nullable="true" />
+    <Property Type="Int32" Name="IdSedeEmpresa" Nullable="true" />
+    <Property Type="Decimal" Name="CoaSeguro" Nullable="true" Precision="6" Scale="2" />
+    <Property Type="DateTime" Name="FechaLimite" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="IdExamen" Nullable="true" />
+    <Property Type="Int32" Name="IdInsumo" Nullable="true" />
+    <Property Type="String" Name="ClasificadorMovimiento" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="IdAprobador" Nullable="true" />
+    <Property Type="String" Name="OrdenSinapa" Nullable="true" MaxLength="20" />
+    <Property Type="Decimal" Name="ValorDescuento" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Int32" Name="SituacionSMS" Nullable="true" />
+    <Property Type="String" Name="DxPresuntivo" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Tipo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="DesEstado" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="TipoAdmisionId" Nullable="false" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DesExamen" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DesInsumo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Situacion" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FecAdmision" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarUsuario_Result">
+    <Property Type="String" Name="UserNameWeb" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="PasswordWeb" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="userHash" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="estadoActualizacion" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="tipoUserWeb" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="IdPersona" Nullable="true" />
+    <Property Type="String" Name="TipoUsuario" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Nombres" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Busqueda" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="GrupoEmpresarial" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="TipoDocumento" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Documento" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="FecNac" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Sexo" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="TipoPersona" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="EstadoCivil" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="190" />
+    <Property Type="String" Name="CodigoPostal" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="Provincia" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="Departamento" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="DocumentoFiscal" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="DocumentoIdentidad" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DireccionReferencia" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Celular" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="ParentescoEmergencia" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="RutaFirma" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="TipoDocumentoIdentidad" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="EstadoDesc" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="TipoPerfil" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="WCO_AccesoUsuario_Result">
+    <Property Type="String" Name="USUARIO" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Nombres" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TipoDocumento" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="TipoUsuario" Nullable="true" />
+    <Property Type="Int32" Name="Persona" Nullable="false" />
+    <Property Type="String" Name="Clave" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="60" />
+    <Property Type="Int32" Name="IdSede" Nullable="false" />
+    <Property Type="String" Name="ExpirarPasswordFlag" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="IdEmpresa" Nullable="true" />
+    <Property Type="Int32" Name="DIA" Nullable="true" />
+    <Property Type="String" Name="SedIp" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="UneuNegocioId" Nullable="false" />
+    <Property Type="String" Name="ACCESO" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="SerieBV" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="SerieFA" Nullable="true" MaxLength="15" />
+    <Property Type="Decimal" Name="Igv" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="Decimal" Name="TipoCambio" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="String" Name="ClasificadorMovimiento" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="WCO_BUSCARPERSONAUSUARIO_Result">
+    <Property Type="String" Name="ApellidoPaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TipoDocumento" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Sexo" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Nacionalidad" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="EstadoCivil" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="190" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Persona" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarAccionDocumento_Result">
+    <Property Type="Int32" Name="IdDocumento" Nullable="false" />
+    <Property Type="Int32" Name="IdAccion" Nullable="false" />
+    <Property Type="String" Name="CodigoAccion" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="TipoAccion" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="TipoUsoAccion" Nullable="true" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="IdProceso" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarAdmisionCarga_Result">
+    <Property Type="DateTime" Name="FechaInicio" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Documento" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Nombres" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="HistoriaClinica" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="MedicoApellido" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="MedicoNombre" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="NroPeticion" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="Examen" Nullable="true" />
+    <Property Type="String" Name="FLATNUEVO" Nullable="false" MaxLength="9" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarAdmisionControl_Result">
+    <Property Type="Int32" Name="IdAdmisionControl" Nullable="false" />
+    <Property Type="Int32" Name="IdAdmision" Nullable="false" />
+    <Property Type="Int32" Name="IdAprobador" Nullable="false" />
+    <Property Type="Int32" Name="UneuNegocioId" Nullable="true" />
+    <Property Type="DateTime" Name="FechaRegistro" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaAprobacion" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="TipoFormula" Nullable="true" />
+    <Property Type="Decimal" Name="ValorDescuento" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="ValorAprobador" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="Descuento" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="DescuentoAutorizado" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="Monto" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="Neto" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IpCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IpModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="DesEstado" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="IdUsuario" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="NroPeticion" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="OrdenAtencion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="Usuario" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarAdmisionExistente_Result">
+    <Property Type="String" Name="NroPeticion" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="IdOrdenAtencion" Nullable="true" />
+    <Property Type="Int32" Name="Cantidad" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarAdmisionExportar_Result">
+    <Property Type="Int32" Name="TipoAtencion" Nullable="true" />
+    <Property Type="Int32" Name="TipoPaciente" Nullable="true" />
+    <Property Type="String" Name="TipoOrden" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="OrdenSpring" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="NroPeticion" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="IdPaciente" Nullable="true" />
+    <Property Type="String" Name="Documento" Nullable="true" MaxLength="21" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Nombres" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Sexo" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="IdSede" Nullable="true" />
+    <Property Type="String" Name="HistoriaClinica" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="OAClinica" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="IdMedico" Nullable="true" />
+    <Property Type="String" Name="MedicoApellido" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="MedicoNombre" Nullable="true" MaxLength="40" />
+    <Property Type="Int32" Name="IdEspecialidad" Nullable="true" />
+    <Property Type="String" Name="Especialidad" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="IdEmpresa" Nullable="true" />
+    <Property Type="String" Name="EmpresaDescripcion" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="IdEmpresaSede" Nullable="true" />
+    <Property Type="String" Name="EmpresaSedeDescripcion" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="IdEmpresaPaciente" Nullable="true" />
+    <Property Type="String" Name="EmpresaPacienteDescripcion" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="IdEmpresaPacienteSede" Nullable="true" />
+    <Property Type="String" Name="EmpresaSedePacienteDescripcion" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="IdAseguradora" Nullable="true" />
+    <Property Type="String" Name="AseguradoraDescripcion" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="IdProcedencia" Nullable="true" />
+    <Property Type="String" Name="ProcedenciaDescripcion" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="Diagnostico1" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Diagnostico2" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Diagnostico3" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Diagnostico4" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Diagnostico5" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Cama" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="CodigoComponente" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="Componente" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="FechaInicio" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaFinal" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="String" Name="RUC" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="TipoDocumento" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CMP" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Documento_Medico" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Medico_Paterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Medico_Materno" Nullable="true" MaxLength="40" />
+    <Property Type="Int32" Name="TipoOperacionId" Nullable="true" />
+    <Property Type="Int32" Name="FLATNUEVO" Nullable="true" />
+    <Property Type="String" Name="OBSERVACION" Nullable="false" MaxLength="9" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarAdmisionProduccion_Result">
+    <Property Type="DateTime" Name="FechaProduccion" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="IdAdmision" Nullable="false" />
+    <Property Type="Int32" Name="Linea" Nullable="false" />
+    <Property Type="String" Name="UnidadNegocio" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="RUC" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="CLIENTE" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TipoPaciente" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="TipoAtencion" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="NroPeticion" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="HistoriaClinica" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CodigoComponente" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="Cantidad" Nullable="true" />
+    <Property Type="Decimal" Name="Valor" Nullable="true" Precision="20" Scale="2" />
+    <Property Type="Int32" Name="EstadoProceso" Nullable="true" />
+    <Property Type="String" Name="DesEstado" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarAdmisionServicioConstancia_Result">
+    <Property Type="Int32" Name="IdAdmision" Nullable="false" />
+    <Property Type="Int32" Name="Linea" Nullable="false" />
+    <Property Type="String" Name="CodigoComponente" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="NroPeticion" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="Cantidad" Nullable="true" />
+    <Property Type="Int32" Name="TipoOperacionID" Nullable="false" />
+    <Property Type="Int32" Name="Persona" Nullable="true" />
+    <Property Type="Int32" Name="IdSede" Nullable="true" />
+    <Property Type="Int32" Name="TIPOADMISIONID" Nullable="true" />
+    <Property Type="String" Name="Sexo" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="edad" Nullable="true" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="MEDICO" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CLIENTE" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="PROCEDENCIA" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="HistoriaClinica" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="EMPRESA" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Usuario" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="OrdenAtencion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Clave" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="FechaAdmision" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="NombreEmpresa" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="OrdenSinapa" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="TipoPaciente" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="TipoOrden" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="TipoAtencion" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarAdmisionServicioDetalle_Result">
+    <Property Type="Int32" Name="IdAdmision" Nullable="false" />
+    <Property Type="Int32" Name="Linea" Nullable="true" />
+    <Property Type="String" Name="CodigoComponente" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="NroPeticion" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="21" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="Cantidad" Nullable="true" />
+    <Property Type="Int32" Name="TipoOperacionID" Nullable="false" />
+    <Property Type="Int32" Name="Persona" Nullable="true" />
+    <Property Type="String" Name="ClasificadorMovimiento" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="IdSede" Nullable="true" />
+    <Property Type="Int32" Name="TIPOADMISIONID" Nullable="true" />
+    <Property Type="Int32" Name="AplicaTitular" Nullable="true" />
+    <Property Type="Decimal" Name="Valorprecio" Nullable="false" Precision="20" Scale="6" />
+    <Property Type="Int32" Name="IdAdmServicio" Nullable="true" />
+    <Property Type="Decimal" Name="Valor" Nullable="false" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="ValorEmpresa" Nullable="false" Precision="20" Scale="6" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="String" Name="EstadoAdm" Nullable="true" MaxLength="80" />
+    <Property Type="Decimal" Name="Copago" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Int32" Name="idempresa" Nullable="true" />
+    <Property Type="Int32" Name="IdTitularAutorizado" Nullable="true" />
+    <Property Type="Int32" Name="IdListaBase" Nullable="false" />
+    <Property Type="String" Name="Sexo" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="IdOrdenAtencion" Nullable="true" />
+    <Property Type="Decimal" Name="CanTotal" Nullable="false" Precision="31" Scale="6" />
+    <Property Type="Int32" Name="IdCobertura" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarAdmisionSubDetalle_Result">
+    <Property Type="String" Name="Clasificacion" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="300" />
+    <Property Type="Int32" Name="IdClasificacion" Nullable="true" />
+    <Property Type="String" Name="Organo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Muestra" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="IdAdmision" Nullable="false" />
+    <Property Type="Int32" Name="IdAdmServicio" Nullable="true" />
+    <Property Type="Int32" Name="IdAdmLinea" Nullable="false" />
+    <Property Type="Int32" Name="IdSecuencial" Nullable="true" />
+    <Property Type="Int32" Name="IdOrgano" Nullable="true" />
+    <Property Type="String" Name="CodigoComponente" Nullable="true" MaxLength="25" />
+    <Property Type="Int32" Name="IdMuestraMarcador" Nullable="true" />
+    <Property Type="String" Name="NroPeticion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="NroReferencia" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaIsquemia" Nullable="true" Precision="23" />
+    <Property Type="String" Name="HoraIsquemia" Nullable="true" MaxLength="8" />
+    <Property Type="Int32" Name="Cantidad" Nullable="true" />
+    <Property Type="Decimal" Name="Valor" Nullable="true" Precision="20" Scale="2" />
+    <Property Type="String" Name="Observacion" Nullable="true" MaxLength="200" />
+    <Property Type="DateTime" Name="FechaProduccion" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="IdProduccion" Nullable="true" />
+    <Property Type="String" Name="NroComprobante" Nullable="true" MaxLength="25" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IpCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IpModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="ESTADOdesc" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="SubFijo" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="IdExamen" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarAprobadores_Result">
+    <Property Type="Int32" Name="IdAprobador" Nullable="false" />
+    <Property Type="Int32" Name="UneuNegocioId" Nullable="false" />
+    <Property Type="String" Name="IdUsuario" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="TipoDescuento" Nullable="false" />
+    <Property Type="Decimal" Name="Monto" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IpCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IpModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Clave" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ESTADOdesc" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarArqueo_Result">
+    <Property Type="Int32" Name="IdArqueo" Nullable="false" />
+    <Property Type="String" Name="TipoArqueo" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="SerieArqueo" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="NumeroArqueo" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="PeriodoEmision" Nullable="true" />
+    <Property Type="Int32" Name="IdResponsable" Nullable="true" />
+    <Property Type="DateTime" Name="FechaIngreso" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Compania" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Sucursal" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="IdEstablecimiento" Nullable="true" />
+    <Property Type="Int32" Name="NumeroTransaccion" Nullable="true" />
+    <Property Type="String" Name="Observacion" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="IndicadorContabilizado" Nullable="true" />
+    <Property Type="Int32" Name="PeriodoAsiento" Nullable="true" />
+    <Property Type="String" Name="Asiento" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="PeriodoAnulacion" Nullable="true" />
+    <Property Type="String" Name="AsientoAnulacion" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="EstadoDocumento" Nullable="true" />
+    <Property Type="Int32" Name="EstadoDocumentoAnterior" Nullable="true" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Moneda" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="CuentaBancaria" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="FechaAsiento" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="IndicadorAnulado" Nullable="true" />
+    <Property Type="Int32" Name="PeriodoAsientoAnulado" Nullable="true" />
+    <Property Type="String" Name="AsientoAnulado" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="FechaAsientoAnulado" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="SecuenciaTransaccion" Nullable="true" />
+    <Property Type="String" Name="UnidadReplicacionTransaccion" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="NumeroDeposito" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ESTADOdesc" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarAseguradora_Result">
+    <Property Type="Int32" Name="IdAseguradora" Nullable="true" />
+    <Property Type="String" Name="NombreEmpresa" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Clasificacion_1" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="Clasificacion_2" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="TipoAseguradora" Nullable="true" />
+    <Property Type="String" Name="DscTipo" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="WCO_LISTARASIGNARPERFILPAG_Result">
+    <Property Type="String" Name="USUARIO" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="NOMBRECOMPLETO" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="PERFIL" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="ClasificadorMovimiento" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarComprobanteId_Result">
+    <Property Type="Int32" Name="IdComprobante" Nullable="false" />
+    <Property Type="String" Name="TipoComprobante" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="SerieComprobante" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="Numero" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="PeriodoEmision" Nullable="true" />
+    <Property Type="String" Name="NumeroComprobante" Nullable="true" MaxLength="23" />
+    <Property Type="String" Name="NombreCliente" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ClasificadorMovimiento" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="IdClienteFacturacion" Nullable="true" />
+    <Property Type="String" Name="DocumentoCliente" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="ConceptoFacturacion" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="FechaEmision" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaCancelacion" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaVencimiento" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Procedencia" Nullable="true" />
+    <Property Type="Int32" Name="TipoVenta" Nullable="true" />
+    <Property Type="String" Name="Moneda" Nullable="true" MaxLength="2" />
+    <Property Type="Decimal" Name="TipoCambio" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="ValorImpuesto" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="Decimal" Name="PrecioVenta" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="MontoAfecto" Nullable="true" Precision="21" Scale="6" />
+    <Property Type="Decimal" Name="MontoImpuestoVentas" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="MontoImpuestoVentasLocal" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="MontoTotal" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="String" Name="DireccionCliente" Nullable="true" MaxLength="190" />
+    <Property Type="String" Name="NomClasificador" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="18" />
+    <Property Type="Decimal" Name="IGV" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="String" Name="Sucursal" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Paciente" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Compania" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Detraccion" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="DesEstado" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="TipoFacturacion" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="FormaPago" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="IdClienteSolicitante" Nullable="true" />
+    <Property Type="Int32" Name="TipoPago" Nullable="true" />
+    <Property Type="String" Name="RazonSocial" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="Ruc" Nullable="true" MaxLength="20" />
+    <Property Type="Decimal" Name="Saldo" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="MontoAdelanto" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="MontoAdelantoSaldo" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="MontoRedondeo" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Int32" Name="IdAdmision" Nullable="true" />
+    <Property Type="String" Name="CorreoCliente" Nullable="true" MaxLength="300" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarConciliacion_Result">
+    <Property Type="String" Name="Cliente" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdConciliacion" Nullable="false" />
+    <Property Type="Int32" Name="IdCliente" Nullable="false" />
+    <Property Type="String" Name="Periodo" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ESTADOdesc" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarConciliacionDetalle_Result">
+    <Property Type="Int32" Name="IdCliente" Nullable="false" />
+    <Property Type="Decimal" Name="valor" Nullable="true" Precision="20" Scale="2" />
+    <Property Type="DateTime" Name="fechaproduccion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="periodo" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="nropeticion" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="LineaOrdenAtencion" Nullable="false" />
+    <Property Type="Int32" Name="IdOrdenAtencion" Nullable="false" />
+    <Property Type="String" Name="codigoOA" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="paciente" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="IdConciliacion" Nullable="false" />
+    <Property Type="String" Name="codigo" Nullable="false" MaxLength="25" />
+    <Property Type="Int32" Name="estado" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarConciliacionDetalleAgrupado_Result">
+    <Property Type="Int32" Name="IdConciliacion" Nullable="false" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="Int32" Name="Cantidad" Nullable="true" />
+    <Property Type="String" Name="ESTADOdesc" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarConfiguracionCorreo_Result">
+    <Property Type="String" Name="CompaniaCodigo" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="AplicacionCodigo" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="ParametroClave" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DescripcionParametro" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Explicacion" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="TipodeDatoFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Texto" Nullable="true" MaxLength="20" />
+    <Property Type="Decimal" Name="Numero" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="Fecha" Nullable="true" Precision="23" />
+    <Property Type="String" Name="FinanceComunFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="UltimoUsuario" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="UltimaFechaModif" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ExplicacionAdicional" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Texto1" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Texto2" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarCorrelativosMast_Result">
+    <Property Type="String" Name="CompaniaCodigo" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="TipoComprobante" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="Serie" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="CorrelativoNumero" Nullable="true" />
+    <Property Type="Int32" Name="CorrelativoDesde" Nullable="true" />
+    <Property Type="Int32" Name="CorrelativoHasta" Nullable="true" />
+    <Property Type="String" Name="AlmacenCodigo" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="UltimoUsuario" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="UltimaFechaModif" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Sucursal" Nullable="true" MaxLength="4" />
+    <Property Type="Int32" Name="IdEstablecimiento" Nullable="true" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ObjetoReporte" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Impresora" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="IndicadorImpresora" Nullable="true" />
+    <Property Type="Int32" Name="Lineas" Nullable="true" />
+    <Property Type="Int32" Name="NumeroDigitos" Nullable="true" />
+    <Property Type="Int32" Name="IndicadorTicket" Nullable="true" />
+    <Property Type="Int32" Name="idCaja" Nullable="true" />
+    <Property Type="Int32" Name="IndicadorIncluirFacturacion" Nullable="true" />
+    <Property Type="String" Name="ImpresoraFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="DatawindowObjeto" Nullable="true" MaxLength="40" />
+    <Property Type="Decimal" Name="Ancho" Nullable="true" Precision="16" Scale="4" />
+    <Property Type="Decimal" Name="Alto" Nullable="true" Precision="16" Scale="4" />
+    <Property Type="String" Name="ESTADOdesc" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="DescripcionCorta" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="IdEmpresa" Nullable="true" />
+    <Property Type="Int32" Name="IdSede" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarHomologacion_Result">
+    <Property Type="String" Name="CodigoHomologado" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarModeloServicio_Result">
+    <Property Type="Int32" Name="UneuNegocioId" Nullable="false" />
+    <Property Type="Int32" Name="ModeloServicioId" Nullable="false" />
+    <Property Type="Int32" Name="TipoOperacionId" Nullable="false" />
+    <Property Type="String" Name="MosDescripcion" Nullable="true" MaxLength="60" />
+    <Property Type="Int32" Name="MosEstado" Nullable="true" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IpCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IpModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="MosAplicaFactor" Nullable="true" />
+    <Property Type="Decimal" Name="MosFactor" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="String" Name="empresa" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EstadoDesc" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="AdmDescripcion" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="IdListaBase" Nullable="true" />
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="60" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarModServDetalle_Result">
+    <Property Type="Int32" Name="UneuNegocioId" Nullable="false" />
+    <Property Type="Int32" Name="ModeloServicioId" Nullable="false" />
+    <Property Type="String" Name="codigocomponente" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="EstadoAdm" Nullable="false" MaxLength="9" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="IpCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IpModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Cantidad" Nullable="false" />
+    <Property Type="Decimal" Name="Valor" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarMonedaMast_Result">
+    <Property Type="String" Name="MonedaCodigo" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="DescripcionCorta" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Sigla" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="DescripcionExtranjera" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="UltimaFechaModif" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UltimoUsuario" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="CodigoFiscal" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarMuestra_Result">
+    <Property Type="Int32" Name="IdMuestra" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Observacion" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="Cantidad" Nullable="true" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IpCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IpModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="abreviatura" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ESTADOdesc" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarMuestraMarcador_Result">
+    <Property Type="String" Name="Clasificacion" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Componente" Nullable="true" MaxLength="300" />
+    <Property Type="Int32" Name="IdClasificacion" Nullable="true" />
+    <Property Type="String" Name="Organo" Nullable="true" MaxLength="40" />
+    <Property Type="Int32" Name="IdMuestraMarcador" Nullable="false" />
+    <Property Type="String" Name="CodigoComponente" Nullable="true" MaxLength="25" />
+    <Property Type="Int32" Name="IdOrgano" Nullable="true" />
+    <Property Type="Int32" Name="IdTipo" Nullable="true" />
+    <Property Type="String" Name="SubFijo" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Observacion" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="IpCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IpModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="Int32" Name="Orden" Nullable="true" />
+    <Property Type="String" Name="ESTADOdesc" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarMuestraMarcadorOrgano_Result">
+    <Property Type="Int32" Name="IdOrgano" Nullable="true" />
+    <Property Type="String" Name="Organo" Nullable="true" MaxLength="40" />
+  </ComplexType>
+  <ComplexType Name="WCO_LISTARPERFILPAG_Result">
+    <Property Type="String" Name="Perfil" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="estado" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarPeriodoEmision_Result">
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="UneDescripcion" Nullable="true" MaxLength="60" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarPeriodosPrograma_Result">
+    <Property Type="String" Name="Programa" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="Periodo" Nullable="false" MaxLength="6" />
+    <Property Type="DateTime" Name="FechaInicio" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="FechaFin" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UltimoUsuario" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="UltimaFechaModif" Nullable="true" Precision="23" />
+    <Property Type="String" Name="FlagCierre" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="DescEstado" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarPersonas_Result">
+    <Property Type="Int32" Name="persona" Nullable="false" />
+    <Property Type="String" Name="origen" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="BUSQUEDA" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TIPODOCUMENTO" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Nombres" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="DocumentoIdentidad" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="EstadoCivil" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Sexo" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="codigo" Nullable="false" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarPersonasGeneral_Result">
+    <Property Type="String" Name="ApellidoPaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TipoDocumento" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="TipoPaciente" Nullable="true" />
+    <Property Type="String" Name="Sexo" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Nacionalidad" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="EstadoCivil" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="190" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Persona" Nullable="false" />
+    <Property Type="String" Name="Nombres" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Celular" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="TipoPersona" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="DEPARTAMENTO" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="PROVINCIA" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="SunatUbigeo" Nullable="true" MaxLength="3" />
+    <Property Type="DateTime" Name="IngresoFechaRegistro" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UltimaFechaModif" Nullable="true" Precision="23" />
+    <Property Type="String" Name="IngresoUsuario" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="UltimoUsuario" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="PerPerfilProfesional" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="EsCliente" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="EsEmpleado" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="EsProveedor" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="EsOtro" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="DocumentoFiscal" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="PerTipoVia" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="PasswordWeb" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="DireccionReferencia" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Comentario" Nullable="true" MaxLength="300" />
+    <Property Type="Int32" Name="DiaVencimiento" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarProduccion_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="DateTime" Name="FechaProduccion" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="IdOALineaOrigen" Nullable="true" />
+    <Property Type="Int32" Name="IdAdmision" Nullable="false" />
+    <Property Type="String" Name="Periodo" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="UnidadNegocio" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="ClasificadorMovimiento" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="RUC" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CLIENTE" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Persona" Nullable="true" />
+    <Property Type="String" Name="TipoPaciente" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="NroPeticion" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="CodigoComponente" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="250" />
+    <Property Type="Decimal" Name="Cantidad" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="Monto" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="MontoTotal" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Decimal" Name="Copago" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Documento" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="EmpresaPaciente" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="RucEmpresa" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="DesEstado" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarProduccionGeneral_Result">
+    <Property Type="Int32" Name="UneuNegocioId" Nullable="true" />
+    <Property Type="String" Name="AdmDescripcion" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="TIPOADMISIONID" Nullable="true" />
+    <Property Type="String" Name="UneDescripcion" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="Periodo" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="ClasificadorMovimiento" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="UnidadNegocio" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="Persona" Nullable="true" />
+    <Property Type="String" Name="CLIENTE" Nullable="true" MaxLength="118" />
+    <Property Type="Int32" Name="IdSede" Nullable="true" />
+    <Property Type="String" Name="Sede" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="40" />
+    <Property Type="Int32" Name="TipoPacienteId" Nullable="true" />
+    <Property Type="Int32" Name="TipoOperacionID" Nullable="false" />
+    <Property Type="Int32" Name="Examen" Nullable="true" />
+    <Property Type="Decimal" Name="Cantidad" Nullable="true" Precision="38" Scale="6" />
+    <Property Type="Decimal" Name="PrecioReal" Nullable="true" Precision="38" Scale="6" />
+    <Property Type="Decimal" Name="PrecioVenta" Nullable="true" Precision="38" Scale="6" />
+    <Property Type="Int32" Name="Pendiente" Nullable="true" />
+    <Property Type="Int32" Name="Liquidado" Nullable="true" />
+    <Property Type="Int32" Name="Facturado" Nullable="true" />
+    <Property Type="Int32" Name="Cerrado" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarSede_Result">
+    <Property Type="Int32" Name="IdSede" Nullable="false" />
+    <Property Type="String" Name="SedCodigo" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="SedIp" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="SedEstado" Nullable="true" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IpCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IpModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Inicial" Nullable="true" />
+    <Property Type="Int32" Name="Final" Nullable="true" />
+    <Property Type="DateTime" Name="Fecha" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Val_Ini" Nullable="true" />
+    <Property Type="Int32" Name="IdEmpresa" Nullable="true" />
+    <Property Type="Int32" Name="FlatCodigo" Nullable="true" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="Establecimiento" Nullable="true" />
+    <Property Type="String" Name="DescEstado" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CompaniaCodigo" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarSedeCliente_Result">
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="143" />
+    <Property Type="String" Name="SedCodigo" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="IdSede" Nullable="true" />
+    <Property Type="Int32" Name="IdEmpresa" Nullable="true" />
+    <Property Type="Int32" Name="IdSedeCliente" Nullable="true" />
+    <Property Type="Int32" Name="TipoConexion" Nullable="true" />
+    <Property Type="String" Name="Homologacion" Nullable="true" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarSedeInterfaz_Result">
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="IdCliente" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="IdSede" Nullable="true" />
+    <Property Type="String" Name="SedCodigo" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="String" Name="IPServer" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="IdServicio" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="IdMedico" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="IdEspecialidad" Nullable="true" />
+    <Property Type="String" Name="UsuarioBD" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PasswordBD" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarSedePrinter_Result">
+    <Property Type="Int32" Name="idprinter" Nullable="false" />
+    <Property Type="Int32" Name="idsede" Nullable="true" />
+    <Property Type="String" Name="shared_name" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="ip" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="codebar" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="alias_name" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="60" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarSedeSucursal_Result">
+    <Property Type="Int32" Name="IdSede" Nullable="true" />
+    <Property Type="String" Name="Sucursal" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="ClasificadorMovimiento" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="DescripcionLocal" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarSedeSucursalNegocio_Result">
+    <Property Type="Int32" Name="IdSede" Nullable="true" />
+    <Property Type="String" Name="Sucursal" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="ClasificadorMovimiento" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="DescripcionLocal" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="TipoComprobante" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="SERIE" Nullable="true" MaxLength="4" />
+    <Property Type="Int32" Name="IdEstablecimiento" Nullable="true" />
+    <Property Type="String" Name="CompaniaCodigo" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarSerie_Result">
+    <Property Type="String" Name="Serie" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="TipoComprobante" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Compania" Nullable="false" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarSucursal_Result">
+    <Property Type="String" Name="Sucursal" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="SucursalGrupo" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="DescripcionLocal" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="DescripcionIngles" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CuentaContableDefecto" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="UltimoUsuario" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="UltimaFechaModif" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="IdSede" Nullable="true" />
+    <Property Type="Int32" Name="IdEmpresa" Nullable="true" />
+    <Property Type="Int32" Name="Inicial" Nullable="true" />
+    <Property Type="Int32" Name="Final" Nullable="true" />
+    <Property Type="DateTime" Name="Fecha" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Val_Ini" Nullable="true" />
+    <Property Type="String" Name="SedIp" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="FlatCodigo" Nullable="true" />
+    <Property Type="String" Name="CodSunat" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="DescEstado" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="DescripcionCorta" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CompaniaCodigo" Nullable="true" MaxLength="17" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarTablaMaestroDetalle_Result">
+    <Property Type="Int32" Name="IdTablaMaestro" Nullable="false" />
+    <Property Type="Int32" Name="IdCodigo" Nullable="false" />
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarTablasMaestras_Result">
+    <Property Type="Int32" Name="IdTablaMaestro" Nullable="false" />
+    <Property Type="String" Name="CodigoTabla" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Version" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="EstadoDe" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarTipoCambio_Result">
+    <Property Type="String" Name="monedacodigo" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="monedacambiocodigo" Nullable="false" MaxLength="2" />
+    <Property Type="DateTime" Name="fechacambio" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="factorcompra" Nullable="true" Precision="16" Scale="4" />
+    <Property Type="Decimal" Name="factorventa" Nullable="true" Precision="16" Scale="4" />
+    <Property Type="Decimal" Name="factorpromedio" Nullable="true" Precision="16" Scale="4" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarTipoCambioMo_Result">
+    <Property Type="String" Name="MonedaCodigo" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="MonedaCambioCodigo" Nullable="false" MaxLength="2" />
+    <Property Type="DateTime" Name="FechaCambio" Nullable="true" />
+    <Property Type="String" Name="FechaCambioString" Nullable="true" MaxLength="8" />
+    <Property Type="Decimal" Name="Factor" Nullable="true" Precision="16" Scale="4" />
+    <Property Type="Decimal" Name="FactorCompra" Nullable="true" Precision="16" Scale="4" />
+    <Property Type="Decimal" Name="FactorVenta" Nullable="true" Precision="16" Scale="4" />
+    <Property Type="Decimal" Name="FactorPromedio" Nullable="true" Precision="16" Scale="4" />
+    <Property Type="Decimal" Name="FactorCompraAfp" Nullable="true" Precision="16" Scale="4" />
+    <Property Type="Decimal" Name="FactorVentaAfp" Nullable="true" Precision="16" Scale="4" />
+    <Property Type="Decimal" Name="FactorCompraSBS" Nullable="true" Precision="16" Scale="4" />
+    <Property Type="Decimal" Name="FactorVentaSBS" Nullable="true" Precision="16" Scale="4" />
+    <Property Type="Decimal" Name="ValorCuota" Nullable="true" Precision="24" Scale="7" />
+    <Property Type="Decimal" Name="TasaTAMEX" Nullable="true" Precision="16" Scale="6" />
+    <Property Type="Decimal" Name="TasaTAMN" Nullable="true" Precision="16" Scale="6" />
+    <Property Type="Decimal" Name="TasaAnualTAMEX" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="TasaAnualTAMN" Nullable="true" Precision="19" />
+    <Property Type="String" Name="EstadoDesc" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="UltimaFechaModif" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UltimoUsuario" Nullable="true" MaxLength="25" />
+    <Property Type="Decimal" Name="FactorCobranza" Nullable="true" Precision="18" Scale="6" />
+    <Property Type="Decimal" Name="FactorCobranzaVenta" Nullable="true" Precision="18" Scale="6" />
+    <Property Type="String" Name="DesMoneda" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="DesCambio" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarTipodeAdmision_Result">
+    <Property Type="Int32" Name="TipoAdmisionId" Nullable="false" />
+    <Property Type="String" Name="AdmCodigo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="AdmDescripcion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="EstadoDesc" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarTipoOperacion_Result">
+    <Property Type="Int32" Name="TipoOperacionID" Nullable="false" />
+    <Property Type="Int32" Name="TIPOADMISIONID" Nullable="true" />
+    <Property Type="Int32" Name="Persona" Nullable="true" />
+    <Property Type="Int32" Name="TPContratoID" Nullable="true" />
+    <Property Type="Int32" Name="IdListaBase" Nullable="true" />
+    <Property Type="Int32" Name="UneuNegocioId" Nullable="true" />
+    <Property Type="Int32" Name="TPAplicaFactor" Nullable="true" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IpCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IpModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="Int32" Name="TipEstado" Nullable="true" />
+    <Property Type="Decimal" Name="TPFactor" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="String" Name="TPMoneda" Nullable="true" MaxLength="2" />
+    <Property Type="Int32" Name="AplicaFormula" Nullable="true" />
+    <Property Type="Int32" Name="TipoPacienteId" Nullable="true" />
+    <Property Type="Int32" Name="IdSede" Nullable="true" />
+    <Property Type="String" Name="Observacion" Nullable="true" MaxLength="300" />
+    <Property Type="Int32" Name="FlatAprobacion" Nullable="true" />
+    <Property Type="Int32" Name="FlaCon" Nullable="true" />
+    <Property Type="String" Name="AdmDescripcion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="empresa" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="EstadoDesc" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="60" />
+    <Property Type="DateTime" Name="FechaInicio" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaTermino" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Moneda" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="CodigoContrato" Nullable="true" MaxLength="15" />
+    <Property Type="Decimal" Name="Monto" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="DescripcionLocal" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="Codigo" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Convenio" Nullable="true" MaxLength="118" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarTipoOperacionCliente_Result">
+    <Property Type="Int32" Name="Persona" Nullable="true" />
+    <Property Type="String" Name="Documento" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="empresa" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarTipoOperacionClienteSede_Result">
+    <Property Type="Int32" Name="IdSede" Nullable="true" />
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="60" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarTipoOperacionClienteTipoPaciente_Result">
+    <Property Type="Int32" Name="TipoPacienteId" Nullable="true" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="40" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarTipoPaciente_Result">
+    <Property Type="Int32" Name="TipoAdmisionId" Nullable="false" />
+    <Property Type="Int32" Name="TipoPacienteId" Nullable="false" />
+    <Property Type="String" Name="Codigo" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="40" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IpCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IpModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="AdmDescripcion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ESTADOdesc" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarTipoTrabajador_Result">
+    <Property Type="String" Name="TipoTrabajador" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="DescripcionLocal" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="DescripcionExtranjera" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="UltimoUsuario" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="UltimaFechaModif" Nullable="true" Precision="23" />
+    <Property Type="String" Name="TratamientoContableAuxiliar" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CodigoSeguro" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="TipotrabajadorRTPS" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="categoriaRTPS" Nullable="true" MaxLength="2" />
+    <Property Type="Int32" Name="IndicadorAplicaCaja" Nullable="true" />
+    <Property Type="Int32" Name="IndicadorCirugia" Nullable="true" />
+    <Property Type="Int32" Name="OrdenPersonalCirugia" Nullable="true" />
+    <Property Type="String" Name="ComponenteHospitalizacion" Nullable="true" MaxLength="25" />
+    <Property Type="Int32" Name="IndicadorSelectorMedico" Nullable="true" />
+    <Property Type="Decimal" Name="PorcentajeFacturacion" Nullable="true" Precision="20" Scale="6" />
+    <Property Type="Int32" Name="IndicadorPorcentajeFacturacion" Nullable="true" />
+    <Property Type="String" Name="EstadoDesc" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarTMAestroDetalles_Result">
+    <Property Type="Int32" Name="IdTablaMaestro" Nullable="false" />
+    <Property Type="Int32" Name="IdCodigo" Nullable="false" />
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="Estado" Nullable="true" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="IdTablaMaestro1" Nullable="false" />
+    <Property Type="String" Name="CodigoTabla" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Nombre1" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="Descripcion1" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Version" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="Estado1" Nullable="true" />
+    <Property Type="String" Name="UsuarioCreacion1" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaCreacion1" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioModificacion1" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaModificacion1" Nullable="true" Precision="23" />
+    <Property Type="String" Name="EstadoDesc" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="TablaMaestro" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarUbigeo_Result">
+    <Property Type="String" Name="Codigo" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="WCO_ListarUsuarioSede_Result">
+    <Property Type="String" Name="SedDescripcion" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Usuario" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="IdSede" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WCO_PerfilPaginas_Result">
+    <Property Type="String" Name="AplicacionCodigo" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="DescripcionGrupo" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Grupo" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="Concepto" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="ConceptoPadre" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="DescripcionPaginas" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="DescripcionIngles" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="VisibleFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="TipodeDetalle" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="TipodeObjeto" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Objeto" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TipodeAcceso" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="ObjetoWindow" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="WorkFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="WorkAgregarFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="WorkModificarFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="WorkBorrarFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="WorkAprobarFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="WebFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="WebPage" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="WebAction" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="WebGrupo" Nullable="true" MaxLength="6" />
+    <Property Type="Int32" Name="WebGrupoSecuencia" Nullable="true" />
+    <Property Type="String" Name="UltimoUsuario" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="UltimaFechaModif" Nullable="true" Precision="23" />
+    <Property Type="String" Name="xEstado" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="ORDEN" Nullable="true" />
+    <Property Type="String" Name="URL" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="RUTAIMAGEN" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Perfil" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Usuario" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="UsuarioPerfil" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Clave" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="Persona" Nullable="true" />
+    <Property Type="Int32" Name="TipoUsuario" Nullable="true" />
+    <Property Type="String" Name="Usuario1" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="WCO_PerfilPaginasOpciones_Result">
+    <Property Type="String" Name="AplicacionCodigo" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="DescGrupo" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Perfil" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Usuario" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Grupo" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="DescOpciones" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="DescripcionIngles" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="VisibleFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="TipodeDetalle" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="TipodeObjeto" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Objeto" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TipodeAcceso" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="ObjetoWindow" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="WorkFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="WorkAgregarFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="WorkModificarFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="WorkBorrarFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="WorkAprobarFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="WebFlag" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="WebPage" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="WebAction" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="WebGrupo" Nullable="true" MaxLength="6" />
+    <Property Type="Int32" Name="WebGrupoSecuencia" Nullable="true" />
+    <Property Type="String" Name="UltimoUsuario" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="UltimaFechaModif" Nullable="true" Precision="23" />
+    <Property Type="String" Name="xEstado" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="ORDEN" Nullable="true" />
+    <Property Type="String" Name="URL" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="RUTAIMAGEN" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Usuario1" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Concepto" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="ConceptoPadre" Nullable="true" MaxLength="6" />
+  </ComplexType>
+</Schema>

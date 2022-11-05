@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WEB_ERPSALUD_CSBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ParametrosMast">
+    <Key>
+      <PropertyRef Name="CompaniaCodigo" />
+      <PropertyRef Name="AplicacionCodigo" />
+      <PropertyRef Name="ParametroClave" />
+    </Key>
+    <Property Name="CompaniaCodigo" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="AplicacionCodigo" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="ParametroClave" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="DescripcionParametro" Type="char" MaxLength="300" />
+    <Property Name="Explicacion" Type="varchar" MaxLength="300" />
+    <Property Name="TipodeDatoFlag" Type="char" MaxLength="1" />
+    <Property Name="Texto" Type="char" MaxLength="20" />
+    <Property Name="Numero" Type="money" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="FinanceComunFlag" Type="char" MaxLength="1" />
+    <Property Name="Estado" Type="char" MaxLength="1" />
+    <Property Name="UltimoUsuario" Type="varchar" MaxLength="25" />
+    <Property Name="UltimaFechaModif" Type="datetime" />
+    <Property Name="ExplicacionAdicional" Type="varchar" MaxLength="250" />
+    <Property Name="Texto1" Type="char" MaxLength="10" />
+    <Property Name="Texto2" Type="char" MaxLength="10" />
+    <Property Name="UnidadReplicacion" Type="varchar" MaxLength="4" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+  </EntityType>
+  <Function Name="SP_ParametrosMastListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompaniaCodigo" Type="char" Mode="In" />
+    <Parameter Name="AplicacionCodigo" Type="char" Mode="In" />
+    <Parameter Name="ParametroClave" Type="char" Mode="In" />
+    <Parameter Name="DescripcionParametro" Type="varchar" Mode="In" />
+    <Parameter Name="Explicacion" Type="varchar" Mode="In" />
+    <Parameter Name="TipodeDatoFlag" Type="char" Mode="In" />
+    <Parameter Name="Texto" Type="char" Mode="In" />
+    <Parameter Name="Numero" Type="money" Mode="In" />
+    <Parameter Name="Fecha" Type="datetime" Mode="In" />
+    <Parameter Name="FinanceComunFlag" Type="char" Mode="In" />
+    <Parameter Name="Estado" Type="char" Mode="In" />
+    <Parameter Name="UltimoUsuario" Type="varchar" Mode="In" />
+    <Parameter Name="UltimaFechaModif" Type="datetime" Mode="In" />
+    <Parameter Name="ExplicacionAdicional" Type="varchar" Mode="In" />
+    <Parameter Name="Texto1" Type="char" Mode="In" />
+    <Parameter Name="Texto2" Type="char" Mode="In" />
+    <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+    <Parameter Name="Accion" Type="varchar" Mode="In" />
+    <Parameter Name="INICIO" Type="int" Mode="In" />
+    <Parameter Name="NUMEROFILAS" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="SP_VW_ATENCIONPACIENTE_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="UnidadReplicacionEC" Type="char" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdEstablecimientoSalud" Type="int" Mode="In" />
+    <Parameter Name="IdUnidadServicio" Type="int" Mode="In" />
+    <Parameter Name="IdPersonalSalud" Type="int" Mode="In" />
+    <Parameter Name="aaaaAtencion" Type="int" Mode="In" />
+    <Parameter Name="EpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="FechaRegistro" Type="datetime" Mode="In" />
+    <Parameter Name="FechaAtencion" Type="datetime" Mode="In" />
+    <Parameter Name="TipoAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="LineaOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="TipoOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+    <Parameter Name="IdEspecialidad" Type="int" Mode="In" />
+    <Parameter Name="CodigoOA" Type="varchar" Mode="In" />
+    <Parameter Name="FechaOrden" Type="datetime" Mode="In" />
+    <Parameter Name="IdProcedimiento" Type="int" Mode="In" />
+    <Parameter Name="IdTipoOrden" Type="int" Mode="In" />
+    <Parameter Name="FechaRegistroEpiClinico" Type="datetime" Mode="In" />
+    <Parameter Name="FechaCierreEpiClinico" Type="datetime" Mode="In" />
+    <Parameter Name="TipoPaciente" Type="int" Mode="In" />
+    <Parameter Name="Edad" Type="int" Mode="In" />
+    <Parameter Name="CodigoHC" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoHCAnterior" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoHCSecundario" Type="varchar" Mode="In" />
+    <Parameter Name="TipoHistoria" Type="varchar" Mode="In" />
+    <Parameter Name="EstadoPaciente" Type="int" Mode="In" />
+    <Parameter Name="NumeroFile" Type="int" Mode="In" />
+    <Parameter Name="IDPACIENTE_OK" Type="int" Mode="In" />
+    <Parameter Name="Persona" Type="int" Mode="In" />
+    <Parameter Name="NombreCompleto" Type="varchar" Mode="In" />
+    <Parameter Name="TipoDocumento" Type="char" Mode="In" />
+    <Parameter Name="Documento" Type="char" Mode="In" />
+    <Parameter Name="EsCliente" Type="char" Mode="In" />
+    <Parameter Name="EsProveedor" Type="char" Mode="In" />
+    <Parameter Name="EsEmpleado" Type="char" Mode="In" />
+    <Parameter Name="EsOtro" Type="char" Mode="In" />
+    <Parameter Name="TipoPersona" Type="char" Mode="In" />
+    <Parameter Name="FechaNacimiento" Type="datetime" Mode="In" />
+    <Parameter Name="Sexo" Type="char" Mode="In" />
+    <Parameter Name="Nacionalidad" Type="char" Mode="In" />
+    <Parameter Name="EstadoCivil" Type="char" Mode="In" />
+    <Parameter Name="NivelInstruccion" Type="char" Mode="In" />
+    <Parameter Name="CodigoPostal" Type="char" Mode="In" />
+    <Parameter Name="Provincia" Type="char" Mode="In" />
+    <Parameter Name="Departamento" Type="char" Mode="In" />
+    <Parameter Name="FecIniDiscamec" Type="datetime" Mode="In" />
+    <Parameter Name="FecFinDiscamec" Type="datetime" Mode="In" />
+    <Parameter Name="Pais" Type="char" Mode="In" />
+    <Parameter Name="EsPaciente" Type="char" Mode="In" />
+    <Parameter Name="EsEmpresa" Type="char" Mode="In" />
+    <Parameter Name="personanew" Type="int" Mode="In" />
+    <Parameter Name="EstadoPersona" Type="char" Mode="In" />
+    <Parameter Name="Servicio" Type="varchar" Mode="In" />
+    <Parameter Name="INICIO" Type="int" Mode="In" />
+    <Parameter Name="NUMEROFILAS" Type="int" Mode="In" />
+    <Parameter Name="Version" Type="varchar" Mode="In" />
+    <Parameter Name="ACCION" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="WEB_ERPSALUD_CSBModelStoreContainer">
+    <EntitySet Name="ParametrosMast" EntityType="Self.ParametrosMast" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

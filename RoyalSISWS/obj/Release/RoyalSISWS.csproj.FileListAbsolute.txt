@@ -1,0 +1,236 @@
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\RoyalSISWS.dll.config
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\RoyalSISWS.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\RoyalSISWS.pdb
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\EntityFramework.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\Microsoft.Web.Infrastructure.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\Newtonsoft.Json.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\System.Web.Helpers.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\System.Web.Mvc.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\System.Web.Razor.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.Deployment.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.Razor.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\EntityFramework.xml
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\Newtonsoft.Json.xml
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\System.Web.Helpers.xml
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\System.Web.Mvc.xml
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\System.Web.Razor.xml
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.xml
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.Deployment.xml
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.Razor.xml
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\obj\Release\RoyalSISWS.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\obj\Release\RoyalSISWS.pdb
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\obj\Release\RoyalSISWS.csprojResolveAssemblyReference.cache
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.AWT.WinForms.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.OpenJDK.Beans.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.OpenJDK.Charsets.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.OpenJDK.Corba.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.OpenJDK.Core.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.OpenJDK.Management.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.OpenJDK.Media.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.OpenJDK.Misc.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.OpenJDK.Naming.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.OpenJDK.Remoting.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.OpenJDK.Security.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.OpenJDK.SwingAWT.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.OpenJDK.Text.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.OpenJDK.Util.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.OpenJDK.XML.API.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.Runtime.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\IKVM.Runtime.JNI.dll
+C:\Proyectos\Proyectos Nuevos\RoyalSISWS\RoyalSISWS\bin\jr-acreditacion-susalud.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\RoyalSISWS.dll.config
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\RoyalSISWS.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\RoyalSISWS.pdb
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\EntityFramework.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\Microsoft.Web.Infrastructure.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\Newtonsoft.Json.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\System.Web.Helpers.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\System.Web.Mvc.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\System.Web.Razor.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.Deployment.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.Razor.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\EntityFramework.xml
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\Newtonsoft.Json.xml
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\System.Web.Helpers.xml
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\System.Web.Mvc.xml
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\System.Web.Razor.xml
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.xml
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.Deployment.xml
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.Razor.xml
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\obj\Release\RoyalSISWS.csprojResolveAssemblyReference.cache
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\obj\Release\RoyalSISWS.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\obj\Release\RoyalSISWS.pdb
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\RoyalSISWS.dll.config
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\RoyalSISWS.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\RoyalSISWS.pdb
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\EntityFramework.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\Microsoft.Web.Infrastructure.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\Newtonsoft.Json.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Net.Http.Formatting.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.Helpers.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.Http.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.Http.WebHost.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.Mvc.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.Razor.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.WebPages.Deployment.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.WebPages.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.WebPages.Razor.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\EntityFramework.xml
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\Newtonsoft.Json.xml
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Net.Http.Formatting.xml
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.Helpers.xml
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.Http.xml
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.Http.WebHost.xml
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.Mvc.xml
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.Razor.xml
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.WebPages.xml
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.WebPages.Deployment.xml
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.WebPages.Razor.xml
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\obj\Release\RoyalSISWS.csprojResolveAssemblyReference.cache
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\obj\Release\RoyalSISWS.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\obj\Release\RoyalSISWS.pdb
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\Antlr3.Runtime.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.Optimization.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\WebGrease.dll
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\Antlr3.Runtime.pdb
+F:\Proyectos Rotal\WS_JORDAN\RoyalSISWS\bin\System.Web.Optimization.xml
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\Antlr3.Runtime.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\RoyalSystems.Core.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\RoyalSystems.Data.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\System.Web.Optimization.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\WebGrease.dll
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\Antlr3.Runtime.pdb
+C:\SPRING_ERP\RoyalSISWS\RoyalSISWS\bin\System.Web.Optimization.xml
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\RoyalSISWS.dll.config
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\RoyalSISWS.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\RoyalSISWS.pdb
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\Antlr3.Runtime.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\EntityFramework.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\Microsoft.Web.Infrastructure.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\Newtonsoft.Json.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\System.Web.Helpers.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\System.Web.Mvc.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\System.Web.Optimization.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\System.Web.Razor.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.Deployment.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.Razor.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\WebGrease.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\Antlr3.Runtime.pdb
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\EntityFramework.xml
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\Newtonsoft.Json.xml
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\System.Web.Helpers.xml
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\System.Web.Mvc.xml
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\System.Web.Optimization.xml
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\System.Web.Razor.xml
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.xml
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.Deployment.xml
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\bin\System.Web.WebPages.Razor.xml
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\obj\Release\RoyalSISWS.csprojResolveAssemblyReference.cache
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\obj\Release\RoyalSISWS.dll
+D:\Desarrollo\SANNA\RoyalSISWS\RoyalSISWS\obj\Release\RoyalSISWS.pdb
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\RoyalSISWS.dll.config
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\RoyalSISWS.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\RoyalSISWS.pdb
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\Antlr3.Runtime.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\EntityFramework.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\Newtonsoft.Json.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Net.Http.Formatting.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.Helpers.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.Http.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.Http.WebHost.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.Mvc.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.Optimization.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.Razor.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.Razor.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\WebGrease.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\Antlr3.Runtime.pdb
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\EntityFramework.xml
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\Newtonsoft.Json.xml
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.Helpers.xml
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.Mvc.xml
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.Optimization.xml
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.Razor.xml
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.xml
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.Razor.xml
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Net.Http.Formatting.xml
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.Http.xml
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\bin\System.Web.Http.WebHost.xml
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\obj\Release\RoyalSISWS.csprojResolveAssemblyReference.cache
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\obj\Release\RoyalSISWS.dll
+C:\Users\riosi\Desktop\SOA_ANGEL_NUEVO\SOA-VISOR\RoyalSISWS\obj\Release\RoyalSISWS.pdb
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\RoyalSISWS.dll.config
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\RoyalSISWS.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\RoyalSISWS.pdb
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\Antlr3.Runtime.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\EntityFramework.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\Microsoft.Web.Infrastructure.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\Newtonsoft.Json.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\System.Web.Helpers.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\System.Web.Mvc.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\System.Web.Optimization.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\System.Web.Razor.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.Deployment.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.Razor.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\WebGrease.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\Antlr3.Runtime.pdb
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\EntityFramework.xml
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\Newtonsoft.Json.xml
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\System.Web.Helpers.xml
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\System.Web.Mvc.xml
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\System.Web.Optimization.xml
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\System.Web.Razor.xml
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.xml
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.Deployment.xml
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.Razor.xml
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\obj\Release\RoyalSISWS.csprojResolveAssemblyReference.cache
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\obj\Release\RoyalSISWS.dll
+D:\Desarrollo\SANNA\SOA-VISOR\RoyalSISWS\obj\Release\RoyalSISWS.pdb
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\RoyalSISWS.dll.config
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\RoyalSISWS.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\RoyalSISWS.pdb
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\Antlr3.Runtime.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\EntityFramework.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\Microsoft.Web.Infrastructure.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\Newtonsoft.Json.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.Helpers.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.Mvc.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.Optimization.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.Razor.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.Deployment.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.Razor.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\WebGrease.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\Antlr3.Runtime.pdb
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\EntityFramework.xml
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\Newtonsoft.Json.xml
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.Helpers.xml
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.Mvc.xml
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.Optimization.xml
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.Razor.xml
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.xml
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.Deployment.xml
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.WebPages.Razor.xml
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\obj\Release\RoyalSISWS.csprojResolveAssemblyReference.cache
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\obj\Release\RoyalSISWS.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\obj\Release\RoyalSISWS.pdb
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Net.Http.Formatting.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.Http.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.Http.WebHost.dll
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Net.Http.Formatting.xml
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.Http.xml
+D:\Desarrollo\SANNA\mejoras\SOA-VISOR\RoyalSISWS\bin\System.Web.Http.WebHost.xml

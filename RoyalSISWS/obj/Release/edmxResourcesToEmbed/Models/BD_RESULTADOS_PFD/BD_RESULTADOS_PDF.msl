@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ResultadosPDFModelStoreContainer" CdmEntityContainer="ResultadosPDFEntities">
+    <FunctionImportMapping FunctionImportName="WCO_ListaInformePatologia" FunctionName="ResultadosPDFModel.Store.WCO_ListaInformePatologia">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ResultadosPDFModel.WCO_ListaInformePatologia_Result">
+          <ScalarProperty Name="IdPdfLog" ColumnName="IdPdfLog" />
+          <ScalarProperty Name="FechaGeneracion" ColumnName="FechaGeneracion" />
+          <ScalarProperty Name="numerpeticion" ColumnName="numerpeticion" />
+          <ScalarProperty Name="NumeroOrden" ColumnName="NumeroOrden" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="CodigoBinario" ColumnName="CodigoBinario" />
+          <ScalarProperty Name="FlatEnvio" ColumnName="FlatEnvio" />
+          <ScalarProperty Name="FechaEnvio" ColumnName="FechaEnvio" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Hclinica" ColumnName="Hclinica" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="VarCodExterno" ColumnName="VarCodExterno" />
+          <ScalarProperty Name="CodSede" ColumnName="CodSede" />
+          <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+          <ScalarProperty Name="CodSedeDesc" ColumnName="CodSedeDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="PDF_LOG">
+      <EntityTypeMapping TypeName="ResultadosPDFModel.PDF_LOG">
+        <MappingFragment StoreEntitySet="PDF_LOG">
+          <ScalarProperty Name="CodSedeDesc" ColumnName="CodSedeDesc" />
+          <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+          <ScalarProperty Name="CodSede" ColumnName="CodSede" />
+          <ScalarProperty Name="VarCodExterno" ColumnName="VarCodExterno" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="Hclinica" ColumnName="Hclinica" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="FechaEnvio" ColumnName="FechaEnvio" />
+          <ScalarProperty Name="FlatEnvio" ColumnName="FlatEnvio" />
+          <ScalarProperty Name="CodigoBinario" ColumnName="CodigoBinario" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="NumeroOrden" ColumnName="NumeroOrden" />
+          <ScalarProperty Name="numerpeticion" ColumnName="numerpeticion" />
+          <ScalarProperty Name="FechaGeneracion" ColumnName="FechaGeneracion" />
+          <ScalarProperty Name="IdPdfLog" ColumnName="IdPdfLog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WEB_ERPSALUD_CEGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="SP_SS_HC_ReporteEpisodioClinico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="CodigoOA" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="WEB_ERPSALUD_CEGModelStoreContainer" />
+</Schema>

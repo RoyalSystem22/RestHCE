@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDComercialModelStoreContainer" CdmEntityContainer="BDComercialEntities">
+    <FunctionImportMapping FunctionImportName="WCO_ListarAdmisionServicio" FunctionName="BDComercialModel.Store.WCO_ListarAdmisionServicio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarAdmisionServicio_Result">
+          <ScalarProperty Name="IdAdmision" ColumnName="IdAdmision" />
+          <ScalarProperty Name="UneuNegocioId" ColumnName="UneuNegocioId" />
+          <ScalarProperty Name="TipoOperacionId" ColumnName="TipoOperacionId" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="FechaAdmision" ColumnName="FechaAdmision" />
+          <ScalarProperty Name="HistoriaClinica" ColumnName="HistoriaClinica" />
+          <ScalarProperty Name="NroPeticion" ColumnName="NroPeticion" />
+          <ScalarProperty Name="OrdenAtencion" ColumnName="OrdenAtencion" />
+          <ScalarProperty Name="MedicoId" ColumnName="MedicoId" />
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
+          <ScalarProperty Name="IpModificacion" ColumnName="IpModificacion" />
+          <ScalarProperty Name="MedicoDescripcion" ColumnName="MedicoDescripcion" />
+          <ScalarProperty Name="IdEmpresaPaciente" ColumnName="IdEmpresaPaciente" />
+          <ScalarProperty Name="IdAseguradora" ColumnName="IdAseguradora" />
+          <ScalarProperty Name="TipoOrden" ColumnName="TipoOrden" />
+          <ScalarProperty Name="Cama" ColumnName="Cama" />
+          <ScalarProperty Name="Grupo" ColumnName="Grupo" />
+          <ScalarProperty Name="IdSedeEmpresa" ColumnName="IdSedeEmpresa" />
+          <ScalarProperty Name="CoaSeguro" ColumnName="CoaSeguro" />
+          <ScalarProperty Name="FechaLimite" ColumnName="FechaLimite" />
+          <ScalarProperty Name="IdExamen" ColumnName="IdExamen" />
+          <ScalarProperty Name="IdInsumo" ColumnName="IdInsumo" />
+          <ScalarProperty Name="ClasificadorMovimiento" ColumnName="ClasificadorMovimiento" />
+          <ScalarProperty Name="IdAprobador" ColumnName="IdAprobador" />
+          <ScalarProperty Name="OrdenSinapa" ColumnName="OrdenSinapa" />
+          <ScalarProperty Name="ValorDescuento" ColumnName="ValorDescuento" />
+          <ScalarProperty Name="SituacionSMS" ColumnName="SituacionSMS" />
+          <ScalarProperty Name="DxPresuntivo" ColumnName="DxPresuntivo" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="DesEstado" ColumnName="DesEstado" />
+          <ScalarProperty Name="TipoAdmisionId" ColumnName="TipoAdmisionId" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="DesExamen" ColumnName="DesExamen" />
+          <ScalarProperty Name="DesInsumo" ColumnName="DesInsumo" />
+          <ScalarProperty Name="Situacion" ColumnName="Situacion" />
+          <ScalarProperty Name="SedDescripcion" ColumnName="SedDescripcion" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="FecAdmision" ColumnName="FecAdmision" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WCO_ListarUsuario" FunctionName="BDComercialModel.Store.WCO_ListarUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDComercialModel.WCO_ListarUsuario_Result">
+          <ScalarProperty Name="UserNameWeb" ColumnName="UserNameWeb" />
+          <ScalarProperty Name="PasswordWeb" ColumnName="PasswordWeb" />
+          <ScalarProperty Name="userHash" ColumnName="userHash" />
+          <ScalarProperty Name="estadoActualizacion" ColumnName="estadoActualizacion" />
+          <ScalarProperty Name="tipoUserWeb" ColumnName="tipoUserWeb" />
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="Busqueda" ColumnName="Busqueda" />
+          <ScalarProperty Name="GrupoEmpresarial" ColumnName="GrupoEmpresarial" />
+          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="FecNac" ColumnName="FecNac" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="TipoPersona" ColumnName="TipoPersona" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="DocumentoFiscal" ColumnName="DocumentoFiscal" />
+          <ScalarProperty Name="DocumentoIdentidad" ColumnName="DocumentoIdentidad" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="DireccionReferencia" ColumnName="DireccionReferencia" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="ParentescoEmergencia" ColumnName="ParentescoEmergencia" />
+          <ScalarProperty Name="RutaFirma" ColumnName="RutaFirma" />
+          <ScalarProperty Name="TipoDocumentoIdentidad" ColumnName="TipoDocumentoIdentidad" />
+          <ScalarProperty Name="EstadoDesc" ColumnName="EstadoDesc" />
+          <ScalarProperty Name="TipoPerfil" ColumnName="TipoPerfil" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

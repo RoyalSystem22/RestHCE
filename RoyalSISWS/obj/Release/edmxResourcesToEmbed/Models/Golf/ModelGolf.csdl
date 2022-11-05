@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClinicaElGolfModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ClinicaElGolfEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="CW_AccesoUsuario" ReturnType="Collection(ClinicaElGolfModel.CW_AccesoUsuario_Result)">
+      <Parameter Name="p_IDPERSONA" Mode="In" Type="Int32" />
+      <Parameter Name="p_USUARIO" Mode="In" Type="String" />
+      <Parameter Name="p_PASSWORD" Mode="In" Type="String" />
+      <Parameter Name="p_TDOCUMENTO" Mode="In" Type="String" />
+      <Parameter Name="p_ACCION" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="CW_AccesoUsuario_Result">
+    <Property Type="Int32" Name="IDPERSONA" Nullable="false" />
+    <Property Type="Int32" Name="IDTITULAR" Nullable="false" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CLAVE" Nullable="true" MaxLength="100" />
+  </ComplexType>
+</Schema>

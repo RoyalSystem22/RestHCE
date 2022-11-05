@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WEB_ERPSALUD_CEGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entidad_Royal" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="SP_SS_HC_ReporteEpisodioClinico" ReturnType="Collection(WEB_ERPSALUD_CEGModel.SP_SS_HC_ReporteEpisodioClinico_Result)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoOA" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SP_SS_HC_ReporteEpisodioClinico_Result">
+    <Property Type="String" Name="UnidadReplicacion" Nullable="false" MaxLength="4" />
+    <Property Type="DateTime" Name="FechaAtencion" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="TipoAtencion" Nullable="true" />
+    <Property Type="Int32" Name="IdOrdenAtencion" Nullable="true" />
+    <Property Type="Int32" Name="LineaOrdenAtencion" Nullable="true" />
+    <Property Type="Int32" Name="TipoOrdenAtencion" Nullable="true" />
+    <Property Type="Int32" Name="Persona" Nullable="false" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Nombres" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="CodigoOA" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Accion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Version" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Tabla" Nullable="false" MaxLength="54" />
+    <Property Type="Int32" Name="EpisodioClinico" Nullable="false" />
+    <Property Type="Int64" Name="EpisodioAtencion" Nullable="true" />
+    <Property Type="String" Name="TipoFormulario" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="Ruta" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Formulario" Nullable="true" MaxLength="100" />
+  </ComplexType>
+</Schema>

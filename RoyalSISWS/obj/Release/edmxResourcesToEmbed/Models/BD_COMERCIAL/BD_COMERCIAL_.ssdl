@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDComercialModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="WCO_ListarAdmisionServicio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pFechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="pFechaIni" Type="datetime" Mode="In" />
+    <Parameter Name="pNroPeticion" Type="varchar" Mode="In" />
+    <Parameter Name="pTipoAdmision" Type="int" Mode="In" />
+    <Parameter Name="pHistoriaClinica" Type="varchar" Mode="In" />
+    <Parameter Name="pEstado" Type="int" Mode="In" />
+    <Parameter Name="Persona" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="IdSede" Type="int" Mode="In" />
+    <Parameter Name="OrdenAtencion" Type="varchar" Mode="In" />
+    <Parameter Name="IdClasificadorMovimiento" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WCO_ListarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <Parameter Name="Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="TipoUsuario" Type="varchar" Mode="In" />
+    <Parameter Name="IdPersona" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="BDComercialModelStoreContainer" />
+</Schema>
