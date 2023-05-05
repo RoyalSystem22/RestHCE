@@ -1,10 +1,10 @@
 ------------------------------------------------------------------------------------
-Titulo:	ERROR: Could not find server '10.2.1.4' in sys.servers. Verify that the correct server name was specified. If necessary, execute the stored procedure sp_addlinkedserver to add the server to sys.servers.
-Fecha:	7/10/2021 15:45:00
+Titulo:	ERROR: Could not find server 'HCE.DB.CLINICACSB.LOCAL' in sys.servers. Verify that the correct server name was specified. If necessary, execute the stored procedure sp_addlinkedserver to add the server to sys.servers.
+Fecha:	21/03/2023 08:44:19
 Mensaje:
 	Exception:	System.Data.SqlClient.SqlException
 	Assembly:	System.Data
-	Mensaje:	Could not find server '10.2.1.4' in sys.servers. Verify that the correct server name was specified. If necessary, execute the stored procedure sp_addlinkedserver to add the server to sys.servers.
+	Mensaje:	Could not find server 'HCE.DB.CLINICACSB.LOCAL' in sys.servers. Verify that the correct server name was specified. If necessary, execute the stored procedure sp_addlinkedserver to add the server to sys.servers.
 	Stack Trace:
 		   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
 		   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
@@ -21,12 +21,12 @@ Mensaje:
 
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
-Titulo:	ERROR: Could not find server '10.2.1.4' in sys.servers. Verify that the correct server name was specified. If necessary, execute the stored procedure sp_addlinkedserver to add the server to sys.servers.
-Fecha:	18/10/2021 12:18:22
+Titulo:	ERROR: Invalid column name 'UnidadReplicacion'.
+Fecha:	22/03/2023 11:21:32
 Mensaje:
 	Exception:	System.Data.SqlClient.SqlException
 	Assembly:	System.Data
-	Mensaje:	Could not find server '10.2.1.4' in sys.servers. Verify that the correct server name was specified. If necessary, execute the stored procedure sp_addlinkedserver to add the server to sys.servers.
+	Mensaje:	Invalid column name 'UnidadReplicacion'.
 	Stack Trace:
 		   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
 		   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
@@ -43,275 +43,45 @@ Mensaje:
 
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
-Titulo:	ERROR: Cannot insert the value NULL into column 'IdDocumento', table 'BI_SpringSalud_ProduccionQV.dbo.SS_PR_ProcedimientoControl'; column does not allow nulls. INSERT fails.
+Titulo:	ERROR: Invalid column name 'UnidadReplicacion'.
+Fecha:	29/03/2023 10:53:22
+Mensaje:
+	Exception:	System.Data.SqlClient.SqlException
+	Assembly:	System.Data
+	Mensaje:	Invalid column name 'UnidadReplicacion'.
+	Stack Trace:
+		   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+		   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+		   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+		   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+		   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+		   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+		   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+		   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+		   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+		   en RoyalSystems.Data.FactoryData.DataSqlFactory.ExecuteNonQuery(DataOperation dop_pRequest, Boolean bln_pThrowException)
+	
+
+
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Titulo:	ERROR: Cannot insert the value NULL into column 'IdDocumento', table 'SpringSalud_ProduccionHCE.dbo.SS_PR_ProcedimientoControl'; column does not allow nulls. INSERT fails.
+llego punto @IDordenatencion = 3055529
+llego punto @LineaOrdenAtencionConsulta = 4
+llego punto @IDPROCEDIMIENTO = 0
+llego punto @TipoOrdenAtencion = 10
+llego punto 2 = 1
 The statement has been terminated.
-Fecha:	9/02/2022 11:54:22
+Fecha:	19/04/2023 09:44:51
 Mensaje:
 	Exception:	System.Data.SqlClient.SqlException
 	Assembly:	System.Data
-	Mensaje:	Cannot insert the value NULL into column 'IdDocumento', table 'BI_SpringSalud_ProduccionQV.dbo.SS_PR_ProcedimientoControl'; column does not allow nulls. INSERT fails.
-	The statement has been terminated.
-	Stack Trace:
-		   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-		   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-		   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-		   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-		   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
-		   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-		   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-		   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-		   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
-		   en RoyalSystems.Data.FactoryData.DataSqlFactory.ExecuteNonQuery(DataOperation dop_pRequest, Boolean bln_pThrowException)
-	
-
-
-------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------
-Titulo:	ERROR: Conversion failed when converting the varchar value 'INGRESO AL STORE EXEC SP_HCE_ITIDConsultaExternaCEG ,' to data type int.
-Fecha:	9/03/2022 19:41:51
-Mensaje:
-	Exception:	System.Data.SqlClient.SqlException
-	Assembly:	System.Data
-	Mensaje:	Conversion failed when converting the varchar value 'INGRESO AL STORE EXEC SP_HCE_ITIDConsultaExternaCEG ,' to data type int.
-	Stack Trace:
-		   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-		   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-		   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-		   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-		   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
-		   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-		   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-		   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-		   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
-		   en RoyalSystems.Data.FactoryData.DataSqlFactory.ExecuteNonQuery(DataOperation dop_pRequest, Boolean bln_pThrowException)
-	
-
-
-------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------
-Titulo:	ERROR: Cannot insert the value NULL into column 'IdDocumento', table 'SpringSalud_Produccion_HCE.dbo.SS_PR_ProcedimientoControl'; column does not allow nulls. INSERT fails.
-The statement has been terminated.
-Fecha:	1/07/2022 15:09:39
-Mensaje:
-	Exception:	System.Data.SqlClient.SqlException
-	Assembly:	System.Data
-	Mensaje:	Cannot insert the value NULL into column 'IdDocumento', table 'SpringSalud_Produccion_HCE.dbo.SS_PR_ProcedimientoControl'; column does not allow nulls. INSERT fails.
-	The statement has been terminated.
-	Stack Trace:
-		   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-		   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-		   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-		   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-		   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
-		   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-		   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-		   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-		   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
-		   en RoyalSystems.Data.FactoryData.DataSqlFactory.ExecuteNonQuery(DataOperation dop_pRequest, Boolean bln_pThrowException)
-	
-
-
-------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------
-Titulo:	ERROR: Cannot insert the value NULL into column 'IdDocumento', table 'SpringSalud_Produccion_HCE.dbo.SS_PR_ProcedimientoControl'; column does not allow nulls. INSERT fails.
-The statement has been terminated.
-Fecha:	1/07/2022 15:39:28
-Mensaje:
-	Exception:	System.Data.SqlClient.SqlException
-	Assembly:	System.Data
-	Mensaje:	Cannot insert the value NULL into column 'IdDocumento', table 'SpringSalud_Produccion_HCE.dbo.SS_PR_ProcedimientoControl'; column does not allow nulls. INSERT fails.
-	The statement has been terminated.
-	Stack Trace:
-		   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-		   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-		   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-		   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-		   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
-		   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-		   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-		   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-		   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
-		   en RoyalSystems.Data.FactoryData.DataSqlFactory.ExecuteNonQuery(DataOperation dop_pRequest, Boolean bln_pThrowException)
-	
-
-
-------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------
-Titulo:	ERROR: Cannot insert the value NULL into column 'IdDocumento', table 'BI_SpringSalud_ProduccionQV.dbo.SS_PR_ProcedimientoControl'; column does not allow nulls. INSERT fails.
-The statement has been terminated.
-Fecha:	22/08/2022 10:32:06
-Mensaje:
-	Exception:	System.Data.SqlClient.SqlException
-	Assembly:	System.Data
-	Mensaje:	Cannot insert the value NULL into column 'IdDocumento', table 'BI_SpringSalud_ProduccionQV.dbo.SS_PR_ProcedimientoControl'; column does not allow nulls. INSERT fails.
-	The statement has been terminated.
-	Stack Trace:
-		   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-		   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-		   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-		   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-		   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
-		   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-		   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-		   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-		   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
-		   en RoyalSystems.Data.FactoryData.DataSqlFactory.ExecuteNonQuery(DataOperation dop_pRequest, Boolean bln_pThrowException)
-	
-
-
-------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------
-Titulo:	ERROR: Cannot insert the value NULL into column 'IdDocumento', table 'BI_SpringSalud_ProduccionQV.dbo.SS_PR_ProcedimientoControl'; column does not allow nulls. INSERT fails.
-The statement has been terminated.
-Fecha:	22/08/2022 15:48:00
-Mensaje:
-	Exception:	System.Data.SqlClient.SqlException
-	Assembly:	System.Data
-	Mensaje:	Cannot insert the value NULL into column 'IdDocumento', table 'BI_SpringSalud_ProduccionQV.dbo.SS_PR_ProcedimientoControl'; column does not allow nulls. INSERT fails.
-	The statement has been terminated.
-	Stack Trace:
-		   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-		   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-		   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-		   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-		   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
-		   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-		   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-		   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-		   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
-		   en RoyalSystems.Data.FactoryData.DataSqlFactory.ExecuteNonQuery(DataOperation dop_pRequest, Boolean bln_pThrowException)
-	
-
-
-------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------
-Titulo:	ERROR: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: TCP Provider, error: 0 - El equipo remoto rechazó la conexión de red.)
-Fecha:	18/10/2022 17:26:16
-Mensaje:
-	Exception:	System.Data.SqlClient.SqlException
-	Assembly:	System.Data
-	Mensaje:	Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: TCP Provider, error: 0 - El equipo remoto rechazó la conexión de red.)
-	Stack Trace:
-		   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
-		   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-		   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-		   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-		   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-		   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-		   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-		   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-		   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-		   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-		   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-		   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-		   en System.Data.SqlClient.SqlConnection.Open()
-		   en RoyalSystems.Data.FactoryData.DataSqlFactory.PrepareAll(SqlCommand& cmd_pCommand, SqlConnection& cnn_pConnection, DataOperation dop_pRequest)
-		   en RoyalSystems.Data.FactoryData.DataSqlFactory.ExecuteDataSet(DataOperation dop_pRequest, Boolean bln_pThrowException)
-		Inner Exception: System.Data.SqlClient.SqlException
-		Assembly:	System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-		Mensaje:	El equipo remoto rechazó la conexión de red
-		Stack Trace:
-
-
-------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------
-Titulo:	ERROR: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: TCP Provider, error: 0 - Tiempo de espera de la operación de espera agotado.)
-Fecha:	26/10/2022 11:42:15
-Mensaje:
-	Exception:	System.Data.SqlClient.SqlException
-	Assembly:	System.Data
-	Mensaje:	Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: TCP Provider, error: 0 - Tiempo de espera de la operación de espera agotado.)
-	Stack Trace:
-		   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
-		   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-		   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-		   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-		   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-		   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-		   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-		   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-		   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-		   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-		   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-		   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-		   en System.Data.SqlClient.SqlConnection.Open()
-		   en RoyalSystems.Data.FactoryData.DataSqlFactory.PrepareAll(SqlCommand& cmd_pCommand, SqlConnection& cnn_pConnection, DataOperation dop_pRequest)
-		   en RoyalSystems.Data.FactoryData.DataSqlFactory.ExecuteDataSet(DataOperation dop_pRequest, Boolean bln_pThrowException)
-		Inner Exception: System.Data.SqlClient.SqlException
-		Assembly:	System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-		Mensaje:	Tiempo de espera de la operación de espera agotado
-		Stack Trace:
-
-
-------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------
-Titulo:	ERROR: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: TCP Provider, error: 0 - El equipo remoto rechazó la conexión de red.)
-Fecha:	26/10/2022 11:55:26
-Mensaje:
-	Exception:	System.Data.SqlClient.SqlException
-	Assembly:	System.Data
-	Mensaje:	Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: TCP Provider, error: 0 - El equipo remoto rechazó la conexión de red.)
-	Stack Trace:
-		   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
-		   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-		   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-		   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-		   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-		   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-		   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-		   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-		   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-		   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-		   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-		   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-		   en System.Data.SqlClient.SqlConnection.Open()
-		   en RoyalSystems.Data.FactoryData.DataSqlFactory.PrepareAll(SqlCommand& cmd_pCommand, SqlConnection& cnn_pConnection, DataOperation dop_pRequest)
-		   en RoyalSystems.Data.FactoryData.DataSqlFactory.ExecuteDataSet(DataOperation dop_pRequest, Boolean bln_pThrowException)
-		Inner Exception: System.Data.SqlClient.SqlException
-		Assembly:	System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-		Mensaje:	El equipo remoto rechazó la conexión de red
-		Stack Trace:
-
-
-------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------
-Titulo:	ERROR: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: TCP Provider, error: 0 - El equipo remoto rechazó la conexión de red.)
-Fecha:	26/10/2022 11:58:06
-Mensaje:
-	Exception:	System.Data.SqlClient.SqlException
-	Assembly:	System.Data
-	Mensaje:	Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: TCP Provider, error: 0 - El equipo remoto rechazó la conexión de red.)
-	Stack Trace:
-		   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
-		   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-		   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-		   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-		   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-		   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-		   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-		   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-		   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-		   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-		   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-		   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-		   en System.Data.SqlClient.SqlConnection.Open()
-		   en RoyalSystems.Data.FactoryData.DataSqlFactory.PrepareAll(SqlCommand& cmd_pCommand, SqlConnection& cnn_pConnection, DataOperation dop_pRequest)
-		   en RoyalSystems.Data.FactoryData.DataSqlFactory.ExecuteDataSet(DataOperation dop_pRequest, Boolean bln_pThrowException)
-		Inner Exception: System.Data.SqlClient.SqlException
-		Assembly:	System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-		Mensaje:	El equipo remoto rechazó la conexión de red
-		Stack Trace:
-
-
-------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------
-Titulo:	ERROR: Cannot insert the value NULL into column 'IdDocumento', table 'BI_SpringSalud_ProduccionQV.dbo.SS_CC_CitaControl'; column does not allow nulls. INSERT fails.
-The statement has been terminated.
-Fecha:	02/11/2022 13:07:42
-Mensaje:
-	Exception:	System.Data.SqlClient.SqlException
-	Assembly:	System.Data
-	Mensaje:	Cannot insert the value NULL into column 'IdDocumento', table 'BI_SpringSalud_ProduccionQV.dbo.SS_CC_CitaControl'; column does not allow nulls. INSERT fails.
+	Mensaje:	Cannot insert the value NULL into column 'IdDocumento', table 'SpringSalud_ProduccionHCE.dbo.SS_PR_ProcedimientoControl'; column does not allow nulls. INSERT fails.
+	llego punto @IDordenatencion = 3055529
+	llego punto @LineaOrdenAtencionConsulta = 4
+	llego punto @IDPROCEDIMIENTO = 0
+	llego punto @TipoOrdenAtencion = 10
+	llego punto 2 = 1
 	The statement has been terminated.
 	Stack Trace:
 		   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)

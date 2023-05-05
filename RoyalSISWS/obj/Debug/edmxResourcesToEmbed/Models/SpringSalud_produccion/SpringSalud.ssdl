@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ModelGolf.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <!--Errors Found During Generation:
-warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SA_PR_REP_ListaServiciosAuxiliares' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SA_PR_REP_ListaServiciosAuxiliares' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VW_SA_PR_REP_ListaServiciosAuxiliares">
     <Key>
       <PropertyRef Name="Selector" />
@@ -69,7 +69,7 @@ warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SA_PR_REP_Lista
     <Property Name="CorreoElectronico" Type="varchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorAnamnesis' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorAnamnesis' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VW_SS_HCE_VisorAnamnesis">
     <Key>
       <PropertyRef Name="TAB" />
@@ -109,7 +109,7 @@ warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorAna
     <Property Name="Sucursal" Type="varchar" MaxLength="15" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorDiagnostico' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorDiagnostico' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VW_SS_HCE_VisorDiagnostico">
     <Key>
       <PropertyRef Name="TAB" />
@@ -140,7 +140,7 @@ warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorDia
     <Property Name="tipodocumento" Type="char" MaxLength="1" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorEmergencia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorEmergencia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VW_SS_HCE_VisorEmergencia">
     <Key>
       <PropertyRef Name="IdOrdenAtencion" />
@@ -199,7 +199,7 @@ warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorEme
     <Property Name="EstadoPersona" Type="char" MaxLength="1" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorExamen' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorExamen' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VW_SS_HCE_VisorExamen">
     <Key>
       <PropertyRef Name="TAB" />
@@ -248,7 +248,7 @@ warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorExa
     <Property Name="EstadoDocPro" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorHistoria' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorHistoria' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VW_SS_HCE_VisorHistoria">
     <Key>
       <PropertyRef Name="CitaTipo" />
@@ -302,7 +302,7 @@ warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorHis
     <Property Name="IdEmpresaAseguradora" Type="int" />
     <Property Name="TipoOrdenAtencion" Type="int" />
     <Property Name="Componente" Type="varchar" MaxLength="25" />
-    <Property Name="ComponenteNombre" Type="varchar" MaxLength="250" />
+    <Property Name="ComponenteNombre" Type="varchar" MaxLength="1" Nullable="false" />
     <Property Name="Compania" Type="varchar" MaxLength="15" />
     <Property Name="Sucursal" Type="varchar" MaxLength="15" />
     <Property Name="IdMedico" Type="int" />
@@ -337,7 +337,7 @@ warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorHis
     <Property Name="EstadoPersona" Type="varchar" MaxLength="20" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorProcedimientoInforme' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorProcedimientoInforme' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VW_SS_HCE_VisorProcedimientoInforme">
     <Key>
       <PropertyRef Name="documento" />
@@ -374,7 +374,7 @@ warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorPro
     <Property Name="Especialidad" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorReceta' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VW_SS_HCE_VisorReceta">
     <Key>
       <PropertyRef Name="documento" />
@@ -420,6 +420,7 @@ warning 6002: The table/view 'BI_SpringSalud_ProduccionQV.dbo.VW_SS_HCE_VisorRec
     <Property Name="Sucursal" Type="varchar" MaxLength="15" />
     <Property Name="DesVia" Type="varchar" MaxLength="500" />
     <Property Name="DesUnidad" Type="char" MaxLength="20" />
+    <Property Name="IndicacionesEsp" Type="char" MaxLength="500" />
   </EntityType>
   <Function Name="A_SP_SS_HCE_ListaServiciosAuxiliares" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
@@ -932,7 +933,8 @@ FROM [dbo].[VW_SS_HCE_VisorProcedimientoInforme] AS [VW_SS_HCE_VisorProcedimient
 [VW_SS_HCE_VisorReceta].[IndicadorCobrado] AS [IndicadorCobrado], 
 [VW_SS_HCE_VisorReceta].[Sucursal] AS [Sucursal], 
 [VW_SS_HCE_VisorReceta].[DesVia] AS [DesVia], 
-[VW_SS_HCE_VisorReceta].[DesUnidad] AS [DesUnidad]
+[VW_SS_HCE_VisorReceta].[DesUnidad] AS [DesUnidad], 
+[VW_SS_HCE_VisorReceta].[IndicacionesEsp] AS [IndicacionesEsp]
 FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
     </EntitySet>
   </EntityContainer>

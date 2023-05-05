@@ -49,5 +49,6 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
         public string Sucursal { get; set; }
         public string DesVia { get; set; }
         public string DesUnidad { get; set; }
+        public string IndicacionesEsp { get; set; }
     }
 }

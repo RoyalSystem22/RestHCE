@@ -166,7 +166,6 @@ namespace RoyalSISWS.Controllers
                 List<CW_VisorHistoria> lstSalida = new List<CW_VisorHistoria>();
                 if (Accion == 1)
                 {
-
                     CW_DisponibilidadMedica VisorHistoria = new CW_DisponibilidadMedica();
                     VisorHistoria.UnidadReplicacion = tipoDocumento;
                     VisorHistoria.CMP = Documento;
@@ -174,16 +173,7 @@ namespace RoyalSISWS.Controllers
                     VisorHistoria.IdEspecialidad_Nombre = cod_sucursal;
 
                     List<VW_SS_HCE_VisorHistoria> lst = new List<VW_SS_HCE_VisorHistoria>();
-                    //List<VW_SS_HCE_VisorAnamnesis> lstAnamnesis = new List<VW_SS_HCE_VisorAnamnesis>();
-                    //List<VW_SS_HCE_VisorDiagnostico> lstDiagnostico = new List<VW_SS_HCE_VisorDiagnostico>();
-                    //List<VW_SA_PR_REP_ListaServiciosAuxiliares> lstExamen = new List<VW_SA_PR_REP_ListaServiciosAuxiliares>();
-                    //List<VW_SS_HCE_VisorReceta> lstReceta = new List<VW_SS_HCE_VisorReceta>();
-
                     lst = m.HCE_VisorHistoria(VisorHistoria);
-                    //lstAnamnesis = m.HCE_VisorHistoria_Anamnesis(VisorHistoria);
-                    //lstDiagnostico = m.HCE_VisorHistoria_Diagnostico(VisorHistoria);
-                    ////lstExamen = m.HCE_VisorHistoria_Examen(VisorHistoria);
-                    //lstReceta = m.HCE_VisorHistoria_Receta(VisorHistoria);
 
                     foreach (VW_SS_HCE_VisorHistoria intobj2 in lst)
                     {
@@ -244,11 +234,10 @@ namespace RoyalSISWS.Controllers
                         pObjVisor.TipoAtencionDescX = intobj2.TipoAtencionDescX;
                         lstSalida.Add(pObjVisor);
                     }
-                    //var test = lstSalida.Where(x => x.IdOrdenAtencion == 4171232).ToList();
                     return Json(lstSalida, JsonRequestBehavior.AllowGet);
                 }
                 else
-                {                 
+                {
                     return Json("Error: Valores de Parametro ", JsonRequestBehavior.AllowGet);
                 }
             }

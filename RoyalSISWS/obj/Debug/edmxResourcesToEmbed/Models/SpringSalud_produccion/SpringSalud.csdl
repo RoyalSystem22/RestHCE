@@ -778,7 +778,7 @@
     <Property Name="IdEmpresaAseguradora" Type="Int32" />
     <Property Name="TipoOrdenAtencion" Type="Int32" />
     <Property Name="Componente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-    <Property Name="ComponenteNombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ComponenteNombre" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Compania" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="Sucursal" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="IdMedico" Type="Int32" />
@@ -857,5 +857,6 @@
     <Property Name="Sucursal" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="DesVia" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="DesUnidad" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="IndicacionesEsp" Type="String" MaxLength="500" FixedLength="true" Unicode="false" />
   </EntityType>
 </Schema>
