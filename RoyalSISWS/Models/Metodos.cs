@@ -300,5 +300,120 @@ namespace RoyalSISWS.Models
       
         #endregion
 
+
+        #region MetodoMirth
+        
+        public ViewResponse Mirth_DiagnosticoIngresoMantenimiento(Nullable<int> Accion, string Objeto)
+        {
+            ViewResponse obje = new ViewResponse();
+            using (var context = new SpringSalud_produccionEntities())
+            {
+                //using (TransactionScope scope = new TransactionScope())
+                //{
+                    try
+                    {
+                        SS_IT_SaludDiagnosticoIngreso objSC = (SS_IT_SaludDiagnosticoIngreso)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_IT_SaludDiagnosticoIngreso));
+                        if (Accion == 1)
+                        {
+                            context.Entry(objSC).State = EntityState.Added;
+                            obje.valor = context.SaveChanges();
+                            obje.ok = true;
+                            obje.msg = "Se registro Correcto";
+                        }
+                        if (Accion == 2)
+                        {
+                            context.Entry(objSC).State = EntityState.Modified;
+                            obje.valor = context.SaveChanges();
+                            obje.ok = true;
+                            obje.msg = "Se actualizo Correctamente";
+                        }
+                        //scope.Complete();
+                    }
+                    catch (Exception ex)
+                    {
+                        obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+                        obje.ok = true;
+                        obje.valor = 0;
+                    }
+                //}
+            }
+            return obje;
+        }
+        
+        public ViewResponse Mirth_ProcedimientoIngresoMantenimiento(Nullable<int> Accion, string Objeto)
+        {
+            ViewResponse obje = new ViewResponse();
+            using (var context = new SpringSalud_produccionEntities())
+            {
+                //using (TransactionScope scope = new TransactionScope())
+                //{
+                try
+                {
+                    SS_IT_SaludProcedimientoIngreso objSC = (SS_IT_SaludProcedimientoIngreso)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_IT_SaludProcedimientoIngreso));
+                    if (Accion == 1)
+                    {
+                        context.Entry(objSC).State = EntityState.Added;
+                        obje.valor = context.SaveChanges();
+                        obje.ok = true;
+                        obje.msg = "Se registro Correcto";
+                    }
+                    if (Accion == 2)
+                    {
+                        context.Entry(objSC).State = EntityState.Modified;
+                        obje.valor = context.SaveChanges();
+                        obje.ok = true;
+                        obje.msg = "Se actualizo Correctamente";
+                    }
+                    //scope.Complete();
+                }
+                catch (Exception ex)
+                {
+                    obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+                    obje.ok = true;
+                    obje.valor = 0;
+                }
+                //}
+            }
+            return obje;
+        }
+
+        public ViewResponse Mirth_OftalmologicoIngresoMantenimiento(Nullable<int> Accion, string Objeto)
+        {
+            ViewResponse obje = new ViewResponse();
+            using (var context = new SpringSalud_produccionEntities())
+            {
+                //using (TransactionScope scope = new TransactionScope())
+                //{
+                try
+                {
+                    SS_IT_SaludOFTALMOLOGICOIngreso objSC = (SS_IT_SaludOFTALMOLOGICOIngreso)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_IT_SaludOFTALMOLOGICOIngreso));
+                    if (Accion == 1)
+                    {
+                        context.Entry(objSC).State = EntityState.Added;
+                        obje.valor = context.SaveChanges();
+                        obje.ok = true;
+                        obje.msg = "Se registro Correcto";
+                    }
+                    if (Accion == 2)
+                    {
+                        context.Entry(objSC).State = EntityState.Modified;
+                        obje.valor = context.SaveChanges();
+                        obje.ok = true;
+                        obje.msg = "Se actualizo Correctamente";
+                    }
+                    //scope.Complete();
+                }
+                catch (Exception ex)
+                {
+                    obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+                    obje.ok = true;
+                    obje.valor = 0;
+                }
+                //}
+            }
+            return obje;
+        }
+
+        #endregion
     }
 }
