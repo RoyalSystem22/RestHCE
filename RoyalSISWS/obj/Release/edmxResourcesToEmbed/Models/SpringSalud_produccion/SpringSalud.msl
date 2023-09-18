@@ -666,6 +666,7 @@
     <EntitySetMapping Name="VW_SS_HCE_VisorReceta">
       <EntityTypeMapping TypeName="ModelGolf.VW_SS_HCE_VisorReceta">
         <MappingFragment StoreEntitySet="VW_SS_HCE_VisorReceta">
+          <ScalarProperty Name="IndicacionesEsp" ColumnName="IndicacionesEsp" />
           <ScalarProperty Name="DesUnidad" ColumnName="DesUnidad" />
           <ScalarProperty Name="DesVia" ColumnName="DesVia" />
           <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />

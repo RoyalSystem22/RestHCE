@@ -21,6 +21,9 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
         public SpringSalud_produccionEntities()
             : base("name=SpringSalud_produccionEntities")
         {
+            ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 300000;
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;  
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -36,6 +39,16 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
         public DbSet<VW_SS_HCE_VisorProcedimientoInforme> VW_SS_HCE_VisorProcedimientoInforme { get; set; }
         public DbSet<VW_SS_HCE_VisorHistoria> VW_SS_HCE_VisorHistoria { get; set; }
         public DbSet<VW_SS_HCE_VisorReceta> VW_SS_HCE_VisorReceta { get; set; }
+        public DbSet<SS_IT_SaludAnamnesisIngreso> SS_IT_SaludAnamnesisIngreso { get; set; }
+        public DbSet<SS_IT_SALUDASIGNARMEDICOINGRESO> SS_IT_SALUDASIGNARMEDICOINGRESO { get; set; }
+        public DbSet<SS_IT_SaludATENDIDOConsultaExternaIngreso> SS_IT_SaludATENDIDOConsultaExternaIngreso { get; set; }
+        public DbSet<SS_IT_SaludConsultaExternaIngreso> SS_IT_SaludConsultaExternaIngreso { get; set; }
+        public DbSet<SS_IT_SaludDiagnosticoIngreso> SS_IT_SaludDiagnosticoIngreso { get; set; }
+        public DbSet<SS_IT_SaludInformePROCIngreso> SS_IT_SaludInformePROCIngreso { get; set; }
+        public DbSet<SS_IT_SaludInformeRutaIngreso> SS_IT_SaludInformeRutaIngreso { get; set; }
+        public DbSet<SS_IT_SaludOFTALMOLOGICOIngreso> SS_IT_SaludOFTALMOLOGICOIngreso { get; set; }
+        public DbSet<SS_IT_SaludProcedimientoIngreso> SS_IT_SaludProcedimientoIngreso { get; set; }
+        public DbSet<SS_IT_SaludRecetaIngreso> SS_IT_SaludRecetaIngreso { get; set; }
     
         public virtual ObjectResult<CW_AccesoUsuario_Result> CW_AccesoUsuario(Nullable<int> p_IDPERSONA, string p_USUARIO, string p_PASSWORD, string p_TDOCUMENTO, string p_ACCION)
         {

@@ -94,20 +94,7 @@ namespace RoyalSISWS.Controllers
                 return Json(Resultado, JsonRequestBehavior.AllowGet);
             }
         }
-
-        public JsonResult ListarUsuario(HCE_EpisodioAtencion consulta)
-        {
-            SP_VW_ATENCIONPACIENTE_LISTAR_Result objAtencion = new SP_VW_ATENCIONPACIENTE_LISTAR_Result();
-            objAtencion.Accion = consulta.Accion;
-            objAtencion.IdPaciente = consulta.IdPaciente;
-            objAtencion.IdOrdenAtencion = consulta.IdOrdenAtencion;
-            objAtencion.LineaOrdenAtencion = consulta.LineaOrdenAtencion;
-            objAtencion.TipoOrdenAtencion = consulta.TipoOrdenAtencion;
-            objAtencion.CodigoOA = consulta.CodigoOA;
-            return Json(m.listarAtencionesPacienteHCE(objAtencion), JsonRequestBehavior.AllowGet);
-        }
-
-
+          
         public DirectoryEntry GetUser(string path, string admUser, string admPass, string UserName, ref string cErr)
         {
             cErr = "";

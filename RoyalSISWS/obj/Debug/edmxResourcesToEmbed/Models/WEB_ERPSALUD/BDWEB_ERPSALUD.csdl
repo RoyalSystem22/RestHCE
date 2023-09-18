@@ -119,6 +119,7 @@
       <Parameter Name="Version" Mode="In" Type="String" />
       <Parameter Name="ACCION" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="SS_HC_InformeConsultaExterna_FE" EntityType="WEB_ERPSALUD_CSBModel.SS_HC_InformeConsultaExterna_FE" />
   </EntityContainer>
   <ComplexType Name="SP_ParametrosMastListar_Result">
     <Property Type="String" Name="CompaniaCodigo" Nullable="false" MaxLength="10" />
@@ -289,4 +290,25 @@
     <Property Type="Int32" Name="SecAsigMed" Nullable="true" />
     <Property Type="Int32" Name="SecReferidaAsigMed" Nullable="true" />
   </ComplexType>
+  <EntityType Name="SS_HC_InformeConsultaExterna_FE">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int64" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+    <Property Name="IdConsultaExterna" Type="Int32" Nullable="false" />
+    <Property Name="Observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

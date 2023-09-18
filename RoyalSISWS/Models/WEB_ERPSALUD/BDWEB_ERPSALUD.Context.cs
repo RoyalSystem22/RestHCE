@@ -21,6 +21,9 @@ namespace RoyalSISWS.Models.WEB_ERPSALUD
         public WEB_ERPSALUDEntities()
             : base("name=WEB_ERPSALUDEntities")
         {
+            ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 300000;
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;      
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -29,6 +32,7 @@ namespace RoyalSISWS.Models.WEB_ERPSALUD
         }
     
         public DbSet<ParametrosMast> ParametrosMast { get; set; }
+        public DbSet<SS_HC_InformeConsultaExterna_FE> SS_HC_InformeConsultaExterna_FE { get; set; }
     
         public virtual ObjectResult<SP_ParametrosMastListar_Result> SP_ParametrosMastListar(string companiaCodigo, string aplicacionCodigo, string parametroClave, string descripcionParametro, string explicacion, string tipodeDatoFlag, string texto, Nullable<decimal> numero, Nullable<System.DateTime> fecha, string financeComunFlag, string estado, string ultimoUsuario, Nullable<System.DateTime> ultimaFechaModif, string explicacionAdicional, string texto1, string texto2, string unidadReplicacion, string accion, Nullable<int> iNICIO, Nullable<int> nUMEROFILAS, string usuarioCreacion, Nullable<System.DateTime> fechaCreacion)
         {

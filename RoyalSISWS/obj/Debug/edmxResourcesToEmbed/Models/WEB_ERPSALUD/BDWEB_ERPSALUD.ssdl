@@ -27,6 +27,27 @@
     <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
     <Property Name="FechaCreacion" Type="datetime" />
   </EntityType>
+  <EntityType Name="SS_HC_InformeConsultaExterna_FE">
+    <Key>
+      <PropertyRef Name="UnidadReplicacion" />
+      <PropertyRef Name="IdEpisodioAtencion" />
+      <PropertyRef Name="IdPaciente" />
+      <PropertyRef Name="EpisodioClinico" />
+    </Key>
+    <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="IdEpisodioAtencion" Type="bigint" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+    <Property Name="IdConsultaExterna" Type="int" Nullable="false" />
+    <Property Name="Observacion" Type="text" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Accion" Type="varchar" MaxLength="25" />
+    <Property Name="Version" Type="varchar" MaxLength="25" />
+  </EntityType>
   <Function Name="SP_ParametrosMastListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="CompaniaCodigo" Type="char" Mode="In" />
     <Parameter Name="AplicacionCodigo" Type="char" Mode="In" />
@@ -119,5 +140,6 @@
   </Function>
   <EntityContainer Name="WEB_ERPSALUD_CSBModelStoreContainer">
     <EntitySet Name="ParametrosMast" EntityType="Self.ParametrosMast" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SS_HC_InformeConsultaExterna_FE" EntityType="Self.SS_HC_InformeConsultaExterna_FE" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

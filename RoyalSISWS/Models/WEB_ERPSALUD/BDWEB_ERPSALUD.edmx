@@ -32,6 +32,27 @@
           <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
           <Property Name="FechaCreacion" Type="datetime" />
         </EntityType>
+        <EntityType Name="SS_HC_InformeConsultaExterna_FE">
+          <Key>
+            <PropertyRef Name="UnidadReplicacion" />
+            <PropertyRef Name="IdEpisodioAtencion" />
+            <PropertyRef Name="IdPaciente" />
+            <PropertyRef Name="EpisodioClinico" />
+          </Key>
+          <Property Name="UnidadReplicacion" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="IdEpisodioAtencion" Type="bigint" Nullable="false" />
+          <Property Name="IdPaciente" Type="int" Nullable="false" />
+          <Property Name="EpisodioClinico" Type="int" Nullable="false" />
+          <Property Name="IdConsultaExterna" Type="int" Nullable="false" />
+          <Property Name="Observacion" Type="text" />
+          <Property Name="Estado" Type="int" />
+          <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+          <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="Accion" Type="varchar" MaxLength="25" />
+          <Property Name="Version" Type="varchar" MaxLength="25" />
+        </EntityType>
         <Function Name="SP_ParametrosMastListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CompaniaCodigo" Type="char" Mode="In" />
           <Parameter Name="AplicacionCodigo" Type="char" Mode="In" />
@@ -124,6 +145,7 @@
         </Function>
         <EntityContainer Name="WEB_ERPSALUD_CSBModelStoreContainer">
           <EntitySet Name="ParametrosMast" EntityType="Self.ParametrosMast" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SS_HC_InformeConsultaExterna_FE" EntityType="Self.SS_HC_InformeConsultaExterna_FE" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -248,6 +270,7 @@
             <Parameter Name="Version" Mode="In" Type="String" />
             <Parameter Name="ACCION" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="SS_HC_InformeConsultaExterna_FE" EntityType="WEB_ERPSALUD_CSBModel.SS_HC_InformeConsultaExterna_FE" />
         </EntityContainer>
         <ComplexType Name="SP_ParametrosMastListar_Result">
           <Property Type="String" Name="CompaniaCodigo" Nullable="false" MaxLength="10" />
@@ -418,6 +441,27 @@
           <Property Type="Int32" Name="SecAsigMed" Nullable="true" />
           <Property Type="Int32" Name="SecReferidaAsigMed" Nullable="true" />
         </ComplexType>
+        <EntityType Name="SS_HC_InformeConsultaExterna_FE">
+          <Key>
+            <PropertyRef Name="UnidadReplicacion" />
+            <PropertyRef Name="IdEpisodioAtencion" />
+            <PropertyRef Name="IdPaciente" />
+            <PropertyRef Name="EpisodioClinico" />
+          </Key>
+          <Property Name="UnidadReplicacion" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="IdEpisodioAtencion" Type="Int64" Nullable="false" />
+          <Property Name="IdPaciente" Type="Int32" Nullable="false" />
+          <Property Name="EpisodioClinico" Type="Int32" Nullable="false" />
+          <Property Name="IdConsultaExterna" Type="Int32" Nullable="false" />
+          <Property Name="Observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="Int32" />
+          <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -627,6 +671,25 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="SS_HC_InformeConsultaExterna_FE">
+            <EntityTypeMapping TypeName="WEB_ERPSALUD_CSBModel.SS_HC_InformeConsultaExterna_FE">
+              <MappingFragment StoreEntitySet="SS_HC_InformeConsultaExterna_FE">
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Accion" ColumnName="Accion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="IdConsultaExterna" ColumnName="IdConsultaExterna" />
+                <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+                <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+                <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+                <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -16,10 +16,10 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressSSLPort>54561</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -72,6 +72,7 @@
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Log" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
@@ -141,6 +142,7 @@
   <ItemGroup>
     <Compile Include="BasicAuthentication\BasicAuthenticationAttribute.cs" />
     <Compile Include="Controllers\ConsultaController.cs" />
+    <Compile Include="Controllers\FormatoController.cs" />
     <Compile Include="Entidad\CW_Usuario.cs" />
     <Compile Include="Entidad\Formulario.cs" />
     <Compile Include="Entidad\SS_HC_WS_EpisodioAtencion.cs" />
@@ -226,6 +228,36 @@
     <Compile Include="Models\SpringSalud_produccion\SS_HC_ATENCIONES_SOA_Result.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludAnamnesisIngreso.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SS_IT_SALUDASIGNARMEDICOINGRESO.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludATENDIDOConsultaExternaIngreso.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludConsultaExternaIngreso.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludDiagnosticoIngreso.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludInformePROCIngreso.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludInformeRutaIngreso.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludOFTALMOLOGICOIngreso.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludProcedimientoIngreso.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludRecetaIngreso.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SpringSalud_produccion\VW_SA_PR_REP_ListaServiciosAuxiliares.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
@@ -250,6 +282,7 @@
     <Compile Include="Models\SpringSalud_produccion\VW_SS_HCE_VisorReceta.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewResponse.cs" />
     <Compile Include="Models\WEB_ERPSALUD\BDWEB_ERPSALUD.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -272,6 +305,9 @@
       <DependentUpon>BDWEB_ERPSALUD.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WEB_ERPSALUD\SP_VW_ATENCIONPACIENTE_LISTAR_Result.cs">
+      <DependentUpon>BDWEB_ERPSALUD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WEB_ERPSALUD\SS_HC_InformeConsultaExterna_FE.cs">
       <DependentUpon>BDWEB_ERPSALUD.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -377,7 +413,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54561</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54561/</IISUrl>
+          <IISUrl>http://localhost:5452/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

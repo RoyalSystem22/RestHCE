@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using System.Transactions;
 
 namespace RoyalSISWS.Models
 {
@@ -38,7 +39,7 @@ namespace RoyalSISWS.Models
             List<VW_SS_HCE_VisorHistoria> lst = new List<VW_SS_HCE_VisorHistoria>();
             using (SpringSalud_produccionEntities context = new SpringSalud_produccionEntities())
             {
-                context.Database.Connection.Open();  
+                context.Database.Connection.Open();
                 if (Disponibilidad.IdHorario == 1)
                 {
                     lst = context.VW_SS_HCE_VisorHistoria.Where(
@@ -235,27 +236,69 @@ namespace RoyalSISWS.Models
             }
             return objLista;
         }
-        
-        public List<SP_VW_ATENCIONPACIENTE_LISTAR_Result> listarAtencionesPacienteHCE(SP_VW_ATENCIONPACIENTE_LISTAR_Result objSC)
+              
+
+        public List<SS_HC_InformeConsultaExterna_FE> InformeConsultaExternaListar(SS_HC_InformeConsultaExterna_FE objSC)
         {
-            List<SP_VW_ATENCIONPACIENTE_LISTAR_Result> objLista = new List<SP_VW_ATENCIONPACIENTE_LISTAR_Result>();
+            List<SS_HC_InformeConsultaExterna_FE> objLista = new List<SS_HC_InformeConsultaExterna_FE>();
             using (var context = new WEB_ERPSALUDEntities())
             {
-                objLista = context.SP_VW_ATENCIONPACIENTE_LISTAR(
-                objSC.UnidadReplicacion, objSC.IdEpisodioAtencion, objSC.UnidadReplicacionEC, objSC.IdPaciente, objSC.EpisodioClinico, objSC.IdEstablecimientoSalud,
-                objSC.IdUnidadServicio, objSC.IdPersonalSalud, objSC.IdPersonalSalud, objSC.EpisodioAtencion, 
-                objSC.FechaRegistro, objSC.FechaAtencion, objSC.TipoAtencion,objSC.IdOrdenAtencion, objSC.LineaOrdenAtencion, objSC.TipoOrdenAtencion, objSC.Estado, 
-                objSC.UsuarioModificacion, objSC.FechaModificacion,objSC.IdEspecialidad, objSC.CodigoOA,objSC.FechaOrden, objSC.IdProcedimiento, 
-                objSC.IdTipoOrden, objSC.FechaRegistroEpiClinico, objSC.FechaCierreEpiClinico,objSC.TipoPaciente ,objSC.Edad, objSC.CodigoHC, objSC.CodigoHCAnterior,
-                objSC.CodigoHCSecundario, objSC.TipoHistoria, objSC.EstadoPaciente,objSC.NumeroFile, objSC.IDPACIENTE_OK, objSC.Persona, objSC.NombreCompleto, 
-                objSC.TipoDocumento, objSC.Documento, objSC.EsCliente, objSC.EsProveedor, objSC.EsEmpleado,  objSC.EsOtro, objSC.TipoPersona, objSC.FechaNacimiento,
-                objSC.Sexo, objSC.Nacionalidad, objSC.EstadoCivil, objSC.NivelInstruccion ,objSC.CodigoPostal,  objSC.Provincia, objSC.Departamento,
-                objSC.FecIniDiscamec, objSC.FecFinDiscamec, objSC.Pais, objSC.EsPaciente, objSC.EsEmpresa, objSC.personanew, objSC.EstadoPersona, objSC.Servicio,
-                0, 0, objSC.Version, objSC.Accion).ToList();
+                List<SS_HC_InformeConsultaExterna_FE> objConsultas = (from t in context.SS_HC_InformeConsultaExterna_FE
+                                                                      where
+                                                                      t.UnidadReplicacion == objSC.UnidadReplicacion
+                                                                      && t.IdPaciente == objSC.IdPaciente
+                                                                      && t.EpisodioClinico == objSC.EpisodioClinico
+                                                                      && t.IdEpisodioAtencion == objSC.IdEpisodioAtencion
+                                                                      orderby t.IdEpisodioAtencion descending
+                                                                      select t).ToList();
+
+                if (objConsultas != null)
+                {
+                    objLista.AddRange(objConsultas);
+                }
+
             }
             return objLista;
         }
 
+        public ViewResponse HC_InformeConsultaExternaMantenimiento(Nullable<int> Accion, string Objeto)
+        {
+            ViewResponse obje = new ViewResponse();
+            using (var context = new WEB_ERPSALUDEntities())
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    try
+                    {
+                        SS_HC_InformeConsultaExterna_FE objSC = (SS_HC_InformeConsultaExterna_FE)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_HC_InformeConsultaExterna_FE));
+                        if (Accion == 1)
+                        {
+                            context.Entry(objSC).State = EntityState.Added;
+                            obje.valor = context.SaveChanges();
+                            obje.ok = true;
+                            obje.msg = "Se registro Correcto";
+                        }
+                        if (Accion == 2)
+                        {
+                            context.Entry(objSC).State = EntityState.Modified;
+                            obje.valor = context.SaveChanges();
+                            obje.ok = true;
+                            obje.msg = "Se actualizo Correctamente";
+                        }
+                        scope.Complete();
+                    }
+                    catch (Exception ex)
+                    {
+                        obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+                        obje.ok = true;
+                        obje.valor = 0;
+                    }
+                }
+            }
+            return obje;
+        }
+      
         #endregion
+
     }
 }
