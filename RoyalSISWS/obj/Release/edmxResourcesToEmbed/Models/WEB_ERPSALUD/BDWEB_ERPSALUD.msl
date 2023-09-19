@@ -204,5 +204,24 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="SS_HC_InformeConsultaExterna_FE">
+      <EntityTypeMapping TypeName="WEB_ERPSALUD_CSBModel.SS_HC_InformeConsultaExterna_FE">
+        <MappingFragment StoreEntitySet="SS_HC_InformeConsultaExterna_FE">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="IdConsultaExterna" ColumnName="IdConsultaExterna" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
