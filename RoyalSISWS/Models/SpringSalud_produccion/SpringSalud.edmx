@@ -844,6 +844,128 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
           <Parameter Name="Accion" Type="varchar" Mode="In" />
           <Parameter Name="Version" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="SP_SS_IT_SALUDAnamnesisInFormeMedico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDordenatencion" Type="int" Mode="In" />
+          <Parameter Name="IdPaciente" Type="int" Mode="In" />
+          <Parameter Name="IdLineaOa" Type="int" Mode="In" />
+          <Parameter Name="Secuencia" Type="int" Mode="In" />
+          <Parameter Name="InformeMedico" Type="varchar" Mode="In" />
+          <Parameter Name="Estado" Type="int" Mode="In" />
+          <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+          <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+          <Parameter Name="ExamenClinico" Type="varchar" Mode="In" />
+          <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+          <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="SP_SS_IT_SALUDAnamnesisIngreso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDordenatencion" Type="int" Mode="In" />
+          <Parameter Name="IdPaciente" Type="int" Mode="In" />
+          <Parameter Name="IdLineaOa" Type="int" Mode="In" />
+          <Parameter Name="Secuencia" Type="int" Mode="In" />
+          <Parameter Name="TiempoEnfermedad" Type="varchar" Mode="In" />
+          <Parameter Name="RelatoCronologico" Type="varchar" Mode="In" />
+          <Parameter Name="PresionArterialMS1" Type="varchar" Mode="In" />
+          <Parameter Name="PresionArterialMS2" Type="varchar" Mode="In" />
+          <Parameter Name="FrecuenciaCardiaca" Type="varchar" Mode="In" />
+          <Parameter Name="FrecuenciaRespiratoria" Type="varchar" Mode="In" />
+          <Parameter Name="Temperatura" Type="numeric" Mode="In" />
+          <Parameter Name="SaturacionOxigeno" Type="varchar" Mode="In" />
+          <Parameter Name="Peso" Type="varchar" Mode="In" />
+          <Parameter Name="Talla" Type="varchar" Mode="In" />
+          <Parameter Name="Estado" Type="int" Mode="In" />
+          <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+          <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+          <Parameter Name="ExamenClinico" Type="varchar" Mode="In" />
+          <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+          <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="SP_SS_IT_SALUDAtendidoConsultaExterna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDordenatencion" Type="int" Mode="In" />
+          <Parameter Name="IDPaciente" Type="int" Mode="In" />
+          <Parameter Name="Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+          <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+          <Parameter Name="LineaOrdenAtencionConsulta" Type="int" Mode="In" />
+          <Parameter Name="TipoOrdenAtencion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_SS_IT_SALUDConsultaExterna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDordenatencion" Type="int" Mode="In" />
+          <Parameter Name="LineaOrdenAtencionConsulta" Type="int" Mode="In" />
+          <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+          <Parameter Name="IDPaciente" Type="int" Mode="In" />
+          <Parameter Name="Secuencia" Type="int" Mode="In" />
+          <Parameter Name="Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="Fechacreacion" Type="datetime" Mode="In" />
+          <Parameter Name="TipoOrdenAtencion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_SS_IT_SALUDOFTALMOLOGICOIngreso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+          <Parameter Name="LineaOrdenAtencion" Type="int" Mode="In" />
+          <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+          <Parameter Name="IdEpisodioAtencion" Type="int" Mode="In" />
+          <Parameter Name="IdPaciente" Type="int" Mode="In" />
+          <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+          <Parameter Name="Secuencia" Type="varchar" Mode="In" />
+          <Parameter Name="ENFACTUAL" Type="varchar" Mode="In" />
+          <Parameter Name="ANTIMPORTANCIA" Type="varchar" Mode="In" />
+          <Parameter Name="AVscOD" Type="varchar" Mode="In" />
+          <Parameter Name="AvCCOD" Type="varchar" Mode="In" />
+          <Parameter Name="AEAVODPIN" Type="varchar" Mode="In" />
+          <Parameter Name="CERCAVAD" Type="varchar" Mode="In" />
+          <Parameter Name="AVSCOI" Type="varchar" Mode="In" />
+          <Parameter Name="AVCCOI" Type="varchar" Mode="In" />
+          <Parameter Name="AEAVOIDPIN" Type="varchar" Mode="In" />
+          <Parameter Name="CERCAVAOI" Type="varchar" Mode="In" />
+          <Parameter Name="SPHodREFRA" Type="varchar" Mode="In" />
+          <Parameter Name="CILodREFA" Type="varchar" Mode="In" />
+          <Parameter Name="EJEodREFRA" Type="varchar" Mode="In" />
+          <Parameter Name="AVodREFRA" Type="varchar" Mode="In" />
+          <Parameter Name="ADDodREFRA" Type="varchar" Mode="In" />
+          <Parameter Name="DIPodREFRA" Type="varchar" Mode="In" />
+          <Parameter Name="SPHoiSCICLO" Type="varchar" Mode="In" />
+          <Parameter Name="CILoiSCICLO" Type="varchar" Mode="In" />
+          <Parameter Name="EJEoiSCICLO" Type="varchar" Mode="In" />
+          <Parameter Name="AVoiSCICLO" Type="varchar" Mode="In" />
+          <Parameter Name="ADDoiSCICLO" Type="varchar" Mode="In" />
+          <Parameter Name="DIPoiSCICLO" Type="varchar" Mode="In" />
+          <Parameter Name="PAPARPADOSANEXOS" Type="varchar" Mode="In" />
+          <Parameter Name="CORNEACRISTESCLERA" Type="varchar" Mode="In" />
+          <Parameter Name="IRISPUPILA" Type="varchar" Mode="In" />
+          <Parameter Name="TonoOD" Type="varchar" Mode="In" />
+          <Parameter Name="TonoOI" Type="varchar" Mode="In" />
+          <Parameter Name="MMHHTonShiotz" Type="varchar" Mode="In" />
+          <Parameter Name="MMHHTonAplanacion" Type="varchar" Mode="In" />
+          <Parameter Name="MMHHTonOtra" Type="varchar" Mode="In" />
+          <Parameter Name="FONDOJOyG" Type="varchar" Mode="In" />
+          <Parameter Name="Estado" Type="int" Mode="In" />
+          <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+          <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+          <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+          <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="SP_SS_IT_SPRINGDiagnosticosConsultaExterna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDordenatencion" Type="int" Mode="In" />
+          <Parameter Name="IdDiagnostico" Type="int" Mode="In" />
+          <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+          <Parameter Name="IDPaciente" Type="int" Mode="In" />
+          <Parameter Name="Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="Fechacreacion" Type="datetime" Mode="In" />
+          <Parameter Name="Determinacion" Type="varchar" Mode="In" />
+          <Parameter Name="LINEA" Type="int" Mode="In" />
+          <Parameter Name="tipoordenatencion" Type="int" Mode="In" />
+          <Parameter Name="observaciondiagnostico" Type="varchar" Mode="In" />
+          <Parameter Name="tipoIT" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_SS_IT_SPRINGRUTAHCE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDordenatencion" Type="int" Mode="In" />
+          <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+          <Parameter Name="IDPaciente" Type="int" Mode="In" />
+          <Parameter Name="Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="Fechacreacion" Type="datetime" Mode="In" />
+          <Parameter Name="LINEA" Type="int" Mode="In" />
+          <Parameter Name="INFORMERUTA" Type="varchar" Mode="In" />
+          <Parameter Name="OBSERVACION" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="SS_HC_ATENCIONES_SOA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tipoListado" Type="varchar" Mode="In" />
           <Parameter Name="CitaTipo" Type="varchar" Mode="In" />
@@ -1713,6 +1835,128 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
           <EntitySet Name="SS_IT_SaludOFTALMOLOGICOIngreso" EntityType="ModelGolf.SS_IT_SaludOFTALMOLOGICOIngreso" />
           <EntitySet Name="SS_IT_SaludProcedimientoIngreso" EntityType="ModelGolf.SS_IT_SaludProcedimientoIngreso" />
           <EntitySet Name="SS_IT_SaludRecetaIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIngreso" />
+          <FunctionImport Name="SP_SS_IT_SALUDAnamnesisInFormeMedico" ReturnType="Collection(Int32)">
+            <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="IdLineaOa" Mode="In" Type="Int32" />
+            <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+            <Parameter Name="InformeMedico" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+            <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+            <Parameter Name="ExamenClinico" Mode="In" Type="String" />
+            <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+            <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SALUDAnamnesisIngreso" ReturnType="Collection(Int32)">
+            <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="IdLineaOa" Mode="In" Type="Int32" />
+            <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+            <Parameter Name="TiempoEnfermedad" Mode="In" Type="String" />
+            <Parameter Name="RelatoCronologico" Mode="In" Type="String" />
+            <Parameter Name="PresionArterialMS1" Mode="In" Type="String" />
+            <Parameter Name="PresionArterialMS2" Mode="In" Type="String" />
+            <Parameter Name="FrecuenciaCardiaca" Mode="In" Type="String" />
+            <Parameter Name="FrecuenciaRespiratoria" Mode="In" Type="String" />
+            <Parameter Name="Temperatura" Mode="In" Type="Decimal" />
+            <Parameter Name="SaturacionOxigeno" Mode="In" Type="String" />
+            <Parameter Name="Peso" Mode="In" Type="String" />
+            <Parameter Name="Talla" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+            <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+            <Parameter Name="ExamenClinico" Mode="In" Type="String" />
+            <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+            <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SALUDAtendidoConsultaExterna">
+            <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+            <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="LineaOrdenAtencionConsulta" Mode="In" Type="Int32" />
+            <Parameter Name="TipoOrdenAtencion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SALUDConsultaExterna">
+            <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+            <Parameter Name="LineaOrdenAtencionConsulta" Mode="In" Type="Int32" />
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+            <Parameter Name="TipoOrdenAtencion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SALUDOFTALMOLOGICOIngreso" ReturnType="Collection(Int32)">
+            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+            <Parameter Name="Secuencia" Mode="In" Type="String" />
+            <Parameter Name="ENFACTUAL" Mode="In" Type="String" />
+            <Parameter Name="ANTIMPORTANCIA" Mode="In" Type="String" />
+            <Parameter Name="AVscOD" Mode="In" Type="String" />
+            <Parameter Name="AvCCOD" Mode="In" Type="String" />
+            <Parameter Name="AEAVODPIN" Mode="In" Type="String" />
+            <Parameter Name="CERCAVAD" Mode="In" Type="String" />
+            <Parameter Name="AVSCOI" Mode="In" Type="String" />
+            <Parameter Name="AVCCOI" Mode="In" Type="String" />
+            <Parameter Name="AEAVOIDPIN" Mode="In" Type="String" />
+            <Parameter Name="CERCAVAOI" Mode="In" Type="String" />
+            <Parameter Name="SPHodREFRA" Mode="In" Type="String" />
+            <Parameter Name="CILodREFA" Mode="In" Type="String" />
+            <Parameter Name="EJEodREFRA" Mode="In" Type="String" />
+            <Parameter Name="AVodREFRA" Mode="In" Type="String" />
+            <Parameter Name="ADDodREFRA" Mode="In" Type="String" />
+            <Parameter Name="DIPodREFRA" Mode="In" Type="String" />
+            <Parameter Name="SPHoiSCICLO" Mode="In" Type="String" />
+            <Parameter Name="CILoiSCICLO" Mode="In" Type="String" />
+            <Parameter Name="EJEoiSCICLO" Mode="In" Type="String" />
+            <Parameter Name="AVoiSCICLO" Mode="In" Type="String" />
+            <Parameter Name="ADDoiSCICLO" Mode="In" Type="String" />
+            <Parameter Name="DIPoiSCICLO" Mode="In" Type="String" />
+            <Parameter Name="PAPARPADOSANEXOS" Mode="In" Type="String" />
+            <Parameter Name="CORNEACRISTESCLERA" Mode="In" Type="String" />
+            <Parameter Name="IRISPUPILA" Mode="In" Type="String" />
+            <Parameter Name="TonoOD" Mode="In" Type="String" />
+            <Parameter Name="TonoOI" Mode="In" Type="String" />
+            <Parameter Name="MMHHTonShiotz" Mode="In" Type="String" />
+            <Parameter Name="MMHHTonAplanacion" Mode="In" Type="String" />
+            <Parameter Name="MMHHTonOtra" Mode="In" Type="String" />
+            <Parameter Name="FONDOJOyG" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+            <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+            <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+            <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SPRINGDiagnosticosConsultaExterna">
+            <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdDiagnostico" Mode="In" Type="Int32" />
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+            <Parameter Name="Determinacion" Mode="In" Type="String" />
+            <Parameter Name="LINEA" Mode="In" Type="Int32" />
+            <Parameter Name="tipoordenatencion" Mode="In" Type="Int32" />
+            <Parameter Name="observaciondiagnostico" Mode="In" Type="String" />
+            <Parameter Name="tipoIT" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SPRINGRUTAHCE">
+            <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+            <Parameter Name="LINEA" Mode="In" Type="Int32" />
+            <Parameter Name="INFORMERUTA" Mode="In" Type="String" />
+            <Parameter Name="OBSERVACION" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="CW_AccesoUsuario_Result">
           <Property Type="Int32" Name="IDPERSONA" Nullable="false" />
@@ -3683,6 +3927,13 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisInFormeMedico" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisInFormeMedico" />
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisIngreso" />
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAtendidoConsultaExterna" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAtendidoConsultaExterna" />
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDConsultaExterna" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDConsultaExterna" />
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDOFTALMOLOGICOIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDOFTALMOLOGICOIngreso" />
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SPRINGDiagnosticosConsultaExterna" FunctionName="ModelGolf.Store.SP_SS_IT_SPRINGDiagnosticosConsultaExterna" />
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SPRINGRUTAHCE" FunctionName="ModelGolf.Store.SP_SS_IT_SPRINGRUTAHCE" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -236,7 +236,6 @@ namespace RoyalSISWS.Models
             }
             return objLista;
         }
-              
 
         public List<SS_HC_InformeConsultaExterna_FE> InformeConsultaExternaListar(SS_HC_InformeConsultaExterna_FE objSC)
         {
@@ -270,21 +269,36 @@ namespace RoyalSISWS.Models
                 {
                     try
                     {
-                        SS_HC_InformeConsultaExterna_FE objSC = (SS_HC_InformeConsultaExterna_FE)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_HC_InformeConsultaExterna_FE));
+                        SS_IT_SaludOFTALMOLOGICOIngreso objSC = (SS_IT_SaludOFTALMOLOGICOIngreso)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_IT_SaludOFTALMOLOGICOIngreso));
+
+                        SS_HC_InformeConsultaExterna_FE objSave = new SS_HC_InformeConsultaExterna_FE();
+                        objSave.UnidadReplicacion = objSC.UnidadReplicacion;
+                        objSave.IdPaciente = objSC.IdPaciente;
+                        objSave.EpisodioClinico = (int)objSC.EpisodioClinico;
+                        objSave.IdEpisodioAtencion = objSC.IdEpisodioAtencion;
+                        objSave.Observacion = objSC.ENFACTUAL;
+                        objSave.Version = "CCEPF330";
+                        objSave.Estado = objSC.Estado;
+                        objSave.UsuarioModificacion = objSC.UsuarioCreacion;
+                        objSave.UsuarioModificacion = objSC.UsuarioModificacion;
+                        objSave.FechaCreacion = objSC.FechaCreacion;
+                        objSave.FechaModificacion = objSC.FechaModificacion;
                         if (Accion == 1)
                         {
-                            context.Entry(objSC).State = EntityState.Added;
+                            objSave.Accion = "NUEVO";
+                            context.Entry(objSave).State = EntityState.Added;
                             obje.valor = context.SaveChanges();
                             obje.ok = true;
                             obje.msg = "Se registro Correcto";
                         }
                         if (Accion == 2)
                         {
-                            context.Entry(objSC).State = EntityState.Modified;
+                            objSave.Accion = "UPDATE";
+                            context.Entry(objSave).State = EntityState.Modified;
                             obje.valor = context.SaveChanges();
                             obje.ok = true;
                             obje.msg = "Se actualizo Correctamente";
-                        }
+                        }                
                         scope.Complete();
                     }
                     catch (Exception ex)
@@ -414,6 +428,42 @@ namespace RoyalSISWS.Models
             return obje;
         }
 
+        public ViewResponse Mirth_AnamnesisInFormeMedicoMantenimiento(Nullable<int> Accion, SS_IT_SaludOFTALMOLOGICOIngreso ObjTrace)
+        {
+            System.Nullable<int> iReturnValue;
+            ViewResponse obje = new ViewResponse();
+            using (var context = new SpringSalud_produccionEntities())
+            {
+                context.Database.Connection.Open();
+                //using (TransactionScope scope = new TransactionScope())
+                //{
+                try
+                {
+                    if (Accion == 1)
+                    {
+                        var VAAA = context.SP_SS_IT_SALUDAnamnesisInFormeMedico(ObjTrace.IdOrdenAtencion, ObjTrace.IdPaciente,
+                              ObjTrace.LineaOrdenAtencion, 1, ObjTrace.ENFACTUAL, ObjTrace.Estado, ObjTrace.UsuarioCreacion,
+                           ObjTrace.FechaCreacion, "", ObjTrace.UsuarioModificacion, DateTime.Now);
+                        //  obje.valor = int.Parse(VAAA);
+                        obje.valor = 1;
+                        obje.ok = true;
+                        obje.msg = "Se registro Correcto";
+                    }
+                    //scope.Complete();
+                }
+                catch (Exception ex)
+                {
+                    obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+                    obje.ok = true;
+                    obje.valor = 0;
+                }
+                context.Database.Connection.Close();
+                context.Dispose();
+                //}
+            }
+            return obje;
+        }
+       
         #endregion
     }
 }

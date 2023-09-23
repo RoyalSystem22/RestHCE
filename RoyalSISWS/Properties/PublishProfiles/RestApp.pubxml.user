@@ -82,7 +82,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/18/2023 12:52:02</publishTime>
     </File>
     <File Include="bin/RoyalSISWS.dll">
-      <publishTime>09/18/2023 15:48:14</publishTime>
+      <publishTime>09/22/2023 21:19:38</publishTime>
     </File>
     <File Include="bin/RoyalSystems.Core.dll">
       <publishTime>09/18/2023 12:52:01</publishTime>
@@ -145,7 +145,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/07/2020 21:31:28</publishTime>
     </File>
     <File Include="Models/SpringSalud_produccion/SpringSalud.edmx.diagram">
-      <publishTime>09/18/2023 12:52:46</publishTime>
+      <publishTime>09/22/2023 16:17:58</publishTime>
     </File>
     <File Include="Models/WEB_ERPSALUD/BDWEB_ERPSALUD.edmx.diagram">
       <publishTime>09/18/2023 12:52:46</publishTime>
@@ -163,7 +163,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/11/2019 15:18:36</publishTime>
     </File>
     <File Include="SpringWeb.config">
-      <publishTime>09/18/2023 12:52:46</publishTime>
+      <publishTime>09/22/2023 16:37:23</publishTime>
     </File>
     <File Include="Views/Consulta/Index.cshtml">
       <publishTime>09/18/2023 12:52:01</publishTime>
@@ -172,7 +172,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/18/2023 12:52:01</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/18/2023 15:48:15</publishTime>
+      <publishTime>09/22/2023 21:19:38</publishTime>
     </File>
   </ItemGroup>
 </Project>

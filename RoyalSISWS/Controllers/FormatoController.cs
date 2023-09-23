@@ -1,4 +1,5 @@
 ﻿using RoyalSISWS.Models;
+using RoyalSISWS.Models.SpringSalud_produccion;
 using RoyalSISWS.Models.WEB_ERPSALUD;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,8 @@ namespace RoyalSISWS.Controllers
             if (valor == 1 || valor == 2)
             {
                 obje = m.HC_InformeConsultaExternaMantenimiento(valor, msg);
+                SS_IT_SaludOFTALMOLOGICOIngreso objSC = (SS_IT_SaludOFTALMOLOGICOIngreso)Newtonsoft.Json.JsonConvert.DeserializeObject(msg, typeof(SS_IT_SaludOFTALMOLOGICOIngreso));
+                m.Mirth_AnamnesisInFormeMedicoMantenimiento(1, objSC);
                 return Json(obje, JsonRequestBehavior.AllowGet);
             }
             else

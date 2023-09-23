@@ -186,6 +186,128 @@
     <EntitySet Name="SS_IT_SaludOFTALMOLOGICOIngreso" EntityType="ModelGolf.SS_IT_SaludOFTALMOLOGICOIngreso" />
     <EntitySet Name="SS_IT_SaludProcedimientoIngreso" EntityType="ModelGolf.SS_IT_SaludProcedimientoIngreso" />
     <EntitySet Name="SS_IT_SaludRecetaIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIngreso" />
+    <FunctionImport Name="SP_SS_IT_SALUDAnamnesisInFormeMedico" ReturnType="Collection(Int32)">
+      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="IdLineaOa" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="InformeMedico" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="ExamenClinico" Mode="In" Type="String" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SALUDAnamnesisIngreso" ReturnType="Collection(Int32)">
+      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="IdLineaOa" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="TiempoEnfermedad" Mode="In" Type="String" />
+      <Parameter Name="RelatoCronologico" Mode="In" Type="String" />
+      <Parameter Name="PresionArterialMS1" Mode="In" Type="String" />
+      <Parameter Name="PresionArterialMS2" Mode="In" Type="String" />
+      <Parameter Name="FrecuenciaCardiaca" Mode="In" Type="String" />
+      <Parameter Name="FrecuenciaRespiratoria" Mode="In" Type="String" />
+      <Parameter Name="Temperatura" Mode="In" Type="Decimal" />
+      <Parameter Name="SaturacionOxigeno" Mode="In" Type="String" />
+      <Parameter Name="Peso" Mode="In" Type="String" />
+      <Parameter Name="Talla" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="ExamenClinico" Mode="In" Type="String" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SALUDAtendidoConsultaExterna">
+      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="LineaOrdenAtencionConsulta" Mode="In" Type="Int32" />
+      <Parameter Name="TipoOrdenAtencion" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SALUDConsultaExterna">
+      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="LineaOrdenAtencionConsulta" Mode="In" Type="Int32" />
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="TipoOrdenAtencion" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SALUDOFTALMOLOGICOIngreso" ReturnType="Collection(Int32)">
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="String" />
+      <Parameter Name="ENFACTUAL" Mode="In" Type="String" />
+      <Parameter Name="ANTIMPORTANCIA" Mode="In" Type="String" />
+      <Parameter Name="AVscOD" Mode="In" Type="String" />
+      <Parameter Name="AvCCOD" Mode="In" Type="String" />
+      <Parameter Name="AEAVODPIN" Mode="In" Type="String" />
+      <Parameter Name="CERCAVAD" Mode="In" Type="String" />
+      <Parameter Name="AVSCOI" Mode="In" Type="String" />
+      <Parameter Name="AVCCOI" Mode="In" Type="String" />
+      <Parameter Name="AEAVOIDPIN" Mode="In" Type="String" />
+      <Parameter Name="CERCAVAOI" Mode="In" Type="String" />
+      <Parameter Name="SPHodREFRA" Mode="In" Type="String" />
+      <Parameter Name="CILodREFA" Mode="In" Type="String" />
+      <Parameter Name="EJEodREFRA" Mode="In" Type="String" />
+      <Parameter Name="AVodREFRA" Mode="In" Type="String" />
+      <Parameter Name="ADDodREFRA" Mode="In" Type="String" />
+      <Parameter Name="DIPodREFRA" Mode="In" Type="String" />
+      <Parameter Name="SPHoiSCICLO" Mode="In" Type="String" />
+      <Parameter Name="CILoiSCICLO" Mode="In" Type="String" />
+      <Parameter Name="EJEoiSCICLO" Mode="In" Type="String" />
+      <Parameter Name="AVoiSCICLO" Mode="In" Type="String" />
+      <Parameter Name="ADDoiSCICLO" Mode="In" Type="String" />
+      <Parameter Name="DIPoiSCICLO" Mode="In" Type="String" />
+      <Parameter Name="PAPARPADOSANEXOS" Mode="In" Type="String" />
+      <Parameter Name="CORNEACRISTESCLERA" Mode="In" Type="String" />
+      <Parameter Name="IRISPUPILA" Mode="In" Type="String" />
+      <Parameter Name="TonoOD" Mode="In" Type="String" />
+      <Parameter Name="TonoOI" Mode="In" Type="String" />
+      <Parameter Name="MMHHTonShiotz" Mode="In" Type="String" />
+      <Parameter Name="MMHHTonAplanacion" Mode="In" Type="String" />
+      <Parameter Name="MMHHTonOtra" Mode="In" Type="String" />
+      <Parameter Name="FONDOJOyG" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SPRINGDiagnosticosConsultaExterna">
+      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdDiagnostico" Mode="In" Type="Int32" />
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Determinacion" Mode="In" Type="String" />
+      <Parameter Name="LINEA" Mode="In" Type="Int32" />
+      <Parameter Name="tipoordenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="observaciondiagnostico" Mode="In" Type="String" />
+      <Parameter Name="tipoIT" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SPRINGRUTAHCE">
+      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="LINEA" Mode="In" Type="Int32" />
+      <Parameter Name="INFORMERUTA" Mode="In" Type="String" />
+      <Parameter Name="OBSERVACION" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="CW_AccesoUsuario_Result">
     <Property Type="Int32" Name="IDPERSONA" Nullable="false" />

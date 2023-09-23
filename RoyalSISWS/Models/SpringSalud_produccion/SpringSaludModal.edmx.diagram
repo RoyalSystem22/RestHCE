@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="05b1bb31fdfd4c1a99557af292200bf3" Name="Diagram1" ZoomLevel="56">
+        <EntityTypeShape EntityType="SpringSalud_ProduccionHCEModel.SS_IT_SaludAnamnesisIngreso" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpringSalud_ProduccionHCEModel.SS_IT_SaludDiagnosticoIngreso" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpringSalud_ProduccionHCEModel.SS_IT_SaludOFTALMOLOGICOIngreso" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpringSalud_ProduccionHCEModel.VW_SS_CC_CitasComprobantes" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpringSalud_ProduccionHCEModel.VW_SS_CC_CitasSpring" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpringSalud_ProduccionHCEModel.VW_SS_HC_ListaServiciosAuxiliares" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpringSalud_ProduccionHCEModel.VW_SS_HCE_VisorAnamnesis" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpringSalud_ProduccionHCEModel.VW_SS_HCE_VisorDiagnostico" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpringSalud_ProduccionHCEModel.VW_SS_HCE_VisorExamen" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpringSalud_ProduccionHCEModel.VW_SS_HCE_VisorHistoria" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpringSalud_ProduccionHCEModel.VW_SS_HCE_VisorProcedimientoInforme" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpringSalud_ProduccionHCEModel.VW_SS_HCE_VisorReceta" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
