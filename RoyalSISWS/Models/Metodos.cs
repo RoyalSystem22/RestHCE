@@ -316,7 +316,7 @@ namespace RoyalSISWS.Models
 
 
         #region MetodoMirth
-        
+
         public ViewResponse Mirth_DiagnosticoIngresoMantenimiento(Nullable<int> Accion, string Objeto)
         {
             ViewResponse obje = new ViewResponse();
@@ -326,34 +326,91 @@ namespace RoyalSISWS.Models
                 //{
                     try
                     {
-                        SS_IT_SaludDiagnosticoIngreso objSC = (SS_IT_SaludDiagnosticoIngreso)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_IT_SaludDiagnosticoIngreso));
-                        if (Accion == 1)
-                        {
-                            context.Entry(objSC).State = EntityState.Added;
-                            obje.valor = context.SaveChanges();
-                            obje.ok = true;
-                            obje.msg = "Se registro Correcto";
+                       // SS_IT_SaludDiagnosticoIngreso objSC = (SS_IT_SaludDiagnosticoIngreso)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_IT_SaludDiagnosticoIngreso));
+                        List<SS_IT_SaludDiagnosticoIngreso> LstEntyt = (List<SS_IT_SaludDiagnosticoIngreso>)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(List<SS_IT_SaludDiagnosticoIngreso>));
+                        foreach (SS_IT_SaludDiagnosticoIngreso objSC in LstEntyt)
+                        {         
+                            var VAAA = context.SP_SS_IT_SaludDiagnosticoIngreso(objSC.UnidadReplicacion, objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,
+                             objSC.IdOrdenAtencion, objSC.LineaOrdenAtencionConsulta, objSC.IdDiagnostico, objSC.Secuencia, objSC.Determinacion, objSC.TIPOORDENATENCION,
+                             objSC.ObservacionDIAGNOSTICO, objSC.TIPOIT, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
                         }
-                        if (Accion == 2)
-                        {
-                            context.Entry(objSC).State = EntityState.Modified;
-                            obje.valor = context.SaveChanges();
-                            obje.ok = true;
-                            obje.msg = "Se actualizo Correctamente";
-                        }
-                        //scope.Complete();
+                        obje.msg = "Correcto";
+                        obje.ok = true;
+                        obje.valor = LstEntyt.Count;                          
                     }
                     catch (Exception ex)
                     {
                         obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
-                        obje.ok = true;
+                        obje.ok = false;
                         obje.valor = 0;
                     }
                 //}
             }
             return obje;
         }
+
+        public ViewResponse SaludRecetaIndicacionesGENIngresoMantenimiento(Nullable<int> Accion, string Objeto)
+        {
+            ViewResponse obje = new ViewResponse();
+            using (var context = new SpringSalud_produccionEntities())
+            {
+                //using (TransactionScope scope = new TransactionScope())
+                //{
+                try
+                {
+                    // SS_IT_SaludDiagnosticoIngreso objSC = (SS_IT_SaludDiagnosticoIngreso)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_IT_SaludDiagnosticoIngreso));
+                    SS_IT_SaludRecetaIndicacionesGENIngreso objSC = (SS_IT_SaludRecetaIndicacionesGENIngreso)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_IT_SaludRecetaIndicacionesGENIngreso));
+
+                    var VAAA = context.SP_SS_IT_SaludRecetaIndicacionesGENIngreso(objSC.UnidadReplicacion, objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,
+                         objSC.IdOrdenAtencion, objSC.LineaOrdenAtencionConsulta, objSC.TipoIndicacion, objSC.Descripcion, objSC.Secuencia, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
+                    
+                    obje.msg = "Correcto";
+                    obje.ok = true;
+                    obje.valor = 1;
+                }
+                catch (Exception ex)
+                {
+                    obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+                    obje.ok = false;
+                    obje.valor = 0;
+                }
+                //}
+            }
+            return obje;
+        }
         
+        public ViewResponse SaludRecetaIngresoMantenimiento(Nullable<int> Accion, string Objeto)
+        {
+            ViewResponse obje = new ViewResponse();
+            using (var context = new SpringSalud_produccionEntities())
+            {
+                //using (TransactionScope scope = new TransactionScope())
+                //{
+                try
+                {
+                    List<SS_IT_SaludRecetaIngreso> LstEntyt = (List<SS_IT_SaludRecetaIngreso>)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(List<SS_IT_SaludRecetaIngreso>));
+                    foreach (SS_IT_SaludRecetaIngreso objSC in LstEntyt)
+                    {
+                        var VAAA = context.SP_SS_IT_SaludRecetaIngreso(objSC.UnidadReplicacion, objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,
+                         objSC.IdOrdenAtencion, objSC.LineaOrdenAtencionConsulta, objSC.Secuencia, objSC.Componente, objSC.SubFamilia, objSC.Familia, objSC.Linea,
+                         objSC.UnidadMedida, objSC.Cantidad,  objSC.Dosis, objSC.DiasTratamiento, objSC.Frecuencia, objSC.IndicadorEPS, objSC.TipoReceta,
+                         objSC.INDICACIONESPECIFICA, objSC.TipoOrdenAtencion, objSC.SECUENCIALHCE, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
+                    }          
+                    obje.msg = "Correcto";
+                    obje.ok = true;
+                    obje.valor = 1;
+                }
+                catch (Exception ex)
+                {
+                    obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+                    obje.ok = false;
+                    obje.valor = 0;
+                }
+                //}
+            }
+            return obje;
+        }
+
         public ViewResponse Mirth_ProcedimientoIngresoMantenimiento(Nullable<int> Accion, string Objeto)
         {
             ViewResponse obje = new ViewResponse();
@@ -363,21 +420,19 @@ namespace RoyalSISWS.Models
                 //{
                 try
                 {
-                    SS_IT_SaludProcedimientoIngreso objSC = (SS_IT_SaludProcedimientoIngreso)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_IT_SaludProcedimientoIngreso));
-                    if (Accion == 1)
+                    List<SS_IT_SaludProcedimientoIngreso> LstEntyt = (List<SS_IT_SaludProcedimientoIngreso>)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(List<SS_IT_SaludProcedimientoIngreso>));
+                    foreach (SS_IT_SaludProcedimientoIngreso objSC in LstEntyt)
                     {
-                        context.Entry(objSC).State = EntityState.Added;
-                        obje.valor = context.SaveChanges();
-                        obje.ok = true;
-                        obje.msg = "Se registro Correcto";
+                        var VAAA = context.SP_SS_IT_SaludProcedimientoIngreso(objSC.UnidadReplicacion, objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,
+                      objSC.IdOrdenAtencion, objSC.LineaOrdenAtencionConsulta, objSC.Componente, objSC.Secuencia, objSC.idtipoordenatencion, objSC.Cantidad,
+                      objSC.IndicadorEPS, objSC.IdMedico, objSC.Especialidad, objSC.IdCita, objSC.Observacion, objSC.SecuencialHCE,
+                      objSC.EstadoDocumento, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
                     }
-                    if (Accion == 2)
-                    {
-                        context.Entry(objSC).State = EntityState.Modified;
-                        obje.valor = context.SaveChanges();
-                        obje.ok = true;
-                        obje.msg = "Se actualizo Correctamente";
-                    }
+                                       
+
+                    obje.msg = "Correcto";
+                    obje.ok = true;
+                    obje.valor = 1;
                     //scope.Complete();
                 }
                 catch (Exception ex)
@@ -391,6 +446,67 @@ namespace RoyalSISWS.Models
             return obje;
         }
 
+        public ViewResponse SaludInformeRutaIngresoMantenimiento(Nullable<int> Accion, string Objeto)
+        {
+            ViewResponse obje = new ViewResponse();
+            using (var context = new SpringSalud_produccionEntities())
+            {
+                //using (TransactionScope scope = new TransactionScope())
+                //{
+                try
+                {
+                    List<SS_IT_SaludInformeRutaIngreso> LstEntyt = (List<SS_IT_SaludInformeRutaIngreso>)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(List<SS_IT_SaludInformeRutaIngreso>));
+                    foreach (SS_IT_SaludInformeRutaIngreso objSC in LstEntyt)
+                    {
+                        var VAAA = context.SP_SS_IT_SaludInformeRutaIngreso(objSC.UnidadReplicacion, objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,
+                         objSC.IdOrdenAtencion, objSC.LineaOrdenAtencion, objSC.RutaInforme, objSC.Observacion,
+                          objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
+                    }          
+                    obje.msg = "Correcto";
+                    obje.ok = true;
+                    obje.valor = 1;
+                }
+                catch (Exception ex)
+                {
+                    obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+                    obje.ok = false;
+                    obje.valor = 0;
+                }
+                //}
+            }
+            return obje;
+        }
+
+        public ViewResponse SaludInformePROCIngresoMantenimiento(Nullable<int> Accion, string Objeto)
+        {
+            ViewResponse obje = new ViewResponse();
+            using (var context = new SpringSalud_produccionEntities())
+            {
+                //using (TransactionScope scope = new TransactionScope())
+                //{
+                try
+                {
+                    SS_IT_SaludInformePROCIngreso objSC = (SS_IT_SaludInformePROCIngreso)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_IT_SaludInformePROCIngreso));
+                   
+                        var VAAA = context.SP_SS_IT_SaludInformePROCIngreso(objSC.UnidadReplicacion, objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,
+                         objSC.IdOrdenAtencion, objSC.LineaOrdenAtencion, objSC.Informe,  objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
+                          
+                    obje.msg = "Correcto";
+                    obje.ok = true;
+                    obje.valor = 1;
+                }
+                catch (Exception ex)
+                {
+                    obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+                    obje.ok = false;
+                    obje.valor = 0;
+                }
+                //}
+            }
+            return obje;
+        }
+        
+        
         public ViewResponse Mirth_OftalmologicoIngresoMantenimiento(Nullable<int> Accion, string Objeto)
         {
             ViewResponse obje = new ViewResponse();

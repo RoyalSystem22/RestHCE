@@ -1002,5 +1002,33 @@
     <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDOFTALMOLOGICOIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDOFTALMOLOGICOIngreso" />
     <FunctionImportMapping FunctionImportName="SP_SS_IT_SPRINGDiagnosticosConsultaExterna" FunctionName="ModelGolf.Store.SP_SS_IT_SPRINGDiagnosticosConsultaExterna" />
     <FunctionImportMapping FunctionImportName="SP_SS_IT_SPRINGRUTAHCE" FunctionName="ModelGolf.Store.SP_SS_IT_SPRINGRUTAHCE" />
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SPRINGExamenesConsultaExterna" FunctionName="ModelGolf.Store.SP_SS_IT_SPRINGExamenesConsultaExterna" />
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludDiagnosticoIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludDiagnosticoIngreso" />
+    <EntitySetMapping Name="SS_IT_SaludRecetaIndicacionesGENIngreso">
+      <EntityTypeMapping TypeName="ModelGolf.SS_IT_SaludRecetaIndicacionesGENIngreso">
+        <MappingFragment StoreEntitySet="SS_IT_SaludRecetaIndicacionesGENIngreso">
+          <ScalarProperty Name="FechaProcesado" ColumnName="FechaProcesado" />
+          <ScalarProperty Name="IndicadorProcesado" ColumnName="IndicadorProcesado" />
+          <ScalarProperty Name="FechaRecepcion" ColumnName="FechaRecepcion" />
+          <ScalarProperty Name="IndicadorRecepcion" ColumnName="IndicadorRecepcion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="TipoIndicacion" ColumnName="TipoIndicacion" />
+          <ScalarProperty Name="LineaOrdenAtencionConsulta" ColumnName="LineaOrdenAtencionConsulta" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludRecetaIndicacionesGENIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludRecetaIndicacionesGENIngreso" />
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludProcedimientoIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludProcedimientoIngreso" />
   </EntityContainerMapping>
 </Mapping>

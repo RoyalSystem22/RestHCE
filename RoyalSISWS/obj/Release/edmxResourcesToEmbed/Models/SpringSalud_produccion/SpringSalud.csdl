@@ -308,6 +308,74 @@
       <Parameter Name="INFORMERUTA" Mode="In" Type="String" />
       <Parameter Name="OBSERVACION" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SPRINGExamenesConsultaExterna">
+      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="IdTipoOrdenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="Componente" Mode="In" Type="String" />
+      <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
+      <Parameter Name="Especialidad" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="lineamax" Mode="In" Type="Int32" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="SECUENCIALHCE" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SaludDiagnosticoIngreso" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="LINEA" Mode="In" Type="Int32" />
+      <Parameter Name="IdDiagnostico" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="Determinacion" Mode="In" Type="String" />
+      <Parameter Name="TIPOORDENATENCION" Mode="In" Type="Int32" />
+      <Parameter Name="ObservacionDIAGNOSTICO" Mode="In" Type="String" />
+      <Parameter Name="TIPOIT" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="SS_IT_SaludRecetaIndicacionesGENIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIndicacionesGENIngreso" />
+    <FunctionImport Name="SP_SS_IT_SaludRecetaIndicacionesGENIngreso" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="LINEA" Mode="In" Type="Int32" />
+      <Parameter Name="TipoIndicacion" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SaludProcedimientoIngreso" ReturnType="Collection(Int32)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Linea" Mode="In" Type="Int32" />
+      <Parameter Name="Componente" Mode="In" Type="String" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="TipoOrdenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
+      <Parameter Name="IdMedico" Mode="In" Type="Int32" />
+      <Parameter Name="Especialidad" Mode="In" Type="Int32" />
+      <Parameter Name="IdCita" Mode="In" Type="Int32" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="SECUENCIALHCE" Mode="In" Type="String" />
+      <Parameter Name="EstadoDocumento" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="CW_AccesoUsuario_Result">
     <Property Type="Int32" Name="IDPERSONA" Nullable="false" />
@@ -1277,5 +1345,28 @@
     <Property Name="INDICACIONESPECIFICA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="TipoOrdenAtencion" Type="Int32" />
     <Property Name="SECUENCIALHCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SS_IT_SaludRecetaIndicacionesGENIngreso">
+    <Key>
+      <PropertyRef Name="IdOrdenAtencion" />
+    </Key>
+    <Property Name="IdOrdenAtencion" Type="Int32" Nullable="false" />
+    <Property Name="LineaOrdenAtencionConsulta" Type="Int32" />
+    <Property Name="TipoIndicacion" Type="Int32" />
+    <Property Name="Descripcion" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+    <Property Name="UnidadReplicacion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int32" />
+    <Property Name="IdPaciente" Type="Int32" />
+    <Property Name="EpisodioClinico" Type="Int32" />
+    <Property Name="Secuencia" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="IndicadorRecepcion" Type="Int32" />
+    <Property Name="FechaRecepcion" Type="DateTime" Precision="3" />
+    <Property Name="IndicadorProcesado" Type="Int32" />
+    <Property Name="FechaProcesado" Type="DateTime" Precision="3" />
   </EntityType>
 </Schema>

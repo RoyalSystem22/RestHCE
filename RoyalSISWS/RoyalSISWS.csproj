@@ -256,6 +256,9 @@
     <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludProcedimientoIngreso.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludRecetaIndicacionesGENIngreso.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludRecetaIngreso.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>

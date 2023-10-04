@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RoyalSISWS.Models.SpringSalud_produccion;
 
 namespace RoyalSISWS.Controllers
 {
@@ -24,7 +25,7 @@ namespace RoyalSISWS.Controllers
             Metodos m = new Metodos();
             ViewResponse obje = new ViewResponse();
             if (valor == 1 || valor == 2)
-            {
+            { 
                 obje = m.Mirth_DiagnosticoIngresoMantenimiento(valor, msg);
                 return Json(obje, JsonRequestBehavior.AllowGet);
             }
@@ -41,6 +42,20 @@ namespace RoyalSISWS.Controllers
             if (valor == 1 || valor == 2)
             {
                 obje = m.Mirth_ProcedimientoIngresoMantenimiento(valor, msg);
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public JsonResult SaludRecetaIndicacionesGENIngresoMantenimiento(Nullable<int> valor, string msg)
+        {
+            Metodos m = new Metodos();
+            ViewResponse obje = new ViewResponse();
+            if (valor == 1 || valor == 2)
+            {
+                obje = m.SaludRecetaIndicacionesGENIngresoMantenimiento(valor, msg);
                 return Json(obje, JsonRequestBehavior.AllowGet);
             }
             else

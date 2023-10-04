@@ -268,6 +268,31 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.SS_IT_SaludProcedimient
     <Property Name="SecuencialHCE" Type="varchar" MaxLength="15" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'SpringSalud_Produccion.dbo.SS_IT_SaludRecetaIndicacionesGENIngreso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SS_IT_SaludRecetaIndicacionesGENIngreso">
+    <Key>
+      <PropertyRef Name="IdOrdenAtencion" />
+    </Key>
+    <Property Name="IdOrdenAtencion" Type="int" Nullable="false" />
+    <Property Name="LineaOrdenAtencionConsulta" Type="int" />
+    <Property Name="TipoIndicacion" Type="int" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="1500" />
+    <Property Name="UnidadReplicacion" Type="varchar" MaxLength="15" />
+    <Property Name="IdEpisodioAtencion" Type="int" />
+    <Property Name="IdPaciente" Type="int" />
+    <Property Name="EpisodioClinico" Type="int" />
+    <Property Name="Secuencia" Type="int" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="char" MaxLength="15" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="char" MaxLength="15" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="IndicadorRecepcion" Type="int" />
+    <Property Name="FechaRecepcion" Type="datetime" />
+    <Property Name="IndicadorProcesado" Type="int" />
+    <Property Name="FechaProcesado" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'SpringSalud_Produccion.dbo.SS_IT_SaludRecetaIngreso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="SS_IT_SaludRecetaIngreso">
     <Key>
@@ -890,6 +915,23 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
     <Parameter Name="Fechacreacion" Type="datetime" Mode="In" />
     <Parameter Name="TipoOrdenAtencion" Type="int" Mode="In" />
   </Function>
+  <Function Name="SP_SS_IT_SaludDiagnosticoIngreso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="LINEA" Type="int" Mode="In" />
+    <Parameter Name="IdDiagnostico" Type="int" Mode="In" />
+    <Parameter Name="Secuencia" Type="int" Mode="In" />
+    <Parameter Name="Determinacion" Type="varchar" Mode="In" />
+    <Parameter Name="TIPOORDENATENCION" Type="int" Mode="In" />
+    <Parameter Name="ObservacionDIAGNOSTICO" Type="varchar" Mode="In" />
+    <Parameter Name="TIPOIT" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="Fechacreacion" Type="datetime" Mode="In" />
+  </Function>
   <Function Name="SP_SS_IT_SALUDOFTALMOLOGICOIngreso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
     <Parameter Name="LineaOrdenAtencion" Type="int" Mode="In" />
@@ -935,6 +977,42 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
     <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
     <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
   </Function>
+  <Function Name="SP_SS_IT_SaludProcedimientoIngreso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="Linea" Type="int" Mode="In" />
+    <Parameter Name="Componente" Type="varchar" Mode="In" />
+    <Parameter Name="Secuencia" Type="int" Mode="In" />
+    <Parameter Name="TipoOrdenatencion" Type="int" Mode="In" />
+    <Parameter Name="Cantidad" Type="decimal" Mode="In" />
+    <Parameter Name="IndicadorEPS" Type="int" Mode="In" />
+    <Parameter Name="IdMedico" Type="int" Mode="In" />
+    <Parameter Name="Especialidad" Type="int" Mode="In" />
+    <Parameter Name="IdCita" Type="int" Mode="In" />
+    <Parameter Name="Observacion" Type="varchar" Mode="In" />
+    <Parameter Name="SECUENCIALHCE" Type="varchar" Mode="In" />
+    <Parameter Name="EstadoDocumento" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="Fechacreacion" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_IT_SaludRecetaIndicacionesGENIngreso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="LINEA" Type="int" Mode="In" />
+    <Parameter Name="TipoIndicacion" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Secuencia" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="Fechacreacion" Type="datetime" Mode="In" />
+  </Function>
   <Function Name="SP_SS_IT_SPRINGDiagnosticosConsultaExterna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IDordenatencion" Type="int" Mode="In" />
     <Parameter Name="IdDiagnostico" Type="int" Mode="In" />
@@ -947,6 +1025,20 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
     <Parameter Name="tipoordenatencion" Type="int" Mode="In" />
     <Parameter Name="observaciondiagnostico" Type="varchar" Mode="In" />
     <Parameter Name="tipoIT" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_IT_SPRINGExamenesConsultaExterna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDordenatencion" Type="int" Mode="In" />
+    <Parameter Name="IDPaciente" Type="int" Mode="In" />
+    <Parameter Name="IdTipoOrdenatencion" Type="int" Mode="In" />
+    <Parameter Name="Componente" Type="varchar" Mode="In" />
+    <Parameter Name="Cantidad" Type="decimal" Mode="In" />
+    <Parameter Name="IndicadorEPS" Type="int" Mode="In" />
+    <Parameter Name="Especialidad" Type="int" Mode="In" />
+    <Parameter Name="Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="Fechacreacion" Type="datetime" Mode="In" />
+    <Parameter Name="lineamax" Type="int" Mode="In" />
+    <Parameter Name="Observacion" Type="varchar" Mode="In" />
+    <Parameter Name="SECUENCIALHCE" Type="varchar" Mode="In" />
   </Function>
   <Function Name="SP_SS_IT_SPRINGRUTAHCE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IDordenatencion" Type="int" Mode="In" />
@@ -1251,6 +1343,28 @@ FROM [dbo].[SS_IT_SaludOFTALMOLOGICOIngreso] AS [SS_IT_SaludOFTALMOLOGICOIngreso
 [SS_IT_SaludProcedimientoIngreso].[Observacion] AS [Observacion], 
 [SS_IT_SaludProcedimientoIngreso].[SecuencialHCE] AS [SecuencialHCE]
 FROM [dbo].[SS_IT_SaludProcedimientoIngreso] AS [SS_IT_SaludProcedimientoIngreso]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SS_IT_SaludRecetaIndicacionesGENIngreso" EntityType="Self.SS_IT_SaludRecetaIndicacionesGENIngreso" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[IdOrdenAtencion] AS [IdOrdenAtencion], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[LineaOrdenAtencionConsulta] AS [LineaOrdenAtencionConsulta], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[TipoIndicacion] AS [TipoIndicacion], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[Descripcion] AS [Descripcion], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[UnidadReplicacion] AS [UnidadReplicacion], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[IdEpisodioAtencion] AS [IdEpisodioAtencion], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[IdPaciente] AS [IdPaciente], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[EpisodioClinico] AS [EpisodioClinico], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[Secuencia] AS [Secuencia], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[Estado] AS [Estado], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[UsuarioCreacion] AS [UsuarioCreacion], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[FechaCreacion] AS [FechaCreacion], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[UsuarioModificacion] AS [UsuarioModificacion], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[FechaModificacion] AS [FechaModificacion], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[IndicadorRecepcion] AS [IndicadorRecepcion], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[FechaRecepcion] AS [FechaRecepcion], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[IndicadorProcesado] AS [IndicadorProcesado], 
+[SS_IT_SaludRecetaIndicacionesGENIngreso].[FechaProcesado] AS [FechaProcesado]
+FROM [dbo].[SS_IT_SaludRecetaIndicacionesGENIngreso] AS [SS_IT_SaludRecetaIndicacionesGENIngreso]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="SS_IT_SaludRecetaIngreso" EntityType="Self.SS_IT_SaludRecetaIngreso" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
