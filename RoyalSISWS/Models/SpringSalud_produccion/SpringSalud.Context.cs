@@ -1581,5 +1581,174 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("SP_SS_IT_SaludRecetaIngreso", unidadReplicacionParameter, idEpisodioAtencionParameter, idPacienteParameter, episodioClinicoParameter, idOrdenAtencionParameter, lineaOrdenAtencionParameter, secuenciaParameter, componenteParameter, subFamiliaParameter, familiaParameter, lineaParameter, unidadMedidaParameter, cantidadParameter, viaParameter, dosisParameter, diastratamientoParameter, frecuenciaParameter, indicadorEPSParameter, tipoRecetaParameter, indicacionEspecificaParameter, tipoOrdenAtencionParameter, sECUENCIALHCEParameter, estadoParameter, usuarioCreacionParameter, fechacreacionParameter);
         }
+    
+        public virtual ObjectResult<string> SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia(Nullable<int> idOrdenAtencion, Nullable<int> lineaOrdenAtencion, string unidadReplicacion, Nullable<int> idEpisodioAtencion, Nullable<int> idPaciente, Nullable<int> episodioClinico, string secuencia, string eNFACTUAL, string aNTIMPORTANCIA, string aVscOD, string avCCOD, string aEAVODPIN, string cERCAVAD, string aVSCOI, string aVCCOI, string aEAVOIDPIN, string cERCAVAOI, string sPHodREFRA, string cILodREFA, string eJEodREFRA, string aVodREFRA, string aDDodREFRA, string dIPodREFRA, string sPHoiSCICLO, string cILoiSCICLO, string eJEoiSCICLO, string aVoiSCICLO, string aDDoiSCICLO, string dIPoiSCICLO, string pAPARPADOSANEXOS, string cORNEACRISTESCLERA, string iRISPUPILA, string tonoOD, string tonoOI, string mMHHTonShiotz, string mMHHTonAplanacion, string mMHHTonOtra, string fONDOJOyG, Nullable<int> estado, string usuarioCreacion, Nullable<System.DateTime> fechacreacion)
+        {
+            var idOrdenAtencionParameter = idOrdenAtencion.HasValue ?
+                new ObjectParameter("IdOrdenAtencion", idOrdenAtencion) :
+                new ObjectParameter("IdOrdenAtencion", typeof(int));
+    
+            var lineaOrdenAtencionParameter = lineaOrdenAtencion.HasValue ?
+                new ObjectParameter("LineaOrdenAtencion", lineaOrdenAtencion) :
+                new ObjectParameter("LineaOrdenAtencion", typeof(int));
+    
+            var unidadReplicacionParameter = unidadReplicacion != null ?
+                new ObjectParameter("UnidadReplicacion", unidadReplicacion) :
+                new ObjectParameter("UnidadReplicacion", typeof(string));
+    
+            var idEpisodioAtencionParameter = idEpisodioAtencion.HasValue ?
+                new ObjectParameter("IdEpisodioAtencion", idEpisodioAtencion) :
+                new ObjectParameter("IdEpisodioAtencion", typeof(int));
+    
+            var idPacienteParameter = idPaciente.HasValue ?
+                new ObjectParameter("IdPaciente", idPaciente) :
+                new ObjectParameter("IdPaciente", typeof(int));
+    
+            var episodioClinicoParameter = episodioClinico.HasValue ?
+                new ObjectParameter("EpisodioClinico", episodioClinico) :
+                new ObjectParameter("EpisodioClinico", typeof(int));
+    
+            var secuenciaParameter = secuencia != null ?
+                new ObjectParameter("Secuencia", secuencia) :
+                new ObjectParameter("Secuencia", typeof(string));
+    
+            var eNFACTUALParameter = eNFACTUAL != null ?
+                new ObjectParameter("ENFACTUAL", eNFACTUAL) :
+                new ObjectParameter("ENFACTUAL", typeof(string));
+    
+            var aNTIMPORTANCIAParameter = aNTIMPORTANCIA != null ?
+                new ObjectParameter("ANTIMPORTANCIA", aNTIMPORTANCIA) :
+                new ObjectParameter("ANTIMPORTANCIA", typeof(string));
+    
+            var aVscODParameter = aVscOD != null ?
+                new ObjectParameter("AVscOD", aVscOD) :
+                new ObjectParameter("AVscOD", typeof(string));
+    
+            var avCCODParameter = avCCOD != null ?
+                new ObjectParameter("AvCCOD", avCCOD) :
+                new ObjectParameter("AvCCOD", typeof(string));
+    
+            var aEAVODPINParameter = aEAVODPIN != null ?
+                new ObjectParameter("AEAVODPIN", aEAVODPIN) :
+                new ObjectParameter("AEAVODPIN", typeof(string));
+    
+            var cERCAVADParameter = cERCAVAD != null ?
+                new ObjectParameter("CERCAVAD", cERCAVAD) :
+                new ObjectParameter("CERCAVAD", typeof(string));
+    
+            var aVSCOIParameter = aVSCOI != null ?
+                new ObjectParameter("AVSCOI", aVSCOI) :
+                new ObjectParameter("AVSCOI", typeof(string));
+    
+            var aVCCOIParameter = aVCCOI != null ?
+                new ObjectParameter("AVCCOI", aVCCOI) :
+                new ObjectParameter("AVCCOI", typeof(string));
+    
+            var aEAVOIDPINParameter = aEAVOIDPIN != null ?
+                new ObjectParameter("AEAVOIDPIN", aEAVOIDPIN) :
+                new ObjectParameter("AEAVOIDPIN", typeof(string));
+    
+            var cERCAVAOIParameter = cERCAVAOI != null ?
+                new ObjectParameter("CERCAVAOI", cERCAVAOI) :
+                new ObjectParameter("CERCAVAOI", typeof(string));
+    
+            var sPHodREFRAParameter = sPHodREFRA != null ?
+                new ObjectParameter("SPHodREFRA", sPHodREFRA) :
+                new ObjectParameter("SPHodREFRA", typeof(string));
+    
+            var cILodREFAParameter = cILodREFA != null ?
+                new ObjectParameter("CILodREFA", cILodREFA) :
+                new ObjectParameter("CILodREFA", typeof(string));
+    
+            var eJEodREFRAParameter = eJEodREFRA != null ?
+                new ObjectParameter("EJEodREFRA", eJEodREFRA) :
+                new ObjectParameter("EJEodREFRA", typeof(string));
+    
+            var aVodREFRAParameter = aVodREFRA != null ?
+                new ObjectParameter("AVodREFRA", aVodREFRA) :
+                new ObjectParameter("AVodREFRA", typeof(string));
+    
+            var aDDodREFRAParameter = aDDodREFRA != null ?
+                new ObjectParameter("ADDodREFRA", aDDodREFRA) :
+                new ObjectParameter("ADDodREFRA", typeof(string));
+    
+            var dIPodREFRAParameter = dIPodREFRA != null ?
+                new ObjectParameter("DIPodREFRA", dIPodREFRA) :
+                new ObjectParameter("DIPodREFRA", typeof(string));
+    
+            var sPHoiSCICLOParameter = sPHoiSCICLO != null ?
+                new ObjectParameter("SPHoiSCICLO", sPHoiSCICLO) :
+                new ObjectParameter("SPHoiSCICLO", typeof(string));
+    
+            var cILoiSCICLOParameter = cILoiSCICLO != null ?
+                new ObjectParameter("CILoiSCICLO", cILoiSCICLO) :
+                new ObjectParameter("CILoiSCICLO", typeof(string));
+    
+            var eJEoiSCICLOParameter = eJEoiSCICLO != null ?
+                new ObjectParameter("EJEoiSCICLO", eJEoiSCICLO) :
+                new ObjectParameter("EJEoiSCICLO", typeof(string));
+    
+            var aVoiSCICLOParameter = aVoiSCICLO != null ?
+                new ObjectParameter("AVoiSCICLO", aVoiSCICLO) :
+                new ObjectParameter("AVoiSCICLO", typeof(string));
+    
+            var aDDoiSCICLOParameter = aDDoiSCICLO != null ?
+                new ObjectParameter("ADDoiSCICLO", aDDoiSCICLO) :
+                new ObjectParameter("ADDoiSCICLO", typeof(string));
+    
+            var dIPoiSCICLOParameter = dIPoiSCICLO != null ?
+                new ObjectParameter("DIPoiSCICLO", dIPoiSCICLO) :
+                new ObjectParameter("DIPoiSCICLO", typeof(string));
+    
+            var pAPARPADOSANEXOSParameter = pAPARPADOSANEXOS != null ?
+                new ObjectParameter("PAPARPADOSANEXOS", pAPARPADOSANEXOS) :
+                new ObjectParameter("PAPARPADOSANEXOS", typeof(string));
+    
+            var cORNEACRISTESCLERAParameter = cORNEACRISTESCLERA != null ?
+                new ObjectParameter("CORNEACRISTESCLERA", cORNEACRISTESCLERA) :
+                new ObjectParameter("CORNEACRISTESCLERA", typeof(string));
+    
+            var iRISPUPILAParameter = iRISPUPILA != null ?
+                new ObjectParameter("IRISPUPILA", iRISPUPILA) :
+                new ObjectParameter("IRISPUPILA", typeof(string));
+    
+            var tonoODParameter = tonoOD != null ?
+                new ObjectParameter("TonoOD", tonoOD) :
+                new ObjectParameter("TonoOD", typeof(string));
+    
+            var tonoOIParameter = tonoOI != null ?
+                new ObjectParameter("TonoOI", tonoOI) :
+                new ObjectParameter("TonoOI", typeof(string));
+    
+            var mMHHTonShiotzParameter = mMHHTonShiotz != null ?
+                new ObjectParameter("MMHHTonShiotz", mMHHTonShiotz) :
+                new ObjectParameter("MMHHTonShiotz", typeof(string));
+    
+            var mMHHTonAplanacionParameter = mMHHTonAplanacion != null ?
+                new ObjectParameter("MMHHTonAplanacion", mMHHTonAplanacion) :
+                new ObjectParameter("MMHHTonAplanacion", typeof(string));
+    
+            var mMHHTonOtraParameter = mMHHTonOtra != null ?
+                new ObjectParameter("MMHHTonOtra", mMHHTonOtra) :
+                new ObjectParameter("MMHHTonOtra", typeof(string));
+    
+            var fONDOJOyGParameter = fONDOJOyG != null ?
+                new ObjectParameter("FONDOJOyG", fONDOJOyG) :
+                new ObjectParameter("FONDOJOyG", typeof(string));
+    
+            var estadoParameter = estado.HasValue ?
+                new ObjectParameter("Estado", estado) :
+                new ObjectParameter("Estado", typeof(int));
+    
+            var usuarioCreacionParameter = usuarioCreacion != null ?
+                new ObjectParameter("UsuarioCreacion", usuarioCreacion) :
+                new ObjectParameter("UsuarioCreacion", typeof(string));
+    
+            var fechacreacionParameter = fechacreacion.HasValue ?
+                new ObjectParameter("Fechacreacion", fechacreacion) :
+                new ObjectParameter("Fechacreacion", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia", idOrdenAtencionParameter, lineaOrdenAtencionParameter, unidadReplicacionParameter, idEpisodioAtencionParameter, idPacienteParameter, episodioClinicoParameter, secuenciaParameter, eNFACTUALParameter, aNTIMPORTANCIAParameter, aVscODParameter, avCCODParameter, aEAVODPINParameter, cERCAVADParameter, aVSCOIParameter, aVCCOIParameter, aEAVOIDPINParameter, cERCAVAOIParameter, sPHodREFRAParameter, cILodREFAParameter, eJEodREFRAParameter, aVodREFRAParameter, aDDodREFRAParameter, dIPodREFRAParameter, sPHoiSCICLOParameter, cILoiSCICLOParameter, eJEoiSCICLOParameter, aVoiSCICLOParameter, aDDoiSCICLOParameter, dIPoiSCICLOParameter, pAPARPADOSANEXOSParameter, cORNEACRISTESCLERAParameter, iRISPUPILAParameter, tonoODParameter, tonoOIParameter, mMHHTonShiotzParameter, mMHHTonAplanacionParameter, mMHHTonOtraParameter, fONDOJOyGParameter, estadoParameter, usuarioCreacionParameter, fechacreacionParameter);
+        }
     }
 }

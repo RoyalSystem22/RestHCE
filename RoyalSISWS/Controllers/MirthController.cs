@@ -49,6 +49,7 @@ namespace RoyalSISWS.Controllers
                 return Json(obje, JsonRequestBehavior.AllowGet);
             }
         }
+      
         public JsonResult SaludRecetaIndicacionesGENIngresoMantenimiento(Nullable<int> valor, string msg)
         {
             Metodos m = new Metodos();
@@ -63,7 +64,52 @@ namespace RoyalSISWS.Controllers
                 return Json(obje, JsonRequestBehavior.AllowGet);
             }
         }
+        
+        public JsonResult SaludRecetaIngresoMantenimiento(Nullable<int> valor, string msg)
+        {
+            Metodos m = new Metodos();
+            ViewResponse obje = new ViewResponse();
+            if (valor == 1 || valor == 2)
+            {
+                obje = m.SaludRecetaIngresoMantenimiento(valor, msg);
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+        }
 
+        public JsonResult SaludInformeRutaIngresoMantenimiento(Nullable<int> valor, string msg)
+        {
+            Metodos m = new Metodos();
+            ViewResponse obje = new ViewResponse();
+            if (valor == 1 || valor == 2)
+            {
+                obje = m.SaludInformeRutaIngresoMantenimiento(valor, msg);
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        public JsonResult SaludInformePROCIngresoMantenimiento(Nullable<int> valor, string msg)
+        {
+            Metodos m = new Metodos();
+            ViewResponse obje = new ViewResponse();
+            if (valor == 1 || valor == 2)
+            {
+                obje = m.SaludInformePROCIngresoMantenimiento(valor, msg);
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+        }
+        
         public JsonResult Mirth_OftalmologicoIngresoMantenimiento(Nullable<int> valor, string msg)
         {
             Metodos m = new Metodos();

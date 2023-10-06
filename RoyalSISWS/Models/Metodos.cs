@@ -393,7 +393,7 @@ namespace RoyalSISWS.Models
                     {
                         var VAAA = context.SP_SS_IT_SaludRecetaIngreso(objSC.UnidadReplicacion, objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,
                          objSC.IdOrdenAtencion, objSC.LineaOrdenAtencionConsulta, objSC.Secuencia, objSC.Componente, objSC.SubFamilia, objSC.Familia, objSC.Linea,
-                         objSC.UnidadMedida, objSC.Cantidad,  objSC.Dosis, objSC.DiasTratamiento, objSC.Frecuencia, objSC.IndicadorEPS, objSC.TipoReceta,
+                         objSC.UnidadMedida, objSC.Cantidad, objSC.Via, objSC.Dosis, objSC.DiasTratamiento, objSC.Frecuencia, objSC.IndicadorEPS, objSC.TipoReceta,
                          objSC.INDICACIONESPECIFICA, objSC.TipoOrdenAtencion, objSC.SECUENCIALHCE, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
                     }          
                     obje.msg = "Correcto";
@@ -517,21 +517,15 @@ namespace RoyalSISWS.Models
                 try
                 {
                     SS_IT_SaludOFTALMOLOGICOIngreso objSC = (SS_IT_SaludOFTALMOLOGICOIngreso)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_IT_SaludOFTALMOLOGICOIngreso));
-                    if (Accion == 1)
-                    {
-                        context.Entry(objSC).State = EntityState.Added;
-                        obje.valor = context.SaveChanges();
-                        obje.ok = true;
-                        obje.msg = "Se registro Correcto";
-                    }
-                    if (Accion == 2)
-                    {
-                        context.Entry(objSC).State = EntityState.Modified;
-                        obje.valor = context.SaveChanges();
-                        obje.ok = true;
-                        obje.msg = "Se actualizo Correctamente";
-                    }
-                    //scope.Complete();
+
+                    var VAAA = context.SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia(objSC.IdOrdenAtencion,objSC.LineaOrdenAtencion,objSC.UnidadReplicacion,objSC.IdEpisodioAtencion,
+                        objSC.IdPaciente,objSC.EpisodioClinico,objSC.Secuencia,objSC.ENFACTUAL,objSC.ANTIMPORTANCIA,objSC.AVscOD,
+                        objSC.AvCCOD,objSC.AEAVODPIN,objSC.CERCAVAD,objSC.AVSCOI,objSC.AVCCOI,objSC.AEAVOIDPIN,objSC.CERCAVAOI,objSC.SPHodREFRA,
+                        objSC.CILodREFA,objSC.EJEodREFRA,objSC.AVodREFRA,objSC.ADDodREFRA,objSC.DIPodREFRA,objSC.SPHoiSCICLO,objSC.CILoiSCICLO,
+                        objSC.EJEoiSCICLO, objSC.AVoiSCICLO, objSC.ADDoiSCICLO, objSC.DIPoiSCICLO, objSC.PAPARPADOSANEXOS, objSC.CORNEACRISTESCLERA,
+                        objSC.IRISPUPILA, objSC.TonoOD, objSC.TonoOI, objSC.MMHHTonShiotz, objSC.MMHHTonAplanacion,objSC.MMHHTonOtra,objSC.FONDOJOyG ,
+                        objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
+          
                 }
                 catch (Exception ex)
                 {
