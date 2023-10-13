@@ -21,6 +21,9 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
         public SpringSalud_produccionEntities()
             : base("name=SpringSalud_produccionEntities")
         {
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
+            ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 300000;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

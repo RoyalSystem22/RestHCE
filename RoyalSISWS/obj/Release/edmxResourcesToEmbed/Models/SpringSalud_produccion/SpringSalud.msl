@@ -1030,5 +1030,9 @@
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludRecetaIndicacionesGENIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludRecetaIndicacionesGENIngreso" />
     <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludProcedimientoIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludProcedimientoIngreso" />
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludInformePROCIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludInformePROCIngreso" />
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludInformeRutaIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludInformeRutaIngreso" />
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludRecetaIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludRecetaIngreso" />
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia" FunctionName="ModelGolf.Store.SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia" />
   </EntityContainerMapping>
 </Mapping>

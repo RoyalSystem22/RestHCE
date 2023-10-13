@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d7f9b757a4e64976840beb81ea9a325c" Name="Diagram1" ZoomLevel="53">
+      <Diagram DiagramId="d7f9b757a4e64976840beb81ea9a325c" Name="Diagram1" ZoomLevel="59">
         <EntityTypeShape EntityType="ModelGolf.VW_SA_PR_REP_ListaServiciosAuxiliares" Width="1.5" PointX="5.25" PointY="1" />
         <EntityTypeShape EntityType="ModelGolf.VW_SS_HCE_VisorAnamnesis" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="ModelGolf.VW_SS_HCE_VisorDiagnostico" Width="1.5" PointX="2.75" PointY="5.75" />
@@ -15,10 +15,10 @@
         <EntityTypeShape EntityType="ModelGolf.VW_SS_HCE_VisorReceta" Width="1.5" PointX="0.75" PointY="11.75" />
         <EntityTypeShape EntityType="ModelGolf.SS_IT_SaludAnamnesisIngreso" Width="1.5" PointX="7.375" PointY="12.75" />
         <EntityTypeShape EntityType="ModelGolf.SS_IT_SALUDASIGNARMEDICOINGRESO" Width="1.5" PointX="3.375" PointY="13.75" />
-        <EntityTypeShape EntityType="ModelGolf.SS_IT_SaludATENDIDOConsultaExternaIngreso" Width="1.5" PointX="13.375" PointY="7.75" />
+        <EntityTypeShape EntityType="ModelGolf.SS_IT_SaludATENDIDOConsultaExternaIngreso" Width="3" PointX="12.5" PointY="7.625" />
         <EntityTypeShape EntityType="ModelGolf.SS_IT_SaludConsultaExternaIngreso" Width="1.5" PointX="13.375" PointY="12.75" />
         <EntityTypeShape EntityType="ModelGolf.SS_IT_SaludDiagnosticoIngreso" Width="1.5" PointX="14.375" PointY="0.75" />
-        <EntityTypeShape EntityType="ModelGolf.SS_IT_SaludInformePROCIngreso" Width="1.5" PointX="15.375" PointY="6.75" />
+        <EntityTypeShape EntityType="ModelGolf.SS_IT_SaludInformePROCIngreso" Width="2.625" PointX="15.875" PointY="9.125" />
         <EntityTypeShape EntityType="ModelGolf.SS_IT_SaludInformeRutaIngreso" Width="1.5" PointX="15.375" PointY="11.75" />
         <EntityTypeShape EntityType="ModelGolf.SS_IT_SaludOFTALMOLOGICOIngreso" Width="1.5" PointX="17.375" PointY="0.75" />
         <EntityTypeShape EntityType="ModelGolf.SS_IT_SaludProcedimientoIngreso" Width="1.5" PointX="17.375" PointY="11.75" />

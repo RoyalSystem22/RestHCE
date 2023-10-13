@@ -14,11 +14,21 @@ namespace RoyalSISWS
     {
         protected void Application_Start()
         {
+            //var scriptSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            //var serializerMaxJsonLengthField = scriptSerializer.GetType().GetField("_maxJsonLength",
+            //    System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+            //if (serializerMaxJsonLengthField != null)
+            //{
+            //    serializerMaxJsonLengthField.SetValue(scriptSerializer, Int32.MaxValue); // O el valor deseado
+            //}
+
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+
         }
     }
 }
