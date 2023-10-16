@@ -20,7 +20,7 @@ using RoyalSISWS.Models.SpringSalud_produccion;
 using RoyalSISWS.Entidad;
 using RoyalSISWS.BasicAuthentication;
 using RoyalSISWS.Models.WEB_ERPSALUD;
-
+using System.Text.RegularExpressions;
 
 namespace RoyalSISWS.Controllers
 {
@@ -149,7 +149,7 @@ namespace RoyalSISWS.Controllers
 
         #region CitaHistoria
         
-        public JsonResult ListarVisorHistoria(Nullable<int> Accion, string tipoDocumento, string Documento, string cod_sucursal)
+        public ActionResult  ListarVisorHistoria(Nullable<int> Accion, string tipoDocumento, string Documento, string cod_sucursal)
         {
             try
             {
@@ -229,11 +229,15 @@ namespace RoyalSISWS.Controllers
 
                     //System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
                     //serializer.MaxJsonLength = serializer.MaxJsonLength;
-                    //int MaxValue=0; // Establece un valor muy alto o el necesario según tus necesidades
-                    // jsonString = serializer.Serialize(lst);
-                    jsonString  = jsonString.Replace("\n","");
+                    //int MaxValue = 99999990; // Establece un valor muy alto o el necesario según tus necesidades
+                    //jsonString = serializer.Serialize(lst);
+                    jsonString  = jsonString.Replace("\n","");  
+
+                    jsonString = Regex.Replace(jsonString, @"[^\u0000-\u007F]+", string.Empty);
+
+                    //var prueba = JsonConvert.DeserializeObject<List<VW_SS_HCE_VisorHistoria>>(jsonString);
                     //BaseDatos.WriteLog(System.DateTime.Now + " | " + lstSalida);
-                    return Json(lst, JsonRequestBehavior.AllowGet);
+                    return Content(jsonString, "application/json");
                 }
                 else
                 {
