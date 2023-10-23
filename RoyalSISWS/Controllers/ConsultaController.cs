@@ -165,65 +165,7 @@ namespace RoyalSISWS.Controllers
                     List<VW_SS_HCE_VisorHistoria> lst = new List<VW_SS_HCE_VisorHistoria>();
                     lst = m.HCE_VisorHistoria(VisorHistoria);
 
-                    //foreach (VW_SS_HCE_VisorHistoria intobj2 in lst)
-                    //{
-                    //    CW_VisorHistoria pObjVisor = new CW_VisorHistoria();
-
-                    //    pObjVisor.CitaTipo = intobj2.CitaTipo;
-                    //    pObjVisor.CitaFecha = intobj2.CitaFecha;
-                    //    pObjVisor.CitaHora = intobj2.CitaHora;
-                    //    pObjVisor.Origen = intobj2.Origen;
-                    //    pObjVisor.NombreEspecialidad = intobj2.NombreEspecialidad;
-                    //    pObjVisor.TipoPacienteNombre = intobj2.TipoPacienteNombre;
-                    //    pObjVisor.CodigoOA = intobj2.CodigoOA;
-                    //    pObjVisor.Cama = intobj2.Cama;
-                    //    pObjVisor.FechaInicio = intobj2.FechaInicio;
-                    //    pObjVisor.TipoOrdenAtencionNombre = intobj2.TipoOrdenAtencionNombre;
-                    //    pObjVisor.CodigoHC = intobj2.CodigoHC;
-                    //    pObjVisor.CodigoHCAnterior = intobj2.CodigoHCAnterior;
-                    //    pObjVisor.PacienteNombre = intobj2.PacienteNombre;
-                    //    pObjVisor.MedicoNombre = intobj2.MedicoNombre;
-                    //    pObjVisor.IdOrdenAtencion = intobj2.IdOrdenAtencion;
-                    //    pObjVisor.LineaOrdenAtencion = intobj2.LineaOrdenAtencion;
-                    //    pObjVisor.Aseguradora = intobj2.Aseguradora;                  
-                    //    pObjVisor.Modalidad = intobj2.Modalidad;
-                    //    pObjVisor.IndicadorSeguro = intobj2.IndicadorSeguro;               
-                    //    pObjVisor.FechaFin = intobj2.FechaFin;                 
-                    //    pObjVisor.TipoPaciente = intobj2.TipoPaciente;
-                    //    pObjVisor.TipoAtencion = intobj2.TipoAtencion;
-                    //    pObjVisor.IdEspecialidad = intobj2.IdEspecialidad;           
-                    //    pObjVisor.TipoOrdenAtencion = intobj2.TipoOrdenAtencion;
-                    //    pObjVisor.Componente = intobj2.Componente;
-                    //    pObjVisor.ComponenteNombre = intobj2.ComponenteNombre;
-                    //    pObjVisor.Compania = intobj2.Compania;
-                    //    pObjVisor.Sucursal = intobj2.Sucursal;               
-                    //    pObjVisor.UnidadReplicacionHCE = intobj2.UnidadReplicacionHCE;
-                    //    pObjVisor.EstadoEpiAtencion = intobj2.EstadoEpiAtencion;                  
-                    //    pObjVisor.SecuenciaHCE = intobj2.SecuenciaHCE;                 
-                    //    pObjVisor.sexo = intobj2.sexo;
-                    //    pObjVisor.FechaNacimiento = intobj2.FechaNacimiento;
-                    //    pObjVisor.EstadoCivil = intobj2.EstadoCivil;
-                    //    pObjVisor.NivelInstruccion = intobj2.NivelInstruccion;
-                    //    pObjVisor.Direccion = intobj2.Direccion;
-                    //    pObjVisor.TipoDocumento = intobj2.TipoDocumento;
-                    //    pObjVisor.Documento = intobj2.Documento;
-                    //    pObjVisor.ApellidoPaterno = intobj2.ApellidoPaterno;
-                    //    pObjVisor.ApellidoMaterno = intobj2.ApellidoMaterno;
-                    //    pObjVisor.Nombres = intobj2.Nombres;
-                    //    pObjVisor.LugarNacimiento = intobj2.LugarNacimiento;
-                    //    pObjVisor.CodigoPostal = intobj2.CodigoPostal;
-                    //    pObjVisor.Provincia = intobj2.Provincia;
-                    //    pObjVisor.Departamento = intobj2.Departamento;
-                    //    pObjVisor.Telefono = intobj2.Telefono;
-                    //    pObjVisor.CorreoElectronico = intobj2.CorreoElectronico;
-                    //    pObjVisor.EsPaciente = intobj2.EsPaciente;
-                    //    pObjVisor.EsEmpresa = intobj2.EsEmpresa;
-                    //    pObjVisor.Pais = intobj2.Pais;
-                    //    pObjVisor.EstadoPersona = intobj2.EstadoPersona;
-                    //    pObjVisor.UnidadReplicacionEC = intobj2.UnidadReplicacionEC;
-                    //    pObjVisor.TipoAtencionDescX = intobj2.TipoAtencionDescX;
-                    //    lstSalida.Add(pObjVisor);
-                    //}
+                   
                    //  string Jsons = Newtonsoft.Json.JsonConvert.SerializeObject(lstSalida);
                     string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(lst);
 
@@ -252,7 +194,7 @@ namespace RoyalSISWS.Controllers
             }
         }
 
-        public JsonResult ListarVisorHistoriaFecha(Nullable<int> Accion, string tipoDocumento, string Documento, DateTime FechaInicio, DateTime FechaFin, string cod_sucursal)
+        public ActionResult ListarVisorHistoriaFecha(Nullable<int> Accion, string tipoDocumento, string Documento, DateTime FechaInicio, DateTime FechaFin, string cod_sucursal)
         {
             try
             {
@@ -271,71 +213,10 @@ namespace RoyalSISWS.Controllers
                     List<VW_SS_HCE_VisorReceta> lstReceta = new List<VW_SS_HCE_VisorReceta>();
 
                     lst = m.getOas(Documento, FechaInicio, FechaFin, cod_sucursal);
-                    //lstAnamnesis = m.HCE_VisorHistoria_Anamnesis(VisorHistoria);
-                    //lstDiagnostico = m.HCE_VisorHistoria_Diagnostico(VisorHistoria);  //22
-                    //lstExamen = m.HCE_VisorHistoria_Examen(VisorHistoria);  //22
-                    //lstReceta = m.HCE_VisorHistoria_Receta(VisorHistoria);   //12
-
-                    foreach (A_SP_SS_HCE_VisorHistoria_Result intobj2 in lst)
-                    {
-                        CW_VisorHistoria pObjVisor = new CW_VisorHistoria();
-                        pObjVisor.CitaTipo = intobj2.CitaTipo;
-                        pObjVisor.CitaFecha = intobj2.CitaFecha;
-                        pObjVisor.CitaHora = intobj2.CitaHora;
-                        pObjVisor.Origen = intobj2.Origen;
-                        pObjVisor.NombreEspecialidad = intobj2.NombreEspecialidad;
-                        pObjVisor.TipoPacienteNombre = intobj2.TipoPacienteNombre;
-                        pObjVisor.CodigoOA = intobj2.CodigoOA;
-                        pObjVisor.Cama = intobj2.Cama;
-                        pObjVisor.FechaInicio = intobj2.FechaInicio;
-                        pObjVisor.TipoOrdenAtencionNombre = intobj2.TipoOrdenAtencionNombre;
-                        pObjVisor.CodigoHC = intobj2.CodigoHC;
-                        pObjVisor.CodigoHCAnterior = intobj2.CodigoHCAnterior;
-                        pObjVisor.PacienteNombre = intobj2.PacienteNombre;
-                        pObjVisor.MedicoNombre = intobj2.MedicoNombre;
-                        pObjVisor.IdOrdenAtencion = intobj2.IdOrdenAtencion;
-                        pObjVisor.LineaOrdenAtencion = intobj2.LineaOrdenAtencion;
-                        pObjVisor.Aseguradora = intobj2.Aseguradora;
-                        pObjVisor.Modalidad = intobj2.Modalidad;
-                        pObjVisor.IndicadorSeguro = intobj2.IndicadorSeguro;                 
-                        pObjVisor.FechaFin = intobj2.FechaFin;                
-                        pObjVisor.TipoPaciente = intobj2.TipoPaciente;
-                        pObjVisor.TipoAtencion = intobj2.TipoAtencion;
-                        pObjVisor.IdEspecialidad = intobj2.IdEspecialidad;                 
-                        pObjVisor.TipoOrdenAtencion = intobj2.TipoOrdenAtencion;
-                        pObjVisor.Componente = intobj2.Componente;
-                        pObjVisor.ComponenteNombre = intobj2.ComponenteNombre;
-                        pObjVisor.Compania = intobj2.Compania;
-                        pObjVisor.Sucursal = intobj2.Sucursal;              
-                        pObjVisor.UnidadReplicacionHCE = intobj2.UnidadReplicacionHCE;
-                        pObjVisor.EstadoEpiAtencion = intobj2.EstadoEpiAtencion;                 
-                        pObjVisor.SecuenciaHCE = intobj2.SecuenciaHCE;                     
-                        pObjVisor.sexo = intobj2.sexo;
-                        pObjVisor.FechaNacimiento = intobj2.FechaNacimiento;
-                        pObjVisor.EstadoCivil = intobj2.EstadoCivil;
-                        pObjVisor.NivelInstruccion = intobj2.NivelInstruccion;
-                        pObjVisor.Direccion = intobj2.Direccion;
-                        pObjVisor.TipoDocumento = intobj2.TipoDocumento;
-                        pObjVisor.Documento = intobj2.Documento;
-                        pObjVisor.ApellidoPaterno = intobj2.ApellidoPaterno;
-                        pObjVisor.ApellidoMaterno = intobj2.ApellidoMaterno;
-                        pObjVisor.Nombres = intobj2.Nombres;
-                        pObjVisor.LugarNacimiento = intobj2.LugarNacimiento;
-                        pObjVisor.CodigoPostal = intobj2.CodigoPostal;
-                        pObjVisor.Provincia = intobj2.Provincia;
-                        pObjVisor.Departamento = intobj2.Departamento;
-                        pObjVisor.Telefono = intobj2.Telefono;
-                        pObjVisor.CorreoElectronico = intobj2.CorreoElectronico;
-                        pObjVisor.EsPaciente = intobj2.EsPaciente;
-                        pObjVisor.EsEmpresa = intobj2.EsEmpresa;
-                        pObjVisor.Pais = intobj2.Pais;
-                        pObjVisor.EstadoPersona = intobj2.EstadoPersona;
-                        pObjVisor.UnidadReplicacionEC = intobj2.UnidadReplicacionEC;
-                        pObjVisor.TipoAtencionDescX = intobj2.TipoAtencionDescX;
-
-                        lstSalida.Add(pObjVisor);
-                    }
-                    return Json(lstSalida, JsonRequestBehavior.AllowGet);
+                    string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(lst);
+                    jsonString = jsonString.Replace("\n", "");
+                    jsonString = Regex.Replace(jsonString, @"[^\u0000-\u007F]+", string.Empty);
+                    return Content(jsonString, "application/json");
                 }
                 else
                 {
@@ -350,7 +231,7 @@ namespace RoyalSISWS.Controllers
             }
         }
 
-        public JsonResult ListarVisorHistoriaId(Nullable<int> Accion, string tipoDocumento, string Documento, string IdOrdenAtencion, string cod_sucursal)
+        public ActionResult ListarVisorHistoriaId(Nullable<int> Accion, string tipoDocumento, string Documento, string IdOrdenAtencion, string cod_sucursal)
         {
 
             Nullable<int> IdOrden = null;
@@ -468,8 +349,10 @@ namespace RoyalSISWS.Controllers
                         }
                         lstSalida.Add(pObjVisor);
                     }
-                    //var test = lstSalida.Where(x => x.IdOrdenAtencion == 4171232).ToList();
-                    return Json(lstSalida, JsonRequestBehavior.AllowGet);
+                    string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(lstSalida);
+                    jsonString = jsonString.Replace("\n", "");
+                    jsonString = Regex.Replace(jsonString, @"[^\u0000-\u007F]+", string.Empty);
+                    return Content(jsonString, "application/json");
                 }
                 else
                 {
