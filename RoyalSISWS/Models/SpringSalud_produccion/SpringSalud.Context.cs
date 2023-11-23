@@ -48,6 +48,7 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
         public DbSet<SS_IT_SaludRecetaIndicacionesGENIngreso> SS_IT_SaludRecetaIndicacionesGENIngreso { get; set; }
         public DbSet<SS_IT_SaludRecetaIngreso> SS_IT_SaludRecetaIngreso { get; set; }
         public DbSet<VW_SS_HCE_VisorDescansoMedico> VW_SS_HCE_VisorDescansoMedico { get; set; }
+        public DbSet<VW_SS_HCE_VisorProcedimiento> VW_SS_HCE_VisorProcedimiento { get; set; }
     
         public virtual ObjectResult<CW_AccesoUsuario_Result> CW_AccesoUsuario(Nullable<int> p_IDPERSONA, string p_USUARIO, string p_PASSWORD, string p_TDOCUMENTO, string p_ACCION)
         {

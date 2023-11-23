@@ -705,6 +705,45 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorHistoria
           <Property Name="EstadoPersona" Type="varchar" MaxLength="20" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorProcedimiento' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VW_SS_HCE_VisorProcedimiento">
+          <Key>
+            <PropertyRef Name="TAB" />
+            <PropertyRef Name="IdProcedimiento" />
+            <PropertyRef Name="IdInforme" />
+            <PropertyRef Name="Secuencial" />
+            <PropertyRef Name="SecuencialPlantilla" />
+            <PropertyRef Name="ValorNumerico" />
+            <PropertyRef Name="ValorCadena" />
+            <PropertyRef Name="documento" />
+            <PropertyRef Name="tipodocumento" />
+          </Key>
+          <Property Name="TAB" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="IdOrdenAtencion" Type="int" />
+          <Property Name="LineaOrdenAtencion" Type="int" />
+          <Property Name="IdProcedimiento" Type="int" Nullable="false" />
+          <Property Name="IdInforme" Type="int" Nullable="false" />
+          <Property Name="Secuencial" Type="int" Nullable="false" />
+          <Property Name="IdConcepto" Type="int" />
+          <Property Name="IdPlantilla" Type="int" />
+          <Property Name="SecuencialPlantilla" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="150" />
+          <Property Name="ValorNumerico" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="ValorCadena" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="ValorFecha" Type="datetime" />
+          <Property Name="Estado" Type="int" />
+          <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+          <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="Codigo" Type="varchar" MaxLength="25" />
+          <Property Name="TipoDato" Type="varchar" MaxLength="1" />
+          <Property Name="IdPaciente" Type="int" />
+          <Property Name="documento" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="tipodocumento" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Sucursal" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorProcedimientoInforme' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_SS_HCE_VisorProcedimientoInforme">
           <Key>
@@ -1877,6 +1916,34 @@ FROM [dbo].[VW_SS_HCE_VisorExamen] AS [VW_SS_HCE_VisorExamen]</DefiningQuery>
 [VW_SS_HCE_VisorHistoria].[EstadoPersona] AS [EstadoPersona]
 FROM [dbo].[VW_SS_HCE_VisorHistoria] AS [VW_SS_HCE_VisorHistoria]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="VW_SS_HCE_VisorProcedimiento" EntityType="Self.VW_SS_HCE_VisorProcedimiento" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VW_SS_HCE_VisorProcedimiento].[TAB] AS [TAB], 
+[VW_SS_HCE_VisorProcedimiento].[IdOrdenAtencion] AS [IdOrdenAtencion], 
+[VW_SS_HCE_VisorProcedimiento].[LineaOrdenAtencion] AS [LineaOrdenAtencion], 
+[VW_SS_HCE_VisorProcedimiento].[IdProcedimiento] AS [IdProcedimiento], 
+[VW_SS_HCE_VisorProcedimiento].[IdInforme] AS [IdInforme], 
+[VW_SS_HCE_VisorProcedimiento].[Secuencial] AS [Secuencial], 
+[VW_SS_HCE_VisorProcedimiento].[IdConcepto] AS [IdConcepto], 
+[VW_SS_HCE_VisorProcedimiento].[IdPlantilla] AS [IdPlantilla], 
+[VW_SS_HCE_VisorProcedimiento].[SecuencialPlantilla] AS [SecuencialPlantilla], 
+[VW_SS_HCE_VisorProcedimiento].[Descripcion] AS [Descripcion], 
+[VW_SS_HCE_VisorProcedimiento].[ValorNumerico] AS [ValorNumerico], 
+[VW_SS_HCE_VisorProcedimiento].[ValorCadena] AS [ValorCadena], 
+[VW_SS_HCE_VisorProcedimiento].[ValorFecha] AS [ValorFecha], 
+[VW_SS_HCE_VisorProcedimiento].[Estado] AS [Estado], 
+[VW_SS_HCE_VisorProcedimiento].[UsuarioCreacion] AS [UsuarioCreacion], 
+[VW_SS_HCE_VisorProcedimiento].[FechaCreacion] AS [FechaCreacion], 
+[VW_SS_HCE_VisorProcedimiento].[UsuarioModificacion] AS [UsuarioModificacion], 
+[VW_SS_HCE_VisorProcedimiento].[FechaModificacion] AS [FechaModificacion], 
+[VW_SS_HCE_VisorProcedimiento].[Codigo] AS [Codigo], 
+[VW_SS_HCE_VisorProcedimiento].[TipoDato] AS [TipoDato], 
+[VW_SS_HCE_VisorProcedimiento].[IdPaciente] AS [IdPaciente], 
+[VW_SS_HCE_VisorProcedimiento].[documento] AS [documento], 
+[VW_SS_HCE_VisorProcedimiento].[tipodocumento] AS [tipodocumento], 
+[VW_SS_HCE_VisorProcedimiento].[Sucursal] AS [Sucursal]
+FROM [dbo].[VW_SS_HCE_VisorProcedimiento] AS [VW_SS_HCE_VisorProcedimiento]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="VW_SS_HCE_VisorProcedimientoInforme" EntityType="Self.VW_SS_HCE_VisorProcedimientoInforme" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
 [VW_SS_HCE_VisorProcedimientoInforme].[LinkInforme] AS [LinkInforme], 
@@ -2467,6 +2534,7 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
             <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
           </FunctionImport>
           <EntitySet Name="VW_SS_HCE_VisorDescansoMedico" EntityType="ModelGolf.VW_SS_HCE_VisorDescansoMedico" />
+          <EntitySet Name="VW_SS_HCE_VisorProcedimiento" EntityType="ModelGolf.VW_SS_HCE_VisorProcedimiento" />
         </EntityContainer>
         <ComplexType Name="CW_AccesoUsuario_Result">
           <Property Type="Int32" Name="IDPERSONA" Nullable="false" />
@@ -3492,6 +3560,43 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
           <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
           <Property Name="Documento" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="TipoDocumento" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VW_SS_HCE_VisorProcedimiento">
+          <Key>
+            <PropertyRef Name="TAB" />
+            <PropertyRef Name="IdProcedimiento" />
+            <PropertyRef Name="IdInforme" />
+            <PropertyRef Name="Secuencial" />
+            <PropertyRef Name="SecuencialPlantilla" />
+            <PropertyRef Name="ValorNumerico" />
+            <PropertyRef Name="ValorCadena" />
+            <PropertyRef Name="documento" />
+            <PropertyRef Name="tipodocumento" />
+          </Key>
+          <Property Name="TAB" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="IdOrdenAtencion" Type="Int32" />
+          <Property Name="LineaOrdenAtencion" Type="Int32" />
+          <Property Name="IdProcedimiento" Type="Int32" Nullable="false" />
+          <Property Name="IdInforme" Type="Int32" Nullable="false" />
+          <Property Name="Secuencial" Type="Int32" Nullable="false" />
+          <Property Name="IdConcepto" Type="Int32" />
+          <Property Name="IdPlantilla" Type="Int32" />
+          <Property Name="SecuencialPlantilla" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ValorNumerico" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+          <Property Name="ValorCadena" Type="String" Nullable="false" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="ValorFecha" Type="DateTime" Precision="3" />
+          <Property Name="Estado" Type="Int32" />
+          <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="Codigo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TipoDato" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="IdPaciente" Type="Int32" />
+          <Property Name="documento" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="tipodocumento" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Sucursal" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4562,6 +4667,36 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
                 <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
                 <ScalarProperty Name="IdDescanso" ColumnName="IdDescanso" />
                 <ScalarProperty Name="IdConsultaExterna" ColumnName="IdConsultaExterna" />
+                <ScalarProperty Name="LineaOrdenAtencion" ColumnName="LineaOrdenAtencion" />
+                <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+                <ScalarProperty Name="TAB" ColumnName="TAB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VW_SS_HCE_VisorProcedimiento">
+            <EntityTypeMapping TypeName="ModelGolf.VW_SS_HCE_VisorProcedimiento">
+              <MappingFragment StoreEntitySet="VW_SS_HCE_VisorProcedimiento">
+                <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+                <ScalarProperty Name="tipodocumento" ColumnName="tipodocumento" />
+                <ScalarProperty Name="documento" ColumnName="documento" />
+                <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+                <ScalarProperty Name="TipoDato" ColumnName="TipoDato" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="ValorFecha" ColumnName="ValorFecha" />
+                <ScalarProperty Name="ValorCadena" ColumnName="ValorCadena" />
+                <ScalarProperty Name="ValorNumerico" ColumnName="ValorNumerico" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="SecuencialPlantilla" ColumnName="SecuencialPlantilla" />
+                <ScalarProperty Name="IdPlantilla" ColumnName="IdPlantilla" />
+                <ScalarProperty Name="IdConcepto" ColumnName="IdConcepto" />
+                <ScalarProperty Name="Secuencial" ColumnName="Secuencial" />
+                <ScalarProperty Name="IdInforme" ColumnName="IdInforme" />
+                <ScalarProperty Name="IdProcedimiento" ColumnName="IdProcedimiento" />
                 <ScalarProperty Name="LineaOrdenAtencion" ColumnName="LineaOrdenAtencion" />
                 <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
                 <ScalarProperty Name="TAB" ColumnName="TAB" />

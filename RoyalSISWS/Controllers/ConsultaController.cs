@@ -263,7 +263,7 @@ namespace RoyalSISWS.Controllers
                     List<VW_SS_HCE_VisorExamen> lstExamen = new List<VW_SS_HCE_VisorExamen>();
                     List<VW_SS_HCE_VisorReceta> lstReceta = new List<VW_SS_HCE_VisorReceta>();
                     List<VW_SS_HCE_VisorDescansoMedico> lstDescansoMedico = new List<VW_SS_HCE_VisorDescansoMedico>();
-                    
+                    List<VW_SS_HCE_VisorProcedimiento> lstProcedimiento = new List<VW_SS_HCE_VisorProcedimiento>();
                     //  pObjVisor.list_VW_SS_HCE_VisorExamen = m.getDiagnostico(pObjVisor.IdOrdenAtencion, IdEspe).ToList();
 
                     lst = m.HCE_VisorHistoria(VisorHistoria);
@@ -274,7 +274,7 @@ namespace RoyalSISWS.Controllers
                         lstExamen = m.HCE_VisorHistoria_Examen(VisorHistoria);
                         lstReceta = m.HCE_VisorHistoria_Receta(VisorHistoria);
                         lstDescansoMedico = m.HCE_VisorHistoria_DescansoMedico(VisorHistoria);
-
+                        lstProcedimiento = m.HCE_VisorHistoria_Procedimiento(VisorHistoria);
                     }               
 
                     foreach (VW_SS_HCE_VisorHistoria intobj2 in lst)
@@ -350,6 +350,10 @@ namespace RoyalSISWS.Controllers
                         {
                             pObjVisor.list_VW_SS_HCE_VisorExamen = lstExamen.Where(o => o.IdOrdenAtencion == pObjVisor.IdOrdenAtencion && o.Linea == pObjVisor.LineaOrdenAtencion).ToList();
                             pObjVisor.list_VW_SS_HCE_VisorReceta = lstReceta.Where(o => o.IdOrdenAtencion == pObjVisor.IdOrdenAtencion && o.LineaOrdenAtencion == pObjVisor.LineaOrdenAtencion).ToList();
+                             if (!string.IsNullOrEmpty(intobj2.IdProcedimiento.ToString()))
+                                {
+                                    pObjVisor.list_VW_SS_HCE_VisorProcedimiento = lstProcedimiento.Where(o => o.IdOrdenAtencion == pObjVisor.IdOrdenAtencion && o.LineaOrdenAtencion == pObjVisor.LineaOrdenAtencion).ToList();
+                                } 
                         }
                         lstSalida.Add(pObjVisor);
                     }

@@ -205,6 +205,33 @@ namespace RoyalSISWS.Models
             return lst;
         }
 
+        public List<VW_SS_HCE_VisorProcedimiento> HCE_VisorHistoria_Procedimiento(CW_DisponibilidadMedica Disponibilidad)
+        {
+            List<VW_SS_HCE_VisorProcedimiento> lst = new List<VW_SS_HCE_VisorProcedimiento>();
+            using (SpringSalud_produccionEntities context = new SpringSalud_produccionEntities())
+            {
+                context.Database.Connection.Open();
+                if (Disponibilidad.IdHorario == 1)
+                {
+                    lst = context.VW_SS_HCE_VisorProcedimiento.Where(
+                        t => t.tipodocumento == Disponibilidad.UnidadReplicacion && t.documento == Disponibilidad.CMP && t.Sucursal == Disponibilidad.IdEspecialidad_Nombre).AsNoTracking().ToList();
+                }
+                if (Disponibilidad.IdHorario == 2)
+                {
+                    lst = context.VW_SS_HCE_VisorProcedimiento.Where(
+                        t => t.FechaCreacion == Disponibilidad.FechaInicio && t.Sucursal == Disponibilidad.IdEspecialidad_Nombre).AsNoTracking().ToList();
+                }
+                if (Disponibilidad.IdHorario == 3)
+                {
+                    lst = context.VW_SS_HCE_VisorProcedimiento.Where(
+                        t => //t.tipodocumento == Disponibilidad.UnidadReplicacion && 
+                            t.documento == Disponibilidad.CMP && t.IdOrdenAtencion == Disponibilidad.IdCita && t.Sucursal == Disponibilidad.IdEspecialidad_Nombre).AsNoTracking().ToList();
+                }
+                context.Database.Connection.Close();
+                context.Dispose();
+            }
+            return lst;
+        }
 
 
         public List<VW_SS_HCE_VisorProcedimientoInforme> HCE_VisorInformes(CW_DisponibilidadMedica Disponibilidad)

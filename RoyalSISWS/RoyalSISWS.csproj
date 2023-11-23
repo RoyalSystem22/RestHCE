@@ -286,6 +286,9 @@
     <Compile Include="Models\SpringSalud_produccion\VW_SS_HCE_VisorHistoria.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SpringSalud_produccion\VW_SS_HCE_VisorProcedimiento.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SpringSalud_produccion\VW_SS_HCE_VisorProcedimientoInforme.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>

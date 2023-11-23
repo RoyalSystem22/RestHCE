@@ -25,6 +25,7 @@
         <EntityTypeShape EntityType="ModelGolf.SS_IT_SaludRecetaIndicacionesGENIngreso" Width="1.5" PointX="3.375" PointY="18.75" />
         <EntityTypeShape EntityType="ModelGolf.SS_IT_SaludRecetaIngreso" Width="1.5" PointX="13.375" PointY="17.75" />
         <EntityTypeShape EntityType="ModelGolf.VW_SS_HCE_VisorDescansoMedico" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ModelGolf.VW_SS_HCE_VisorProcedimiento" Width="1.5" PointX="19.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
