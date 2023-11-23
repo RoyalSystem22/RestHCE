@@ -446,6 +446,36 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorAnamnesi
           <Property Name="Sucursal" Type="varchar" MaxLength="15" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorDescansoMedico' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VW_SS_HCE_VisorDescansoMedico">
+          <Key>
+            <PropertyRef Name="TAB" />
+            <PropertyRef Name="IdConsultaExterna" />
+            <PropertyRef Name="IdDescanso" />
+            <PropertyRef Name="Documento" />
+            <PropertyRef Name="TipoDocumento" />
+          </Key>
+          <Property Name="TAB" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="IdOrdenAtencion" Type="int" />
+          <Property Name="LineaOrdenAtencion" Type="int" />
+          <Property Name="IdConsultaExterna" Type="int" Nullable="false" />
+          <Property Name="IdDescanso" Type="int" Nullable="false" />
+          <Property Name="IdPaciente" Type="int" />
+          <Property Name="FechaInicio" Type="datetime" />
+          <Property Name="FechaFinal" Type="datetime" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="500" />
+          <Property Name="Dia" Type="varchar" MaxLength="500" />
+          <Property Name="Diagnostico" Type="varchar(max)" />
+          <Property Name="Estado" Type="int" />
+          <Property Name="UsuarioCreacion" Type="varchar" MaxLength="80" />
+          <Property Name="Sucursal" Type="varchar" MaxLength="15" />
+          <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="UsuarioModificacion" Type="char" MaxLength="4" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="Documento" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="TipoDocumento" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorDiagnostico' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_SS_HCE_VisorDiagnostico">
           <Key>
@@ -760,7 +790,7 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
           <Property Name="Sucursal" Type="varchar" MaxLength="15" />
           <Property Name="DesVia" Type="varchar" MaxLength="500" />
           <Property Name="DesUnidad" Type="char" MaxLength="20" />
-          <Property Name="IndicacionesEsp" Type="char" MaxLength="500" />
+          <Property Name="IndicacionesEsp" Type="varchar(max)" />
         </EntityType>
         <Function Name="A_SP_SS_HCE_ListaServiciosAuxiliares" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
@@ -869,6 +899,9 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
           <Parameter Name="Accion" Type="varchar" Mode="In" />
           <Parameter Name="Version" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="SP_SS_GenerarLlamado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCita" Type="int" Mode="In" />
+        </Function>
         <Function Name="SP_SS_IT_SALUDAnamnesisInFormeMedico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IDordenatencion" Type="int" Mode="In" />
           <Parameter Name="IdPaciente" Type="int" Mode="In" />
@@ -904,6 +937,32 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
           <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
           <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
         </Function>
+        <Function Name="SP_SS_IT_SALUDAnamnesisIngresoMirth" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+          <Parameter Name="IdEpisodioAtencion" Type="int" Mode="In" />
+          <Parameter Name="IdPaciente" Type="int" Mode="In" />
+          <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+          <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+          <Parameter Name="LineaOrdenAtencion" Type="int" Mode="In" />
+          <Parameter Name="Secuencia" Type="varchar" Mode="In" />
+          <Parameter Name="TiempoEnfermedad" Type="varchar" Mode="In" />
+          <Parameter Name="TiempoEnfermedadUnidad" Type="varchar" Mode="In" />
+          <Parameter Name="RelatoCronologico" Type="varchar" Mode="In" />
+          <Parameter Name="PresionArterialMSD1" Type="varchar" Mode="In" />
+          <Parameter Name="PresionArterialMSD2" Type="int" Mode="In" />
+          <Parameter Name="PresionArterialMSI1" Type="varchar" Mode="In" />
+          <Parameter Name="PresionArterialMSI2" Type="varchar" Mode="In" />
+          <Parameter Name="FrecuenciaCardiaca" Type="varchar" Mode="In" />
+          <Parameter Name="FrecuenciaRespiratoria" Type="int" Mode="In" />
+          <Parameter Name="Temperatura" Type="varchar" Mode="In" />
+          <Parameter Name="SaturacionOxigeno" Type="int" Mode="In" />
+          <Parameter Name="Peso" Type="varchar" Mode="In" />
+          <Parameter Name="Talla" Type="varchar" Mode="In" />
+          <Parameter Name="ExamenClinico" Type="varchar" Mode="In" />
+          <Parameter Name="Estado" Type="int" Mode="In" />
+          <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+          <Parameter Name="Fechacreacion" Type="datetime" Mode="In" />
+        </Function>
         <Function Name="SP_SS_IT_SALUDAtendidoConsultaExterna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IDordenatencion" Type="int" Mode="In" />
           <Parameter Name="IDPaciente" Type="int" Mode="In" />
@@ -922,6 +981,19 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
           <Parameter Name="Usuario" Type="varchar" Mode="In" />
           <Parameter Name="Fechacreacion" Type="datetime" Mode="In" />
           <Parameter Name="TipoOrdenAtencion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_SS_IT_SALUDDescansoMedico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+          <Parameter Name="IdPaciente" Type="int" Mode="In" />
+          <Parameter Name="IdLineaOa" Type="int" Mode="In" />
+          <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+          <Parameter Name="FechaFinal" Type="datetime" Mode="In" />
+          <Parameter Name="Observaciones" Type="varchar" Mode="In" />
+          <Parameter Name="Estado" Type="int" Mode="In" />
+          <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+          <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+          <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+          <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
         </Function>
         <Function Name="SP_SS_IT_SaludDiagnosticoIngreso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
@@ -1594,6 +1666,29 @@ FROM [dbo].[VW_SA_PR_REP_ListaServiciosAuxiliares] AS [VW_SA_PR_REP_ListaServici
 [VW_SS_HCE_VisorAnamnesis].[Sucursal] AS [Sucursal]
 FROM [dbo].[VW_SS_HCE_VisorAnamnesis] AS [VW_SS_HCE_VisorAnamnesis]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="VW_SS_HCE_VisorDescansoMedico" EntityType="Self.VW_SS_HCE_VisorDescansoMedico" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VW_SS_HCE_VisorDescansoMedico].[TAB] AS [TAB], 
+[VW_SS_HCE_VisorDescansoMedico].[IdOrdenAtencion] AS [IdOrdenAtencion], 
+[VW_SS_HCE_VisorDescansoMedico].[LineaOrdenAtencion] AS [LineaOrdenAtencion], 
+[VW_SS_HCE_VisorDescansoMedico].[IdConsultaExterna] AS [IdConsultaExterna], 
+[VW_SS_HCE_VisorDescansoMedico].[IdDescanso] AS [IdDescanso], 
+[VW_SS_HCE_VisorDescansoMedico].[IdPaciente] AS [IdPaciente], 
+[VW_SS_HCE_VisorDescansoMedico].[FechaInicio] AS [FechaInicio], 
+[VW_SS_HCE_VisorDescansoMedico].[FechaFinal] AS [FechaFinal], 
+[VW_SS_HCE_VisorDescansoMedico].[Observaciones] AS [Observaciones], 
+[VW_SS_HCE_VisorDescansoMedico].[Dia] AS [Dia], 
+[VW_SS_HCE_VisorDescansoMedico].[Diagnostico] AS [Diagnostico], 
+[VW_SS_HCE_VisorDescansoMedico].[Estado] AS [Estado], 
+[VW_SS_HCE_VisorDescansoMedico].[UsuarioCreacion] AS [UsuarioCreacion], 
+[VW_SS_HCE_VisorDescansoMedico].[Sucursal] AS [Sucursal], 
+[VW_SS_HCE_VisorDescansoMedico].[FechaCreacion] AS [FechaCreacion], 
+[VW_SS_HCE_VisorDescansoMedico].[UsuarioModificacion] AS [UsuarioModificacion], 
+[VW_SS_HCE_VisorDescansoMedico].[FechaModificacion] AS [FechaModificacion], 
+[VW_SS_HCE_VisorDescansoMedico].[Documento] AS [Documento], 
+[VW_SS_HCE_VisorDescansoMedico].[TipoDocumento] AS [TipoDocumento]
+FROM [dbo].[VW_SS_HCE_VisorDescansoMedico] AS [VW_SS_HCE_VisorDescansoMedico]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="VW_SS_HCE_VisorDiagnostico" EntityType="Self.VW_SS_HCE_VisorDiagnostico" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
 [VW_SS_HCE_VisorDiagnostico].[TAB] AS [TAB], 
@@ -2043,7 +2138,6 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
           <EntitySet Name="SS_IT_SaludInformeRutaIngreso" EntityType="ModelGolf.SS_IT_SaludInformeRutaIngreso" />
           <EntitySet Name="SS_IT_SaludOFTALMOLOGICOIngreso" EntityType="ModelGolf.SS_IT_SaludOFTALMOLOGICOIngreso" />
           <EntitySet Name="SS_IT_SaludProcedimientoIngreso" EntityType="ModelGolf.SS_IT_SaludProcedimientoIngreso" />
-          <EntitySet Name="SS_IT_SaludRecetaIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIngreso" />
           <FunctionImport Name="SP_SS_IT_SALUDAnamnesisInFormeMedico" ReturnType="Collection(Int32)">
             <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
             <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
@@ -2329,6 +2423,50 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
             <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
             <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SALUDAnamnesisIngresoMirth" ReturnType="Collection(String)">
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="Secuencia" Mode="In" Type="String" />
+            <Parameter Name="TiempoEnfermedad" Mode="In" Type="String" />
+            <Parameter Name="TiempoEnfermedadUnidad" Mode="In" Type="String" />
+            <Parameter Name="RelatoCronologico" Mode="In" Type="String" />
+            <Parameter Name="PresionArterialMSD1" Mode="In" Type="String" />
+            <Parameter Name="PresionArterialMSD2" Mode="In" Type="Int32" />
+            <Parameter Name="PresionArterialMSI1" Mode="In" Type="String" />
+            <Parameter Name="PresionArterialMSI2" Mode="In" Type="String" />
+            <Parameter Name="FrecuenciaCardiaca" Mode="In" Type="String" />
+            <Parameter Name="FrecuenciaRespiratoria" Mode="In" Type="Int32" />
+            <Parameter Name="Temperatura" Mode="In" Type="String" />
+            <Parameter Name="SaturacionOxigeno" Mode="In" Type="Int32" />
+            <Parameter Name="Peso" Mode="In" Type="String" />
+            <Parameter Name="Talla" Mode="In" Type="String" />
+            <Parameter Name="ExamenClinico" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="SS_IT_SaludRecetaIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIngreso" />
+          <FunctionImport Name="SP_SS_GenerarLlamado" ReturnType="Collection(ModelGolf.SP_SS_GenerarLlamado_Result)">
+          <Parameter Name="IdCita" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SALUDDescansoMedico" ReturnType="Collection(Int32)">
+            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="IdLineaOa" Mode="In" Type="Int32" />
+            <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaFinal" Mode="In" Type="DateTime" />
+            <Parameter Name="Observaciones" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+            <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+            <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+            <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="VW_SS_HCE_VisorDescansoMedico" EntityType="ModelGolf.VW_SS_HCE_VisorDescansoMedico" />
         </EntityContainer>
         <ComplexType Name="CW_AccesoUsuario_Result">
           <Property Type="Int32" Name="IDPERSONA" Nullable="false" />
@@ -3010,7 +3148,7 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
           <Property Name="Sucursal" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="DesVia" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="DesUnidad" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="IndicacionesEsp" Type="String" MaxLength="500" FixedLength="true" Unicode="false" />
+          <Property Name="IndicacionesEsp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SS_IT_SaludAnamnesisIngreso">
           <Key>
@@ -3261,6 +3399,29 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
           <Property Name="Observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="SecuencialHCE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="SS_IT_SaludRecetaIndicacionesGENIngreso">
+          <Key>
+            <PropertyRef Name="IdOrdenAtencion" />
+          </Key>
+          <Property Name="IdOrdenAtencion" Type="Int32" Nullable="false" />
+          <Property Name="LineaOrdenAtencionConsulta" Type="Int32" />
+          <Property Name="TipoIndicacion" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+          <Property Name="UnidadReplicacion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="IdEpisodioAtencion" Type="Int32" />
+          <Property Name="IdPaciente" Type="Int32" />
+          <Property Name="EpisodioClinico" Type="Int32" />
+          <Property Name="Secuencia" Type="Int32" />
+          <Property Name="Estado" Type="Int32" />
+          <Property Name="UsuarioCreacion" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioModificacion" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="IndicadorRecepcion" Type="Int32" />
+          <Property Name="FechaRecepcion" Type="DateTime" Precision="3" />
+          <Property Name="IndicadorProcesado" Type="Int32" />
+          <Property Name="FechaProcesado" Type="DateTime" Precision="3" />
+        </EntityType>
         <EntityType Name="SS_IT_SaludRecetaIngreso">
           <Key>
             <PropertyRef Name="IdOrdenAtencion" />
@@ -3299,28 +3460,38 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
           <Property Name="TipoOrdenAtencion" Type="Int32" />
           <Property Name="SECUENCIALHCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="SS_IT_SaludRecetaIndicacionesGENIngreso">
+        <ComplexType Name="SP_SS_GenerarLlamado_Result">
+          <Property Type="Int32" Name="IdCita" Nullable="true" />
+          <Property Type="Int32" Name="Retorno" Nullable="true" />
+          <Property Type="String" Name="Observacion" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="VW_SS_HCE_VisorDescansoMedico">
           <Key>
-            <PropertyRef Name="IdOrdenAtencion" />
+            <PropertyRef Name="TAB" />
+            <PropertyRef Name="IdConsultaExterna" />
+            <PropertyRef Name="IdDescanso" />
+            <PropertyRef Name="Documento" />
+            <PropertyRef Name="TipoDocumento" />
           </Key>
-          <Property Name="IdOrdenAtencion" Type="Int32" Nullable="false" />
-          <Property Name="LineaOrdenAtencionConsulta" Type="Int32" />
-          <Property Name="TipoIndicacion" Type="Int32" />
-          <Property Name="Descripcion" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
-          <Property Name="UnidadReplicacion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="IdEpisodioAtencion" Type="Int32" />
+          <Property Name="TAB" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="IdOrdenAtencion" Type="Int32" />
+          <Property Name="LineaOrdenAtencion" Type="Int32" />
+          <Property Name="IdConsultaExterna" Type="Int32" Nullable="false" />
+          <Property Name="IdDescanso" Type="Int32" Nullable="false" />
           <Property Name="IdPaciente" Type="Int32" />
-          <Property Name="EpisodioClinico" Type="Int32" />
-          <Property Name="Secuencia" Type="Int32" />
+          <Property Name="FechaInicio" Type="DateTime" Precision="3" />
+          <Property Name="FechaFinal" Type="DateTime" Precision="3" />
+          <Property Name="Observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Dia" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Diagnostico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Estado" Type="Int32" />
-          <Property Name="UsuarioCreacion" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="UsuarioCreacion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="Sucursal" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
-          <Property Name="UsuarioModificacion" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="UsuarioModificacion" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
           <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
-          <Property Name="IndicadorRecepcion" Type="Int32" />
-          <Property Name="FechaRecepcion" Type="DateTime" Precision="3" />
-          <Property Name="IndicadorProcesado" Type="Int32" />
-          <Property Name="FechaProcesado" Type="DateTime" Precision="3" />
+          <Property Name="Documento" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="TipoDocumento" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4283,45 +4454,6 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SS_IT_SaludRecetaIngreso">
-            <EntityTypeMapping TypeName="ModelGolf.SS_IT_SaludRecetaIngreso">
-              <MappingFragment StoreEntitySet="SS_IT_SaludRecetaIngreso">
-                <ScalarProperty Name="SECUENCIALHCE" ColumnName="SECUENCIALHCE" />
-                <ScalarProperty Name="TipoOrdenAtencion" ColumnName="TipoOrdenAtencion" />
-                <ScalarProperty Name="INDICACIONESPECIFICA" ColumnName="INDICACIONESPECIFICA" />
-                <ScalarProperty Name="FechaProcesado" ColumnName="FechaProcesado" />
-                <ScalarProperty Name="IndicadorProcesado" ColumnName="IndicadorProcesado" />
-                <ScalarProperty Name="FechaRecepcion" ColumnName="FechaRecepcion" />
-                <ScalarProperty Name="IndicadorRecepcion" ColumnName="IndicadorRecepcion" />
-                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
-                <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
-                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
-                <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
-                <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
-                <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
-                <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
-                <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
-                <ScalarProperty Name="TipoReceta" ColumnName="TipoReceta" />
-                <ScalarProperty Name="IndicadorEPS" ColumnName="IndicadorEPS" />
-                <ScalarProperty Name="Frecuencia" ColumnName="Frecuencia" />
-                <ScalarProperty Name="DiasTratamiento" ColumnName="DiasTratamiento" />
-                <ScalarProperty Name="Dosis" ColumnName="Dosis" />
-                <ScalarProperty Name="Via" ColumnName="Via" />
-                <ScalarProperty Name="FechaAplicacion" ColumnName="FechaAplicacion" />
-                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-                <ScalarProperty Name="UnidadMedida" ColumnName="UnidadMedida" />
-                <ScalarProperty Name="Linea" ColumnName="Linea" />
-                <ScalarProperty Name="Familia" ColumnName="Familia" />
-                <ScalarProperty Name="SubFamilia" ColumnName="SubFamilia" />
-                <ScalarProperty Name="Componente" ColumnName="Componente" />
-                <ScalarProperty Name="LineaOrdenAtencion" ColumnName="LineaOrdenAtencion" />
-                <ScalarProperty Name="LineaOrdenAtencionConsulta" ColumnName="LineaOrdenAtencionConsulta" />
-                <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisInFormeMedico" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisInFormeMedico" />
           <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisIngreso" />
           <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAtendidoConsultaExterna" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAtendidoConsultaExterna" />
@@ -4361,6 +4493,81 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludInformeRutaIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludInformeRutaIngreso" />
           <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludRecetaIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludRecetaIngreso" />
           <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia" FunctionName="ModelGolf.Store.SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia" />
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisIngresoMirth" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisIngresoMirth" />
+          <EntitySetMapping Name="SS_IT_SaludRecetaIngreso">
+            <EntityTypeMapping TypeName="ModelGolf.SS_IT_SaludRecetaIngreso">
+              <MappingFragment StoreEntitySet="SS_IT_SaludRecetaIngreso">
+                <ScalarProperty Name="SECUENCIALHCE" ColumnName="SECUENCIALHCE" />
+                <ScalarProperty Name="TipoOrdenAtencion" ColumnName="TipoOrdenAtencion" />
+                <ScalarProperty Name="INDICACIONESPECIFICA" ColumnName="INDICACIONESPECIFICA" />
+                <ScalarProperty Name="FechaProcesado" ColumnName="FechaProcesado" />
+                <ScalarProperty Name="IndicadorProcesado" ColumnName="IndicadorProcesado" />
+                <ScalarProperty Name="FechaRecepcion" ColumnName="FechaRecepcion" />
+                <ScalarProperty Name="IndicadorRecepcion" ColumnName="IndicadorRecepcion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+                <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+                <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+                <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+                <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+                <ScalarProperty Name="TipoReceta" ColumnName="TipoReceta" />
+                <ScalarProperty Name="IndicadorEPS" ColumnName="IndicadorEPS" />
+                <ScalarProperty Name="Frecuencia" ColumnName="Frecuencia" />
+                <ScalarProperty Name="DiasTratamiento" ColumnName="DiasTratamiento" />
+                <ScalarProperty Name="Dosis" ColumnName="Dosis" />
+                <ScalarProperty Name="Via" ColumnName="Via" />
+                <ScalarProperty Name="FechaAplicacion" ColumnName="FechaAplicacion" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="UnidadMedida" ColumnName="UnidadMedida" />
+                <ScalarProperty Name="Linea" ColumnName="Linea" />
+                <ScalarProperty Name="Familia" ColumnName="Familia" />
+                <ScalarProperty Name="SubFamilia" ColumnName="SubFamilia" />
+                <ScalarProperty Name="Componente" ColumnName="Componente" />
+                <ScalarProperty Name="LineaOrdenAtencion" ColumnName="LineaOrdenAtencion" />
+                <ScalarProperty Name="LineaOrdenAtencionConsulta" ColumnName="LineaOrdenAtencionConsulta" />
+                <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_SS_GenerarLlamado" FunctionName="ModelGolf.Store.SP_SS_GenerarLlamado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ModelGolf.SP_SS_GenerarLlamado_Result">
+                <ScalarProperty Name="IdCita" ColumnName="IdCita" />
+                <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDDescansoMedico" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDDescansoMedico" />
+          <EntitySetMapping Name="VW_SS_HCE_VisorDescansoMedico">
+            <EntityTypeMapping TypeName="ModelGolf.VW_SS_HCE_VisorDescansoMedico">
+              <MappingFragment StoreEntitySet="VW_SS_HCE_VisorDescansoMedico">
+                <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+                <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Diagnostico" ColumnName="Diagnostico" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="FechaFinal" ColumnName="FechaFinal" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+                <ScalarProperty Name="IdDescanso" ColumnName="IdDescanso" />
+                <ScalarProperty Name="IdConsultaExterna" ColumnName="IdConsultaExterna" />
+                <ScalarProperty Name="LineaOrdenAtencion" ColumnName="LineaOrdenAtencion" />
+                <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+                <ScalarProperty Name="TAB" ColumnName="TAB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

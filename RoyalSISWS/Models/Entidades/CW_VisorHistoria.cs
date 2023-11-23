@@ -81,6 +81,7 @@ namespace RoyalSISWS.Models.Entidades
         public virtual List<VW_SS_HCE_VisorAnamnesis> list_VW_SS_HCE_VisorAnamnesis { get; set; }
         public virtual List<VW_SS_HCE_VisorDiagnostico> list_VW_SS_HCE_VisorDiagnostico { get; set; }
         public virtual List<VW_SS_HCE_VisorReceta> list_VW_SS_HCE_VisorReceta { get; set; }
+        public virtual List<VW_SS_HCE_VisorDescansoMedico> list_VW_SS_HCE_VisorDescansoMedico { get; set; }
 
     }
 }

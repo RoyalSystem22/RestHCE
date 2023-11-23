@@ -185,7 +185,6 @@
     <EntitySet Name="SS_IT_SaludInformeRutaIngreso" EntityType="ModelGolf.SS_IT_SaludInformeRutaIngreso" />
     <EntitySet Name="SS_IT_SaludOFTALMOLOGICOIngreso" EntityType="ModelGolf.SS_IT_SaludOFTALMOLOGICOIngreso" />
     <EntitySet Name="SS_IT_SaludProcedimientoIngreso" EntityType="ModelGolf.SS_IT_SaludProcedimientoIngreso" />
-    <EntitySet Name="SS_IT_SaludRecetaIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIngreso" />
     <FunctionImport Name="SP_SS_IT_SALUDAnamnesisInFormeMedico" ReturnType="Collection(Int32)">
       <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
       <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
@@ -470,6 +469,36 @@
       <Parameter Name="Estado" Mode="In" Type="Int32" />
       <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
       <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SALUDAnamnesisIngresoMirth" ReturnType="Collection(String)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="String" />
+      <Parameter Name="TiempoEnfermedad" Mode="In" Type="String" />
+      <Parameter Name="TiempoEnfermedadUnidad" Mode="In" Type="String" />
+      <Parameter Name="RelatoCronologico" Mode="In" Type="String" />
+      <Parameter Name="PresionArterialMSD1" Mode="In" Type="String" />
+      <Parameter Name="PresionArterialMSD2" Mode="In" Type="Int32" />
+      <Parameter Name="PresionArterialMSI1" Mode="In" Type="String" />
+      <Parameter Name="PresionArterialMSI2" Mode="In" Type="String" />
+      <Parameter Name="FrecuenciaCardiaca" Mode="In" Type="String" />
+      <Parameter Name="FrecuenciaRespiratoria" Mode="In" Type="Int32" />
+      <Parameter Name="Temperatura" Mode="In" Type="String" />
+      <Parameter Name="SaturacionOxigeno" Mode="In" Type="Int32" />
+      <Parameter Name="Peso" Mode="In" Type="String" />
+      <Parameter Name="Talla" Mode="In" Type="String" />
+      <Parameter Name="ExamenClinico" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="SS_IT_SaludRecetaIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIngreso" />
+    <FunctionImport Name="SP_SS_GenerarLlamado" ReturnType="Collection(ModelGolf.SP_SS_GenerarLlamado_Result)">
+      <Parameter Name="IdCita" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="CW_AccesoUsuario_Result">
@@ -1152,7 +1181,7 @@
     <Property Name="Sucursal" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="DesVia" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="DesUnidad" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-    <Property Name="IndicacionesEsp" Type="String" MaxLength="500" FixedLength="true" Unicode="false" />
+    <Property Name="IndicacionesEsp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="SS_IT_SaludAnamnesisIngreso">
     <Key>
@@ -1403,6 +1432,29 @@
     <Property Name="Observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="SecuencialHCE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
   </EntityType>
+  <EntityType Name="SS_IT_SaludRecetaIndicacionesGENIngreso">
+    <Key>
+      <PropertyRef Name="IdOrdenAtencion" />
+    </Key>
+    <Property Name="IdOrdenAtencion" Type="Int32" Nullable="false" />
+    <Property Name="LineaOrdenAtencionConsulta" Type="Int32" />
+    <Property Name="TipoIndicacion" Type="Int32" />
+    <Property Name="Descripcion" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+    <Property Name="UnidadReplicacion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="IdEpisodioAtencion" Type="Int32" />
+    <Property Name="IdPaciente" Type="Int32" />
+    <Property Name="EpisodioClinico" Type="Int32" />
+    <Property Name="Secuencia" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="IndicadorRecepcion" Type="Int32" />
+    <Property Name="FechaRecepcion" Type="DateTime" Precision="3" />
+    <Property Name="IndicadorProcesado" Type="Int32" />
+    <Property Name="FechaProcesado" Type="DateTime" Precision="3" />
+  </EntityType>
   <EntityType Name="SS_IT_SaludRecetaIngreso">
     <Key>
       <PropertyRef Name="IdOrdenAtencion" />
@@ -1441,27 +1493,9 @@
     <Property Name="TipoOrdenAtencion" Type="Int32" />
     <Property Name="SECUENCIALHCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="SS_IT_SaludRecetaIndicacionesGENIngreso">
-    <Key>
-      <PropertyRef Name="IdOrdenAtencion" />
-    </Key>
-    <Property Name="IdOrdenAtencion" Type="Int32" Nullable="false" />
-    <Property Name="LineaOrdenAtencionConsulta" Type="Int32" />
-    <Property Name="TipoIndicacion" Type="Int32" />
-    <Property Name="Descripcion" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
-    <Property Name="UnidadReplicacion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="IdEpisodioAtencion" Type="Int32" />
-    <Property Name="IdPaciente" Type="Int32" />
-    <Property Name="EpisodioClinico" Type="Int32" />
-    <Property Name="Secuencia" Type="Int32" />
-    <Property Name="Estado" Type="Int32" />
-    <Property Name="UsuarioCreacion" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
-    <Property Name="UsuarioModificacion" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
-    <Property Name="IndicadorRecepcion" Type="Int32" />
-    <Property Name="FechaRecepcion" Type="DateTime" Precision="3" />
-    <Property Name="IndicadorProcesado" Type="Int32" />
-    <Property Name="FechaProcesado" Type="DateTime" Precision="3" />
-  </EntityType>
+  <ComplexType Name="SP_SS_GenerarLlamado_Result">
+    <Property Type="Int32" Name="IdCita" Nullable="true" />
+    <Property Type="Int32" Name="Retorno" Nullable="true" />
+    <Property Type="String" Name="Observacion" Nullable="true" MaxLength="50" />
+  </ComplexType>
 </Schema>

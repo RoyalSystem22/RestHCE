@@ -752,7 +752,7 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
     <Property Name="Sucursal" Type="varchar" MaxLength="15" />
     <Property Name="DesVia" Type="varchar" MaxLength="500" />
     <Property Name="DesUnidad" Type="char" MaxLength="20" />
-    <Property Name="IndicacionesEsp" Type="char" MaxLength="500" />
+    <Property Name="IndicacionesEsp" Type="varchar(max)" />
   </EntityType>
   <Function Name="A_SP_SS_HCE_ListaServiciosAuxiliares" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
@@ -861,6 +861,9 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
     <Parameter Name="Accion" Type="varchar" Mode="In" />
     <Parameter Name="Version" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="SP_SS_GenerarLlamado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCita" Type="int" Mode="In" />
+  </Function>
   <Function Name="SP_SS_IT_SALUDAnamnesisInFormeMedico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IDordenatencion" Type="int" Mode="In" />
     <Parameter Name="IdPaciente" Type="int" Mode="In" />
@@ -895,6 +898,32 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
     <Parameter Name="ExamenClinico" Type="varchar" Mode="In" />
     <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
     <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_IT_SALUDAnamnesisIngresoMirth" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+    <Parameter Name="IdEpisodioAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="LineaOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="Secuencia" Type="varchar" Mode="In" />
+    <Parameter Name="TiempoEnfermedad" Type="varchar" Mode="In" />
+    <Parameter Name="TiempoEnfermedadUnidad" Type="varchar" Mode="In" />
+    <Parameter Name="RelatoCronologico" Type="varchar" Mode="In" />
+    <Parameter Name="PresionArterialMSD1" Type="varchar" Mode="In" />
+    <Parameter Name="PresionArterialMSD2" Type="int" Mode="In" />
+    <Parameter Name="PresionArterialMSI1" Type="varchar" Mode="In" />
+    <Parameter Name="PresionArterialMSI2" Type="varchar" Mode="In" />
+    <Parameter Name="FrecuenciaCardiaca" Type="varchar" Mode="In" />
+    <Parameter Name="FrecuenciaRespiratoria" Type="int" Mode="In" />
+    <Parameter Name="Temperatura" Type="varchar" Mode="In" />
+    <Parameter Name="SaturacionOxigeno" Type="int" Mode="In" />
+    <Parameter Name="Peso" Type="varchar" Mode="In" />
+    <Parameter Name="Talla" Type="varchar" Mode="In" />
+    <Parameter Name="ExamenClinico" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="Fechacreacion" Type="datetime" Mode="In" />
   </Function>
   <Function Name="SP_SS_IT_SALUDAtendidoConsultaExterna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IDordenatencion" Type="int" Mode="In" />

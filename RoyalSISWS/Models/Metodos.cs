@@ -177,6 +177,36 @@ namespace RoyalSISWS.Models
             return lst;
         }
 
+        public List<VW_SS_HCE_VisorDescansoMedico> HCE_VisorHistoria_DescansoMedico(CW_DisponibilidadMedica Disponibilidad)
+        {
+            List<VW_SS_HCE_VisorDescansoMedico> lst = new List<VW_SS_HCE_VisorDescansoMedico>();
+            using (SpringSalud_produccionEntities context = new SpringSalud_produccionEntities())
+            {
+                context.Database.Connection.Open();
+                if (Disponibilidad.IdHorario == 1)
+                {
+                    lst = context.VW_SS_HCE_VisorDescansoMedico.Where(
+                        t => t.TipoDocumento == Disponibilidad.UnidadReplicacion && t.Documento == Disponibilidad.CMP && t.Sucursal == Disponibilidad.IdEspecialidad_Nombre).AsNoTracking().ToList();
+                }
+                if (Disponibilidad.IdHorario == 2)
+                {
+                    lst = context.VW_SS_HCE_VisorDescansoMedico.Where(
+                        t => t.FechaCreacion == Disponibilidad.FechaInicio && t.Sucursal == Disponibilidad.IdEspecialidad_Nombre).AsNoTracking().ToList();
+                }
+                if (Disponibilidad.IdHorario == 3)
+                {
+                    lst = context.VW_SS_HCE_VisorDescansoMedico.Where(
+                        t => //t.tipodocumento == Disponibilidad.UnidadReplicacion && 
+                            t.Documento == Disponibilidad.CMP && t.IdOrdenAtencion == Disponibilidad.IdCita && t.Sucursal == Disponibilidad.IdEspecialidad_Nombre).AsNoTracking().ToList();
+                }
+                context.Database.Connection.Close();
+                context.Dispose();
+            }
+            return lst;
+        }
+
+
+
         public List<VW_SS_HCE_VisorProcedimientoInforme> HCE_VisorInformes(CW_DisponibilidadMedica Disponibilidad)
         {
             List<VW_SS_HCE_VisorProcedimientoInforme> lst = new List<VW_SS_HCE_VisorProcedimientoInforme>();
@@ -311,7 +341,52 @@ namespace RoyalSISWS.Models
             }
             return obje;
         }
-      
+
+        public List<SP_SS_HC_InterConsultaSalida_Lista_Result> Lista_InterConsultaSalida(SP_SS_HC_InterConsultaSalida_Lista_Result objSC)
+        {
+            List<SP_SS_HC_InterConsultaSalida_Lista_Result> objLista = new List<SP_SS_HC_InterConsultaSalida_Lista_Result>();
+            using (var context = new WEB_ERPSALUDEntities())
+            {
+                List<SP_SS_HC_InterConsultaSalida_Lista_Result> objConsultas = context.SP_SS_HC_InterConsultaSalida_Lista(objSC.UnidadReplicacion, 
+                    objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,objSC.IdOrdenAtencion ).ToList();
+                if (objConsultas != null)
+                {
+                    objLista.AddRange(objConsultas);
+                }
+
+            }
+            return objLista;
+        }
+ 
+        #endregion
+
+
+        #region LlamadoHCE
+        public ViewResponse SALUD_GenerarLlamado(Nullable<int> Accion, string Objeto)
+        {
+            ViewResponse obje = new ViewResponse();
+            using (var context = new SpringSalud_produccionEntities())
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    try
+                    {
+                        SP_SS_GenerarLlamado_Result objSC = (SP_SS_GenerarLlamado_Result)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SP_SS_GenerarLlamado_Result));
+                        var VAAA = context.SP_SS_GenerarLlamado(objSC.IdCita);
+                        obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(VAAA);
+                        obje.ok = true;
+                        obje.valor = 1;
+                    }
+                    catch (Exception ex)
+                    {
+                        obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+                        obje.ok = false;
+                        obje.valor = 0;
+                    }
+                }
+            }
+            return obje;
+        }
         #endregion
 
 
@@ -506,7 +581,6 @@ namespace RoyalSISWS.Models
             return obje;
         }
         
-        
         public ViewResponse Mirth_OftalmologicoIngresoMantenimiento(Nullable<int> Accion, string Objeto)
         {
             ViewResponse obje = new ViewResponse();
@@ -539,8 +613,7 @@ namespace RoyalSISWS.Models
         }
 
         public ViewResponse Mirth_AnamnesisInFormeMedicoMantenimiento(Nullable<int> Accion, SS_IT_SaludOFTALMOLOGICOIngreso ObjTrace)
-        {
-            System.Nullable<int> iReturnValue;
+        {    
             ViewResponse obje = new ViewResponse();
             using (var context = new SpringSalud_produccionEntities())
             {
@@ -573,7 +646,81 @@ namespace RoyalSISWS.Models
             }
             return obje;
         }
-       
+
+        public ViewResponse Mirth_SaludAnamnesisIngresoMantenimiento(Nullable<int> Accion, string Objeto)
+        {
+            System.Nullable<int> iReturnValue;
+            ViewResponse obje = new ViewResponse();
+            using (var context = new SpringSalud_produccionEntities())
+            {
+                context.Database.Connection.Open();
+                //using (TransactionScope scope = new TransactionScope())
+                //{
+                try
+                {
+                    if (Accion == 1)
+                    {
+                        SS_IT_SaludAnamnesisIngreso ObjTrace = (SS_IT_SaludAnamnesisIngreso)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_IT_SaludAnamnesisIngreso));
+
+                        var VAAA = context.SP_SS_IT_SALUDAnamnesisIngresoMirth(ObjTrace.UnidadReplicacion,ObjTrace.IdEpisodioAtencion,  ObjTrace.IdPaciente,
+                          ObjTrace.EpisodioClinico, ObjTrace.IdOrdenAtencion, ObjTrace.LineaOrdenAtencion, "1", ObjTrace.TiempoEnfermedad, ObjTrace.TiempoEnfermedadUnidad,
+                          ObjTrace.RelatoCronologico,ObjTrace.PresionArterialMSD1,ObjTrace.PresionArterialMSD2, ObjTrace.PresionArterialMSI1
+                          ,ObjTrace.PresionArterialMSI2,ObjTrace.FrecuenciaCardiaca,ObjTrace.FrecuenciaRespiratoria,ObjTrace.Temperatura,ObjTrace.SaturacionOxigeno
+                          , ObjTrace.Peso, ObjTrace.Talla, ObjTrace.EXAMENCLINICOOBS, ObjTrace.Estado, ObjTrace.UsuarioCreacion, DateTime.Now);
+                        //  obje.valor = int.Parse(VAAA);
+                        obje.valor = 1;
+                        obje.ok = true;
+                        obje.msg = "Se registro Correcto";
+                    }
+                    //scope.Complete();
+                }
+                catch (Exception ex)
+                {
+                    obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+                    obje.ok = true;
+                    obje.valor = 0;
+                }
+                context.Database.Connection.Close();
+                context.Dispose();
+                //}
+            }
+            return obje;
+        }
+
+        public ViewResponse Mirth_SaludDescansoMedicoMantenimiento(Nullable<int> Accion, string Objeto)
+        {
+            ViewResponse obje = new ViewResponse();
+            using (var context = new SpringSalud_produccionEntities())
+            {
+                //using (TransactionScope scope = new TransactionScope())
+                //{
+                try
+                {
+                    VW_SS_HCE_VisorDescansoMedico objSC = new VW_SS_HCE_VisorDescansoMedico();
+                    List<VW_SS_HCE_VisorDescansoMedico> LstEntyt = (List<VW_SS_HCE_VisorDescansoMedico>)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(List<VW_SS_HCE_VisorDescansoMedico>));
+                    foreach (VW_SS_HCE_VisorDescansoMedico obj in LstEntyt)
+                    {
+                        objSC = obj;
+                    }
+                    var VAAA = context.SP_SS_IT_SALUDDescansoMedico(objSC.IdOrdenAtencion, objSC.IdPaciente, objSC.LineaOrdenAtencion, 
+                        objSC.FechaInicio, objSC.FechaFinal, objSC.Observaciones, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion, 
+                        objSC.UsuarioCreacion, objSC.FechaCreacion);
+                    obje.msg = "Correcto";
+                    obje.ok = true;
+                    obje.valor = 1;
+                }
+                catch (Exception ex)
+                {
+                    obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+                    obje.ok = false;
+                    obje.valor = 0;
+                }
+                //}
+            }
+            return obje;
+        }
+
+
         #endregion
     }
 }

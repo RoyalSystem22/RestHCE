@@ -51,6 +51,44 @@ namespace RoyalSISWS.Controllers
                 return Json(obje, JsonRequestBehavior.AllowGet);
             }
         }
+
+        public JsonResult SALUD_GenerarLlamado(Nullable<int> valor, string msg)
+        {
+            Metodos m = new Metodos();
+            ViewResponse obje = new ViewResponse();
+            if (valor == 1)
+            {
+                obje = m.SALUD_GenerarLlamado(valor, msg);             
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+
+        public JsonResult Lista_InterConsultaSalida(SP_SS_HC_InterConsultaSalida_Lista_Result consulta)
+        {
+            Metodos m = new Metodos();
+            ViewResponse obje = new ViewResponse();
+            try
+            {
+                List<SP_SS_HC_InterConsultaSalida_Lista_Result> objLista = new List<SP_SS_HC_InterConsultaSalida_Lista_Result>();
+                objLista = m.Lista_InterConsultaSalida(consulta);
+                obje.ok = true;
+                obje.valor = objLista.Count;
+                obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(objLista);
+            }
+            catch (Exception ex)
+            {
+                obje.ok = false;
+                obje.valor = 0;
+                obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+            }
+            return Json(obje, JsonRequestBehavior.AllowGet);
+        }
+
         #endregion
     }
 }

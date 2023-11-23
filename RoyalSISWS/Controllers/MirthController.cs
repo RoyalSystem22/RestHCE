@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using RoyalSISWS.Models.SpringSalud_produccion;
+using System.Text.RegularExpressions;
 
 namespace RoyalSISWS.Controllers
 {
@@ -125,6 +126,43 @@ namespace RoyalSISWS.Controllers
             }
         }
 
+        public ActionResult Mirth_SaludAnamnesisIngresoMantenimiento(Nullable<int> valor, string msg)
+        {
+            Metodos m = new Metodos();
+            ViewResponse obje = new ViewResponse();
+            if (valor == 1 || valor == 2)
+            {
+                obje = m.Mirth_SaludAnamnesisIngresoMantenimiento(valor, msg);
+                //return Json(obje, JsonRequestBehavior.AllowGet);
+                string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(obje);
+                jsonString = jsonString.Replace("\n", "");
+                jsonString = Regex.Replace(jsonString, @"[^\u0000-\u007F]+", string.Empty);
+                return Content(jsonString, "application/json");
+            }
+            else
+            {
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+         public ActionResult Mirth_SaludDescansoMedicoMantenimiento(Nullable<int> valor, string msg)
+        {
+            Metodos m = new Metodos();
+            ViewResponse obje = new ViewResponse();
+            if (valor == 1 || valor == 2)
+            {
+                obje = m.Mirth_SaludDescansoMedicoMantenimiento(valor, msg);
+                //return Json(obje, JsonRequestBehavior.AllowGet);
+                string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(obje);
+                jsonString = jsonString.Replace("\n", "");
+                jsonString = Regex.Replace(jsonString, @"[^\u0000-\u007F]+", string.Empty);
+                return Content(jsonString, "application/json");
+            }
+            else
+            {
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+        }
         #endregion
 
         #region Mirth_Maestros

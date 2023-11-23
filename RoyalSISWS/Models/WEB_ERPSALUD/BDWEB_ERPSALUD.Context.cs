@@ -21,9 +21,6 @@ namespace RoyalSISWS.Models.WEB_ERPSALUD
         public WEB_ERPSALUDEntities()
             : base("name=WEB_ERPSALUDEntities")
         {
-            ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 300000;
-            Configuration.LazyLoadingEnabled = false;
-            Configuration.ProxyCreationEnabled = false;      
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -386,6 +383,31 @@ namespace RoyalSISWS.Models.WEB_ERPSALUD
                 new ObjectParameter("ACCION", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_VW_ATENCIONPACIENTE_LISTAR_Result>("SP_VW_ATENCIONPACIENTE_LISTAR", unidadReplicacionParameter, idEpisodioAtencionParameter, unidadReplicacionECParameter, idPacienteParameter, episodioClinicoParameter, idEstablecimientoSaludParameter, idUnidadServicioParameter, idPersonalSaludParameter, aaaaAtencionParameter, episodioAtencionParameter, fechaRegistroParameter, fechaAtencionParameter, tipoAtencionParameter, idOrdenAtencionParameter, lineaOrdenAtencionParameter, tipoOrdenAtencionParameter, estadoParameter, usuarioModificacionParameter, fechaModificacionParameter, idEspecialidadParameter, codigoOAParameter, fechaOrdenParameter, idProcedimientoParameter, idTipoOrdenParameter, fechaRegistroEpiClinicoParameter, fechaCierreEpiClinicoParameter, tipoPacienteParameter, edadParameter, codigoHCParameter, codigoHCAnteriorParameter, codigoHCSecundarioParameter, tipoHistoriaParameter, estadoPacienteParameter, numeroFileParameter, iDPACIENTE_OKParameter, personaParameter, nombreCompletoParameter, tipoDocumentoParameter, documentoParameter, esClienteParameter, esProveedorParameter, esEmpleadoParameter, esOtroParameter, tipoPersonaParameter, fechaNacimientoParameter, sexoParameter, nacionalidadParameter, estadoCivilParameter, nivelInstruccionParameter, codigoPostalParameter, provinciaParameter, departamentoParameter, fecIniDiscamecParameter, fecFinDiscamecParameter, paisParameter, esPacienteParameter, esEmpresaParameter, personanewParameter, estadoPersonaParameter, servicioParameter, iNICIOParameter, nUMEROFILASParameter, versionParameter, aCCIONParameter);
+        }
+    
+        public virtual ObjectResult<SP_SS_HC_InterConsultaSalida_Lista_Result> SP_SS_HC_InterConsultaSalida_Lista(string unidadReplicacion, Nullable<long> episodioAtencion, Nullable<int> idPaciente, Nullable<int> episodioClinico, Nullable<int> idOrdenAtencion)
+        {
+            var unidadReplicacionParameter = unidadReplicacion != null ?
+                new ObjectParameter("UnidadReplicacion", unidadReplicacion) :
+                new ObjectParameter("UnidadReplicacion", typeof(string));
+    
+            var episodioAtencionParameter = episodioAtencion.HasValue ?
+                new ObjectParameter("EpisodioAtencion", episodioAtencion) :
+                new ObjectParameter("EpisodioAtencion", typeof(long));
+    
+            var idPacienteParameter = idPaciente.HasValue ?
+                new ObjectParameter("IdPaciente", idPaciente) :
+                new ObjectParameter("IdPaciente", typeof(int));
+    
+            var episodioClinicoParameter = episodioClinico.HasValue ?
+                new ObjectParameter("EpisodioClinico", episodioClinico) :
+                new ObjectParameter("EpisodioClinico", typeof(int));
+    
+            var idOrdenAtencionParameter = idOrdenAtencion.HasValue ?
+                new ObjectParameter("IdOrdenAtencion", idOrdenAtencion) :
+                new ObjectParameter("IdOrdenAtencion", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_SS_HC_InterConsultaSalida_Lista_Result>("SP_SS_HC_InterConsultaSalida_Lista", unidadReplicacionParameter, episodioAtencionParameter, idPacienteParameter, episodioClinicoParameter, idOrdenAtencionParameter);
         }
     }
 }

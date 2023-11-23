@@ -120,6 +120,13 @@
       <Parameter Name="ACCION" Mode="In" Type="String" />
     </FunctionImport>
     <EntitySet Name="SS_HC_InformeConsultaExterna_FE" EntityType="WEB_ERPSALUD_CSBModel.SS_HC_InformeConsultaExterna_FE" />
+    <FunctionImport Name="SP_SS_HC_InterConsultaSalida_Lista" ReturnType="Collection(WEB_ERPSALUD_CSBModel.SP_SS_HC_InterConsultaSalida_Lista_Result)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="EpisodioAtencion" Mode="In" Type="Int64" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SP_ParametrosMastListar_Result">
     <Property Type="String" Name="CompaniaCodigo" Nullable="false" MaxLength="10" />
@@ -311,4 +318,29 @@
     <Property Name="Accion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
     <Property Name="Version" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
   </EntityType>
+  <ComplexType Name="SP_SS_HC_InterConsultaSalida_Lista_Result">
+    <Property Type="Int32" Name="IdOrdenAtencion" Nullable="true" />
+    <Property Type="Int32" Name="LineaOrdenAtencion" Nullable="true" />
+    <Property Type="String" Name="CodigoSegus" Nullable="false" MaxLength="6" />
+    <Property Type="Int32" Name="Cantidad" Nullable="false" />
+    <Property Type="Int32" Name="IndicadorEPS" Nullable="true" />
+    <Property Type="Int32" Name="IdEspecialidad" Nullable="true" />
+    <Property Type="Int32" Name="Medico" Nullable="true" />
+    <Property Type="DateTime" Name="FechaProcedimiento" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="IdCita" Nullable="true" />
+    <Property Type="Int32" Name="EstadoDcumento" Nullable="true" />
+    <Property Type="String" Name="UnidadReplicacion" Nullable="false" MaxLength="4" />
+    <Property Type="Int64" Name="IdEpisodioAtencion" Nullable="false" />
+    <Property Type="Int32" Name="IdPaciente" Nullable="false" />
+    <Property Type="Int32" Name="EpisodioClinico" Nullable="false" />
+    <Property Type="Int32" Name="Secuencia" Nullable="false" />
+    <Property Type="Int32" Name="Estado" Nullable="false" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="false" Precision="23" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="IdTipoOrdenAtencion" Nullable="false" />
+    <Property Type="String" Name="Observacion" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="SecuencialHCE" Nullable="true" MaxLength="15" />
+  </ComplexType>
 </Schema>

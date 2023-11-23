@@ -262,7 +262,8 @@ namespace RoyalSISWS.Controllers
                     List<VW_SS_HCE_VisorDiagnostico> lstDiagnostico = new List<VW_SS_HCE_VisorDiagnostico>();
                     List<VW_SS_HCE_VisorExamen> lstExamen = new List<VW_SS_HCE_VisorExamen>();
                     List<VW_SS_HCE_VisorReceta> lstReceta = new List<VW_SS_HCE_VisorReceta>();
-
+                    List<VW_SS_HCE_VisorDescansoMedico> lstDescansoMedico = new List<VW_SS_HCE_VisorDescansoMedico>();
+                    
                     //  pObjVisor.list_VW_SS_HCE_VisorExamen = m.getDiagnostico(pObjVisor.IdOrdenAtencion, IdEspe).ToList();
 
                     lst = m.HCE_VisorHistoria(VisorHistoria);
@@ -272,6 +273,8 @@ namespace RoyalSISWS.Controllers
                         lstDiagnostico = m.HCE_VisorHistoria_Diagnostico(VisorHistoria);
                         lstExamen = m.HCE_VisorHistoria_Examen(VisorHistoria);
                         lstReceta = m.HCE_VisorHistoria_Receta(VisorHistoria);
+                        lstDescansoMedico = m.HCE_VisorHistoria_DescansoMedico(VisorHistoria);
+
                     }               
 
                     foreach (VW_SS_HCE_VisorHistoria intobj2 in lst)
@@ -341,6 +344,7 @@ namespace RoyalSISWS.Controllers
                         {
                             pObjVisor.list_VW_SS_HCE_VisorReceta = lstReceta.Where(o => o.IdOrdenAtencion == pObjVisor.IdOrdenAtencion && o.IdConsultaExterna == pObjVisor.IdConsultaExterna).ToList();
                             pObjVisor.list_VW_SS_HCE_VisorExamen = lstExamen.Where(o => o.IdOrdenAtencion == pObjVisor.IdOrdenAtencion && o.IdConsultaExterna == pObjVisor.IdConsultaExterna).ToList();
+                            pObjVisor.list_VW_SS_HCE_VisorDescansoMedico = lstDescansoMedico.Where(o => o.IdOrdenAtencion == pObjVisor.IdOrdenAtencion && o.IdConsultaExterna == pObjVisor.IdConsultaExterna).ToList();
                         }
                         else
                         {

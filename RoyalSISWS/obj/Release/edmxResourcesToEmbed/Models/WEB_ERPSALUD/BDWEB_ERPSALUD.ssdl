@@ -72,6 +72,13 @@
     <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
     <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
   </Function>
+  <Function Name="SP_SS_HC_InterConsultaSalida_Lista" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
+    <Parameter Name="EpisodioAtencion" Type="bigint" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="EpisodioClinico" Type="int" Mode="In" />
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+  </Function>
   <Function Name="SP_VW_ATENCIONPACIENTE_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="UnidadReplicacion" Type="char" Mode="In" />
     <Parameter Name="IdEpisodioAtencion" Type="bigint" Mode="In" />

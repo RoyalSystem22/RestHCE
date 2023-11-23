@@ -223,5 +223,34 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_InterConsultaSalida_Lista" FunctionName="WEB_ERPSALUD_CSBModel.Store.SP_SS_HC_InterConsultaSalida_Lista">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WEB_ERPSALUD_CSBModel.SP_SS_HC_InterConsultaSalida_Lista_Result">
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="LineaOrdenAtencion" ColumnName="LineaOrdenAtencion" />
+          <ScalarProperty Name="CodigoSegus" ColumnName="CodigoSegus" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="IndicadorEPS" ColumnName="IndicadorEPS" />
+          <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
+          <ScalarProperty Name="Medico" ColumnName="Medico" />
+          <ScalarProperty Name="FechaProcedimiento" ColumnName="FechaProcedimiento" />
+          <ScalarProperty Name="IdCita" ColumnName="IdCita" />
+          <ScalarProperty Name="EstadoDcumento" ColumnName="EstadoDcumento" />
+          <ScalarProperty Name="UnidadReplicacion" ColumnName="UnidadReplicacion" />
+          <ScalarProperty Name="IdEpisodioAtencion" ColumnName="IdEpisodioAtencion" />
+          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="EpisodioClinico" ColumnName="EpisodioClinico" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="IdTipoOrdenAtencion" ColumnName="IdTipoOrdenAtencion" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="SecuencialHCE" ColumnName="SecuencialHCE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
