@@ -497,8 +497,36 @@
       <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
     </FunctionImport>
     <EntitySet Name="SS_IT_SaludRecetaIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIngreso" />
+    <FunctionImport Name="SP_SS_IT_SALUDDescansoMedico" ReturnType="Collection(Int32)">
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="IdLineaOa" Mode="In" Type="Int32" />
+      <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaFinal" Mode="In" Type="DateTime" />
+      <Parameter Name="Observaciones" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="VW_SS_HCE_VisorDescansoMedico" EntityType="ModelGolf.VW_SS_HCE_VisorDescansoMedico" />
+    <EntitySet Name="VW_SS_HCE_VisorProcedimiento" EntityType="ModelGolf.VW_SS_HCE_VisorProcedimiento" />
+    <FunctionImport Name="SP_SS_EliminarLlamado" ReturnType="Collection(ModelGolf.SP_SS_EliminarLlamado_Result)">
+      <Parameter Name="IdCita" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="Valor" Mode="In" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="SP_SS_GenerarLlamado" ReturnType="Collection(ModelGolf.SP_SS_GenerarLlamado_Result)">
       <Parameter Name="IdCita" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="A_SP_SS_HCE_VisorHistoria_bk" ReturnType="Collection(ModelGolf.A_SP_SS_HCE_VisorHistoria_bk_Result)">
+      <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
+      <Parameter Name="Documento" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="CW_AccesoUsuario_Result">
@@ -1493,9 +1521,150 @@
     <Property Name="TipoOrdenAtencion" Type="Int32" />
     <Property Name="SECUENCIALHCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
+  <EntityType Name="VW_SS_HCE_VisorDescansoMedico">
+    <Key>
+      <PropertyRef Name="TAB" />
+      <PropertyRef Name="IdConsultaExterna" />
+      <PropertyRef Name="IdDescanso" />
+      <PropertyRef Name="Documento" />
+      <PropertyRef Name="TipoDocumento" />
+    </Key>
+    <Property Name="TAB" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="IdOrdenAtencion" Type="Int32" />
+    <Property Name="LineaOrdenAtencion" Type="Int32" />
+    <Property Name="IdConsultaExterna" Type="Int32" Nullable="false" />
+    <Property Name="IdDescanso" Type="Int32" Nullable="false" />
+    <Property Name="IdPaciente" Type="Int32" />
+    <Property Name="FechaInicio" Type="DateTime" Precision="3" />
+    <Property Name="FechaFinal" Type="DateTime" Precision="3" />
+    <Property Name="Observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Dia" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Diagnostico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Sucursal" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Documento" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="TipoDocumento" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_SS_HCE_VisorProcedimiento">
+    <Key>
+      <PropertyRef Name="TAB" />
+      <PropertyRef Name="IdProcedimiento" />
+      <PropertyRef Name="IdInforme" />
+      <PropertyRef Name="Secuencial" />
+      <PropertyRef Name="SecuencialPlantilla" />
+      <PropertyRef Name="ValorNumerico" />
+      <PropertyRef Name="ValorCadena" />
+      <PropertyRef Name="documento" />
+      <PropertyRef Name="tipodocumento" />
+    </Key>
+    <Property Name="TAB" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="IdOrdenAtencion" Type="Int32" />
+    <Property Name="LineaOrdenAtencion" Type="Int32" />
+    <Property Name="IdProcedimiento" Type="Int32" Nullable="false" />
+    <Property Name="IdInforme" Type="Int32" Nullable="false" />
+    <Property Name="Secuencial" Type="Int32" Nullable="false" />
+    <Property Name="IdConcepto" Type="Int32" />
+    <Property Name="IdPlantilla" Type="Int32" />
+    <Property Name="SecuencialPlantilla" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ValorNumerico" Type="Decimal" Nullable="false" Precision="20" Scale="6" />
+    <Property Name="ValorCadena" Type="String" Nullable="false" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="ValorFecha" Type="DateTime" Precision="3" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Codigo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="TipoDato" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="IdPaciente" Type="Int32" />
+    <Property Name="documento" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="tipodocumento" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Sucursal" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="SP_SS_EliminarLlamado_Result">
+    <Property Type="Int32" Name="IdCita" Nullable="true" />
+    <Property Type="Int32" Name="Secuencia" Nullable="true" />
+    <Property Type="String" Name="Usuario" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="Observacion" Nullable="true" MaxLength="200" />
+  </ComplexType>
   <ComplexType Name="SP_SS_GenerarLlamado_Result">
     <Property Type="Int32" Name="IdCita" Nullable="true" />
-    <Property Type="Int32" Name="Retorno" Nullable="true" />
-    <Property Type="String" Name="Observacion" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Secuencia" Nullable="true" />
+    <Property Type="String" Name="Usuario" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="Observacion" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="A_SP_SS_HCE_VisorHistoria_bk_Result">
+    <Property Type="String" Name="UnidadReplicacionEC" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="TipoAtencionDescX" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CitaTipo" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="CitaFecha" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="CitaHora" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Origen" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="NombreEspecialidad" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="TipoPacienteNombre" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CodigoOA" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Cama" Nullable="false" MaxLength="150" />
+    <Property Type="DateTime" Name="FechaInicio" Nullable="true" Precision="23" />
+    <Property Type="String" Name="TipoOrdenAtencionNombre" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CodigoHC" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Aseguradora" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CodigoHCAnterior" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="PacienteNombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MedicoNombre" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdOrdenAtencion" Nullable="false" />
+    <Property Type="Int32" Name="LineaOrdenAtencion" Nullable="false" />
+    <Property Type="Int32" Name="IdHospitalizacion" Nullable="false" />
+    <Property Type="Int32" Name="LineaHospitalizacion" Nullable="false" />
+    <Property Type="Int32" Name="IdConsultaExterna" Nullable="true" />
+    <Property Type="Int32" Name="IdProcedimiento" Nullable="true" />
+    <Property Type="Int32" Name="Modalidad" Nullable="true" />
+    <Property Type="Int32" Name="IndicadorSeguro" Nullable="true" />
+    <Property Type="Int32" Name="IdCita" Nullable="true" />
+    <Property Type="DateTime" Name="FechaFin" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="IdPaciente" Nullable="false" />
+    <Property Type="Int32" Name="TipoPaciente" Nullable="true" />
+    <Property Type="Int32" Name="TipoAtencion" Nullable="true" />
+    <Property Type="Int32" Name="IdEspecialidad" Nullable="true" />
+    <Property Type="Int32" Name="IdEmpresaAseguradora" Nullable="true" />
+    <Property Type="Int32" Name="TipoOrdenAtencion" Nullable="true" />
+    <Property Type="String" Name="Componente" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="ComponenteNombre" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Compania" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Sucursal" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="IdMedico" Nullable="true" />
+    <Property Type="Int32" Name="IndicadorCirugia" Nullable="false" />
+    <Property Type="Int32" Name="IndicadorExamenPrincipal" Nullable="false" />
+    <Property Type="String" Name="UnidadReplicacionHCE" Nullable="true" MaxLength="4" />
+    <Property Type="Int32" Name="EstadoEpiAtencion" Nullable="true" />
+    <Property Type="Int32" Name="EpisodioClinicoHCE" Nullable="false" />
+    <Property Type="Int32" Name="IDEPISODIOAtencionHCE" Nullable="false" />
+    <Property Type="Int32" Name="IdPacienteHCE" Nullable="false" />
+    <Property Type="Int32" Name="SecuenciaHCE" Nullable="true" />
+    <Property Type="String" Name="PersonaAnt" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="sexo" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="true" Precision="23" />
+    <Property Type="String" Name="EstadoCivil" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="NivelInstruccion" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="190" />
+    <Property Type="String" Name="TipoDocumento" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Nombres" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="LugarNacimiento" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CodigoPostal" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="Provincia" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="Departamento" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EsPaciente" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="EsEmpresa" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Pais" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="EstadoPersona" Nullable="true" MaxLength="20" />
   </ComplexType>
 </Schema>

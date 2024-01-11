@@ -56,17 +56,23 @@ namespace RoyalSISWS.Controllers
         {
             Metodos m = new Metodos();
             ViewResponse obje = new ViewResponse();
-            if (valor == 1)
-            {
-                obje = m.SALUD_GenerarLlamado(valor, msg);             
-                return Json(obje, JsonRequestBehavior.AllowGet);
-            }
-            else
-            {
-                return Json(obje, JsonRequestBehavior.AllowGet);
-            }
-        }
 
+            switch (valor)
+            {
+                case 1:
+                         obje = m.SALUD_GenerarLlamado(valor, msg);
+                         break;  
+                case 2:
+                        obje = m.SALUD_GenerarLlamado(valor, msg);               
+                        break;
+                case 3:
+                        obje = m.SALUD_GenerarLlamado(valor, msg);
+                        break;
+              
+            }
+            return Json(obje, JsonRequestBehavior.AllowGet);
+        
+        }
 
         public JsonResult Lista_InterConsultaSalida(SP_SS_HC_InterConsultaSalida_Lista_Result consulta)
         {

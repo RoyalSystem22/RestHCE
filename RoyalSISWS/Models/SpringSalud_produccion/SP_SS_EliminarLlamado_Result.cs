@@ -11,7 +11,7 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
 {
     using System;
     
-    public partial class SP_SS_GenerarLlamado_Result
+    public partial class SP_SS_EliminarLlamado_Result
     {
         public Nullable<int> IdCita { get; set; }
         public Nullable<int> Secuencia { get; set; }

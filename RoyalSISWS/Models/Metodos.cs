@@ -394,15 +394,37 @@ namespace RoyalSISWS.Models
             ViewResponse obje = new ViewResponse();
             using (var context = new SpringSalud_produccionEntities())
             {
-                using (TransactionScope scope = new TransactionScope())
-                {
+                //using (TransactionScope scope = new TransactionScope())
+                //{
                     try
                     {
-                        SP_SS_GenerarLlamado_Result objSC = (SP_SS_GenerarLlamado_Result)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SP_SS_GenerarLlamado_Result));
-                        var VAAA = context.SP_SS_GenerarLlamado(objSC.IdCita);
-                        obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(VAAA);
-                        obje.ok = true;
-                        obje.valor = 1;
+
+                        if (Accion == 1)
+                        {
+                            SP_SS_GenerarLlamado_Result objSC = (SP_SS_GenerarLlamado_Result)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SP_SS_GenerarLlamado_Result));
+                            var VAAA = context.SP_SS_GenerarLlamado(objSC.IdCita, objSC.Usuario, objSC.Observacion);
+                            obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(VAAA);
+                            obje.ok = true;
+                            obje.valor = 1;
+                        }
+
+                        if (Accion == 2)
+                        {
+                            SP_SS_GenerarLlamado_Result objSC = (SP_SS_GenerarLlamado_Result)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SP_SS_GenerarLlamado_Result));
+                            var VAAA = context.SP_SS_EliminarLlamado(objSC.IdCita, objSC.Usuario, objSC.Observacion, Accion);
+                            obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(VAAA);
+                            obje.ok = true;
+                            obje.valor = 1;
+                        }
+                        if (Accion == 3)
+                        {
+                            SP_SS_GenerarLlamado_Result objSC = (SP_SS_GenerarLlamado_Result)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SP_SS_GenerarLlamado_Result));
+                            var VAAA = context.SP_SS_EliminarLlamado(objSC.IdCita, objSC.Usuario, objSC.Observacion, Accion);
+                            obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(VAAA);
+                            obje.ok = true;
+                            obje.valor = 1;
+                        }
+                   
                     }
                     catch (Exception ex)
                     {
@@ -410,10 +432,12 @@ namespace RoyalSISWS.Models
                         obje.ok = false;
                         obje.valor = 0;
                     }
-                }
+                //}
             }
             return obje;
         }
+
+        
         #endregion
 
 

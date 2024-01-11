@@ -441,6 +441,36 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorAnamnesi
     <Property Name="Sucursal" Type="varchar" MaxLength="15" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorDescansoMedico' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_SS_HCE_VisorDescansoMedico">
+    <Key>
+      <PropertyRef Name="TAB" />
+      <PropertyRef Name="IdConsultaExterna" />
+      <PropertyRef Name="IdDescanso" />
+      <PropertyRef Name="Documento" />
+      <PropertyRef Name="TipoDocumento" />
+    </Key>
+    <Property Name="TAB" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="int" />
+    <Property Name="LineaOrdenAtencion" Type="int" />
+    <Property Name="IdConsultaExterna" Type="int" Nullable="false" />
+    <Property Name="IdDescanso" Type="int" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" />
+    <Property Name="FechaInicio" Type="datetime" />
+    <Property Name="FechaFinal" Type="datetime" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="500" />
+    <Property Name="Dia" Type="varchar" MaxLength="500" />
+    <Property Name="Diagnostico" Type="varchar(max)" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="80" />
+    <Property Name="Sucursal" Type="varchar" MaxLength="15" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="char" MaxLength="4" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Documento" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="TipoDocumento" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorDiagnostico' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VW_SS_HCE_VisorDiagnostico">
     <Key>
@@ -669,6 +699,45 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorHistoria
     <Property Name="EstadoPersona" Type="varchar" MaxLength="20" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorProcedimiento' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_SS_HCE_VisorProcedimiento">
+    <Key>
+      <PropertyRef Name="TAB" />
+      <PropertyRef Name="IdProcedimiento" />
+      <PropertyRef Name="IdInforme" />
+      <PropertyRef Name="Secuencial" />
+      <PropertyRef Name="SecuencialPlantilla" />
+      <PropertyRef Name="ValorNumerico" />
+      <PropertyRef Name="ValorCadena" />
+      <PropertyRef Name="documento" />
+      <PropertyRef Name="tipodocumento" />
+    </Key>
+    <Property Name="TAB" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="IdOrdenAtencion" Type="int" />
+    <Property Name="LineaOrdenAtencion" Type="int" />
+    <Property Name="IdProcedimiento" Type="int" Nullable="false" />
+    <Property Name="IdInforme" Type="int" Nullable="false" />
+    <Property Name="Secuencial" Type="int" Nullable="false" />
+    <Property Name="IdConcepto" Type="int" />
+    <Property Name="IdPlantilla" Type="int" />
+    <Property Name="SecuencialPlantilla" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="ValorNumerico" Type="numeric" Precision="20" Scale="6" Nullable="false" />
+    <Property Name="ValorCadena" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="ValorFecha" Type="datetime" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Codigo" Type="varchar" MaxLength="25" />
+    <Property Name="TipoDato" Type="varchar" MaxLength="1" />
+    <Property Name="IdPaciente" Type="int" />
+    <Property Name="documento" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="tipodocumento" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Sucursal" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorProcedimientoInforme' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VW_SS_HCE_VisorProcedimientoInforme">
     <Key>
@@ -763,6 +832,11 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
     <Parameter Name="FechaFin" Type="datetime" Mode="In" />
     <Parameter Name="Documento" Type="varchar" Mode="In" />
     <Parameter Name="codsucursal" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="A_SP_SS_HCE_VisorHistoria_bk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="Documento" Type="varchar" Mode="In" />
   </Function>
   <Function Name="CW_AccesoUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="p_IDPERSONA" Type="int" Mode="In" />
@@ -861,8 +935,16 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
     <Parameter Name="Accion" Type="varchar" Mode="In" />
     <Parameter Name="Version" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="SP_SS_EliminarLlamado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCita" Type="int" Mode="In" />
+    <Parameter Name="Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="Observacion" Type="varchar" Mode="In" />
+    <Parameter Name="Valor" Type="int" Mode="In" />
+  </Function>
   <Function Name="SP_SS_GenerarLlamado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IdCita" Type="int" Mode="In" />
+    <Parameter Name="Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="Observacion" Type="varchar" Mode="In" />
   </Function>
   <Function Name="SP_SS_IT_SALUDAnamnesisInFormeMedico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IDordenatencion" Type="int" Mode="In" />
@@ -943,6 +1025,19 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
     <Parameter Name="Usuario" Type="varchar" Mode="In" />
     <Parameter Name="Fechacreacion" Type="datetime" Mode="In" />
     <Parameter Name="TipoOrdenAtencion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SS_IT_SALUDDescansoMedico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdOrdenAtencion" Type="int" Mode="In" />
+    <Parameter Name="IdPaciente" Type="int" Mode="In" />
+    <Parameter Name="IdLineaOa" Type="int" Mode="In" />
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFinal" Type="datetime" Mode="In" />
+    <Parameter Name="Observaciones" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="datetime" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
   </Function>
   <Function Name="SP_SS_IT_SaludDiagnosticoIngreso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
@@ -1615,6 +1710,29 @@ FROM [dbo].[VW_SA_PR_REP_ListaServiciosAuxiliares] AS [VW_SA_PR_REP_ListaServici
 [VW_SS_HCE_VisorAnamnesis].[Sucursal] AS [Sucursal]
 FROM [dbo].[VW_SS_HCE_VisorAnamnesis] AS [VW_SS_HCE_VisorAnamnesis]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="VW_SS_HCE_VisorDescansoMedico" EntityType="Self.VW_SS_HCE_VisorDescansoMedico" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[VW_SS_HCE_VisorDescansoMedico].[TAB] AS [TAB], 
+[VW_SS_HCE_VisorDescansoMedico].[IdOrdenAtencion] AS [IdOrdenAtencion], 
+[VW_SS_HCE_VisorDescansoMedico].[LineaOrdenAtencion] AS [LineaOrdenAtencion], 
+[VW_SS_HCE_VisorDescansoMedico].[IdConsultaExterna] AS [IdConsultaExterna], 
+[VW_SS_HCE_VisorDescansoMedico].[IdDescanso] AS [IdDescanso], 
+[VW_SS_HCE_VisorDescansoMedico].[IdPaciente] AS [IdPaciente], 
+[VW_SS_HCE_VisorDescansoMedico].[FechaInicio] AS [FechaInicio], 
+[VW_SS_HCE_VisorDescansoMedico].[FechaFinal] AS [FechaFinal], 
+[VW_SS_HCE_VisorDescansoMedico].[Observaciones] AS [Observaciones], 
+[VW_SS_HCE_VisorDescansoMedico].[Dia] AS [Dia], 
+[VW_SS_HCE_VisorDescansoMedico].[Diagnostico] AS [Diagnostico], 
+[VW_SS_HCE_VisorDescansoMedico].[Estado] AS [Estado], 
+[VW_SS_HCE_VisorDescansoMedico].[UsuarioCreacion] AS [UsuarioCreacion], 
+[VW_SS_HCE_VisorDescansoMedico].[Sucursal] AS [Sucursal], 
+[VW_SS_HCE_VisorDescansoMedico].[FechaCreacion] AS [FechaCreacion], 
+[VW_SS_HCE_VisorDescansoMedico].[UsuarioModificacion] AS [UsuarioModificacion], 
+[VW_SS_HCE_VisorDescansoMedico].[FechaModificacion] AS [FechaModificacion], 
+[VW_SS_HCE_VisorDescansoMedico].[Documento] AS [Documento], 
+[VW_SS_HCE_VisorDescansoMedico].[TipoDocumento] AS [TipoDocumento]
+FROM [dbo].[VW_SS_HCE_VisorDescansoMedico] AS [VW_SS_HCE_VisorDescansoMedico]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="VW_SS_HCE_VisorDiagnostico" EntityType="Self.VW_SS_HCE_VisorDiagnostico" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
 [VW_SS_HCE_VisorDiagnostico].[TAB] AS [TAB], 
@@ -1802,6 +1920,34 @@ FROM [dbo].[VW_SS_HCE_VisorExamen] AS [VW_SS_HCE_VisorExamen]</DefiningQuery>
 [VW_SS_HCE_VisorHistoria].[Pais] AS [Pais], 
 [VW_SS_HCE_VisorHistoria].[EstadoPersona] AS [EstadoPersona]
 FROM [dbo].[VW_SS_HCE_VisorHistoria] AS [VW_SS_HCE_VisorHistoria]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_SS_HCE_VisorProcedimiento" EntityType="Self.VW_SS_HCE_VisorProcedimiento" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[VW_SS_HCE_VisorProcedimiento].[TAB] AS [TAB], 
+[VW_SS_HCE_VisorProcedimiento].[IdOrdenAtencion] AS [IdOrdenAtencion], 
+[VW_SS_HCE_VisorProcedimiento].[LineaOrdenAtencion] AS [LineaOrdenAtencion], 
+[VW_SS_HCE_VisorProcedimiento].[IdProcedimiento] AS [IdProcedimiento], 
+[VW_SS_HCE_VisorProcedimiento].[IdInforme] AS [IdInforme], 
+[VW_SS_HCE_VisorProcedimiento].[Secuencial] AS [Secuencial], 
+[VW_SS_HCE_VisorProcedimiento].[IdConcepto] AS [IdConcepto], 
+[VW_SS_HCE_VisorProcedimiento].[IdPlantilla] AS [IdPlantilla], 
+[VW_SS_HCE_VisorProcedimiento].[SecuencialPlantilla] AS [SecuencialPlantilla], 
+[VW_SS_HCE_VisorProcedimiento].[Descripcion] AS [Descripcion], 
+[VW_SS_HCE_VisorProcedimiento].[ValorNumerico] AS [ValorNumerico], 
+[VW_SS_HCE_VisorProcedimiento].[ValorCadena] AS [ValorCadena], 
+[VW_SS_HCE_VisorProcedimiento].[ValorFecha] AS [ValorFecha], 
+[VW_SS_HCE_VisorProcedimiento].[Estado] AS [Estado], 
+[VW_SS_HCE_VisorProcedimiento].[UsuarioCreacion] AS [UsuarioCreacion], 
+[VW_SS_HCE_VisorProcedimiento].[FechaCreacion] AS [FechaCreacion], 
+[VW_SS_HCE_VisorProcedimiento].[UsuarioModificacion] AS [UsuarioModificacion], 
+[VW_SS_HCE_VisorProcedimiento].[FechaModificacion] AS [FechaModificacion], 
+[VW_SS_HCE_VisorProcedimiento].[Codigo] AS [Codigo], 
+[VW_SS_HCE_VisorProcedimiento].[TipoDato] AS [TipoDato], 
+[VW_SS_HCE_VisorProcedimiento].[IdPaciente] AS [IdPaciente], 
+[VW_SS_HCE_VisorProcedimiento].[documento] AS [documento], 
+[VW_SS_HCE_VisorProcedimiento].[tipodocumento] AS [tipodocumento], 
+[VW_SS_HCE_VisorProcedimiento].[Sucursal] AS [Sucursal]
+FROM [dbo].[VW_SS_HCE_VisorProcedimiento] AS [VW_SS_HCE_VisorProcedimiento]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="VW_SS_HCE_VisorProcedimientoInforme" EntityType="Self.VW_SS_HCE_VisorProcedimientoInforme" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 

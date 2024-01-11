@@ -172,6 +172,9 @@
     <Compile Include="Models\SpringSalud_produccion\A_SP_SS_HCE_ListaServiciosAuxiliares_Result.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SpringSalud_produccion\A_SP_SS_HCE_VisorHistoria_bk_Result.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SpringSalud_produccion\A_SP_SS_HCE_VisorHistoria_Result.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
@@ -225,6 +228,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SpringSalud.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SP_SS_EliminarLlamado_Result.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SpringSalud_produccion\SP_SS_GenerarLlamado_Result.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>

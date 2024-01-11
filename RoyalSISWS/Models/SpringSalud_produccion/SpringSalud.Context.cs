@@ -21,6 +21,9 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
         public SpringSalud_produccionEntities()
             : base("name=SpringSalud_produccionEntities")
         {
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
+            ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 300000;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -1854,15 +1857,6 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("SP_SS_IT_SALUDAnamnesisIngresoMirth", unidadReplicacionParameter, idEpisodioAtencionParameter, idPacienteParameter, episodioClinicoParameter, idOrdenAtencionParameter, lineaOrdenAtencionParameter, secuenciaParameter, tiempoEnfermedadParameter, tiempoEnfermedadUnidadParameter, relatoCronologicoParameter, presionArterialMSD1Parameter, presionArterialMSD2Parameter, presionArterialMSI1Parameter, presionArterialMSI2Parameter, frecuenciaCardiacaParameter, frecuenciaRespiratoriaParameter, temperaturaParameter, saturacionOxigenoParameter, pesoParameter, tallaParameter, examenClinicoParameter, estadoParameter, usuarioCreacionParameter, fechacreacionParameter);
         }
     
-        public virtual ObjectResult<SP_SS_GenerarLlamado_Result> SP_SS_GenerarLlamado(Nullable<int> idCita)
-        {
-            var idCitaParameter = idCita.HasValue ?
-                new ObjectParameter("IdCita", idCita) :
-                new ObjectParameter("IdCita", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_SS_GenerarLlamado_Result>("SP_SS_GenerarLlamado", idCitaParameter);
-        }
-    
         public virtual ObjectResult<Nullable<int>> SP_SS_IT_SALUDDescansoMedico(Nullable<int> idOrdenAtencion, Nullable<int> idPaciente, Nullable<int> idLineaOa, Nullable<System.DateTime> fechaInicio, Nullable<System.DateTime> fechaFinal, string observaciones, Nullable<int> estado, string usuarioCreacion, Nullable<System.DateTime> fechaCreacion, string usuarioModificacion, Nullable<System.DateTime> fechaModificacion)
         {
             var idOrdenAtencionParameter = idOrdenAtencion.HasValue ?
@@ -1910,6 +1904,61 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
                 new ObjectParameter("FechaModificacion", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("SP_SS_IT_SALUDDescansoMedico", idOrdenAtencionParameter, idPacienteParameter, idLineaOaParameter, fechaInicioParameter, fechaFinalParameter, observacionesParameter, estadoParameter, usuarioCreacionParameter, fechaCreacionParameter, usuarioModificacionParameter, fechaModificacionParameter);
+        }
+    
+        public virtual ObjectResult<SP_SS_EliminarLlamado_Result> SP_SS_EliminarLlamado(Nullable<int> idCita, string usuario, string observacion, Nullable<int> valor)
+        {
+            var idCitaParameter = idCita.HasValue ?
+                new ObjectParameter("IdCita", idCita) :
+                new ObjectParameter("IdCita", typeof(int));
+    
+            var usuarioParameter = usuario != null ?
+                new ObjectParameter("Usuario", usuario) :
+                new ObjectParameter("Usuario", typeof(string));
+    
+            var observacionParameter = observacion != null ?
+                new ObjectParameter("Observacion", observacion) :
+                new ObjectParameter("Observacion", typeof(string));
+    
+            var valorParameter = valor.HasValue ?
+                new ObjectParameter("Valor", valor) :
+                new ObjectParameter("Valor", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_SS_EliminarLlamado_Result>("SP_SS_EliminarLlamado", idCitaParameter, usuarioParameter, observacionParameter, valorParameter);
+        }
+    
+        public virtual ObjectResult<SP_SS_GenerarLlamado_Result> SP_SS_GenerarLlamado(Nullable<int> idCita, string usuario, string observacion)
+        {
+            var idCitaParameter = idCita.HasValue ?
+                new ObjectParameter("IdCita", idCita) :
+                new ObjectParameter("IdCita", typeof(int));
+    
+            var usuarioParameter = usuario != null ?
+                new ObjectParameter("Usuario", usuario) :
+                new ObjectParameter("Usuario", typeof(string));
+    
+            var observacionParameter = observacion != null ?
+                new ObjectParameter("Observacion", observacion) :
+                new ObjectParameter("Observacion", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_SS_GenerarLlamado_Result>("SP_SS_GenerarLlamado", idCitaParameter, usuarioParameter, observacionParameter);
+        }
+    
+        public virtual ObjectResult<A_SP_SS_HCE_VisorHistoria_bk_Result> A_SP_SS_HCE_VisorHistoria_bk(Nullable<System.DateTime> fechaInicio, Nullable<System.DateTime> fechaFin, string documento)
+        {
+            var fechaInicioParameter = fechaInicio.HasValue ?
+                new ObjectParameter("FechaInicio", fechaInicio) :
+                new ObjectParameter("FechaInicio", typeof(System.DateTime));
+    
+            var fechaFinParameter = fechaFin.HasValue ?
+                new ObjectParameter("FechaFin", fechaFin) :
+                new ObjectParameter("FechaFin", typeof(System.DateTime));
+    
+            var documentoParameter = documento != null ?
+                new ObjectParameter("Documento", documento) :
+                new ObjectParameter("Documento", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<A_SP_SS_HCE_VisorHistoria_bk_Result>("A_SP_SS_HCE_VisorHistoria_bk", fechaInicioParameter, fechaFinParameter, documentoParameter);
         }
     }
 }

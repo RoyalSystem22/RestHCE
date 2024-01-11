@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ccc8d86eec5241688434a2cd8eb865ef" Name="Diagram1" ZoomLevel="65">
+      <Diagram DiagramId="ccc8d86eec5241688434a2cd8eb865ef" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="WEB_ERPSALUD_CSBModel.ParametrosMast" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="WEB_ERPSALUD_CSBModel.SS_HC_InformeConsultaExterna_FE" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>

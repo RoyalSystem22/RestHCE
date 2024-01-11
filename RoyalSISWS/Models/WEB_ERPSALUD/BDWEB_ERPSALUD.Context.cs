@@ -21,6 +21,9 @@ namespace RoyalSISWS.Models.WEB_ERPSALUD
         public WEB_ERPSALUDEntities()
             : base("name=WEB_ERPSALUDEntities")
         {
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;   
+            ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 300000;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
