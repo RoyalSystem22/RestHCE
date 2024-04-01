@@ -189,7 +189,7 @@ namespace RoyalSISWS.Controllers
             catch (Exception exception)
             {
                 string dd = exception.Source;
-                BaseDatos.WriteLog(System.DateTime.Now + " | " + "Error Asignacion: SELECT * FROM CW_VisorHistoria WHERE UnidadReplicacion= '" + tipoDocumento + "' AND Documento='" + Documento + "' AND Sucursal='" + cod_sucursal + "' | " + exception.StackTrace + " | " + dd);
+                BaseDatos.WriteLog(System.DateTime.Now + " | " + "Error Asignacion: SELECT * FROM CW_VisorHistoria WHERE tipoDocumento= '" + tipoDocumento + "' AND Documento='" + Documento + "' AND Sucursal='" + cod_sucursal + "' | " + exception.StackTrace + " | " + dd);
                 return Json("Error : " + " | " + exception.StackTrace, JsonRequestBehavior.AllowGet);
             }
         }

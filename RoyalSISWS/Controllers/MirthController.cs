@@ -145,7 +145,7 @@ namespace RoyalSISWS.Controllers
             }
         }
 
-         public ActionResult Mirth_SaludDescansoMedicoMantenimiento(Nullable<int> valor, string msg)
+        public ActionResult Mirth_SaludDescansoMedicoMantenimiento(Nullable<int> valor, string msg)
         {
             Metodos m = new Metodos();
             ViewResponse obje = new ViewResponse();
@@ -163,6 +163,7 @@ namespace RoyalSISWS.Controllers
                 return Json(obje, JsonRequestBehavior.AllowGet);
             }
         }
+        
         #endregion
 
         #region Mirth_Maestros

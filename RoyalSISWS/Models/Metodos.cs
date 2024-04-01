@@ -553,8 +553,7 @@ namespace RoyalSISWS.Models
                       objSC.IdOrdenAtencion, objSC.LineaOrdenAtencionConsulta, objSC.Componente, objSC.Secuencia, objSC.idtipoordenatencion, objSC.Cantidad,
                       objSC.IndicadorEPS, objSC.IdMedico, objSC.Especialidad, objSC.IdCita, objSC.Observacion, objSC.SecuencialHCE,
                       objSC.EstadoDocumento, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
-                    }
-                                       
+                    }                                       
 
                     obje.msg = "Correcto";
                     obje.ok = true;
