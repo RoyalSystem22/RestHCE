@@ -10,10 +10,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="bin/IKVM.AWT.WinForms.dll">
       <publishTime>06/12/2012 09:53:16</publishTime>
@@ -73,28 +73,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/10/2021 22:51:49</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>09/18/2023 12:52:02</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="bin/RoyalSISWS.dll">
-      <publishTime>01/10/2024 19:38:00</publishTime>
+      <publishTime>04/05/2024 11:51:39</publishTime>
     </File>
     <File Include="bin/RoyalSystems.Core.dll">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="bin/RoyalSystems.Data.dll">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>09/18/2023 12:52:01</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="bin/System.Web.Http.dll">
       <publishTime>09/18/2023 12:52:01</publishTime>
@@ -103,28 +103,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/18/2023 12:52:01</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
-      <publishTime>09/18/2023 12:52:02</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="Models/BD.edmx.diagram">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -145,34 +145,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/07/2020 21:31:28</publishTime>
     </File>
     <File Include="Models/SpringSalud_produccion/SpringSalud.edmx.diagram">
-      <publishTime>11/23/2023 11:44:41</publishTime>
+      <publishTime>04/05/2024 11:31:32</publishTime>
     </File>
     <File Include="Models/WEB_ERPSALUD/BDWEB_ERPSALUD.edmx.diagram">
-      <publishTime>12/22/2023 12:44:28</publishTime>
+      <publishTime>04/05/2024 11:31:32</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="Service.asmx">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="SoaService.asmx">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="SoaServices.asmx">
       <publishTime>01/11/2019 15:18:36</publishTime>
     </File>
     <File Include="SpringWeb.config">
-      <publishTime>01/03/2024 11:14:46</publishTime>
+      <publishTime>04/05/2024 11:31:32</publishTime>
     </File>
     <File Include="Views/Consulta/Index.cshtml">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>09/18/2023 12:52:01</publishTime>
+      <publishTime>04/05/2024 11:11:47</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/10/2024 19:38:01</publishTime>
+      <publishTime>04/05/2024 11:51:40</publishTime>
     </File>
   </ItemGroup>
 </Project>
