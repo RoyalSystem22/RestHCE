@@ -451,6 +451,7 @@ namespace RoyalSISWS.Models
                 obje.msg = "El valor de Accion no puede ser nulo.";
                 obje.ok = false;
                 obje.valor = 0;
+                
                 return obje;
             }
             try
@@ -465,6 +466,8 @@ namespace RoyalSISWS.Models
                             var VAAA = context.SP_SS_IT_SaludDiagnosticoIngreso(objSC.UnidadReplicacion, objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,
                                  objSC.IdOrdenAtencion, objSC.LineaOrdenAtencionConsulta, objSC.IdDiagnostico, objSC.Secuencia, objSC.Determinacion, objSC.TIPOORDENATENCION,
                                  objSC.ObservacionDIAGNOSTICO, objSC.TIPOIT, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
+                            obje.valor = VAAA.FirstOrDefault().Value;
+
                         }
                         catch (Exception ex)
                         {
@@ -478,7 +481,7 @@ namespace RoyalSISWS.Models
                     }
                     obje.msg = "Correcto";
                     obje.ok = true;
-                    obje.valor = LstEntyt.Count;
+                    //obje.valor = LstEntyt.Count;
                 }
             }
             catch (Exception ex)
@@ -562,6 +565,8 @@ namespace RoyalSISWS.Models
                                  objSC.IdOrdenAtencion, objSC.LineaOrdenAtencionConsulta, objSC.Secuencia, objSC.Componente, objSC.SubFamilia, objSC.Familia, objSC.Linea,
                                  objSC.UnidadMedida, objSC.Cantidad, objSC.Via, objSC.Dosis, objSC.DiasTratamiento, objSC.Frecuencia, objSC.IndicadorEPS, objSC.TipoReceta,
                                  objSC.INDICACIONESPECIFICA, objSC.TipoOrdenAtencion, objSC.SECUENCIALHCE, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
+
+                            obje.valor = VAAA.FirstOrDefault().Value;
                         }
                         catch (Exception ex)
                         {
@@ -575,7 +580,7 @@ namespace RoyalSISWS.Models
 
                     obje.msg = "Correcto";
                     obje.ok = true;
-                    obje.valor = LstEntyt.Count;
+                    //obje.valor = LstEntyt.Count;
                 }
             }
             catch (Exception ex)
@@ -606,15 +611,30 @@ namespace RoyalSISWS.Models
                     List<SS_IT_SaludProcedimientoIngreso> LstEntyt = (List<SS_IT_SaludProcedimientoIngreso>)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(List<SS_IT_SaludProcedimientoIngreso>));
                     foreach (SS_IT_SaludProcedimientoIngreso objSC in LstEntyt)
                     {
-                        var VAAA = context.SP_SS_IT_SaludProcedimientoIngreso(objSC.UnidadReplicacion, objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,
-                      objSC.IdOrdenAtencion, objSC.LineaOrdenAtencionConsulta, objSC.Componente, objSC.Secuencia, objSC.idtipoordenatencion, objSC.Cantidad,
-                      objSC.IndicadorEPS, objSC.IdMedico, objSC.Especialidad, objSC.IdCita, objSC.Observacion, objSC.SecuencialHCE,
-                      objSC.EstadoDocumento, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
+                        try
+                        {
+                            var VAAA = context.SP_SS_IT_SaludProcedimientoIngreso(objSC.UnidadReplicacion, objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,
+                              objSC.IdOrdenAtencion, objSC.LineaOrdenAtencionConsulta, objSC.Componente, objSC.Secuencia, objSC.idtipoordenatencion, objSC.Cantidad,
+                              objSC.IndicadorEPS, objSC.IdMedico, objSC.Especialidad, objSC.IdCita, objSC.Observacion, objSC.SecuencialHCE,
+                              objSC.EstadoDocumento, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
+
+                            obje.valor = VAAA.FirstOrDefault().Value;
+
+                        }
+                        catch (Exception ex)
+                        {
+                            // Manejo del error específico para el elemento actual
+                            obje.msg = "Error al procesar el elemento: " + Newtonsoft.Json.JsonConvert.SerializeObject(objSC) + ". Detalles del error: " + Newtonsoft.Json.JsonConvert.SerializeObject(ex.Message); obje.ok = false;
+                            obje.valor = 0;
+                            BaseDatos.WriteLog(DateTime.Now + " | " + "Error : SP_SS_IT_SaludProcedimientoIngreso" + " | " + Newtonsoft.Json.JsonConvert.SerializeObject(objSC));
+                            return obje; // Termina la función si ocurre un error
+                        }
+                        
                     }
 
                     obje.msg = "Correcto";
                     obje.ok = true;
-                    obje.valor = 1;
+                    //obje.valor = 1;
                     //scope.Complete();
                 }
                 catch (Exception ex)
@@ -775,7 +795,8 @@ namespace RoyalSISWS.Models
                           , ObjTrace.PresionArterialMSI2, ObjTrace.FrecuenciaCardiaca, ObjTrace.FrecuenciaRespiratoria, ObjTrace.Temperatura, ObjTrace.SaturacionOxigeno
                           , ObjTrace.Peso, ObjTrace.Talla, ObjTrace.EXAMENCLINICOOBS, ObjTrace.Estado, ObjTrace.UsuarioCreacion, DateTime.Now);
                         //  obje.valor = int.Parse(VAAA);
-                        obje.valor = 1;
+                        var res = VAAA.FirstOrDefault();
+                        obje.valor = Convert.ToInt32(res);
                         obje.ok = true;
                         obje.msg = "Se registro Correcto";
                     }
