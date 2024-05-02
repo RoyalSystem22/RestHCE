@@ -172,9 +172,6 @@
     <Compile Include="Models\SpringSalud_produccion\A_SP_SS_HCE_ListaServiciosAuxiliares_Result.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpringSalud_produccion\A_SP_SS_HCE_VisorHistoria_bk_Result.cs">
-      <DependentUpon>SpringSalud.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\SpringSalud_produccion\A_SP_SS_HCE_VisorHistoria_Result.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
@@ -233,6 +230,39 @@
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SpringSalud_produccion\SP_SS_GenerarLlamado_Result.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SP_SS_IT_SALUDAnamnesisInFormeMedico_Result.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SP_SS_IT_SALUDAnamnesisIngresoMirth_Result.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SP_SS_IT_SALUDDescansoMedico_Result.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SP_SS_IT_SaludDiagnosticoIngreso_Result.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SP_SS_IT_SaludInformePROCIngreso_Result.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SP_SS_IT_SaludInformeRutaIngreso_Result.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia_Result.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SP_SS_IT_SaludProcedimientoIngreso_Result.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SP_SS_IT_SaludRecetaIndicacionesGENIngreso_Result.cs">
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SP_SS_IT_SaludRecetaIngreso_Result.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SpringSalud_produccion\SS_HC_ATENCIONES_SOA_Result.cs">

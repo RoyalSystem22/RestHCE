@@ -233,7 +233,6 @@ namespace RoyalSISWS.Models
             return lst;
         }
 
-
         public List<VW_SS_HCE_VisorProcedimientoInforme> HCE_VisorInformes(CW_DisponibilidadMedica Disponibilidad)
         {
             List<VW_SS_HCE_VisorProcedimientoInforme> lst = new List<VW_SS_HCE_VisorProcedimientoInforme>();
@@ -274,6 +273,27 @@ namespace RoyalSISWS.Models
             }
             return lst;
         }
+
+        public List<SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result> HCE_VisorProcedimientoInformeSPRING(Nullable<int> Accion, string Objeto)
+        {
+            List<SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result> lst = new List<SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result>();
+            SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result objSC = (SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result));
+
+                using (SpringSalud_produccionEntities context = new SpringSalud_produccionEntities())
+                {
+                    Nullable<int> inicio = objSC.IdProcedimiento;
+                    Nullable<int> NumeroFilas = objSC.IdOrdenAtencion;
+                    Nullable<int> LineaOA;
+
+                    context.Database.Connection.Open();
+                    lst = context.SP_SS_HC_ProcedimientoInformeSPRING_LISTAR( objSC.IdPaciente, objSC.Paciente, objSC.CodigoOA, 
+                        objSC.CodigoComponente, objSC.DescripcionComponente, inicio, NumeroFilas, objSC.accion).ToList();
+                    context.Database.Connection.Close();
+                    context.Dispose();
+                }
+                return lst;
+        }
+
 
         #endregion
 
@@ -355,7 +375,7 @@ namespace RoyalSISWS.Models
                             obje.valor = context.SaveChanges();
                             obje.ok = true;
                             obje.msg = "Se actualizo Correctamente";
-                        }                
+                        }
                         scope.Complete();
                     }
                     catch (Exception ex)
@@ -374,8 +394,8 @@ namespace RoyalSISWS.Models
             List<SP_SS_HC_InterConsultaSalida_Lista_Result> objLista = new List<SP_SS_HC_InterConsultaSalida_Lista_Result>();
             using (var context = new WEB_ERPSALUDEntities())
             {
-                List<SP_SS_HC_InterConsultaSalida_Lista_Result> objConsultas = context.SP_SS_HC_InterConsultaSalida_Lista(objSC.UnidadReplicacion, 
-                    objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,objSC.IdOrdenAtencion ).ToList();
+                List<SP_SS_HC_InterConsultaSalida_Lista_Result> objConsultas = context.SP_SS_HC_InterConsultaSalida_Lista(objSC.UnidadReplicacion,
+                    objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico, objSC.IdOrdenAtencion).ToList();
                 if (objConsultas != null)
                 {
                     objLista.AddRange(objConsultas);
@@ -384,7 +404,7 @@ namespace RoyalSISWS.Models
             }
             return objLista;
         }
- 
+
         #endregion
 
 
@@ -396,48 +416,48 @@ namespace RoyalSISWS.Models
             {
                 //using (TransactionScope scope = new TransactionScope())
                 //{
-                    try
-                    {
+                try
+                {
 
-                        if (Accion == 1)
-                        {
-                            SP_SS_GenerarLlamado_Result objSC = (SP_SS_GenerarLlamado_Result)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SP_SS_GenerarLlamado_Result));
-                            var VAAA = context.SP_SS_GenerarLlamado(objSC.IdCita, objSC.Usuario, objSC.Observacion);
-                            obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(VAAA);
-                            obje.ok = true;
-                            obje.valor = 1;
-                        }
-
-                        if (Accion == 2)
-                        {
-                            SP_SS_GenerarLlamado_Result objSC = (SP_SS_GenerarLlamado_Result)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SP_SS_GenerarLlamado_Result));
-                            var VAAA = context.SP_SS_EliminarLlamado(objSC.IdCita, objSC.Usuario, objSC.Observacion, Accion);
-                            obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(VAAA);
-                            obje.ok = true;
-                            obje.valor = 1;
-                        }
-                        if (Accion == 3)
-                        {
-                            SP_SS_GenerarLlamado_Result objSC = (SP_SS_GenerarLlamado_Result)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SP_SS_GenerarLlamado_Result));
-                            var VAAA = context.SP_SS_EliminarLlamado(objSC.IdCita, objSC.Usuario, objSC.Observacion, Accion);
-                            obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(VAAA);
-                            obje.ok = true;
-                            obje.valor = 1;
-                        }
-                   
-                    }
-                    catch (Exception ex)
+                    if (Accion == 1)
                     {
-                        obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
-                        obje.ok = false;
-                        obje.valor = 0;
+                        SP_SS_GenerarLlamado_Result objSC = (SP_SS_GenerarLlamado_Result)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SP_SS_GenerarLlamado_Result));
+                        var VAAA = context.SP_SS_GenerarLlamado(objSC.IdCita, objSC.Usuario, objSC.Observacion);
+                        obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(VAAA);
+                        obje.ok = true;
+                        obje.valor = 1;
                     }
+
+                    if (Accion == 2)
+                    {
+                        SP_SS_GenerarLlamado_Result objSC = (SP_SS_GenerarLlamado_Result)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SP_SS_GenerarLlamado_Result));
+                        var VAAA = context.SP_SS_EliminarLlamado(objSC.IdCita, objSC.Usuario, objSC.Observacion, Accion);
+                        obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(VAAA);
+                        obje.ok = true;
+                        obje.valor = 1;
+                    }
+                    if (Accion == 3)
+                    {
+                        SP_SS_GenerarLlamado_Result objSC = (SP_SS_GenerarLlamado_Result)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SP_SS_GenerarLlamado_Result));
+                        var VAAA = context.SP_SS_EliminarLlamado(objSC.IdCita, objSC.Usuario, objSC.Observacion, Accion);
+                        obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(VAAA);
+                        obje.ok = true;
+                        obje.valor = 1;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+                    obje.ok = false;
+                    obje.valor = 0;
+                }
                 //}
             }
             return obje;
         }
 
-        
+
         #endregion
 
 
@@ -451,7 +471,7 @@ namespace RoyalSISWS.Models
                 obje.msg = "El valor de Accion no puede ser nulo.";
                 obje.ok = false;
                 obje.valor = 0;
-                
+
                 return obje;
             }
             try
@@ -466,7 +486,11 @@ namespace RoyalSISWS.Models
                             var VAAA = context.SP_SS_IT_SaludDiagnosticoIngreso(objSC.UnidadReplicacion, objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,
                                  objSC.IdOrdenAtencion, objSC.LineaOrdenAtencionConsulta, objSC.IdDiagnostico, objSC.Secuencia, objSC.Determinacion, objSC.TIPOORDENATENCION,
                                  objSC.ObservacionDIAGNOSTICO, objSC.TIPOIT, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
-                            obje.valor = VAAA.FirstOrDefault().Value;
+                            foreach (SP_SS_IT_SaludDiagnosticoIngreso_Result obj in VAAA)
+                            {
+                                obje.msg = obj.Mensaje;
+                                obje.valor = obj.Retorno;
+                            }
 
                         }
                         catch (Exception ex)
@@ -565,8 +589,12 @@ namespace RoyalSISWS.Models
                                  objSC.IdOrdenAtencion, objSC.LineaOrdenAtencionConsulta, objSC.Secuencia, objSC.Componente, objSC.SubFamilia, objSC.Familia, objSC.Linea,
                                  objSC.UnidadMedida, objSC.Cantidad, objSC.Via, objSC.Dosis, objSC.DiasTratamiento, objSC.Frecuencia, objSC.IndicadorEPS, objSC.TipoReceta,
                                  objSC.INDICACIONESPECIFICA, objSC.TipoOrdenAtencion, objSC.SECUENCIALHCE, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
-
-                            obje.valor = VAAA.FirstOrDefault().Value;
+                            foreach (SP_SS_IT_SaludRecetaIngreso_Result obj in VAAA)
+                            {
+                                obje.msg = obj.Mensaje;
+                                obje.valor = obj.Retorno;
+                            }
+                            //obje.valor = VAAA.FirstOrDefault().Value;
                         }
                         catch (Exception ex)
                         {
@@ -618,7 +646,11 @@ namespace RoyalSISWS.Models
                               objSC.IndicadorEPS, objSC.IdMedico, objSC.Especialidad, objSC.IdCita, objSC.Observacion, objSC.SecuencialHCE,
                               objSC.EstadoDocumento, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
 
-                            obje.valor = VAAA.FirstOrDefault().Value;
+                            foreach (SP_SS_IT_SaludProcedimientoIngreso_Result obj in VAAA)
+                            {
+                                obje.msg = obj.Mensaje;
+                                obje.valor = obj.Retorno;
+                            }
 
                         }
                         catch (Exception ex)
@@ -629,7 +661,7 @@ namespace RoyalSISWS.Models
                             BaseDatos.WriteLog(DateTime.Now + " | " + "Error : SP_SS_IT_SaludProcedimientoIngreso" + " | " + Newtonsoft.Json.JsonConvert.SerializeObject(objSC));
                             return obje; // Termina la función si ocurre un error
                         }
-                        
+
                     }
 
                     obje.msg = "Correcto";
@@ -663,10 +695,13 @@ namespace RoyalSISWS.Models
                         var VAAA = context.SP_SS_IT_SaludInformeRutaIngreso(objSC.UnidadReplicacion, objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,
                          objSC.IdOrdenAtencion, objSC.LineaOrdenAtencion, objSC.RutaInforme, objSC.Observacion,
                           objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
+                        foreach (SP_SS_IT_SaludInformeRutaIngreso_Result obj in VAAA)
+                        {
+                            obje.msg = obj.Mensaje;
+                            obje.valor = obj.Retorno;
+                            obje.ok = true;
+                        }
                     }
-                    obje.msg = "Correcto";
-                    obje.ok = true;
-                    obje.valor = 1;
                 }
                 catch (Exception ex)
                 {
@@ -692,10 +727,12 @@ namespace RoyalSISWS.Models
 
                     var VAAA = context.SP_SS_IT_SaludInformePROCIngreso(objSC.UnidadReplicacion, objSC.IdEpisodioAtencion, objSC.IdPaciente, objSC.EpisodioClinico,
                      objSC.IdOrdenAtencion, objSC.LineaOrdenAtencion, objSC.Informe, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
-
-                    obje.msg = "Correcto";
-                    obje.ok = true;
-                    obje.valor = 1;
+                    foreach (SP_SS_IT_SaludInformePROCIngreso_Result obj in VAAA)
+                    {
+                        obje.msg = obj.Mensaje;
+                        obje.valor = obj.Retorno;
+                        obje.ok = true;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -726,40 +763,12 @@ namespace RoyalSISWS.Models
                         objSC.EJEoiSCICLO, objSC.AVoiSCICLO, objSC.ADDoiSCICLO, objSC.DIPoiSCICLO, objSC.PAPARPADOSANEXOS, objSC.CORNEACRISTESCLERA,
                         objSC.IRISPUPILA, objSC.TonoOD, objSC.TonoOI, objSC.MMHHTonShiotz, objSC.MMHHTonAplanacion, objSC.MMHHTonOtra, objSC.FONDOJOyG,
                         objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion);
-
-                }
-                catch (Exception ex)
-                {
-                    obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
-                    obje.ok = true;
-                    obje.valor = 0;
-                }
-                //}
-            }
-            return obje;
-        }
-
-        public ViewResponse Mirth_AnamnesisInFormeMedicoMantenimiento(Nullable<int> Accion, SS_IT_SaludOFTALMOLOGICOIngreso ObjTrace)
-        {
-            ViewResponse obje = new ViewResponse();
-            using (var context = new SpringSalud_produccionEntities())
-            {
-                context.Database.Connection.Open();
-                //using (TransactionScope scope = new TransactionScope())
-                //{
-                try
-                {
-                    if (Accion == 1)
+                    foreach (SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia_Result obj in VAAA)
                     {
-                        var VAAA = context.SP_SS_IT_SALUDAnamnesisInFormeMedico(ObjTrace.IdOrdenAtencion, ObjTrace.IdPaciente,
-                              ObjTrace.LineaOrdenAtencion, 1, ObjTrace.ENFACTUAL, ObjTrace.Estado, ObjTrace.UsuarioCreacion,
-                           ObjTrace.FechaCreacion, "", ObjTrace.UsuarioModificacion, DateTime.Now);
-                        //  obje.valor = int.Parse(VAAA);
-                        obje.valor = 1;
+                        obje.msg = obj.Mensaje;
+                        obje.valor = obj.Retorno;
                         obje.ok = true;
-                        obje.msg = "Se registro Correcto";
                     }
-                    //scope.Complete();
                 }
                 catch (Exception ex)
                 {
@@ -767,8 +776,6 @@ namespace RoyalSISWS.Models
                     obje.ok = true;
                     obje.valor = 0;
                 }
-                context.Database.Connection.Close();
-                context.Dispose();
                 //}
             }
             return obje;
@@ -794,11 +801,12 @@ namespace RoyalSISWS.Models
                           ObjTrace.RelatoCronologico, ObjTrace.PresionArterialMSD1, ObjTrace.PresionArterialMSD2, ObjTrace.PresionArterialMSI1
                           , ObjTrace.PresionArterialMSI2, ObjTrace.FrecuenciaCardiaca, ObjTrace.FrecuenciaRespiratoria, ObjTrace.Temperatura, ObjTrace.SaturacionOxigeno
                           , ObjTrace.Peso, ObjTrace.Talla, ObjTrace.EXAMENCLINICOOBS, ObjTrace.Estado, ObjTrace.UsuarioCreacion, DateTime.Now);
-                        //  obje.valor = int.Parse(VAAA);
-                        var res = VAAA.FirstOrDefault();
-                        obje.valor = Convert.ToInt32(res);
-                        obje.ok = true;
-                        obje.msg = "Se registro Correcto";
+                        foreach (SP_SS_IT_SALUDAnamnesisIngresoMirth_Result obj in VAAA)
+                        {
+                            obje.msg = obj.Mensaje;
+                            obje.valor = obj.Retorno;
+                            obje.ok = true;
+                        }
                     }
                     //scope.Complete();
                 }
@@ -833,9 +841,12 @@ namespace RoyalSISWS.Models
                     var VAAA = context.SP_SS_IT_SALUDDescansoMedico(objSC.IdOrdenAtencion, objSC.IdPaciente, objSC.LineaOrdenAtencion,
                         objSC.FechaInicio, objSC.FechaFinal, objSC.Observaciones, objSC.Estado, objSC.UsuarioCreacion, objSC.FechaCreacion,
                         objSC.UsuarioCreacion, objSC.FechaCreacion);
-                    obje.msg = "Correcto";
-                    obje.ok = true;
-                    obje.valor = 1;
+                    foreach (SP_SS_IT_SALUDDescansoMedico_Result obj in VAAA)
+                    {
+                        obje.msg = obj.Mensaje;
+                        obje.valor = obj.Retorno;
+                        obje.ok = true;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -848,6 +859,42 @@ namespace RoyalSISWS.Models
             return obje;
         }
 
+        public ViewResponse Mirth_AnamnesisInFormeMedicoMantenimiento(Nullable<int> Accion, SS_IT_SaludOFTALMOLOGICOIngreso ObjTrace)
+        {
+            ViewResponse obje = new ViewResponse();
+            using (var context = new SpringSalud_produccionEntities())
+            {
+                context.Database.Connection.Open();
+                //using (TransactionScope scope = new TransactionScope())
+                //{
+                try
+                {
+                    if (Accion == 1)
+                    {
+                        var VAAA = context.SP_SS_IT_SALUDAnamnesisInFormeMedico(ObjTrace.IdOrdenAtencion, ObjTrace.IdPaciente,
+                              ObjTrace.LineaOrdenAtencion, 1, ObjTrace.ENFACTUAL, ObjTrace.Estado, ObjTrace.UsuarioCreacion,
+                           ObjTrace.FechaCreacion, "", ObjTrace.UsuarioModificacion, DateTime.Now);
+                        foreach (SP_SS_IT_SALUDAnamnesisInFormeMedico_Result obj in VAAA)
+                        {
+                            obje.msg = obj.Mensaje;
+                            obje.valor = obj.Retorno;
+                            obje.ok = true;
+                        }
+                    }
+                    //scope.Complete();
+                }
+                catch (Exception ex)
+                {
+                    obje.msg = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
+                    obje.ok = true;
+                    obje.valor = 0;
+                }
+                context.Database.Connection.Close();
+                context.Dispose();
+                //}
+            }
+            return obje;
+        }
 
         #endregion
     }

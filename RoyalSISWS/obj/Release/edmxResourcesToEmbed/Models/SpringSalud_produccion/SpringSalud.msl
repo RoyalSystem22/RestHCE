@@ -956,15 +956,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisInFormeMedico" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisInFormeMedico" />
-    <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisIngreso" />
     <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAtendidoConsultaExterna" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAtendidoConsultaExterna" />
     <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDConsultaExterna" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDConsultaExterna" />
-    <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDOFTALMOLOGICOIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDOFTALMOLOGICOIngreso" />
     <FunctionImportMapping FunctionImportName="SP_SS_IT_SPRINGDiagnosticosConsultaExterna" FunctionName="ModelGolf.Store.SP_SS_IT_SPRINGDiagnosticosConsultaExterna" />
     <FunctionImportMapping FunctionImportName="SP_SS_IT_SPRINGRUTAHCE" FunctionName="ModelGolf.Store.SP_SS_IT_SPRINGRUTAHCE" />
     <FunctionImportMapping FunctionImportName="SP_SS_IT_SPRINGExamenesConsultaExterna" FunctionName="ModelGolf.Store.SP_SS_IT_SPRINGExamenesConsultaExterna" />
-    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludDiagnosticoIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludDiagnosticoIngreso" />
     <EntitySetMapping Name="SS_IT_SaludRecetaIndicacionesGENIngreso">
       <EntityTypeMapping TypeName="ModelGolf.SS_IT_SaludRecetaIndicacionesGENIngreso">
         <MappingFragment StoreEntitySet="SS_IT_SaludRecetaIndicacionesGENIngreso">
@@ -989,13 +985,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludRecetaIndicacionesGENIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludRecetaIndicacionesGENIngreso" />
-    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludProcedimientoIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludProcedimientoIngreso" />
-    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludInformePROCIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludInformePROCIngreso" />
-    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludInformeRutaIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludInformeRutaIngreso" />
-    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludRecetaIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludRecetaIngreso" />
-    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia" FunctionName="ModelGolf.Store.SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia" />
-    <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisIngresoMirth" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisIngresoMirth" />
     <EntitySetMapping Name="SS_IT_SaludRecetaIngreso">
       <EntityTypeMapping TypeName="ModelGolf.SS_IT_SaludRecetaIngreso">
         <MappingFragment StoreEntitySet="SS_IT_SaludRecetaIngreso">
@@ -1035,7 +1024,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDDescansoMedico" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDDescansoMedico" />
     <EntitySetMapping Name="VW_SS_HCE_VisorDescansoMedico">
       <EntityTypeMapping TypeName="ModelGolf.VW_SS_HCE_VisorDescansoMedico">
         <MappingFragment StoreEntitySet="VW_SS_HCE_VisorDescansoMedico">
@@ -1111,76 +1099,110 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="A_SP_SS_HCE_VisorHistoria_bk" FunctionName="ModelGolf.Store.A_SP_SS_HCE_VisorHistoria_bk">
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludRecetaIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludRecetaIngreso">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="ModelGolf.A_SP_SS_HCE_VisorHistoria_bk_Result">
-          <ScalarProperty Name="UnidadReplicacionEC" ColumnName="UnidadReplicacionEC" />
-          <ScalarProperty Name="TipoAtencionDescX" ColumnName="TipoAtencionDescX" />
-          <ScalarProperty Name="CitaTipo" ColumnName="CitaTipo" />
-          <ScalarProperty Name="CitaFecha" ColumnName="CitaFecha" />
-          <ScalarProperty Name="CitaHora" ColumnName="CitaHora" />
-          <ScalarProperty Name="Origen" ColumnName="Origen" />
-          <ScalarProperty Name="NombreEspecialidad" ColumnName="NombreEspecialidad" />
-          <ScalarProperty Name="TipoPacienteNombre" ColumnName="TipoPacienteNombre" />
-          <ScalarProperty Name="CodigoOA" ColumnName="CodigoOA" />
-          <ScalarProperty Name="Cama" ColumnName="Cama" />
-          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
-          <ScalarProperty Name="TipoOrdenAtencionNombre" ColumnName="TipoOrdenAtencionNombre" />
-          <ScalarProperty Name="CodigoHC" ColumnName="CodigoHC" />
-          <ScalarProperty Name="Aseguradora" ColumnName="Aseguradora" />
-          <ScalarProperty Name="CodigoHCAnterior" ColumnName="CodigoHCAnterior" />
-          <ScalarProperty Name="PacienteNombre" ColumnName="PacienteNombre" />
-          <ScalarProperty Name="MedicoNombre" ColumnName="MedicoNombre" />
-          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
-          <ScalarProperty Name="LineaOrdenAtencion" ColumnName="LineaOrdenAtencion" />
-          <ScalarProperty Name="IdHospitalizacion" ColumnName="IdHospitalizacion" />
-          <ScalarProperty Name="LineaHospitalizacion" ColumnName="LineaHospitalizacion" />
-          <ScalarProperty Name="IdConsultaExterna" ColumnName="IdConsultaExterna" />
+        <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SaludRecetaIngreso_Result">
+          <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludDiagnosticoIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludDiagnosticoIngreso">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SaludDiagnosticoIngreso_Result">
+          <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisIngresoMirth" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisIngresoMirth">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SALUDAnamnesisIngresoMirth_Result">
+          <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludInformePROCIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludInformePROCIngreso">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SaludInformePROCIngreso_Result">
+          <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludInformeRutaIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludInformeRutaIngreso">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SaludInformeRutaIngreso_Result">
+          <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDOFTALMOLOGICOIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDOFTALMOLOGICOIngreso" />
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia" FunctionName="ModelGolf.Store.SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia_Result">
+          <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludProcedimientoIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludProcedimientoIngreso">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SaludProcedimientoIngreso_Result">
+          <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludRecetaIndicacionesGENIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludRecetaIndicacionesGENIngreso">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SaludRecetaIndicacionesGENIngreso_Result">
+          <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisInFormeMedico" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisInFormeMedico">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SALUDAnamnesisInFormeMedico_Result">
+          <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDDescansoMedico" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDDescansoMedico">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SALUDDescansoMedico_Result">
+          <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SS_HC_ProcedimientoInformeSPRING_LISTAR" FunctionName="ModelGolf.Store.SP_SS_HC_ProcedimientoInformeSPRING_LISTAR">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ModelGolf.SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result">
           <ScalarProperty Name="IdProcedimiento" ColumnName="IdProcedimiento" />
-          <ScalarProperty Name="Modalidad" ColumnName="Modalidad" />
-          <ScalarProperty Name="IndicadorSeguro" ColumnName="IndicadorSeguro" />
-          <ScalarProperty Name="IdCita" ColumnName="IdCita" />
-          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+          <ScalarProperty Name="RutaInforme" ColumnName="RutaInforme" />
           <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
-          <ScalarProperty Name="TipoPaciente" ColumnName="TipoPaciente" />
-          <ScalarProperty Name="TipoAtencion" ColumnName="TipoAtencion" />
-          <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
-          <ScalarProperty Name="IdEmpresaAseguradora" ColumnName="IdEmpresaAseguradora" />
+          <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+          <ScalarProperty Name="CodigoOA" ColumnName="CodigoOA" />
+          <ScalarProperty Name="CodigoComponente" ColumnName="CodigoComponente" />
+          <ScalarProperty Name="DescripcionComponente" ColumnName="DescripcionComponente" />
+          <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+          <ScalarProperty Name="LineaOA" ColumnName="LineaOA" />
           <ScalarProperty Name="TipoOrdenAtencion" ColumnName="TipoOrdenAtencion" />
-          <ScalarProperty Name="Componente" ColumnName="Componente" />
-          <ScalarProperty Name="ComponenteNombre" ColumnName="ComponenteNombre" />
-          <ScalarProperty Name="Compania" ColumnName="Compania" />
-          <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
-          <ScalarProperty Name="IdMedico" ColumnName="IdMedico" />
-          <ScalarProperty Name="IndicadorCirugia" ColumnName="IndicadorCirugia" />
-          <ScalarProperty Name="IndicadorExamenPrincipal" ColumnName="IndicadorExamenPrincipal" />
-          <ScalarProperty Name="UnidadReplicacionHCE" ColumnName="UnidadReplicacionHCE" />
-          <ScalarProperty Name="EstadoEpiAtencion" ColumnName="EstadoEpiAtencion" />
-          <ScalarProperty Name="EpisodioClinicoHCE" ColumnName="EpisodioClinicoHCE" />
-          <ScalarProperty Name="IDEPISODIOAtencionHCE" ColumnName="IDEPISODIOAtencionHCE" />
-          <ScalarProperty Name="IdPacienteHCE" ColumnName="IdPacienteHCE" />
-          <ScalarProperty Name="SecuenciaHCE" ColumnName="SecuenciaHCE" />
-          <ScalarProperty Name="PersonaAnt" ColumnName="PersonaAnt" />
-          <ScalarProperty Name="sexo" ColumnName="sexo" />
-          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
-          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
-          <ScalarProperty Name="NivelInstruccion" ColumnName="NivelInstruccion" />
-          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
-          <ScalarProperty Name="Documento" ColumnName="Documento" />
-          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
-          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
-          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
-          <ScalarProperty Name="LugarNacimiento" ColumnName="LugarNacimiento" />
-          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
-          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
-          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
-          <ScalarProperty Name="EsPaciente" ColumnName="EsPaciente" />
-          <ScalarProperty Name="EsEmpresa" ColumnName="EsEmpresa" />
-          <ScalarProperty Name="Pais" ColumnName="Pais" />
-          <ScalarProperty Name="EstadoPersona" ColumnName="EstadoPersona" />
+          <ScalarProperty Name="Medico" ColumnName="Medico" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="FechaProcedimiento" ColumnName="FechaProcedimiento" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="accion" ColumnName="accion" />
+          <ScalarProperty Name="Contador_filas" ColumnName="Contador_filas" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

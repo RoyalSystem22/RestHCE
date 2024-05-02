@@ -185,19 +185,6 @@
     <EntitySet Name="SS_IT_SaludInformeRutaIngreso" EntityType="ModelGolf.SS_IT_SaludInformeRutaIngreso" />
     <EntitySet Name="SS_IT_SaludOFTALMOLOGICOIngreso" EntityType="ModelGolf.SS_IT_SaludOFTALMOLOGICOIngreso" />
     <EntitySet Name="SS_IT_SaludProcedimientoIngreso" EntityType="ModelGolf.SS_IT_SaludProcedimientoIngreso" />
-    <FunctionImport Name="SP_SS_IT_SALUDAnamnesisInFormeMedico" ReturnType="Collection(Int32)">
-      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
-      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
-      <Parameter Name="IdLineaOa" Mode="In" Type="Int32" />
-      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
-      <Parameter Name="InformeMedico" Mode="In" Type="String" />
-      <Parameter Name="Estado" Mode="In" Type="Int32" />
-      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
-      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
-      <Parameter Name="ExamenClinico" Mode="In" Type="String" />
-      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
-      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
-    </FunctionImport>
     <FunctionImport Name="SP_SS_IT_SALUDAnamnesisIngreso" ReturnType="Collection(Int32)">
       <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
       <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
@@ -238,6 +225,156 @@
       <Parameter Name="Usuario" Mode="In" Type="String" />
       <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
       <Parameter Name="TipoOrdenAtencion" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SPRINGDiagnosticosConsultaExterna">
+      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdDiagnostico" Mode="In" Type="Int32" />
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Determinacion" Mode="In" Type="String" />
+      <Parameter Name="LINEA" Mode="In" Type="Int32" />
+      <Parameter Name="tipoordenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="observaciondiagnostico" Mode="In" Type="String" />
+      <Parameter Name="tipoIT" Mode="In" Type="String" />
+      <Parameter Name="al_retorno" Mode="InOut" Type="Int32" />
+      <Parameter Name="as_mensaje" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SPRINGRUTAHCE">
+      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="LINEA" Mode="In" Type="Int32" />
+      <Parameter Name="INFORMERUTA" Mode="In" Type="String" />
+      <Parameter Name="OBSERVACION" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SPRINGExamenesConsultaExterna">
+      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="IdTipoOrdenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="Componente" Mode="In" Type="String" />
+      <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
+      <Parameter Name="Especialidad" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="lineamax" Mode="In" Type="Int32" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="LineaOrdenAtencionConsulta" Mode="In" Type="Int32" />
+      <Parameter Name="SECUENCIALHCE" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="SS_IT_SaludRecetaIndicacionesGENIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIndicacionesGENIngreso" />
+    <EntitySet Name="SS_IT_SaludRecetaIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIngreso" />
+    <EntitySet Name="VW_SS_HCE_VisorDescansoMedico" EntityType="ModelGolf.VW_SS_HCE_VisorDescansoMedico" />
+    <EntitySet Name="VW_SS_HCE_VisorProcedimiento" EntityType="ModelGolf.VW_SS_HCE_VisorProcedimiento" />
+    <FunctionImport Name="SP_SS_EliminarLlamado" ReturnType="Collection(ModelGolf.SP_SS_EliminarLlamado_Result)">
+      <Parameter Name="IdCita" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="Valor" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_GenerarLlamado" ReturnType="Collection(ModelGolf.SP_SS_GenerarLlamado_Result)">
+      <Parameter Name="IdCita" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SaludRecetaIngreso" ReturnType="Collection(ModelGolf.SP_SS_IT_SaludRecetaIngreso_Result)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="Componente" Mode="In" Type="String" />
+      <Parameter Name="SubFamilia" Mode="In" Type="String" />
+      <Parameter Name="Familia" Mode="In" Type="String" />
+      <Parameter Name="Linea" Mode="In" Type="String" />
+      <Parameter Name="UnidadMedida" Mode="In" Type="Int32" />
+      <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="Via" Mode="In" Type="String" />
+      <Parameter Name="Dosis" Mode="In" Type="String" />
+      <Parameter Name="Diastratamiento" Mode="In" Type="String" />
+      <Parameter Name="Frecuencia" Mode="In" Type="String" />
+      <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
+      <Parameter Name="TipoReceta" Mode="In" Type="Int32" />
+      <Parameter Name="IndicacionEspecifica" Mode="In" Type="String" />
+      <Parameter Name="TipoOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="SECUENCIALHCE" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SaludDiagnosticoIngreso" ReturnType="Collection(ModelGolf.SP_SS_IT_SaludDiagnosticoIngreso_Result)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="LINEA" Mode="In" Type="Int32" />
+      <Parameter Name="IdDiagnostico" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="Determinacion" Mode="In" Type="String" />
+      <Parameter Name="TIPOORDENATENCION" Mode="In" Type="Int32" />
+      <Parameter Name="ObservacionDIAGNOSTICO" Mode="In" Type="String" />
+      <Parameter Name="TIPOIT" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SALUDAnamnesisIngresoMirth" ReturnType="Collection(ModelGolf.SP_SS_IT_SALUDAnamnesisIngresoMirth_Result)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="String" />
+      <Parameter Name="TiempoEnfermedad" Mode="In" Type="String" />
+      <Parameter Name="TiempoEnfermedadUnidad" Mode="In" Type="String" />
+      <Parameter Name="RelatoCronologico" Mode="In" Type="String" />
+      <Parameter Name="PresionArterialMSD1" Mode="In" Type="String" />
+      <Parameter Name="PresionArterialMSD2" Mode="In" Type="Int32" />
+      <Parameter Name="PresionArterialMSI1" Mode="In" Type="String" />
+      <Parameter Name="PresionArterialMSI2" Mode="In" Type="String" />
+      <Parameter Name="FrecuenciaCardiaca" Mode="In" Type="String" />
+      <Parameter Name="FrecuenciaRespiratoria" Mode="In" Type="Int32" />
+      <Parameter Name="Temperatura" Mode="In" Type="String" />
+      <Parameter Name="SaturacionOxigeno" Mode="In" Type="Int32" />
+      <Parameter Name="Peso" Mode="In" Type="String" />
+      <Parameter Name="Talla" Mode="In" Type="String" />
+      <Parameter Name="ExamenClinico" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SaludInformePROCIngreso" ReturnType="Collection(ModelGolf.SP_SS_IT_SaludInformePROCIngreso_Result)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="Informe" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SaludInformeRutaIngreso" ReturnType="Collection(ModelGolf.SP_SS_IT_SaludInformeRutaIngreso_Result)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="RutaInforme" Mode="In" Type="String" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
     </FunctionImport>
     <FunctionImport Name="SP_SS_IT_SALUDOFTALMOLOGICOIngreso" ReturnType="Collection(Int32)">
       <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
@@ -284,150 +421,7 @@
       <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
       <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
     </FunctionImport>
-    <FunctionImport Name="SP_SS_IT_SPRINGDiagnosticosConsultaExterna">
-      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
-      <Parameter Name="IdDiagnostico" Mode="In" Type="Int32" />
-      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-      <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
-      <Parameter Name="Usuario" Mode="In" Type="String" />
-      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-      <Parameter Name="Determinacion" Mode="In" Type="String" />
-      <Parameter Name="LINEA" Mode="In" Type="Int32" />
-      <Parameter Name="tipoordenatencion" Mode="In" Type="Int32" />
-      <Parameter Name="observaciondiagnostico" Mode="In" Type="String" />
-      <Parameter Name="tipoIT" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="SP_SS_IT_SPRINGRUTAHCE">
-      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
-      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-      <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
-      <Parameter Name="Usuario" Mode="In" Type="String" />
-      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-      <Parameter Name="LINEA" Mode="In" Type="Int32" />
-      <Parameter Name="INFORMERUTA" Mode="In" Type="String" />
-      <Parameter Name="OBSERVACION" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="SP_SS_IT_SPRINGExamenesConsultaExterna">
-      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
-      <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
-      <Parameter Name="IdTipoOrdenatencion" Mode="In" Type="Int32" />
-      <Parameter Name="Componente" Mode="In" Type="String" />
-      <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
-      <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
-      <Parameter Name="Especialidad" Mode="In" Type="Int32" />
-      <Parameter Name="Usuario" Mode="In" Type="String" />
-      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-      <Parameter Name="lineamax" Mode="In" Type="Int32" />
-      <Parameter Name="Observacion" Mode="In" Type="String" />
-      <Parameter Name="SECUENCIALHCE" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="SP_SS_IT_SaludDiagnosticoIngreso" ReturnType="Collection(Int32)">
-      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
-      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
-      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="LINEA" Mode="In" Type="Int32" />
-      <Parameter Name="IdDiagnostico" Mode="In" Type="Int32" />
-      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
-      <Parameter Name="Determinacion" Mode="In" Type="String" />
-      <Parameter Name="TIPOORDENATENCION" Mode="In" Type="Int32" />
-      <Parameter Name="ObservacionDIAGNOSTICO" Mode="In" Type="String" />
-      <Parameter Name="TIPOIT" Mode="In" Type="String" />
-      <Parameter Name="Estado" Mode="In" Type="Int32" />
-      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
-      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <EntitySet Name="SS_IT_SaludRecetaIndicacionesGENIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIndicacionesGENIngreso" />
-    <FunctionImport Name="SP_SS_IT_SaludRecetaIndicacionesGENIngreso" ReturnType="Collection(Int32)">
-      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
-      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
-      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="LINEA" Mode="In" Type="Int32" />
-      <Parameter Name="TipoIndicacion" Mode="In" Type="Int32" />
-      <Parameter Name="Descripcion" Mode="In" Type="String" />
-      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
-      <Parameter Name="Estado" Mode="In" Type="Int32" />
-      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
-      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <FunctionImport Name="SP_SS_IT_SaludProcedimientoIngreso" ReturnType="Collection(Int32)">
-      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
-      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
-      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="Linea" Mode="In" Type="Int32" />
-      <Parameter Name="Componente" Mode="In" Type="String" />
-      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
-      <Parameter Name="TipoOrdenatencion" Mode="In" Type="Int32" />
-      <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
-      <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
-      <Parameter Name="IdMedico" Mode="In" Type="Int32" />
-      <Parameter Name="Especialidad" Mode="In" Type="Int32" />
-      <Parameter Name="IdCita" Mode="In" Type="Int32" />
-      <Parameter Name="Observacion" Mode="In" Type="String" />
-      <Parameter Name="SECUENCIALHCE" Mode="In" Type="String" />
-      <Parameter Name="EstadoDocumento" Mode="In" Type="Int32" />
-      <Parameter Name="Estado" Mode="In" Type="Int32" />
-      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
-      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <FunctionImport Name="SP_SS_IT_SaludInformePROCIngreso" ReturnType="Collection(Int32)">
-      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
-      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
-      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="Informe" Mode="In" Type="String" />
-      <Parameter Name="Estado" Mode="In" Type="Int32" />
-      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
-      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <FunctionImport Name="SP_SS_IT_SaludInformeRutaIngreso" ReturnType="Collection(Int32)">
-      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
-      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
-      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="RutaInforme" Mode="In" Type="String" />
-      <Parameter Name="Observacion" Mode="In" Type="String" />
-      <Parameter Name="Estado" Mode="In" Type="Int32" />
-      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
-      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <FunctionImport Name="SP_SS_IT_SaludRecetaIngreso" ReturnType="Collection(Int32)">
-      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
-      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
-      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
-      <Parameter Name="Componente" Mode="In" Type="String" />
-      <Parameter Name="SubFamilia" Mode="In" Type="String" />
-      <Parameter Name="Familia" Mode="In" Type="String" />
-      <Parameter Name="Linea" Mode="In" Type="String" />
-      <Parameter Name="UnidadMedida" Mode="In" Type="Int32" />
-      <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
-      <Parameter Name="Via" Mode="In" Type="String" />
-      <Parameter Name="Dosis" Mode="In" Type="String" />
-      <Parameter Name="Diastratamiento" Mode="In" Type="String" />
-      <Parameter Name="Frecuencia" Mode="In" Type="String" />
-      <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
-      <Parameter Name="TipoReceta" Mode="In" Type="Int32" />
-      <Parameter Name="IndicacionEspecifica" Mode="In" Type="String" />
-      <Parameter Name="TipoOrdenAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="SECUENCIALHCE" Mode="In" Type="String" />
-      <Parameter Name="Estado" Mode="In" Type="Int32" />
-      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
-      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <FunctionImport Name="SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia" ReturnType="Collection(String)">
+    <FunctionImport Name="SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia" ReturnType="Collection(ModelGolf.SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia_Result)">
       <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
       <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
       <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
@@ -470,34 +464,56 @@
       <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
       <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
     </FunctionImport>
-    <FunctionImport Name="SP_SS_IT_SALUDAnamnesisIngresoMirth" ReturnType="Collection(String)">
+    <FunctionImport Name="SP_SS_IT_SaludProcedimientoIngreso" ReturnType="Collection(ModelGolf.SP_SS_IT_SaludProcedimientoIngreso_Result)">
       <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
       <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
       <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
       <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
       <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
-      <Parameter Name="Secuencia" Mode="In" Type="String" />
-      <Parameter Name="TiempoEnfermedad" Mode="In" Type="String" />
-      <Parameter Name="TiempoEnfermedadUnidad" Mode="In" Type="String" />
-      <Parameter Name="RelatoCronologico" Mode="In" Type="String" />
-      <Parameter Name="PresionArterialMSD1" Mode="In" Type="String" />
-      <Parameter Name="PresionArterialMSD2" Mode="In" Type="Int32" />
-      <Parameter Name="PresionArterialMSI1" Mode="In" Type="String" />
-      <Parameter Name="PresionArterialMSI2" Mode="In" Type="String" />
-      <Parameter Name="FrecuenciaCardiaca" Mode="In" Type="String" />
-      <Parameter Name="FrecuenciaRespiratoria" Mode="In" Type="Int32" />
-      <Parameter Name="Temperatura" Mode="In" Type="String" />
-      <Parameter Name="SaturacionOxigeno" Mode="In" Type="Int32" />
-      <Parameter Name="Peso" Mode="In" Type="String" />
-      <Parameter Name="Talla" Mode="In" Type="String" />
-      <Parameter Name="ExamenClinico" Mode="In" Type="String" />
+      <Parameter Name="Linea" Mode="In" Type="Int32" />
+      <Parameter Name="Componente" Mode="In" Type="String" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="TipoOrdenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
+      <Parameter Name="IdMedico" Mode="In" Type="Int32" />
+      <Parameter Name="Especialidad" Mode="In" Type="Int32" />
+      <Parameter Name="IdCita" Mode="In" Type="Int32" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="SECUENCIALHCE" Mode="In" Type="String" />
+      <Parameter Name="EstadoDocumento" Mode="In" Type="Int32" />
       <Parameter Name="Estado" Mode="In" Type="Int32" />
       <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
       <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
     </FunctionImport>
-    <EntitySet Name="SS_IT_SaludRecetaIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIngreso" />
-    <FunctionImport Name="SP_SS_IT_SALUDDescansoMedico" ReturnType="Collection(Int32)">
+    <FunctionImport Name="SP_SS_IT_SaludRecetaIndicacionesGENIngreso" ReturnType="Collection(ModelGolf.SP_SS_IT_SaludRecetaIndicacionesGENIngreso_Result)">
+      <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+      <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+      <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+      <Parameter Name="LINEA" Mode="In" Type="Int32" />
+      <Parameter Name="TipoIndicacion" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SALUDAnamnesisInFormeMedico" ReturnType="Collection(ModelGolf.SP_SS_IT_SALUDAnamnesisInFormeMedico_Result)">
+      <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="IdLineaOa" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="InformeMedico" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+      <Parameter Name="ExamenClinico" Mode="In" Type="String" />
+      <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+      <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SS_IT_SALUDDescansoMedico" ReturnType="Collection(ModelGolf.SP_SS_IT_SALUDDescansoMedico_Result)">
       <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
       <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
       <Parameter Name="IdLineaOa" Mode="In" Type="Int32" />
@@ -510,23 +526,15 @@
       <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
       <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
     </FunctionImport>
-    <EntitySet Name="VW_SS_HCE_VisorDescansoMedico" EntityType="ModelGolf.VW_SS_HCE_VisorDescansoMedico" />
-    <EntitySet Name="VW_SS_HCE_VisorProcedimiento" EntityType="ModelGolf.VW_SS_HCE_VisorProcedimiento" />
-    <FunctionImport Name="SP_SS_EliminarLlamado" ReturnType="Collection(ModelGolf.SP_SS_EliminarLlamado_Result)">
-      <Parameter Name="IdCita" Mode="In" Type="Int32" />
-      <Parameter Name="Usuario" Mode="In" Type="String" />
-      <Parameter Name="Observacion" Mode="In" Type="String" />
-      <Parameter Name="Valor" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="SP_SS_GenerarLlamado" ReturnType="Collection(ModelGolf.SP_SS_GenerarLlamado_Result)">
-      <Parameter Name="IdCita" Mode="In" Type="Int32" />
-      <Parameter Name="Usuario" Mode="In" Type="String" />
-      <Parameter Name="Observacion" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="A_SP_SS_HCE_VisorHistoria_bk" ReturnType="Collection(ModelGolf.A_SP_SS_HCE_VisorHistoria_bk_Result)">
-      <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
-      <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
-      <Parameter Name="Documento" Mode="In" Type="String" />
+    <FunctionImport Name="SP_SS_HC_ProcedimientoInformeSPRING_LISTAR" ReturnType="Collection(ModelGolf.SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result)">
+      <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="Paciente" Mode="In" Type="String" />
+      <Parameter Name="CodigoOA" Mode="In" Type="String" />
+      <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+      <Parameter Name="DescripcionComponente" Mode="In" Type="String" />
+      <Parameter Name="Inicio" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroFilas" Mode="In" Type="Int32" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="CW_AccesoUsuario_Result">
@@ -1598,73 +1606,66 @@
     <Property Type="String" Name="Usuario" Nullable="true" MaxLength="25" />
     <Property Type="String" Name="Observacion" Nullable="true" MaxLength="200" />
   </ComplexType>
-  <ComplexType Name="A_SP_SS_HCE_VisorHistoria_bk_Result">
-    <Property Type="String" Name="UnidadReplicacionEC" Nullable="true" MaxLength="4" />
-    <Property Type="String" Name="TipoAtencionDescX" Nullable="true" MaxLength="80" />
-    <Property Type="String" Name="CitaTipo" Nullable="false" MaxLength="9" />
-    <Property Type="String" Name="CitaFecha" Nullable="true" MaxLength="10" />
-    <Property Type="String" Name="CitaHora" Nullable="true" MaxLength="10" />
-    <Property Type="String" Name="Origen" Nullable="false" MaxLength="1" />
-    <Property Type="String" Name="NombreEspecialidad" Nullable="true" MaxLength="80" />
-    <Property Type="String" Name="TipoPacienteNombre" Nullable="true" MaxLength="80" />
+  <ComplexType Name="SP_SS_IT_SaludRecetaIngreso_Result">
+    <Property Type="Int32" Name="Retorno" Nullable="true" />
+    <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_SS_IT_SaludDiagnosticoIngreso_Result">
+    <Property Type="Int32" Name="Retorno" Nullable="true" />
+    <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_SS_IT_SALUDAnamnesisIngresoMirth_Result">
+    <Property Type="Int32" Name="Retorno" Nullable="true" />
+    <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_SS_IT_SaludInformePROCIngreso_Result">
+    <Property Type="Int32" Name="Retorno" Nullable="true" />
+    <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_SS_IT_SaludInformeRutaIngreso_Result">
+    <Property Type="Int32" Name="Retorno" Nullable="true" />
+    <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia_Result">
+    <Property Type="Int32" Name="Retorno" Nullable="true" />
+    <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_SS_IT_SaludProcedimientoIngreso_Result">
+    <Property Type="Int32" Name="Retorno" Nullable="true" />
+    <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_SS_IT_SaludRecetaIndicacionesGENIngreso_Result">
+    <Property Type="Int32" Name="Retorno" Nullable="true" />
+    <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_SS_IT_SALUDAnamnesisInFormeMedico_Result">
+    <Property Type="Int32" Name="Retorno" Nullable="true" />
+    <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_SS_IT_SALUDDescansoMedico_Result">
+    <Property Type="Int32" Name="Retorno" Nullable="true" />
+    <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result">
+    <Property Type="Int32" Name="IdProcedimiento" Nullable="false" />
+    <Property Type="String" Name="NombreArchivo" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="RutaInforme" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="IdPaciente" Nullable="true" />
+    <Property Type="String" Name="Paciente" Nullable="false" MaxLength="1" />
     <Property Type="String" Name="CodigoOA" Nullable="true" MaxLength="15" />
-    <Property Type="String" Name="Cama" Nullable="false" MaxLength="150" />
-    <Property Type="DateTime" Name="FechaInicio" Nullable="true" Precision="23" />
-    <Property Type="String" Name="TipoOrdenAtencionNombre" Nullable="true" MaxLength="80" />
-    <Property Type="String" Name="CodigoHC" Nullable="true" MaxLength="15" />
-    <Property Type="String" Name="Aseguradora" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="CodigoHCAnterior" Nullable="true" MaxLength="15" />
-    <Property Type="String" Name="PacienteNombre" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="MedicoNombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CodigoComponente" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="DescripcionComponente" Nullable="true" MaxLength="300" />
     <Property Type="Int32" Name="IdOrdenAtencion" Nullable="false" />
-    <Property Type="Int32" Name="LineaOrdenAtencion" Nullable="false" />
-    <Property Type="Int32" Name="IdHospitalizacion" Nullable="false" />
-    <Property Type="Int32" Name="LineaHospitalizacion" Nullable="false" />
-    <Property Type="Int32" Name="IdConsultaExterna" Nullable="true" />
-    <Property Type="Int32" Name="IdProcedimiento" Nullable="true" />
-    <Property Type="Int32" Name="Modalidad" Nullable="true" />
-    <Property Type="Int32" Name="IndicadorSeguro" Nullable="true" />
-    <Property Type="Int32" Name="IdCita" Nullable="true" />
-    <Property Type="DateTime" Name="FechaFin" Nullable="true" Precision="23" />
-    <Property Type="Int32" Name="IdPaciente" Nullable="false" />
-    <Property Type="Int32" Name="TipoPaciente" Nullable="true" />
-    <Property Type="Int32" Name="TipoAtencion" Nullable="true" />
-    <Property Type="Int32" Name="IdEspecialidad" Nullable="true" />
-    <Property Type="Int32" Name="IdEmpresaAseguradora" Nullable="true" />
+    <Property Type="Int32" Name="LineaOA" Nullable="false" />
     <Property Type="Int32" Name="TipoOrdenAtencion" Nullable="true" />
-    <Property Type="String" Name="Componente" Nullable="true" MaxLength="25" />
-    <Property Type="String" Name="ComponenteNombre" Nullable="false" MaxLength="1" />
-    <Property Type="String" Name="Compania" Nullable="true" MaxLength="15" />
-    <Property Type="String" Name="Sucursal" Nullable="true" MaxLength="15" />
-    <Property Type="Int32" Name="IdMedico" Nullable="true" />
-    <Property Type="Int32" Name="IndicadorCirugia" Nullable="false" />
-    <Property Type="Int32" Name="IndicadorExamenPrincipal" Nullable="false" />
-    <Property Type="String" Name="UnidadReplicacionHCE" Nullable="true" MaxLength="4" />
-    <Property Type="Int32" Name="EstadoEpiAtencion" Nullable="true" />
-    <Property Type="Int32" Name="EpisodioClinicoHCE" Nullable="false" />
-    <Property Type="Int32" Name="IDEPISODIOAtencionHCE" Nullable="false" />
-    <Property Type="Int32" Name="IdPacienteHCE" Nullable="false" />
-    <Property Type="Int32" Name="SecuenciaHCE" Nullable="true" />
-    <Property Type="String" Name="PersonaAnt" Nullable="true" MaxLength="15" />
-    <Property Type="String" Name="sexo" Nullable="true" MaxLength="1" />
-    <Property Type="DateTime" Name="FechaNacimiento" Nullable="true" Precision="23" />
-    <Property Type="String" Name="EstadoCivil" Nullable="true" MaxLength="1" />
-    <Property Type="String" Name="NivelInstruccion" Nullable="true" MaxLength="3" />
-    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="190" />
-    <Property Type="String" Name="TipoDocumento" Nullable="false" MaxLength="1" />
-    <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="ApellidoPaterno" Nullable="true" MaxLength="40" />
-    <Property Type="String" Name="ApellidoMaterno" Nullable="true" MaxLength="40" />
-    <Property Type="String" Name="Nombres" Nullable="true" MaxLength="40" />
-    <Property Type="String" Name="LugarNacimiento" Nullable="true" MaxLength="255" />
-    <Property Type="String" Name="CodigoPostal" Nullable="true" MaxLength="3" />
-    <Property Type="String" Name="Provincia" Nullable="true" MaxLength="3" />
-    <Property Type="String" Name="Departamento" Nullable="true" MaxLength="3" />
-    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="15" />
-    <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="EsPaciente" Nullable="true" MaxLength="1" />
-    <Property Type="String" Name="EsEmpresa" Nullable="true" MaxLength="1" />
-    <Property Type="String" Name="Pais" Nullable="false" MaxLength="1" />
-    <Property Type="String" Name="EstadoPersona" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Medico" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Observacion" Nullable="false" MaxLength="1" />
+    <Property Type="DateTime" Name="FechaProcedimiento" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="accion" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="Contador_filas" Nullable="true" />
   </ComplexType>
 </Schema>

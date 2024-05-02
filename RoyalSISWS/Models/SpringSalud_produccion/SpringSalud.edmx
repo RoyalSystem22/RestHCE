@@ -841,11 +841,6 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
           <Parameter Name="Documento" Type="varchar" Mode="In" />
           <Parameter Name="codsucursal" Type="varchar" Mode="In" />
         </Function>
-        <Function Name="A_SP_SS_HCE_VisorHistoria_bk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
-          <Parameter Name="FechaFin" Type="datetime" Mode="In" />
-          <Parameter Name="Documento" Type="varchar" Mode="In" />
-        </Function>
         <Function Name="CW_AccesoUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="p_IDPERSONA" Type="int" Mode="In" />
           <Parameter Name="p_USUARIO" Type="varchar" Mode="In" />
@@ -954,6 +949,16 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
           <Parameter Name="Usuario" Type="varchar" Mode="In" />
           <Parameter Name="Observacion" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="SP_SS_HC_ProcedimientoInformeSPRING_LISTAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdPaciente" Type="int" Mode="In" />
+          <Parameter Name="Paciente" Type="varchar" Mode="In" />
+          <Parameter Name="CodigoOA" Type="varchar" Mode="In" />
+          <Parameter Name="CodigoComponente" Type="varchar" Mode="In" />
+          <Parameter Name="DescripcionComponente" Type="varchar" Mode="In" />
+          <Parameter Name="Inicio" Type="int" Mode="In" />
+          <Parameter Name="NumeroFilas" Type="int" Mode="In" />
+          <Parameter Name="Accion" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="SP_SS_IT_SALUDAnamnesisInFormeMedico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IDordenatencion" Type="int" Mode="In" />
           <Parameter Name="IdPaciente" Type="int" Mode="In" />
@@ -988,6 +993,8 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
           <Parameter Name="ExamenClinico" Type="varchar" Mode="In" />
           <Parameter Name="UsuarioModificacion" Type="varchar" Mode="In" />
           <Parameter Name="FechaModificacion" Type="datetime" Mode="In" />
+          <Parameter Name="al_retorno" Type="int" Mode="InOut" />
+          <Parameter Name="as_mensaje" Type="varchar" Mode="InOut" />
         </Function>
         <Function Name="SP_SS_IT_SALUDAnamnesisIngresoMirth" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UnidadReplicacion" Type="varchar" Mode="In" />
@@ -1252,6 +1259,8 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
           <Parameter Name="tipoordenatencion" Type="int" Mode="In" />
           <Parameter Name="observaciondiagnostico" Type="varchar" Mode="In" />
           <Parameter Name="tipoIT" Type="varchar" Mode="In" />
+          <Parameter Name="al_retorno" Type="int" Mode="InOut" />
+          <Parameter Name="as_mensaje" Type="varchar" Mode="InOut" />
         </Function>
         <Function Name="SP_SS_IT_SPRINGExamenesConsultaExterna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IDordenatencion" Type="int" Mode="In" />
@@ -1265,6 +1274,7 @@ warning 6002: The table/view 'SpringSalud_Produccion.dbo.VW_SS_HCE_VisorReceta' 
           <Parameter Name="Fechacreacion" Type="datetime" Mode="In" />
           <Parameter Name="lineamax" Type="int" Mode="In" />
           <Parameter Name="Observacion" Type="varchar" Mode="In" />
+          <Parameter Name="LineaOrdenAtencionConsulta" Type="int" Mode="In" />
           <Parameter Name="SECUENCIALHCE" Type="varchar" Mode="In" />
         </Function>
         <Function Name="SP_SS_IT_SPRINGRUTAHCE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -2218,19 +2228,6 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
           <EntitySet Name="SS_IT_SaludInformeRutaIngreso" EntityType="ModelGolf.SS_IT_SaludInformeRutaIngreso" />
           <EntitySet Name="SS_IT_SaludOFTALMOLOGICOIngreso" EntityType="ModelGolf.SS_IT_SaludOFTALMOLOGICOIngreso" />
           <EntitySet Name="SS_IT_SaludProcedimientoIngreso" EntityType="ModelGolf.SS_IT_SaludProcedimientoIngreso" />
-          <FunctionImport Name="SP_SS_IT_SALUDAnamnesisInFormeMedico" ReturnType="Collection(Int32)">
-            <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
-            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
-            <Parameter Name="IdLineaOa" Mode="In" Type="Int32" />
-            <Parameter Name="Secuencia" Mode="In" Type="Int32" />
-            <Parameter Name="InformeMedico" Mode="In" Type="String" />
-            <Parameter Name="Estado" Mode="In" Type="Int32" />
-            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
-            <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
-            <Parameter Name="ExamenClinico" Mode="In" Type="String" />
-            <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
-            <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
-          </FunctionImport>
           <FunctionImport Name="SP_SS_IT_SALUDAnamnesisIngreso" ReturnType="Collection(Int32)">
             <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
             <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
@@ -2271,6 +2268,156 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
             <Parameter Name="Usuario" Mode="In" Type="String" />
             <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
             <Parameter Name="TipoOrdenAtencion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SPRINGDiagnosticosConsultaExterna">
+            <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdDiagnostico" Mode="In" Type="Int32" />
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+            <Parameter Name="Determinacion" Mode="In" Type="String" />
+            <Parameter Name="LINEA" Mode="In" Type="Int32" />
+            <Parameter Name="tipoordenatencion" Mode="In" Type="Int32" />
+            <Parameter Name="observaciondiagnostico" Mode="In" Type="String" />
+            <Parameter Name="tipoIT" Mode="In" Type="String" />
+            <Parameter Name="al_retorno" Mode="InOut" Type="Int32" />
+            <Parameter Name="as_mensaje" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SPRINGRUTAHCE">
+            <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+            <Parameter Name="LINEA" Mode="In" Type="Int32" />
+            <Parameter Name="INFORMERUTA" Mode="In" Type="String" />
+            <Parameter Name="OBSERVACION" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SPRINGExamenesConsultaExterna">
+            <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+            <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="IdTipoOrdenatencion" Mode="In" Type="Int32" />
+            <Parameter Name="Componente" Mode="In" Type="String" />
+            <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
+            <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
+            <Parameter Name="Especialidad" Mode="In" Type="Int32" />
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+            <Parameter Name="lineamax" Mode="In" Type="Int32" />
+            <Parameter Name="Observacion" Mode="In" Type="String" />
+            <Parameter Name="LineaOrdenAtencionConsulta" Mode="In" Type="Int32" />
+            <Parameter Name="SECUENCIALHCE" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="SS_IT_SaludRecetaIndicacionesGENIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIndicacionesGENIngreso" />
+          <EntitySet Name="SS_IT_SaludRecetaIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIngreso" />
+          <EntitySet Name="VW_SS_HCE_VisorDescansoMedico" EntityType="ModelGolf.VW_SS_HCE_VisorDescansoMedico" />
+          <EntitySet Name="VW_SS_HCE_VisorProcedimiento" EntityType="ModelGolf.VW_SS_HCE_VisorProcedimiento" />
+          <FunctionImport Name="SP_SS_EliminarLlamado" ReturnType="Collection(ModelGolf.SP_SS_EliminarLlamado_Result)">
+            <Parameter Name="IdCita" Mode="In" Type="Int32" />
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Observacion" Mode="In" Type="String" />
+            <Parameter Name="Valor" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_GenerarLlamado" ReturnType="Collection(ModelGolf.SP_SS_GenerarLlamado_Result)">
+            <Parameter Name="IdCita" Mode="In" Type="Int32" />
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Observacion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SaludRecetaIngreso" ReturnType="Collection(ModelGolf.SP_SS_IT_SaludRecetaIngreso_Result)">
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+            <Parameter Name="Componente" Mode="In" Type="String" />
+            <Parameter Name="SubFamilia" Mode="In" Type="String" />
+            <Parameter Name="Familia" Mode="In" Type="String" />
+            <Parameter Name="Linea" Mode="In" Type="String" />
+            <Parameter Name="UnidadMedida" Mode="In" Type="Int32" />
+            <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
+            <Parameter Name="Via" Mode="In" Type="String" />
+            <Parameter Name="Dosis" Mode="In" Type="String" />
+            <Parameter Name="Diastratamiento" Mode="In" Type="String" />
+            <Parameter Name="Frecuencia" Mode="In" Type="String" />
+            <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
+            <Parameter Name="TipoReceta" Mode="In" Type="Int32" />
+            <Parameter Name="IndicacionEspecifica" Mode="In" Type="String" />
+            <Parameter Name="TipoOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="SECUENCIALHCE" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SaludDiagnosticoIngreso" ReturnType="Collection(ModelGolf.SP_SS_IT_SaludDiagnosticoIngreso_Result)">
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="LINEA" Mode="In" Type="Int32" />
+            <Parameter Name="IdDiagnostico" Mode="In" Type="Int32" />
+            <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+            <Parameter Name="Determinacion" Mode="In" Type="String" />
+            <Parameter Name="TIPOORDENATENCION" Mode="In" Type="Int32" />
+            <Parameter Name="ObservacionDIAGNOSTICO" Mode="In" Type="String" />
+            <Parameter Name="TIPOIT" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SALUDAnamnesisIngresoMirth" ReturnType="Collection(ModelGolf.SP_SS_IT_SALUDAnamnesisIngresoMirth_Result)">
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="Secuencia" Mode="In" Type="String" />
+            <Parameter Name="TiempoEnfermedad" Mode="In" Type="String" />
+            <Parameter Name="TiempoEnfermedadUnidad" Mode="In" Type="String" />
+            <Parameter Name="RelatoCronologico" Mode="In" Type="String" />
+            <Parameter Name="PresionArterialMSD1" Mode="In" Type="String" />
+            <Parameter Name="PresionArterialMSD2" Mode="In" Type="Int32" />
+            <Parameter Name="PresionArterialMSI1" Mode="In" Type="String" />
+            <Parameter Name="PresionArterialMSI2" Mode="In" Type="String" />
+            <Parameter Name="FrecuenciaCardiaca" Mode="In" Type="String" />
+            <Parameter Name="FrecuenciaRespiratoria" Mode="In" Type="Int32" />
+            <Parameter Name="Temperatura" Mode="In" Type="String" />
+            <Parameter Name="SaturacionOxigeno" Mode="In" Type="Int32" />
+            <Parameter Name="Peso" Mode="In" Type="String" />
+            <Parameter Name="Talla" Mode="In" Type="String" />
+            <Parameter Name="ExamenClinico" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SaludInformePROCIngreso" ReturnType="Collection(ModelGolf.SP_SS_IT_SaludInformePROCIngreso_Result)">
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="Informe" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SaludInformeRutaIngreso" ReturnType="Collection(ModelGolf.SP_SS_IT_SaludInformeRutaIngreso_Result)">
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="RutaInforme" Mode="In" Type="String" />
+            <Parameter Name="Observacion" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="SP_SS_IT_SALUDOFTALMOLOGICOIngreso" ReturnType="Collection(Int32)">
             <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
@@ -2317,150 +2464,7 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
             <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
             <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="SP_SS_IT_SPRINGDiagnosticosConsultaExterna">
-            <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
-            <Parameter Name="IdDiagnostico" Mode="In" Type="Int32" />
-            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-            <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
-            <Parameter Name="Usuario" Mode="In" Type="String" />
-            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-            <Parameter Name="Determinacion" Mode="In" Type="String" />
-            <Parameter Name="LINEA" Mode="In" Type="Int32" />
-            <Parameter Name="tipoordenatencion" Mode="In" Type="Int32" />
-            <Parameter Name="observaciondiagnostico" Mode="In" Type="String" />
-            <Parameter Name="tipoIT" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SP_SS_IT_SPRINGRUTAHCE">
-            <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
-            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-            <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
-            <Parameter Name="Usuario" Mode="In" Type="String" />
-            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-            <Parameter Name="LINEA" Mode="In" Type="Int32" />
-            <Parameter Name="INFORMERUTA" Mode="In" Type="String" />
-            <Parameter Name="OBSERVACION" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SP_SS_IT_SPRINGExamenesConsultaExterna">
-            <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
-            <Parameter Name="IDPaciente" Mode="In" Type="Int32" />
-            <Parameter Name="IdTipoOrdenatencion" Mode="In" Type="Int32" />
-            <Parameter Name="Componente" Mode="In" Type="String" />
-            <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
-            <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
-            <Parameter Name="Especialidad" Mode="In" Type="Int32" />
-            <Parameter Name="Usuario" Mode="In" Type="String" />
-            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-            <Parameter Name="lineamax" Mode="In" Type="Int32" />
-            <Parameter Name="Observacion" Mode="In" Type="String" />
-            <Parameter Name="SECUENCIALHCE" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SP_SS_IT_SaludDiagnosticoIngreso" ReturnType="Collection(Int32)">
-            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
-            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
-            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="LINEA" Mode="In" Type="Int32" />
-            <Parameter Name="IdDiagnostico" Mode="In" Type="Int32" />
-            <Parameter Name="Secuencia" Mode="In" Type="Int32" />
-            <Parameter Name="Determinacion" Mode="In" Type="String" />
-            <Parameter Name="TIPOORDENATENCION" Mode="In" Type="Int32" />
-            <Parameter Name="ObservacionDIAGNOSTICO" Mode="In" Type="String" />
-            <Parameter Name="TIPOIT" Mode="In" Type="String" />
-            <Parameter Name="Estado" Mode="In" Type="Int32" />
-            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
-            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <EntitySet Name="SS_IT_SaludRecetaIndicacionesGENIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIndicacionesGENIngreso" />
-          <FunctionImport Name="SP_SS_IT_SaludRecetaIndicacionesGENIngreso" ReturnType="Collection(Int32)">
-            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
-            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
-            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="LINEA" Mode="In" Type="Int32" />
-            <Parameter Name="TipoIndicacion" Mode="In" Type="Int32" />
-            <Parameter Name="Descripcion" Mode="In" Type="String" />
-            <Parameter Name="Secuencia" Mode="In" Type="Int32" />
-            <Parameter Name="Estado" Mode="In" Type="Int32" />
-            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
-            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="SP_SS_IT_SaludProcedimientoIngreso" ReturnType="Collection(Int32)">
-            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
-            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
-            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="Linea" Mode="In" Type="Int32" />
-            <Parameter Name="Componente" Mode="In" Type="String" />
-            <Parameter Name="Secuencia" Mode="In" Type="Int32" />
-            <Parameter Name="TipoOrdenatencion" Mode="In" Type="Int32" />
-            <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
-            <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
-            <Parameter Name="IdMedico" Mode="In" Type="Int32" />
-            <Parameter Name="Especialidad" Mode="In" Type="Int32" />
-            <Parameter Name="IdCita" Mode="In" Type="Int32" />
-            <Parameter Name="Observacion" Mode="In" Type="String" />
-            <Parameter Name="SECUENCIALHCE" Mode="In" Type="String" />
-            <Parameter Name="EstadoDocumento" Mode="In" Type="Int32" />
-            <Parameter Name="Estado" Mode="In" Type="Int32" />
-            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
-            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="SP_SS_IT_SaludInformePROCIngreso" ReturnType="Collection(Int32)">
-            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
-            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
-            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="Informe" Mode="In" Type="String" />
-            <Parameter Name="Estado" Mode="In" Type="Int32" />
-            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
-            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="SP_SS_IT_SaludInformeRutaIngreso" ReturnType="Collection(Int32)">
-            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
-            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
-            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="RutaInforme" Mode="In" Type="String" />
-            <Parameter Name="Observacion" Mode="In" Type="String" />
-            <Parameter Name="Estado" Mode="In" Type="Int32" />
-            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
-            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="SP_SS_IT_SaludRecetaIngreso" ReturnType="Collection(Int32)">
-            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
-            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
-            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
-            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="Secuencia" Mode="In" Type="Int32" />
-            <Parameter Name="Componente" Mode="In" Type="String" />
-            <Parameter Name="SubFamilia" Mode="In" Type="String" />
-            <Parameter Name="Familia" Mode="In" Type="String" />
-            <Parameter Name="Linea" Mode="In" Type="String" />
-            <Parameter Name="UnidadMedida" Mode="In" Type="Int32" />
-            <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
-            <Parameter Name="Via" Mode="In" Type="String" />
-            <Parameter Name="Dosis" Mode="In" Type="String" />
-            <Parameter Name="Diastratamiento" Mode="In" Type="String" />
-            <Parameter Name="Frecuencia" Mode="In" Type="String" />
-            <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
-            <Parameter Name="TipoReceta" Mode="In" Type="Int32" />
-            <Parameter Name="IndicacionEspecifica" Mode="In" Type="String" />
-            <Parameter Name="TipoOrdenAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="SECUENCIALHCE" Mode="In" Type="String" />
-            <Parameter Name="Estado" Mode="In" Type="Int32" />
-            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
-            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia" ReturnType="Collection(String)">
+          <FunctionImport Name="SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia" ReturnType="Collection(ModelGolf.SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia_Result)">
             <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
             <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
             <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
@@ -2503,34 +2507,56 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
             <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
             <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="SP_SS_IT_SALUDAnamnesisIngresoMirth" ReturnType="Collection(String)">
+          <FunctionImport Name="SP_SS_IT_SaludProcedimientoIngreso" ReturnType="Collection(ModelGolf.SP_SS_IT_SaludProcedimientoIngreso_Result)">
             <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
             <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
             <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
             <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
             <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="LineaOrdenAtencion" Mode="In" Type="Int32" />
-            <Parameter Name="Secuencia" Mode="In" Type="String" />
-            <Parameter Name="TiempoEnfermedad" Mode="In" Type="String" />
-            <Parameter Name="TiempoEnfermedadUnidad" Mode="In" Type="String" />
-            <Parameter Name="RelatoCronologico" Mode="In" Type="String" />
-            <Parameter Name="PresionArterialMSD1" Mode="In" Type="String" />
-            <Parameter Name="PresionArterialMSD2" Mode="In" Type="Int32" />
-            <Parameter Name="PresionArterialMSI1" Mode="In" Type="String" />
-            <Parameter Name="PresionArterialMSI2" Mode="In" Type="String" />
-            <Parameter Name="FrecuenciaCardiaca" Mode="In" Type="String" />
-            <Parameter Name="FrecuenciaRespiratoria" Mode="In" Type="Int32" />
-            <Parameter Name="Temperatura" Mode="In" Type="String" />
-            <Parameter Name="SaturacionOxigeno" Mode="In" Type="Int32" />
-            <Parameter Name="Peso" Mode="In" Type="String" />
-            <Parameter Name="Talla" Mode="In" Type="String" />
-            <Parameter Name="ExamenClinico" Mode="In" Type="String" />
+            <Parameter Name="Linea" Mode="In" Type="Int32" />
+            <Parameter Name="Componente" Mode="In" Type="String" />
+            <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+            <Parameter Name="TipoOrdenatencion" Mode="In" Type="Int32" />
+            <Parameter Name="Cantidad" Mode="In" Type="Decimal" />
+            <Parameter Name="IndicadorEPS" Mode="In" Type="Int32" />
+            <Parameter Name="IdMedico" Mode="In" Type="Int32" />
+            <Parameter Name="Especialidad" Mode="In" Type="Int32" />
+            <Parameter Name="IdCita" Mode="In" Type="Int32" />
+            <Parameter Name="Observacion" Mode="In" Type="String" />
+            <Parameter Name="SECUENCIALHCE" Mode="In" Type="String" />
+            <Parameter Name="EstadoDocumento" Mode="In" Type="Int32" />
             <Parameter Name="Estado" Mode="In" Type="Int32" />
             <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
             <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <EntitySet Name="SS_IT_SaludRecetaIngreso" EntityType="ModelGolf.SS_IT_SaludRecetaIngreso" />
-          <FunctionImport Name="SP_SS_IT_SALUDDescansoMedico" ReturnType="Collection(Int32)">
+          <FunctionImport Name="SP_SS_IT_SaludRecetaIndicacionesGENIngreso" ReturnType="Collection(ModelGolf.SP_SS_IT_SaludRecetaIndicacionesGENIngreso_Result)">
+            <Parameter Name="UnidadReplicacion" Mode="In" Type="String" />
+            <Parameter Name="IdEpisodioAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
+            <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
+            <Parameter Name="LINEA" Mode="In" Type="Int32" />
+            <Parameter Name="TipoIndicacion" Mode="In" Type="Int32" />
+            <Parameter Name="Descripcion" Mode="In" Type="String" />
+            <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+            <Parameter Name="Estado" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+            <Parameter Name="Fechacreacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SALUDAnamnesisInFormeMedico" ReturnType="Collection(ModelGolf.SP_SS_IT_SALUDAnamnesisInFormeMedico_Result)">
+            <Parameter Name="IDordenatencion" Mode="In" Type="Int32" />
+            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="IdLineaOa" Mode="In" Type="Int32" />
+            <Parameter Name="Secuencia" Mode="In" Type="Int32" />
+            <Parameter Name="InformeMedico" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+            <Parameter Name="FechaCreacion" Mode="In" Type="DateTime" />
+            <Parameter Name="ExamenClinico" Mode="In" Type="String" />
+            <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
+            <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SS_IT_SALUDDescansoMedico" ReturnType="Collection(ModelGolf.SP_SS_IT_SALUDDescansoMedico_Result)">
             <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
             <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
             <Parameter Name="IdLineaOa" Mode="In" Type="Int32" />
@@ -2543,23 +2569,15 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
             <Parameter Name="UsuarioModificacion" Mode="In" Type="String" />
             <Parameter Name="FechaModificacion" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <EntitySet Name="VW_SS_HCE_VisorDescansoMedico" EntityType="ModelGolf.VW_SS_HCE_VisorDescansoMedico" />
-          <EntitySet Name="VW_SS_HCE_VisorProcedimiento" EntityType="ModelGolf.VW_SS_HCE_VisorProcedimiento" />
-          <FunctionImport Name="SP_SS_EliminarLlamado" ReturnType="Collection(ModelGolf.SP_SS_EliminarLlamado_Result)">
-            <Parameter Name="IdCita" Mode="In" Type="Int32" />
-            <Parameter Name="Usuario" Mode="In" Type="String" />
-            <Parameter Name="Observacion" Mode="In" Type="String" />
-            <Parameter Name="Valor" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_SS_GenerarLlamado" ReturnType="Collection(ModelGolf.SP_SS_GenerarLlamado_Result)">
-            <Parameter Name="IdCita" Mode="In" Type="Int32" />
-            <Parameter Name="Usuario" Mode="In" Type="String" />
-            <Parameter Name="Observacion" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="A_SP_SS_HCE_VisorHistoria_bk" ReturnType="Collection(ModelGolf.A_SP_SS_HCE_VisorHistoria_bk_Result)">
-            <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
-            <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
-            <Parameter Name="Documento" Mode="In" Type="String" />
+          <FunctionImport Name="SP_SS_HC_ProcedimientoInformeSPRING_LISTAR" ReturnType="Collection(ModelGolf.SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result)">
+            <Parameter Name="IdPaciente" Mode="In" Type="Int32" />
+            <Parameter Name="Paciente" Mode="In" Type="String" />
+            <Parameter Name="CodigoOA" Mode="In" Type="String" />
+            <Parameter Name="CodigoComponente" Mode="In" Type="String" />
+            <Parameter Name="DescripcionComponente" Mode="In" Type="String" />
+            <Parameter Name="Inicio" Mode="In" Type="Int32" />
+            <Parameter Name="NumeroFilas" Mode="In" Type="Int32" />
+            <Parameter Name="Accion" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="CW_AccesoUsuario_Result">
@@ -3631,74 +3649,67 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
           <Property Type="String" Name="Usuario" Nullable="true" MaxLength="25" />
           <Property Type="String" Name="Observacion" Nullable="true" MaxLength="200" />
         </ComplexType>
-        <ComplexType Name="A_SP_SS_HCE_VisorHistoria_bk_Result">
-          <Property Type="String" Name="UnidadReplicacionEC" Nullable="true" MaxLength="4" />
-          <Property Type="String" Name="TipoAtencionDescX" Nullable="true" MaxLength="80" />
-          <Property Type="String" Name="CitaTipo" Nullable="false" MaxLength="9" />
-          <Property Type="String" Name="CitaFecha" Nullable="true" MaxLength="10" />
-          <Property Type="String" Name="CitaHora" Nullable="true" MaxLength="10" />
-          <Property Type="String" Name="Origen" Nullable="false" MaxLength="1" />
-          <Property Type="String" Name="NombreEspecialidad" Nullable="true" MaxLength="80" />
-          <Property Type="String" Name="TipoPacienteNombre" Nullable="true" MaxLength="80" />
+        <ComplexType Name="SP_SS_IT_SaludRecetaIngreso_Result">
+          <Property Type="Int32" Name="Retorno" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_SS_IT_SaludDiagnosticoIngreso_Result">
+          <Property Type="Int32" Name="Retorno" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_SS_IT_SALUDAnamnesisIngresoMirth_Result">
+          <Property Type="Int32" Name="Retorno" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_SS_IT_SaludInformePROCIngreso_Result">
+          <Property Type="Int32" Name="Retorno" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_SS_IT_SaludInformeRutaIngreso_Result">
+          <Property Type="Int32" Name="Retorno" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia_Result">
+          <Property Type="Int32" Name="Retorno" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_SS_IT_SaludProcedimientoIngreso_Result">
+          <Property Type="Int32" Name="Retorno" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_SS_IT_SaludRecetaIndicacionesGENIngreso_Result">
+          <Property Type="Int32" Name="Retorno" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_SS_IT_SALUDAnamnesisInFormeMedico_Result">
+          <Property Type="Int32" Name="Retorno" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_SS_IT_SALUDDescansoMedico_Result">
+          <Property Type="Int32" Name="Retorno" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result">
+          <Property Type="Int32" Name="IdProcedimiento" Nullable="false" />
+          <Property Type="String" Name="NombreArchivo" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="RutaInforme" Nullable="true" MaxLength="250" />
+          <Property Type="Int32" Name="IdPaciente" Nullable="true" />
+          <Property Type="String" Name="Paciente" Nullable="false" MaxLength="1" />
           <Property Type="String" Name="CodigoOA" Nullable="true" MaxLength="15" />
-          <Property Type="String" Name="Cama" Nullable="false" MaxLength="150" />
-          <Property Type="DateTime" Name="FechaInicio" Nullable="true" Precision="23" />
-          <Property Type="String" Name="TipoOrdenAtencionNombre" Nullable="true" MaxLength="80" />
-          <Property Type="String" Name="CodigoHC" Nullable="true" MaxLength="15" />
-          <Property Type="String" Name="Aseguradora" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="CodigoHCAnterior" Nullable="true" MaxLength="15" />
-          <Property Type="String" Name="PacienteNombre" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="MedicoNombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CodigoComponente" Nullable="false" MaxLength="25" />
+          <Property Type="String" Name="DescripcionComponente" Nullable="true" MaxLength="300" />
           <Property Type="Int32" Name="IdOrdenAtencion" Nullable="false" />
-          <Property Type="Int32" Name="LineaOrdenAtencion" Nullable="false" />
-          <Property Type="Int32" Name="IdHospitalizacion" Nullable="false" />
-          <Property Type="Int32" Name="LineaHospitalizacion" Nullable="false" />
-          <Property Type="Int32" Name="IdConsultaExterna" Nullable="true" />
-          <Property Type="Int32" Name="IdProcedimiento" Nullable="true" />
-          <Property Type="Int32" Name="Modalidad" Nullable="true" />
-          <Property Type="Int32" Name="IndicadorSeguro" Nullable="true" />
-          <Property Type="Int32" Name="IdCita" Nullable="true" />
-          <Property Type="DateTime" Name="FechaFin" Nullable="true" Precision="23" />
-          <Property Type="Int32" Name="IdPaciente" Nullable="false" />
-          <Property Type="Int32" Name="TipoPaciente" Nullable="true" />
-          <Property Type="Int32" Name="TipoAtencion" Nullable="true" />
-          <Property Type="Int32" Name="IdEspecialidad" Nullable="true" />
-          <Property Type="Int32" Name="IdEmpresaAseguradora" Nullable="true" />
+          <Property Type="Int32" Name="LineaOA" Nullable="false" />
           <Property Type="Int32" Name="TipoOrdenAtencion" Nullable="true" />
-          <Property Type="String" Name="Componente" Nullable="true" MaxLength="25" />
-          <Property Type="String" Name="ComponenteNombre" Nullable="false" MaxLength="1" />
-          <Property Type="String" Name="Compania" Nullable="true" MaxLength="15" />
-          <Property Type="String" Name="Sucursal" Nullable="true" MaxLength="15" />
-          <Property Type="Int32" Name="IdMedico" Nullable="true" />
-          <Property Type="Int32" Name="IndicadorCirugia" Nullable="false" />
-          <Property Type="Int32" Name="IndicadorExamenPrincipal" Nullable="false" />
-          <Property Type="String" Name="UnidadReplicacionHCE" Nullable="true" MaxLength="4" />
-          <Property Type="Int32" Name="EstadoEpiAtencion" Nullable="true" />
-          <Property Type="Int32" Name="EpisodioClinicoHCE" Nullable="false" />
-          <Property Type="Int32" Name="IDEPISODIOAtencionHCE" Nullable="false" />
-          <Property Type="Int32" Name="IdPacienteHCE" Nullable="false" />
-          <Property Type="Int32" Name="SecuenciaHCE" Nullable="true" />
-          <Property Type="String" Name="PersonaAnt" Nullable="true" MaxLength="15" />
-          <Property Type="String" Name="sexo" Nullable="true" MaxLength="1" />
-          <Property Type="DateTime" Name="FechaNacimiento" Nullable="true" Precision="23" />
-          <Property Type="String" Name="EstadoCivil" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="NivelInstruccion" Nullable="true" MaxLength="3" />
-          <Property Type="String" Name="Direccion" Nullable="true" MaxLength="190" />
-          <Property Type="String" Name="TipoDocumento" Nullable="false" MaxLength="1" />
-          <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
-          <Property Type="String" Name="ApellidoPaterno" Nullable="true" MaxLength="40" />
-          <Property Type="String" Name="ApellidoMaterno" Nullable="true" MaxLength="40" />
-          <Property Type="String" Name="Nombres" Nullable="true" MaxLength="40" />
-          <Property Type="String" Name="LugarNacimiento" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="CodigoPostal" Nullable="true" MaxLength="3" />
-          <Property Type="String" Name="Provincia" Nullable="true" MaxLength="3" />
-          <Property Type="String" Name="Departamento" Nullable="true" MaxLength="3" />
-          <Property Type="String" Name="Telefono" Nullable="true" MaxLength="15" />
-          <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="EsPaciente" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="EsEmpresa" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="Pais" Nullable="false" MaxLength="1" />
-          <Property Type="String" Name="EstadoPersona" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Medico" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Observacion" Nullable="false" MaxLength="1" />
+          <Property Type="DateTime" Name="FechaProcedimiento" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FechaCreacion" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+          <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="accion" Nullable="true" MaxLength="250" />
+          <Property Type="Int32" Name="Contador_filas" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4661,15 +4672,11 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisInFormeMedico" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisInFormeMedico" />
-          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisIngreso" />
           <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAtendidoConsultaExterna" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAtendidoConsultaExterna" />
           <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDConsultaExterna" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDConsultaExterna" />
-          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDOFTALMOLOGICOIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDOFTALMOLOGICOIngreso" />
           <FunctionImportMapping FunctionImportName="SP_SS_IT_SPRINGDiagnosticosConsultaExterna" FunctionName="ModelGolf.Store.SP_SS_IT_SPRINGDiagnosticosConsultaExterna" />
           <FunctionImportMapping FunctionImportName="SP_SS_IT_SPRINGRUTAHCE" FunctionName="ModelGolf.Store.SP_SS_IT_SPRINGRUTAHCE" />
           <FunctionImportMapping FunctionImportName="SP_SS_IT_SPRINGExamenesConsultaExterna" FunctionName="ModelGolf.Store.SP_SS_IT_SPRINGExamenesConsultaExterna" />
-          <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludDiagnosticoIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludDiagnosticoIngreso" />
           <EntitySetMapping Name="SS_IT_SaludRecetaIndicacionesGENIngreso">
             <EntityTypeMapping TypeName="ModelGolf.SS_IT_SaludRecetaIndicacionesGENIngreso">
               <MappingFragment StoreEntitySet="SS_IT_SaludRecetaIndicacionesGENIngreso">
@@ -4694,13 +4701,6 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludRecetaIndicacionesGENIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludRecetaIndicacionesGENIngreso" />
-          <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludProcedimientoIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludProcedimientoIngreso" />
-          <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludInformePROCIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludInformePROCIngreso" />
-          <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludInformeRutaIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludInformeRutaIngreso" />
-          <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludRecetaIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludRecetaIngreso" />
-          <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia" FunctionName="ModelGolf.Store.SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia" />
-          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisIngresoMirth" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisIngresoMirth" />
           <EntitySetMapping Name="SS_IT_SaludRecetaIngreso">
             <EntityTypeMapping TypeName="ModelGolf.SS_IT_SaludRecetaIngreso">
               <MappingFragment StoreEntitySet="SS_IT_SaludRecetaIngreso">
@@ -4740,7 +4740,6 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDDescansoMedico" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDDescansoMedico" />
           <EntitySetMapping Name="VW_SS_HCE_VisorDescansoMedico">
             <EntityTypeMapping TypeName="ModelGolf.VW_SS_HCE_VisorDescansoMedico">
               <MappingFragment StoreEntitySet="VW_SS_HCE_VisorDescansoMedico">
@@ -4816,76 +4815,110 @@ FROM [dbo].[VW_SS_HCE_VisorReceta] AS [VW_SS_HCE_VisorReceta]</DefiningQuery>
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="A_SP_SS_HCE_VisorHistoria_bk" FunctionName="ModelGolf.Store.A_SP_SS_HCE_VisorHistoria_bk">
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludRecetaIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludRecetaIngreso">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="ModelGolf.A_SP_SS_HCE_VisorHistoria_bk_Result">
-                <ScalarProperty Name="UnidadReplicacionEC" ColumnName="UnidadReplicacionEC" />
-                <ScalarProperty Name="TipoAtencionDescX" ColumnName="TipoAtencionDescX" />
-                <ScalarProperty Name="CitaTipo" ColumnName="CitaTipo" />
-                <ScalarProperty Name="CitaFecha" ColumnName="CitaFecha" />
-                <ScalarProperty Name="CitaHora" ColumnName="CitaHora" />
-                <ScalarProperty Name="Origen" ColumnName="Origen" />
-                <ScalarProperty Name="NombreEspecialidad" ColumnName="NombreEspecialidad" />
-                <ScalarProperty Name="TipoPacienteNombre" ColumnName="TipoPacienteNombre" />
-                <ScalarProperty Name="CodigoOA" ColumnName="CodigoOA" />
-                <ScalarProperty Name="Cama" ColumnName="Cama" />
-                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
-                <ScalarProperty Name="TipoOrdenAtencionNombre" ColumnName="TipoOrdenAtencionNombre" />
-                <ScalarProperty Name="CodigoHC" ColumnName="CodigoHC" />
-                <ScalarProperty Name="Aseguradora" ColumnName="Aseguradora" />
-                <ScalarProperty Name="CodigoHCAnterior" ColumnName="CodigoHCAnterior" />
-                <ScalarProperty Name="PacienteNombre" ColumnName="PacienteNombre" />
-                <ScalarProperty Name="MedicoNombre" ColumnName="MedicoNombre" />
-                <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
-                <ScalarProperty Name="LineaOrdenAtencion" ColumnName="LineaOrdenAtencion" />
-                <ScalarProperty Name="IdHospitalizacion" ColumnName="IdHospitalizacion" />
-                <ScalarProperty Name="LineaHospitalizacion" ColumnName="LineaHospitalizacion" />
-                <ScalarProperty Name="IdConsultaExterna" ColumnName="IdConsultaExterna" />
+              <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SaludRecetaIngreso_Result">
+                <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludDiagnosticoIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludDiagnosticoIngreso">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SaludDiagnosticoIngreso_Result">
+                <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisIngresoMirth" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisIngresoMirth">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SALUDAnamnesisIngresoMirth_Result">
+                <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludInformePROCIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludInformePROCIngreso">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SaludInformePROCIngreso_Result">
+                <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludInformeRutaIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludInformeRutaIngreso">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SaludInformeRutaIngreso_Result">
+                <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDOFTALMOLOGICOIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDOFTALMOLOGICOIngreso" />
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia" FunctionName="ModelGolf.Store.SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SaludOFTALMOLOGICOIngresoIntermedia_Result">
+                <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludProcedimientoIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludProcedimientoIngreso">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SaludProcedimientoIngreso_Result">
+                <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SaludRecetaIndicacionesGENIngreso" FunctionName="ModelGolf.Store.SP_SS_IT_SaludRecetaIndicacionesGENIngreso">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SaludRecetaIndicacionesGENIngreso_Result">
+                <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDAnamnesisInFormeMedico" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDAnamnesisInFormeMedico">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SALUDAnamnesisInFormeMedico_Result">
+                <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_SS_IT_SALUDDescansoMedico" FunctionName="ModelGolf.Store.SP_SS_IT_SALUDDescansoMedico">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ModelGolf.SP_SS_IT_SALUDDescansoMedico_Result">
+                <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_SS_HC_ProcedimientoInformeSPRING_LISTAR" FunctionName="ModelGolf.Store.SP_SS_HC_ProcedimientoInformeSPRING_LISTAR">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ModelGolf.SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result">
                 <ScalarProperty Name="IdProcedimiento" ColumnName="IdProcedimiento" />
-                <ScalarProperty Name="Modalidad" ColumnName="Modalidad" />
-                <ScalarProperty Name="IndicadorSeguro" ColumnName="IndicadorSeguro" />
-                <ScalarProperty Name="IdCita" ColumnName="IdCita" />
-                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+                <ScalarProperty Name="RutaInforme" ColumnName="RutaInforme" />
                 <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
-                <ScalarProperty Name="TipoPaciente" ColumnName="TipoPaciente" />
-                <ScalarProperty Name="TipoAtencion" ColumnName="TipoAtencion" />
-                <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
-                <ScalarProperty Name="IdEmpresaAseguradora" ColumnName="IdEmpresaAseguradora" />
+                <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+                <ScalarProperty Name="CodigoOA" ColumnName="CodigoOA" />
+                <ScalarProperty Name="CodigoComponente" ColumnName="CodigoComponente" />
+                <ScalarProperty Name="DescripcionComponente" ColumnName="DescripcionComponente" />
+                <ScalarProperty Name="IdOrdenAtencion" ColumnName="IdOrdenAtencion" />
+                <ScalarProperty Name="LineaOA" ColumnName="LineaOA" />
                 <ScalarProperty Name="TipoOrdenAtencion" ColumnName="TipoOrdenAtencion" />
-                <ScalarProperty Name="Componente" ColumnName="Componente" />
-                <ScalarProperty Name="ComponenteNombre" ColumnName="ComponenteNombre" />
-                <ScalarProperty Name="Compania" ColumnName="Compania" />
-                <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
-                <ScalarProperty Name="IdMedico" ColumnName="IdMedico" />
-                <ScalarProperty Name="IndicadorCirugia" ColumnName="IndicadorCirugia" />
-                <ScalarProperty Name="IndicadorExamenPrincipal" ColumnName="IndicadorExamenPrincipal" />
-                <ScalarProperty Name="UnidadReplicacionHCE" ColumnName="UnidadReplicacionHCE" />
-                <ScalarProperty Name="EstadoEpiAtencion" ColumnName="EstadoEpiAtencion" />
-                <ScalarProperty Name="EpisodioClinicoHCE" ColumnName="EpisodioClinicoHCE" />
-                <ScalarProperty Name="IDEPISODIOAtencionHCE" ColumnName="IDEPISODIOAtencionHCE" />
-                <ScalarProperty Name="IdPacienteHCE" ColumnName="IdPacienteHCE" />
-                <ScalarProperty Name="SecuenciaHCE" ColumnName="SecuenciaHCE" />
-                <ScalarProperty Name="PersonaAnt" ColumnName="PersonaAnt" />
-                <ScalarProperty Name="sexo" ColumnName="sexo" />
-                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
-                <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
-                <ScalarProperty Name="NivelInstruccion" ColumnName="NivelInstruccion" />
-                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-                <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
-                <ScalarProperty Name="Documento" ColumnName="Documento" />
-                <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
-                <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
-                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
-                <ScalarProperty Name="LugarNacimiento" ColumnName="LugarNacimiento" />
-                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
-                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
-                <ScalarProperty Name="EsPaciente" ColumnName="EsPaciente" />
-                <ScalarProperty Name="EsEmpresa" ColumnName="EsEmpresa" />
-                <ScalarProperty Name="Pais" ColumnName="Pais" />
-                <ScalarProperty Name="EstadoPersona" ColumnName="EstadoPersona" />
+                <ScalarProperty Name="Medico" ColumnName="Medico" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="FechaProcedimiento" ColumnName="FechaProcedimiento" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+                <ScalarProperty Name="accion" ColumnName="accion" />
+                <ScalarProperty Name="Contador_filas" ColumnName="Contador_filas" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

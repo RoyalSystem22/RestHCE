@@ -77,14 +77,14 @@ namespace RoyalSISWS.Controllers
                     }
                     else
                     {
-                        ObjREs.TipoPago ="";
+                        ObjREs.TipoPago = "";
                         Resultado.Add(ObjREs);
                         return Json(Resultado, JsonRequestBehavior.AllowGet);
                     }
                 }
                 else
                 {
-                    ObjREs.TipoPago ="";
+                    ObjREs.TipoPago = "";
                     Resultado.Add(ObjREs);
                     return Json(Resultado, JsonRequestBehavior.AllowGet);
                 }
@@ -97,7 +97,7 @@ namespace RoyalSISWS.Controllers
                 return Json(Resultado, JsonRequestBehavior.AllowGet);
             }
         }
-          
+
         public DirectoryEntry GetUser(string path, string admUser, string admPass, string UserName, ref string cErr)
         {
             cErr = "";
@@ -148,8 +148,8 @@ namespace RoyalSISWS.Controllers
 
 
         #region CitaHistoria
-        
-        public ActionResult  ListarVisorHistoria(Nullable<int> Accion, string tipoDocumento, string Documento, string cod_sucursal)
+
+        public ActionResult ListarVisorHistoria(Nullable<int> Accion, string tipoDocumento, string Documento, string cod_sucursal)
         {
             try
             {
@@ -165,15 +165,15 @@ namespace RoyalSISWS.Controllers
                     List<VW_SS_HCE_VisorHistoria> lst = new List<VW_SS_HCE_VisorHistoria>();
                     lst = m.HCE_VisorHistoria(VisorHistoria);
 
-                   
-                   //  string Jsons = Newtonsoft.Json.JsonConvert.SerializeObject(lstSalida);
+
+                    //  string Jsons = Newtonsoft.Json.JsonConvert.SerializeObject(lstSalida);
                     string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(lst);
 
                     //System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
                     //serializer.MaxJsonLength = serializer.MaxJsonLength;
                     //int MaxValue = 99999990; // Establece un valor muy alto o el necesario según tus necesidades
                     //jsonString = serializer.Serialize(lst);
-                    jsonString  = jsonString.Replace("\n","");  
+                    jsonString = jsonString.Replace("\n", "");
 
                     jsonString = Regex.Replace(jsonString, @"[^\u0000-\u007F]+", string.Empty);
 
@@ -224,9 +224,9 @@ namespace RoyalSISWS.Controllers
                 }
             }
             catch (Exception exception)
-            {            
+            {
                 string dd = exception.Source;
-                BaseDatos.WriteLog(System.DateTime.Now + " | " + "Error Asignacion: EXEC A_SP_SS_HCE_VisorHistoria  '" + FechaInicio + "' ,'" + FechaFin + "','" + Documento + "','" + cod_sucursal +"' | " + exception.StackTrace + " | " + dd);
+                BaseDatos.WriteLog(System.DateTime.Now + " | " + "Error Asignacion: EXEC A_SP_SS_HCE_VisorHistoria  '" + FechaInicio + "' ,'" + FechaFin + "','" + Documento + "','" + cod_sucursal + "' | " + exception.StackTrace + " | " + dd);
                 return Json("Error : " + " | " + exception.StackTrace, JsonRequestBehavior.AllowGet);
             }
         }
@@ -267,7 +267,7 @@ namespace RoyalSISWS.Controllers
                     //  pObjVisor.list_VW_SS_HCE_VisorExamen = m.getDiagnostico(pObjVisor.IdOrdenAtencion, IdEspe).ToList();
 
                     lst = m.HCE_VisorHistoria(VisorHistoria);
-                    if (lst.Count>0)
+                    if (lst.Count > 0)
                     {
                         lstAnamnesis = m.HCE_VisorHistoria_Anamnesis(VisorHistoria);
                         lstDiagnostico = m.HCE_VisorHistoria_Diagnostico(VisorHistoria);
@@ -275,7 +275,7 @@ namespace RoyalSISWS.Controllers
                         lstReceta = m.HCE_VisorHistoria_Receta(VisorHistoria);
                         lstDescansoMedico = m.HCE_VisorHistoria_DescansoMedico(VisorHistoria);
                         lstProcedimiento = m.HCE_VisorHistoria_Procedimiento(VisorHistoria);
-                    }               
+                    }
 
                     foreach (VW_SS_HCE_VisorHistoria intobj2 in lst)
                     {
@@ -304,18 +304,18 @@ namespace RoyalSISWS.Controllers
                         pObjVisor.Modalidad = intobj2.Modalidad;
                         pObjVisor.IndicadorSeguro = intobj2.IndicadorSeguro;
                         pObjVisor.IdCita = intobj2.IdCita;
-                        pObjVisor.FechaFin = intobj2.FechaFin;  
+                        pObjVisor.FechaFin = intobj2.FechaFin;
                         pObjVisor.TipoPaciente = intobj2.TipoPaciente;
                         pObjVisor.TipoAtencion = intobj2.TipoAtencion;
-                        pObjVisor.IdEspecialidad = intobj2.IdEspecialidad;             
+                        pObjVisor.IdEspecialidad = intobj2.IdEspecialidad;
                         pObjVisor.TipoOrdenAtencion = intobj2.TipoOrdenAtencion;
                         pObjVisor.Componente = intobj2.Componente;
                         pObjVisor.ComponenteNombre = intobj2.ComponenteNombre;
                         pObjVisor.Compania = intobj2.Compania;
-                        pObjVisor.Sucursal = intobj2.Sucursal;              
+                        pObjVisor.Sucursal = intobj2.Sucursal;
                         pObjVisor.UnidadReplicacionHCE = intobj2.UnidadReplicacionHCE;
-                        pObjVisor.EstadoEpiAtencion = intobj2.EstadoEpiAtencion;                    
-                        pObjVisor.SecuenciaHCE = intobj2.SecuenciaHCE;                    
+                        pObjVisor.EstadoEpiAtencion = intobj2.EstadoEpiAtencion;
+                        pObjVisor.SecuenciaHCE = intobj2.SecuenciaHCE;
                         pObjVisor.sexo = intobj2.sexo;
                         pObjVisor.FechaNacimiento = intobj2.FechaNacimiento;
                         pObjVisor.EstadoCivil = intobj2.EstadoCivil;
@@ -350,10 +350,10 @@ namespace RoyalSISWS.Controllers
                         {
                             pObjVisor.list_VW_SS_HCE_VisorExamen = lstExamen.Where(o => o.IdOrdenAtencion == pObjVisor.IdOrdenAtencion && o.Linea == pObjVisor.LineaOrdenAtencion).ToList();
                             pObjVisor.list_VW_SS_HCE_VisorReceta = lstReceta.Where(o => o.IdOrdenAtencion == pObjVisor.IdOrdenAtencion && o.LineaOrdenAtencion == pObjVisor.LineaOrdenAtencion).ToList();
-                             if (!string.IsNullOrEmpty(intobj2.IdProcedimiento.ToString()))
-                                {
-                                    pObjVisor.list_VW_SS_HCE_VisorProcedimiento = lstProcedimiento.Where(o => o.IdOrdenAtencion == pObjVisor.IdOrdenAtencion && o.LineaOrdenAtencion == pObjVisor.LineaOrdenAtencion).ToList();
-                                } 
+                            if (!string.IsNullOrEmpty(intobj2.IdProcedimiento.ToString()))
+                            {
+                                pObjVisor.list_VW_SS_HCE_VisorProcedimiento = lstProcedimiento.Where(o => o.IdOrdenAtencion == pObjVisor.IdOrdenAtencion && o.LineaOrdenAtencion == pObjVisor.LineaOrdenAtencion).ToList();
+                            }
                         }
                         lstSalida.Add(pObjVisor);
                     }
@@ -372,9 +372,36 @@ namespace RoyalSISWS.Controllers
                 //lst = context.VW_SS_HCE_VisorHistoria.Where(
                 //        t =>   t.Documento == Disponibilidad.CMP &&
                 //            t.IdOrdenAtencion == Disponibilidad.IdCita && t.LineaOrdenAtencion == Disponibilidad.IdTurno && t.Sucursal == Disponibilidad.IdEspecialidad_Nombre)
-               
+
                 string dd = exception.Source;
                 BaseDatos.WriteLog(System.DateTime.Now + " | " + "Error Asignacion: SELECT * FROM CW_VisorHistoria WHERE tipoDocumento= '" + tipoDocumento + "' AND Documento='" + Documento + "' AND Sucursal='" + cod_sucursal + "' | " + exception.StackTrace + " | " + dd);
+                return Json("Error : " + " | " + exception.StackTrace, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        public ActionResult ListarVisorProcedimientoInforme(Nullable<int> valor, string msg)
+        {
+            Metodos m = new Metodos();
+            try
+            {
+                if (valor == 1)
+                {
+                    List<SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result> lst = new List<SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result>();
+                    lst = m.HCE_VisorProcedimientoInformeSPRING(valor, msg);
+                    string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(lst);
+                    jsonString = jsonString.Replace("\n", "");
+                    jsonString = Regex.Replace(jsonString, @"[^\u0000-\u007F]+", string.Empty);
+                    return Content(jsonString, "application/json");
+                }
+                else
+                {
+                    return Json("Error: Valores de Parametro ", JsonRequestBehavior.AllowGet);
+                }
+            }
+            catch (Exception exception)
+            {
+                string dd = exception.Source;
+                BaseDatos.WriteLog(System.DateTime.Now + " | " + "Error Asignacion: EXEC SP_SS_HC_ProcedimientoInformeSPRING_LISTAR  " + msg );
                 return Json("Error : " + " | " + exception.StackTrace, JsonRequestBehavior.AllowGet);
             }
         }
