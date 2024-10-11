@@ -4,7 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="WEB_ERPSALUD_CSBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="WEB_ERPSALUD_CSBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="HC_OrdenIntQ_ChcBox">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="Tipo" Type="int" />
+          <Property Name="Sucursal" Type="varchar" MaxLength="50" />
+          <Property Name="CodigoMedi" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="ParametrosMast">
           <Key>
             <PropertyRef Name="CompaniaCodigo" />
@@ -151,6 +161,7 @@
           <Parameter Name="ACCION" Type="varchar" Mode="In" />
         </Function>
         <EntityContainer Name="WEB_ERPSALUD_CSBModelStoreContainer">
+          <EntitySet Name="HC_OrdenIntQ_ChcBox" EntityType="Self.HC_OrdenIntQ_ChcBox" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ParametrosMast" EntityType="Self.ParametrosMast" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SS_HC_InformeConsultaExterna_FE" EntityType="Self.SS_HC_InformeConsultaExterna_FE" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -285,6 +296,7 @@
             <Parameter Name="EpisodioClinico" Mode="In" Type="Int32" />
             <Parameter Name="IdOrdenAtencion" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="HC_OrdenIntQ_ChcBox" EntityType="WEB_ERPSALUD_CSBModel.HC_OrdenIntQ_ChcBox" />
         </EntityContainer>
         <ComplexType Name="SP_ParametrosMastListar_Result">
           <Property Type="String" Name="CompaniaCodigo" Nullable="false" MaxLength="10" />
@@ -501,6 +513,16 @@
           <Property Type="String" Name="Observacion" Nullable="true" MaxLength="Max" />
           <Property Type="String" Name="SecuencialHCE" Nullable="true" MaxLength="15" />
         </ComplexType>
+        <EntityType Name="HC_OrdenIntQ_ChcBox">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo" Type="Int32" />
+          <Property Name="Sucursal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoMedi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -758,6 +780,17 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="HC_OrdenIntQ_ChcBox">
+            <EntityTypeMapping TypeName="WEB_ERPSALUD_CSBModel.HC_OrdenIntQ_ChcBox">
+              <MappingFragment StoreEntitySet="HC_OrdenIntQ_ChcBox">
+                <ScalarProperty Name="CodigoMedi" ColumnName="CodigoMedi" />
+                <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

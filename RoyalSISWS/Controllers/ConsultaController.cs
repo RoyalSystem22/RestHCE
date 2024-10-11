@@ -21,6 +21,7 @@ using RoyalSISWS.Entidad;
 using RoyalSISWS.BasicAuthentication;
 using RoyalSISWS.Models.WEB_ERPSALUD;
 using System.Text.RegularExpressions;
+using System.Runtime.CompilerServices;
 
 namespace RoyalSISWS.Controllers
 {
@@ -409,5 +410,129 @@ namespace RoyalSISWS.Controllers
 
         #endregion
 
+
+        #region intervecion quirurgica
+
+        public JsonResult obtenerCheckBox(string sucursal , int tipo)
+        {
+            try
+            {
+                ViewResponseContenido obje = new ViewResponseContenido();
+                //Consultamos a la BD
+                obje = m.hce_getChcjBox(sucursal, tipo);
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message, JsonRequestBehavior.AllowGet);
+            }
+           
+        }
+
+        public JsonResult obtenerCheckBoxAll()
+        {
+            try
+            {
+                ViewResponseContenido obje = new ViewResponseContenido();
+                //Consultamos a la BD
+                obje = m.hce_getChcjBoxAll();
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+
+        public JsonResult obtenerCheckBoxAllBuscar(string Descripcion, string CodigoMedi, int Tipo, string Sucursal, int PageNumber, int PageSize)
+        {
+            try
+            {
+                ViewResponseContenidoPaginado obje = new ViewResponseContenidoPaginado();
+                //Consultamos a la BD
+                obje = m.hce_getChcjBoxAllBuscar(Sucursal, Tipo, CodigoMedi, Sucursal, PageNumber, PageSize);
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+
+        public JsonResult saveCheckBoxAll(string Sucursal, int Tipo, string CodigoMedi, string Descripcion)
+        {
+            try
+            {
+                ViewResponseContenido obje = new ViewResponseContenido();
+                //Consultamos a la BD
+                obje = m.hce_saveComponenteQuirurgico(Sucursal, Tipo, CodigoMedi, Descripcion);
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+
+        public JsonResult updateCheckBoxAll(int Id,string Sucursal, int Tipo, string CodigoMedi, string Descripcion)
+        {
+            try
+            {
+                ViewResponseContenido obje = new ViewResponseContenido();
+                //Consultamos a la BD
+                obje = m.hce_updateChcjBoxAll(Id,Sucursal, Tipo, CodigoMedi, Descripcion);
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+
+        public JsonResult deleteCheckBoxAll(int Id)
+        {
+            try
+            {
+                ViewResponseContenido obje = new ViewResponseContenido();
+                //Consultamos a la BD
+                obje = m.hce_deleteChcjBoxAll(Id);
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+
+        public JsonResult obtenerCheckBoxId(int Id)
+        {
+            try
+            {
+                ViewResponseContenido obje = new ViewResponseContenido();
+                //Consultamos a la BD
+                obje = m.hce_getChcjBoxId(Id);
+                return Json(obje, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+
+
+        #endregion
     }
 }

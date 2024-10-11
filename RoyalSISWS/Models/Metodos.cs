@@ -9,6 +9,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.Transactions;
+using System.Drawing.Printing;
 
 namespace RoyalSISWS.Models
 {
@@ -517,6 +518,409 @@ namespace RoyalSISWS.Models
             }
             return obje;
         }
+
+        public ViewResponseContenido hce_getChcjBox( string sucursal, int tipo)
+        {
+            ViewResponseContenido obje = new ViewResponseContenido();
+            try
+            {
+                List<HC_OrdenIntQ_ChcBox> lst = new List<HC_OrdenIntQ_ChcBox>();
+                //List<HC_OrdenIntQ_ChcBox> LstEntyt = (List<HC_OrdenIntQ_ChcBox>)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(List<SS_IT_SaludDiagnosticoIngreso>));
+                using (var context = new WEB_ERPSALUDEntities())
+                {
+
+                    try
+                    {
+                        lst = context.HC_OrdenIntQ_ChcBox.Where(x => x.Sucursal == sucursal.Trim() && x.Tipo == tipo).ToList();
+
+                        if (lst !=null)
+                        {
+                            obje.contenido = lst;
+                            obje.valor = 1;
+                            obje.msg = "Correcto";
+                            obje.ok = true;
+                        }
+                        else
+                        {
+                            obje.contenido = null;
+                            obje.valor = 1;
+                            obje.msg = "Correcto";
+                            obje.ok = true;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        obje.msg = "Detalles del error: " + Newtonsoft.Json.JsonConvert.SerializeObject(ex.Message);
+                        obje.ok = false;
+                        obje.valor = 0;
+                        
+                    }
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                obje.msg = "Detalles del error: " + Newtonsoft.Json.JsonConvert.SerializeObject(ex.Message);
+                obje.ok = false;
+                obje.valor = 0;
+
+            }
+            return obje;
+        }
+
+        public ViewResponseContenido hce_getChcjBoxId(int id)
+        {
+            ViewResponseContenido obje = new ViewResponseContenido();
+            try
+            {
+                List<HC_OrdenIntQ_ChcBox> lst = new List<HC_OrdenIntQ_ChcBox>();
+                //List<HC_OrdenIntQ_ChcBox> LstEntyt = (List<HC_OrdenIntQ_ChcBox>)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(List<SS_IT_SaludDiagnosticoIngreso>));
+                using (var context = new WEB_ERPSALUDEntities())
+                {
+
+                    try
+                    {
+                        lst = context.HC_OrdenIntQ_ChcBox.Where(x => x.Id == id).ToList();
+
+                        if (lst != null)
+                        {
+                            obje.contenido = lst;
+                            obje.valor = 1;
+                            obje.msg = "Correcto";
+                            obje.ok = true;
+                        }
+                        else
+                        {
+                            obje.contenido = null;
+                            obje.valor = 1;
+                            obje.msg = "Correcto";
+                            obje.ok = true;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        obje.msg = "Detalles del error: " + Newtonsoft.Json.JsonConvert.SerializeObject(ex.Message);
+                        obje.ok = false;
+                        obje.valor = 0;
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                obje.msg = "Detalles del error: " + Newtonsoft.Json.JsonConvert.SerializeObject(ex.Message);
+                obje.ok = false;
+                obje.valor = 0;
+
+            }
+            return obje;
+        }
+
+        public ViewResponseContenido hce_getChcjBoxAll()
+        {
+            ViewResponseContenido obje = new ViewResponseContenido();
+            try
+            {
+                List<HC_OrdenIntQ_ChcBox> lst = new List<HC_OrdenIntQ_ChcBox>();
+                //List<HC_OrdenIntQ_ChcBox> LstEntyt = (List<HC_OrdenIntQ_ChcBox>)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(List<SS_IT_SaludDiagnosticoIngreso>));
+                using (var context = new WEB_ERPSALUDEntities())
+                {
+
+                    try
+                    {
+                        lst = context.HC_OrdenIntQ_ChcBox.ToList();
+
+                        if (lst != null)
+                        {
+                            obje.contenido = lst;
+                            obje.valor = 1;
+                            obje.msg = "Correcto";
+                            obje.ok = true;
+                        }
+                        else
+                        {
+                            obje.contenido = null;
+                            obje.valor = 1;
+                            obje.msg = "Correcto";
+                            obje.ok = true;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        obje.msg = "Detalles del error: " + Newtonsoft.Json.JsonConvert.SerializeObject(ex.Message);
+                        obje.ok = false;
+                        obje.valor = 0;
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                obje.msg = "Detalles del error: " + Newtonsoft.Json.JsonConvert.SerializeObject(ex.Message);
+                obje.ok = false;
+                obje.valor = 0;
+
+            }
+            return obje;
+        }
+
+        public ViewResponseContenido hce_deleteChcjBoxAll(int tipo)
+        {
+            ViewResponseContenido obje = new ViewResponseContenido();
+            try
+            {
+                List<HC_OrdenIntQ_ChcBox> lst = new List<HC_OrdenIntQ_ChcBox>();
+                //List<HC_OrdenIntQ_ChcBox> LstEntyt = (List<HC_OrdenIntQ_ChcBox>)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(List<SS_IT_SaludDiagnosticoIngreso>));
+                using (var context = new WEB_ERPSALUDEntities())
+                {
+
+                    try
+                    {
+
+                        // Busca el objeto en la base de datos
+                        var obj = context.HC_OrdenIntQ_ChcBox.FirstOrDefault(x => x.Id == tipo);
+
+                        if (obj != null)
+                        {
+                            // Elimina el objeto
+                            context.HC_OrdenIntQ_ChcBox.Remove(obj);
+
+                            // Guarda los cambios
+                            context.SaveChanges();
+                            obje.contenido = obj;
+                            obje.valor = 1;
+                            obje.msg = "Se eliminó el registro correctamente";
+                            obje.ok = true;
+                        }
+                        else
+                        {
+                            obje.contenido = null;
+                            obje.valor = 0;
+                            obje.msg = "No se pudo eliminar el registro.";
+                            obje.ok = true;
+                        }
+
+                        
+
+                    }
+                    catch (Exception ex)
+                    {
+                        obje.msg = "Detalles del error: " + Newtonsoft.Json.JsonConvert.SerializeObject(ex.Message);
+                        obje.ok = false;
+                        obje.valor = 0;
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                obje.msg = "Detalles del error: " + Newtonsoft.Json.JsonConvert.SerializeObject(ex.Message);
+                obje.ok = false;
+                obje.valor = 0;
+
+            }
+            return obje;
+        }
+
+        public ViewResponseContenido hce_updateChcjBoxAll(int Id, string sucursal, int tipo, string codMedicamento, string descripcion)
+        {
+            ViewResponseContenido obje = new ViewResponseContenido();
+            try
+            {
+                List<HC_OrdenIntQ_ChcBox> lst = new List<HC_OrdenIntQ_ChcBox>();
+                //List<HC_OrdenIntQ_ChcBox> LstEntyt = (List<HC_OrdenIntQ_ChcBox>)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(List<SS_IT_SaludDiagnosticoIngreso>));
+                using (var context = new WEB_ERPSALUDEntities())
+                {
+
+                    try
+                    {
+                        
+                        // Busca el objeto en la base de datos
+                        var obj = context.HC_OrdenIntQ_ChcBox.FirstOrDefault(x => x.Id == Id);
+
+                        if (obj != null)
+                        {
+                            obj.Sucursal = sucursal;
+                            obj.Tipo = tipo;
+                            obj.CodigoMedi = codMedicamento;
+                            obj.Descripcion = descripcion;
+                            // Guarda los cambios
+                            context.SaveChanges();
+
+                            obje.contenido = obj;
+                            obje.valor = 1;
+                            obje.msg = "Actualizado correctamente.";
+                            obje.ok = true;
+                        }
+                        else
+                        {
+                            obje.contenido = null;
+                            obje.valor = 0;
+                            obje.msg = "No se pudo actualizar el registro.";
+                            obje.ok = true;
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        obje.msg = "Detalles del error: " + Newtonsoft.Json.JsonConvert.SerializeObject(ex.Message);
+                        obje.ok = false;
+                        obje.valor = 0;
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                obje.msg = "Detalles del error: " + Newtonsoft.Json.JsonConvert.SerializeObject(ex.Message);
+                obje.ok = false;
+                obje.valor = 0;
+
+            }
+            return obje;
+        }
+
+
+        public ViewResponseContenidoPaginado hce_getChcjBoxAllBuscar(string sucursal, int tipo, string codMedicamento, string descripcion, int pageNumber, int pageSize)
+        {
+            ViewResponseContenidoPaginado obje = new ViewResponseContenidoPaginado();
+            try
+            {
+                using (var context = new WEB_ERPSALUDEntities())
+                {
+                    // Inicializa la consulta base
+                    var query = context.HC_OrdenIntQ_ChcBox.AsQueryable();
+
+                    int contador = query.Count();
+
+                    // Filtro por "tipo", si es mayor a 0 (si se quiere filtrar por este campo)
+                    if (tipo > 0)
+                    {
+                        query = query.Where(x => x.Tipo == tipo);
+                    }
+
+                    // Filtro por "sucursal", si no es nulo ni vacío
+                    if (!string.IsNullOrEmpty(sucursal))
+                    {
+                        query = query.Where(x => x.Sucursal.Contains(sucursal));
+                    }
+
+                    // Filtro por "codMedicamento", si no es nulo ni vacío
+                    if (!string.IsNullOrEmpty(codMedicamento))
+                    {
+                        query = query.Where(x => x.CodigoMedi.Contains(codMedicamento));
+                    }
+
+                    // Filtro por "descripcion", si no es nulo ni vacío
+                    if (!string.IsNullOrEmpty(descripcion))
+                    {
+                        query = query.Where(x => x.Descripcion.Contains(descripcion));
+                    }
+
+                    // Paginación: omitir los registros previos y tomar solo el tamaño de página
+                    var result = query
+                                        .OrderBy(x => x.Id) // O cualquier campo que desees ordenar
+                                        .Skip((pageNumber - 1) * pageSize)
+                                        .Take(pageSize)
+                                        .ToList();
+
+                    // Si se encontraron resultados
+                    if (result.Any())
+                    {
+                        obje.contenido = result;
+                        obje.valor = 1;
+                        obje.msg = "Datos obtenidos correctamente.";
+                        obje.ok = true;
+                        obje.total = contador;
+                    }
+                    else
+                    {
+                        obje.contenido = null;
+                        obje.valor = 0;
+                        obje.msg = "No se encontraron registros.";
+                        obje.ok = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                obje.msg = "Detalles del error: " + Newtonsoft.Json.JsonConvert.SerializeObject(ex.Message);
+                obje.ok = false;
+                obje.valor = 0;
+            }
+
+            return obje;
+        }
+
+
+        public ViewResponseContenido hce_saveComponenteQuirurgico(string sucursal, int tipo, string codMedicamento, string descripcion)
+        {
+            ViewResponseContenido obje = new ViewResponseContenido();
+            try
+            {
+                List<HC_OrdenIntQ_ChcBox> lst = new List<HC_OrdenIntQ_ChcBox>();
+                //List<HC_OrdenIntQ_ChcBox> LstEntyt = (List<HC_OrdenIntQ_ChcBox>)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(List<SS_IT_SaludDiagnosticoIngreso>));
+                using (var context = new WEB_ERPSALUDEntities())
+                {
+
+                    try
+                    {
+                        //primero buscamos si existe el elemento registrado
+                        lst = context.HC_OrdenIntQ_ChcBox.Where(x=>x.Sucursal == sucursal && x.CodigoMedi == codMedicamento && x.Tipo == tipo).ToList();
+
+                        if (lst.Count()==0)
+                        {
+
+                            HC_OrdenIntQ_ChcBox obj = new HC_OrdenIntQ_ChcBox();
+                            obj.Sucursal = sucursal;
+                            obj.Tipo = tipo;
+                            obj.Descripcion = descripcion;
+                            obj.CodigoMedi = codMedicamento;
+                            context.HC_OrdenIntQ_ChcBox.Add(obj);
+                            context.SaveChanges();
+                            obje.contenido = obj;
+                            obje.valor = 1;
+                            obje.msg = "Se agregó el registro correctamente.";
+                            obje.ok = true;
+                        }
+                        else
+                        {
+                            obje.contenido = null;
+                            obje.valor = 0;
+                            obje.msg = "El elemento por registrar ya existe.";
+                            obje.ok = true;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        obje.msg = "Detalles del error: " + Newtonsoft.Json.JsonConvert.SerializeObject(ex.Message);
+                        obje.ok = false;
+                        obje.valor = 0;
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                obje.msg = "Detalles del error: " + Newtonsoft.Json.JsonConvert.SerializeObject(ex.Message);
+                obje.ok = false;
+                obje.valor = 0;
+
+            }
+            return obje;
+        }
+
 
         public ViewResponse SaludRecetaIndicacionesGENIngresoMantenimiento(Nullable<int> Accion, string Objeto)
         {
